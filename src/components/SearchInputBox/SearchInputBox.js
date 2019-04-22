@@ -1,0 +1,56 @@
+import React from "react";
+import Input from "../../ReusableUI-Components/Input";
+import "../../App.scss";
+
+class SearchInputBox extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      inputArrow: false,
+      value: ""
+    };
+    this.searchUsersFn = this.searchUsersFn.bind(this);
+  }
+
+  searchUsersFn(e) {
+    let docInputBox = document.getElementById("input-box");
+    docInputBox.style.background = "white";
+    docInputBox.style.boxShadow = "0px 4px 5px 0px rgba(205,205,205,1)";
+    this.setState({ value: e, inputArrow: true }, () => {
+      if (e === "") {
+        this.setState({ inputArrow: false });
+        document.getElementById("input-arrow").style.transition = "all 0.2s";
+        docInputBox.style.backgroundColor = "#f8f8f8";
+        docInputBox.style.transition = "all 0.4s";
+        docInputBox.style.boxShadow = "none";
+      }
+    });
+  }
+  render() {
+    let leftArrow = this.state.inputArrow ? (
+      <i className="fas fa-arrow-down input-arrow px-2 py-2" id="input-arrow" />
+    ) : (
+      <i className="fas fa-search icon-color input-search-icon px-3" />
+    );
+    return (
+      <div className="col-12 px-0 input-box" id="input-box">
+        <div className="px-2 py-2 d-flex">
+          <div className="row mx-0 w-100">
+            <div className="col-12 px-0">
+              <div className="main-left-arrow px-1">{leftArrow}</div>
+              <Input
+                placeholder={this.props.placeholder}
+                onChangeHandler={this.searchUsersFn}
+                value={this.state.value}
+                classes="search-input-box"
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default SearchInputBox;
