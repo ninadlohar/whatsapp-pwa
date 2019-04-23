@@ -2,7 +2,7 @@ import React from "react";
 import SearchInputBox from "../../components/SearchInputBox/SearchInputBox";
 import ContactDataChatWithStataus from "../../components/TypesOfUserChats/ContactDataChatWithStatus";
 
-class HiddenComponent extends React.Component {
+class HiddenComponentRightSide extends React.Component {
   state = {
     squeezeLayoutBoolean: false,
     isTextAStatus: this.props.isTextAStatus,
@@ -181,4 +181,4 @@ class HiddenComponent extends React.Component {
   }
 }
 
-export default HiddenComponent;
+export default HiddenComponentRightSide;

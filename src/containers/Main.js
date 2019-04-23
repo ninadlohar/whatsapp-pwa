@@ -2,7 +2,8 @@ import React from "react";
 import "../App.scss";
 import RightSide from "./RightSide/RightSide";
 import LeftSide from "./LeftSide/LeftSide";
-import HiddenComponent from "./HiddenComponent/HiddenComponent";
+import HiddenComponentRightSide from "./HiddenComponent/HiddenComponentRightSide";
+import HiddenComponentLeftSide from "./HiddenComponent/HiddenComponentLeftSide";
 
 class Main extends React.Component {
   constructor(props) {
@@ -18,6 +19,10 @@ class Main extends React.Component {
       isChatARegularMessage: false,
       isChatWithStatus: false,
       /** 3 types of user chats end */
+
+      /** props set for leftSideHiddenContainer start */
+      setLeftHiddenComponentVisible: false,
+      /** props set for leftSideHiddenContainer end */
       hiddenClass: ["DOMChangedHiddenSide"],
       addClassesLeftSide: ["DOMChangedLeftSide_P-1301", "DOMChangedLeftSide"],
       addClassesRightSide: ["DOMChangedRightSide_P-1301", "DOMChangedRightSide"]
@@ -59,8 +64,11 @@ class Main extends React.Component {
     this.setState({ isTextAStatus: true });
   };
 
+  setLeftHiddenComponentVisibleFn = () => {
+    this.setState({ setLeftHiddenComponentVisible: true });
+  };
+
   render() {
-    console.log(this.state.isTextAStatus);
     return (
       <div className="col-12 px-0">
         <div className="green-box">
@@ -69,6 +77,16 @@ class Main extends React.Component {
               <div className="display-content-area-child">
                 {/** d-flex enables flexbox -> 2 parts of screen */}
                 {/** divide screen into two parts -> chat-people and chat logs */}
+
+                {this.state.setLeftHiddenComponentVisible ? (
+                  <HiddenComponentLeftSide
+                    setLeftHiddenComponentVisible={this.state.setLeftHiddenComponentVisible}
+                    squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
+                    setHiddenComponentTrue={this.setHiddenComponentTrue}
+                    setHiddenComponentFalse={this.setHiddenComponentFalse}
+                  />
+                ) : null}
+
                 <LeftSide
                   leftDropdown={this.state.leftDropdown}
                   squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
@@ -77,6 +95,8 @@ class Main extends React.Component {
                   isTextAStatus={this.state.isTextAStatus}
                   isChatARegularMessage={this.state.isChatARegularMessage}
                   isChatARegularMessageFn={this.isChatARegularMessageFn}
+                  setLeftHiddenComponentVisible={this.state.setLeftHiddenComponentVisible}
+                  setLeftHiddenComponentVisibleFn={this.setLeftHiddenComponentVisibleFn}
                 />
                 <RightSide
                   rightDropdown={this.state.rightDropdown}
@@ -87,7 +107,7 @@ class Main extends React.Component {
                   setDropdownTrueFn={this.setDropdownTrueFn}
                 />
                 {this.state.squeezeLayoutBoolean ? (
-                  <HiddenComponent
+                  <HiddenComponentRightSide
                     squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
                     hiddenClass={this.state.hiddenClass}
                     setHiddenComponentTrue={this.setHiddenComponentTrue}

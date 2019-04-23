@@ -3,19 +3,17 @@ import SearchInputBox from "../../components/SearchInputBox/SearchInputBox";
 import DropDown from "../../components/dropDown";
 import Aux from "../../hoc/Aux";
 import DefaultLoadedChat from "../../components/TypesOfUserChats/DefaultLoadedChat";
-import NewUserChat from "../../components/TypesOfUserChats/NewUserChat";
 
 class LeftSide extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      newChatWindowActiveToggle: false,
+      setLeftHiddenComponentVisible: this.props.setLeftHiddenComponentVisible,
       baseClasses: ["col-xl-3-5", "left-side-of-chat-window", "px-0"],
       squeezeLayoutBoolean: this.props.squeezeLayoutBoolean,
       isChatARegularMessage: this.props.isChatARegularMessage
     };
     this.toggleHandlerIn = this.toggleHandlerIn.bind(this);
-    this.toggleHandlerOut = this.toggleHandlerOut.bind(this);
   }
 
   componentDidMount() {
@@ -24,86 +22,19 @@ class LeftSide extends React.Component {
   }
 
   toggleHandlerIn() {
-    document.getElementById("newChatActiveBox").style.visibility = "visible";
-    document.getElementById("message-logs").style.display = "none";
-    if (!this.state.newChatWindowActiveToggle) {
-      this.setState(
-        {
-          newChatWindowActiveToggle: !this.state.newChatWindowActiveToggle
-        },
-        () => {
-          document.getElementById("newChatActiveBox").style.transform = "translate(0%, 0)";
-        }
-      );
-    }
-  }
-
-  toggleHandlerOut() {
-    document.getElementById("newChatActiveBox").style.transform = "translate(-100%, 0)";
-    setTimeout(() => {
-      document.getElementById("message-logs").style.display = "block";
-      this.setState({
-        newChatWindowActiveToggle: !this.state.newChatWindowActiveToggle
-      });
-    }, 200);
+    this.setState({ setLeftHiddenComponentVisible: true }, () => {
+      this.props.setLeftHiddenComponentVisibleFn();
+      document.getElementById("message-logs").style.display = "none";
+      setTimeout(() => {
+        document.getElementById("newChatActiveBox").style.transform = "translate(0%, 0)";
+      }, 100);
+    });
   }
 
   render() {
-    let frequentlyContacted = (
-      <div className="chat-1 w-100 py-4 d-flex single-user-chat-box pr-3">
-        <div className="single-user-chat-box d-flex align-items-center frequently-contacted">FREQUENTLY CONTACTED</div>
-      </div>
-    );
-    let newGroup = (
-      <div className="chat-1 w-100 py-2 d-flex single-user-chat-box pr-3">
-        <div className="sender-image-padding py-1">
-          <img src={require("../../assets/images/new-group.png")} alt="new-group" className="sender-user-image" />
-        </div>
-        <div className="remaining d-flex align-items-center">New Group</div>
-      </div>
-    );
     /** newChat component is too reusable */
-    let newChat = (
-      <div className="row mx-0 newChatActiveBox" id="newChatActiveBox">
-        <header className="col-12 display-content-area-header px-0">
-          <div className="newChatActive">
-            <div className="row">
-              <div className="col-12 d-flex h-59 align-items-center">
-                <span className="newChatLeftArrow" onClick={this.toggleHandlerOut}>
-                  <i className="fas fa-arrow-left" />
-                </span>
-                <span className="newChatHeader">New Chat</span>
-              </div>
-            </div>
-          </div>
-        </header>
-        <SearchInputBox />
-        <section className="col-12 px-0 chat-section">
-          <div className="row mx-0">
-            {/** all chats will append here from API */}
-            {/** log-of-chats-new-chat-active will be true when active else log-of-chats toggle*/}
-            <div className="col-12 px-0 log-of-chats-new-chat-active">
-              <div className="row mx-0">
-                {newGroup}
-                {frequentlyContacted}
-                <NewUserChat />
-                <NewUserChat />
-                <NewUserChat />
-                <NewUserChat />
-                <NewUserChat />
-                <NewUserChat />
-                <NewUserChat />
-                <NewUserChat />
-                <NewUserChat />
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    );
     let messageLogs = (
       <Aux>
-        {newChat}
         <div className="row mx-0" id="message-logs">
           <header className="col-12 display-content-area-header px-0">
             <div className="row mx-0">
