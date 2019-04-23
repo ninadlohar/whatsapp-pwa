@@ -5,7 +5,8 @@ import SearchInputBox from "../../components/SearchInputBox/SearchInputBox";
 class HiddenComponentLeftSide extends React.Component {
   state = {
     baseClasses: ["row", "mx-0", "newChatActiveBox"],
-    hiddenLeftClass: ["DOMChangedLeftHiddenSide"]
+    hiddenLeftClass: ["DOMChangedLeftHiddenSide"],
+    show: true
   };
   toggleHandlerOut = () => {
     document.getElementById("newChatActiveBox").style.transform = "translate(-100%, 0)";
@@ -36,8 +37,7 @@ class HiddenComponentLeftSide extends React.Component {
         <div className="remaining d-flex align-items-center">New Group</div>
       </div>
     );
-
-    return (
+    let newChat = (
       <div className={classes} id="newChatActiveBox">
         {/* <div className="row mx-0 newChatActiveBox" id="newChatActiveBox"> */}
         <header className="col-12 display-content-area-header px-0">
@@ -52,7 +52,7 @@ class HiddenComponentLeftSide extends React.Component {
             </div>
           </div>
         </header>
-        <SearchInputBox />
+        <SearchInputBox casualSearchBox={true} placeholder="Search Contacts" />
         <section className="col-12 px-0 chat-section">
           <div className="row mx-0">
             {/** all chats will append here from API */}
@@ -76,6 +76,60 @@ class HiddenComponentLeftSide extends React.Component {
         </section>
       </div>
     );
+
+    let makeNewGroup = (
+      <div className={classes} id="newChatActiveBox">
+        {/* <div className="row mx-0 newChatActiveBox" id="newChatActiveBox"> */}
+        <header className="col-12 display-content-area-header px-0">
+          <div className="newChatActive">
+            <div className="row">
+              <div className="col-12 d-flex h-59 align-items-center">
+                <span className="newChatLeftArrow" onClick={this.toggleHandlerOut}>
+                  <i className="fas fa-arrow-left" />
+                </span>
+                <span className="newChatHeader">Add Group Participants</span>
+              </div>
+            </div>
+          </div>
+        </header>
+        <section className="col-12 px-0 chat-section">
+          <SearchInputBox casualSearchBox={false} placeholder="Type Contact Name" />
+          <div className="row mx-0">
+            {/** all chats will append here from API */}
+            {/** log-of-chats-new-chat-active will be true when active else log-of-chats toggle*/}
+            <div className="col-12 px-0 log-of-chats-new-chat-active">
+              <div className="row mx-0">
+                <NewUserChat />
+                <NewUserChat />
+                <NewUserChat />
+                <NewUserChat />
+                <NewUserChat />
+                <NewUserChat />
+                <NewUserChat />
+                <NewUserChat />
+                <NewUserChat />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    );
+
+    // let display = null;
+    // if (this.props.makeNewGroup) {
+    //   display = this.props.makeNewGroup ? makeNewGroup : null;
+    // } else if (this.props.defaultLeftHiddenChats) {
+    //   display = this.props.defaultLeftHiddenChats ? newChat : null;
+    // }
+    switch (true) {
+      case this.props.makeNewGroup: {
+        return makeNewGroup;
+      }
+      case this.props.defaultLeftHiddenChats: {
+        return newChat;
+      }
+    }
+    // return display;
   }
 }
 

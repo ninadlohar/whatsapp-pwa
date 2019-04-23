@@ -24,12 +24,18 @@ class LeftSide extends React.Component {
   toggleHandlerIn() {
     this.setState({ setLeftHiddenComponentVisible: true }, () => {
       this.props.setLeftHiddenComponentVisibleFn();
+      this.props.defaultLeftHiddenChatsFn();
       document.getElementById("message-logs").style.display = "none";
       setTimeout(() => {
         document.getElementById("newChatActiveBox").style.transform = "translate(0%, 0)";
       }, 100);
     });
   }
+
+  newGroup = () => {
+    this.props.makeNewGroupFn();
+    this.toggleHandlerIn();
+  };
 
   render() {
     /** newChat component is too reusable */
@@ -55,13 +61,13 @@ class LeftSide extends React.Component {
                   <div className="px-3" onClick={this.toggleHandlerIn}>
                     <img src={require("../../assets/svg/message-ballon.svg")} alt="message-ballon" height="20" width="20" />
                   </div>
-                  <DropDown leftDropdown={this.props.leftDropdown} classes="fas fa-ellipsis-v" />
+                  <DropDown leftDropdown={this.props.leftDropdown} classes="fas fa-ellipsis-v" newGroup={this.newGroup} />
                 </div>
               </div>
             </div>
           </header>
           {/** input box  */}
-          <SearchInputBox placeholder="Search or start new Chat" />
+          <SearchInputBox placeholder="Search or start new Chat" casualSearchBox={true} />
           {/** chat section */}
           <section className="col-12 px-0 chat-section">
             <div className="row mx-0">

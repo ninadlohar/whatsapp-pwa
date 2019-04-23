@@ -13,12 +13,12 @@ class RightSide extends React.Component {
   slideInToggler = () => {
     let leftSide = document.getElementById("col-xl-3-5");
     let rightSide = document.getElementById("col-xl-6-5");
+
     this.setState({ squeezeLayoutBoolean: true }, () => {
       this.props.setHiddenComponentTrue();
       this.props.setSearchComponentTrueFn();
       leftSide.classList.add("DOMChangedLeftSide_P-1301", "DOMChangedLeftSide");
       rightSide.classList.add("DOMChangedRightSide_P-1301", "DOMChangedRightSide");
-      console.log("search icon called");
     });
   };
 
@@ -63,7 +63,7 @@ class RightSide extends React.Component {
                       <i
                         className="fas fa-search icon-color px-3"
                         onClick={this.slideInToggler}
-                        // onClick={this.props.squeezeLayoutBoolean ? this.slideOutToggler : this.slideInToggler}
+                        // onClick={this.state.squeezeLayoutBoolean ? this.toggleIfWindowLessThan1024 : this.slideInToggler}
                       />
                       <DropDown attachment={this.state.attachment} classes="fas fa-paperclip icon-color" />
                       <DropDown

@@ -23,6 +23,11 @@ class Main extends React.Component {
       /** props set for leftSideHiddenContainer start */
       setLeftHiddenComponentVisible: false,
       /** props set for leftSideHiddenContainer end */
+
+      /** left dropdown -> to hidden left component toggle start */
+      makeNewGroup: false,
+      defaultLeftHiddenChats: false,
+      /** left dropdown -> to hidden left component toggle end */
       hiddenClass: ["DOMChangedHiddenSide"],
       addClassesLeftSide: ["DOMChangedLeftSide_P-1301", "DOMChangedLeftSide"],
       addClassesRightSide: ["DOMChangedRightSide_P-1301", "DOMChangedRightSide"]
@@ -68,7 +73,16 @@ class Main extends React.Component {
     this.setState({ setLeftHiddenComponentVisible: true });
   };
 
+  makeNewGroupFn = () => {
+    this.setState({ makeNewGroup: true });
+  };
+
+  defaultLeftHiddenChatsFn = () => {
+    this.setState({ defaultLeftHiddenChats: true });
+  };
+
   render() {
+    console.log(this.state.makeNewGroup);
     return (
       <div className="col-12 px-0">
         <div className="green-box">
@@ -84,6 +98,8 @@ class Main extends React.Component {
                     squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
                     setHiddenComponentTrue={this.setHiddenComponentTrue}
                     setHiddenComponentFalse={this.setHiddenComponentFalse}
+                    makeNewGroup={this.state.makeNewGroup}
+                    defaultLeftHiddenChats={this.state.defaultLeftHiddenChats}
                   />
                 ) : null}
 
@@ -97,6 +113,8 @@ class Main extends React.Component {
                   isChatARegularMessageFn={this.isChatARegularMessageFn}
                   setLeftHiddenComponentVisible={this.state.setLeftHiddenComponentVisible}
                   setLeftHiddenComponentVisibleFn={this.setLeftHiddenComponentVisibleFn}
+                  makeNewGroupFn={this.makeNewGroupFn}
+                  defaultLeftHiddenChatsFn={this.defaultLeftHiddenChatsFn}
                 />
                 <RightSide
                   rightDropdown={this.state.rightDropdown}

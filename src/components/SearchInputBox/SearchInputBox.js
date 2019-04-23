@@ -32,7 +32,7 @@ class SearchInputBox extends React.Component {
     ) : (
       <i className="fas fa-search icon-color input-search-icon px-3" />
     );
-    return (
+    let casualSearchBox = (
       <div className="col-12 px-0 input-box" id="input-box">
         <div className="px-2 py-2 d-flex">
           <div className="row mx-0 w-100">
@@ -50,6 +50,18 @@ class SearchInputBox extends React.Component {
         </div>
       </div>
     );
+    let newSearch = (
+      <div className="col-12 px-0 newSearchInputBox">
+        <Input
+          placeholder="Type Contact Name"
+          onChangeHandler={this.searchUsersFn}
+          value={this.state.value}
+          classes="searchInputBoxCustomized"
+          type="text"
+        />
+      </div>
+    );
+    return this.props.casualSearchBox ? casualSearchBox : newSearch;
   }
 }
 
