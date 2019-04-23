@@ -76,7 +76,11 @@ class HiddenComponentLeftSide extends React.Component {
         </section>
       </div>
     );
-
+    let hashTag = (
+      <div className="hashTag w-100">
+        <div className="hashTag_child">#</div>
+      </div>
+    );
     let makeNewGroup = (
       <div className={classes} id="newChatActiveBox">
         {/* <div className="row mx-0 newChatActiveBox" id="newChatActiveBox"> */}
@@ -99,6 +103,7 @@ class HiddenComponentLeftSide extends React.Component {
             {/** log-of-chats-new-chat-active will be true when active else log-of-chats toggle*/}
             <div className="col-12 px-0 log-of-chats-new-chat-active">
               <div className="row mx-0">
+                {hashTag}
                 <NewUserChat />
                 <NewUserChat />
                 <NewUserChat />

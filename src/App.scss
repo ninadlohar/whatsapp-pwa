@@ -284,6 +284,13 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .hashTag_child {
+    padding-top: 30px;
+    padding-left: 32px;
+    padding-bottom: 15px;
+    font-size: 15px;
+    color: $green-box-color;
+  }
   .newSearchInputBox {
     padding-left: 34px !important;
     padding-bottom: 12px;
@@ -517,6 +524,13 @@ body {
 }
 
 @media (min-width: 768px) {
+  .hashTag_child {
+    padding-top: 30px;
+    padding-left: 32px;
+    padding-bottom: 15px;
+    font-size: 15px;
+    color: $green-box-color;
+  }
   .newSearchInputBox {
     padding-left: 34px !important;
     padding-bottom: 12px;
