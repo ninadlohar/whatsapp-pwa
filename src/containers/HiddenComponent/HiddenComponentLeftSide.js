@@ -84,7 +84,7 @@ class HiddenComponentLeftSide extends React.Component {
     let makeNewGroup = (
       <div className={classes} id="newChatActiveBox">
         {/* <div className="row mx-0 newChatActiveBox" id="newChatActiveBox"> */}
-        <header className="col-12 display-content-area-header px-0">
+        <header className="col-12  px-0">
           <div className="newChatActive">
             <div className="row">
               <div className="col-12 d-flex h-59 align-items-center">
@@ -123,7 +123,7 @@ class HiddenComponentLeftSide extends React.Component {
     let profile = (
       <div className={classes} id="newChatActiveBox">
         {/* <div className="row mx-0 newChatActiveBox" id="newChatActiveBox"> */}
-        <header className="col-12 display-content-area-header px-0">
+        <header className="col-12 px-0">
           <div className="newChatActive">
             <div className="row">
               <div className="col-12 d-flex h-59 align-items-center">
