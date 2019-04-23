@@ -154,6 +154,9 @@ class LeftSide extends React.Component {
         </div>
       </Aux>
     );
+    /** if hidden componenet toggle then -> pass props to display proper chatType -> then in Hidden<C> switch based on */
+    /** message logs is default */
+    /** only new chat will be shown on toggle. */
     let appendClasses = this.state.squeezeLayoutBoolean
       ? this.state.baseClasses.concat(this.props.addClassesLeftSide).join(" ")
       : this.state.baseClasses.join(" ");
