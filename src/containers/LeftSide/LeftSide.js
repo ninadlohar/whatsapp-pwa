@@ -11,7 +11,8 @@ class LeftSide extends React.Component {
       setLeftHiddenComponentVisible: this.props.setLeftHiddenComponentVisible,
       baseClasses: ["col-xl-3-5", "left-side-of-chat-window", "px-0"],
       squeezeLayoutBoolean: this.props.squeezeLayoutBoolean,
-      isChatARegularMessage: this.props.isChatARegularMessage
+      isChatARegularMessage: this.props.isChatARegularMessage,
+      openProfileLeftSide: this.props.openProfileLeftSide
     };
     this.toggleHandlerIn = this.toggleHandlerIn.bind(this);
   }
@@ -34,6 +35,11 @@ class LeftSide extends React.Component {
 
   newGroup = () => {
     this.props.makeNewGroupFn();
+    this.toggleHandlerIn();
+  };
+
+  openProfileLeftSideFn = () => {
+    this.props.openProfileLeftSideFn();
     this.toggleHandlerIn();
   };
 
@@ -61,7 +67,12 @@ class LeftSide extends React.Component {
                   <div className="px-3" onClick={this.toggleHandlerIn}>
                     <img src={require("../../assets/svg/message-ballon.svg")} alt="message-ballon" height="20" width="20" />
                   </div>
-                  <DropDown leftDropdown={this.props.leftDropdown} classes="fas fa-ellipsis-v" newGroup={this.newGroup} />
+                  <DropDown
+                    leftDropdown={this.props.leftDropdown}
+                    classes="fas fa-ellipsis-v"
+                    newGroup={this.newGroup}
+                    openProfileLeftSideFn={this.openProfileLeftSideFn}
+                  />
                 </div>
               </div>
             </div>

@@ -7,10 +7,6 @@ class DropDown extends React.Component {
     squeezeLayoutBoolean: this.props.squeezeLayoutBoolean
   };
 
-  // toggleFn = () => {
-  //   this.props.onClickHandlerFn();
-  // };
-
   showMenu = event => {
     event.preventDefault();
     this.setState({ showMenu: true }, () => {
@@ -40,7 +36,9 @@ class DropDown extends React.Component {
         <div className="px-4 py-2" onClick={this.props.newGroup}>
           New Group
         </div>
-        <div className="px-4 py-2">Profile</div>
+        <div className="px-4 py-2" onClick={this.props.openProfileLeftSideFn}>
+          Profile
+        </div>
         <div className="px-4 py-2">Archived</div>
         <div className="px-4 py-2">Started</div>
         <div className="px-4 py-2">Settings</div>

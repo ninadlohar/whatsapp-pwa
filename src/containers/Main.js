@@ -27,6 +27,7 @@ class Main extends React.Component {
       /** left dropdown -> to hidden left component toggle start */
       makeNewGroup: false,
       defaultLeftHiddenChats: false,
+      openProfileLeftSide: false,
       /** left dropdown -> to hidden left component toggle end */
       hiddenClass: ["DOMChangedHiddenSide"],
       addClassesLeftSide: ["DOMChangedLeftSide_P-1301", "DOMChangedLeftSide"],
@@ -80,9 +81,12 @@ class Main extends React.Component {
   defaultLeftHiddenChatsFn = () => {
     this.setState({ defaultLeftHiddenChats: true });
   };
+  openProfileLeftSideFn = () => {
+    this.setState({ openProfileLeftSide: true });
+  };
 
   render() {
-    console.log(this.state.makeNewGroup);
+    console.log(this.state.openProfileLeftSide);
     return (
       <div className="col-12 px-0">
         <div className="green-box">
@@ -100,6 +104,7 @@ class Main extends React.Component {
                     setHiddenComponentFalse={this.setHiddenComponentFalse}
                     makeNewGroup={this.state.makeNewGroup}
                     defaultLeftHiddenChats={this.state.defaultLeftHiddenChats}
+                    openProfileLeftSide={this.state.openProfileLeftSide}
                   />
                 ) : null}
 
@@ -115,6 +120,8 @@ class Main extends React.Component {
                   setLeftHiddenComponentVisibleFn={this.setLeftHiddenComponentVisibleFn}
                   makeNewGroupFn={this.makeNewGroupFn}
                   defaultLeftHiddenChatsFn={this.defaultLeftHiddenChatsFn}
+                  openProfileLeftSideFn={this.openProfileLeftSideFn}
+                  openProfileLeftSide={this.state.openProfileLeftSide}
                 />
                 <RightSide
                   rightDropdown={this.state.rightDropdown}
