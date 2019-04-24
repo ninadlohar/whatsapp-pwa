@@ -19,7 +19,7 @@ const ArchievedChat = props => {
         <div className="row mx-0">
           {/** all chats will append here from API */}
           {/** log-of-chats-new-chat-active will be true when active else log-of-chats toggle*/}
-          <div className="col-12 px-0 log-of-chats-new-chat-active profile_section">
+          <div className="col-12 px-0 log-of-chats new-chat-active profile_section">
             <div className="row mx-0">
               <div className="archievedChatSection w-100">
                 <div className="d-flex justify-content-center">

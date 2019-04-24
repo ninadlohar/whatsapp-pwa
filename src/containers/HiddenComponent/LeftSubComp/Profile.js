@@ -21,8 +21,8 @@ class Profile extends React.Component {
       <div className={this.props.classes} id="newChatActiveBox">
         <header className="col-12 px-0">
           <div className="newChatActive">
-            <div className="row">
-              <div className="col-12 d-flex h-59 align-items-center">
+            <div className="row mx-0">
+              <div className="col-12 px-0 d-flex h-59 align-items-center">
                 <span className="newChatLeftArrow" onClick={this.props.toggleHandlerOut}>
                   <i className="fas fa-arrow-left" />
                 </span>
@@ -31,11 +31,12 @@ class Profile extends React.Component {
             </div>
           </div>
         </header>
+
         <section className="col-12 px-0 chat-section">
           <div className="row mx-0">
             {/** all chats will append here from API */}
             {/** log-of-chats-new-chat-active will be true when active else log-of-chats toggle*/}
-            <div className="col-12 px-0 log-of-chats-new-chat-active profile_section">
+            <div className="col-12 px-0 log-of-chats new-chat-active profile_section">
               <div className="row mx-0">
                 <div className="leftDrawer_Profile_ImageSection w-100 d-flex justify-content-center">
                   <img
@@ -53,8 +54,8 @@ class Profile extends React.Component {
                       <SearchInputBox casualSearchBox="profileInput" />
                     </div>
                   ) : (
-                    withoutEdit
-                  )}
+                      withoutEdit
+                    )}
                 </div>
               </div>
               <div className="row mx-0">

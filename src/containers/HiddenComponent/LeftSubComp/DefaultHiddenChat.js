@@ -46,7 +46,7 @@ class DefaultHiddenLeftChat extends React.Component {
           <div className="row mx-0">
             {/** all chats will append here from API */}
             {/** log-of-chats-new-chat-active will be true when active else log-of-chats toggle*/}
-            <div className="col-12 px-0 log-of-chats-new-chat-active">
+            <div className="col-12 px-0 log-of-chats new-chat-active">
               <div className="row mx-0">
                 {newGroup}
                 {frequentlyContacted}
