@@ -53,7 +53,8 @@ class LeftSide extends React.Component {
                 <div className="px-3">
                   <img src={require("../../assets/svg/charging-circle.svg")} alt="status-v3" height="24" width="18" />
                 </div>
-                <div className="px-3" onClick={this.toggleHandlerIn}>
+                {/* <div className="px-3" onClick={this.toggleHandlerIn}>  */}
+                <div className="px-3" onClick={() => this.props.setLeftSliderScreen("defaultView")}>
                   <img src={require("../../assets/svg/message-ballon.svg")} alt="message-ballon" height="20" width="20" />
                 </div>
                 <DropDown leftDropdown={this.props.leftDropdown} classes="fas fa-ellipsis-v" handleMenuClick={this.handleMenuClick} />

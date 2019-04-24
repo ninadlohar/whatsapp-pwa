@@ -32,7 +32,7 @@ const StarredMessages = props => {
                   <div className="col-9 d-flex px-0">
                     <div className="starred-messages-sender-image-main">
                       <img
-                        alt="sender-image-in-starred-message"
+                        alt="sender-img-in-starred-message"
                         src={require("../../../assets/images/user-image.jpg")}
                         className="starred-messages-sender-image"
                       />

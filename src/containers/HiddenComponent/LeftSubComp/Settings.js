@@ -25,7 +25,7 @@ class Settings extends React.Component {
                     <div>
                       <img
                         src={require("../../../assets/images/user-image.jpg")}
-                        alt="logged-in-user-image-in-settings-section"
+                        alt="logged-in-user-img-in-settings-section"
                         className="settings-section-image_img"
                       />
                     </div>

@@ -44,7 +44,7 @@ class HiddenComponentLeftSide extends React.Component {
 
     let makeNewGroup = <NewGroup classes={classes} toggleHandlerOut={this.toggleHandlerOut} />;
     let profile = <Profile classes={classes} toggleHandlerOut={this.toggleHandlerOut} />;
-    let display = (
+    let display1 = (
       <DefaultHiddenLeftChat
         setLeftHiddenComponentVisible={this.props.setLeftHiddenComponentVisible}
         squeezeLayoutBoolean={this.props.squeezeLayoutBoolean}
@@ -54,7 +54,7 @@ class HiddenComponentLeftSide extends React.Component {
     let archievedChat = <ArchievedChat classes={classes} toggleHandlerOut={this.toggleHandlerOut} />;
     let starredMessages = <StarredMessages classes={classes} toggleHandlerOut={this.toggleHandlerOut} />;
     let settingsC = <Settings classes={classes} toggleHandlerOut={this.toggleHandlerOut} />;
-
+    let display = null;
     switch (this.props.currentScreen) {
       case "newGroup":
         display = makeNewGroup;
@@ -70,6 +70,12 @@ class HiddenComponentLeftSide extends React.Component {
         break;
       case "settings":
         display = settingsC;
+        break;
+      case "defaultView":
+        display = display1;
+        break;
+      default:
+        display = display1;
         break;
     }
 
