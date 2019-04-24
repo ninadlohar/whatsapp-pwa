@@ -32,8 +32,8 @@ const StarredMessages = props => {
                   <div className="col-9 d-flex px-0">
                     <div className="starred-messages-sender-image-main">
                       <img
+                        alt="sender-image-in-starred-message"
                         src={require("../../../assets/images/user-image.jpg")}
-                        alt="sender-image-small"
                         className="starred-messages-sender-image"
                       />
                     </div>
@@ -47,7 +47,7 @@ const StarredMessages = props => {
                     Sunday
                     <img
                       src={require("../../../assets/svg/right-arrow.svg")}
-                      alt="right-arrow-angle"
+                      alt="right-arrow-angle-1"
                       style={{ marginLeft: "8px" }}
                       height="12"
                       width="12"
@@ -60,11 +60,23 @@ const StarredMessages = props => {
                       <div className="col-12 px-0 w-100 starred-messages-date-sent font-italic">
                         <div className="row mx-0 w-100">
                           <div className="col-11 px-0">
-                            <img src={require("../../../assets/svg/forward-arrow.svg")} width="12" height="12" className="mr-1" />
+                            <img
+                              src={require("../../../assets/svg/forward-arrow.svg")}
+                              alt="forward-arrow"
+                              width="12"
+                              height="12"
+                              className="mr-1"
+                            />
                             Forwarded
                           </div>
                           <div className="col-1 px-0 d-flex justify-content-end">
-                            <img src={require("../../../assets/svg/chevron-arrow-down.svg")} width="12" height="12" className="mr-1" />
+                            <img
+                              src={require("../../../assets/svg/chevron-arrow-down.svg")}
+                              alt="chevron-down"
+                              width="12"
+                              height="12"
+                              className="mr-1"
+                            />
                           </div>
                         </div>
                       </div>
@@ -74,7 +86,13 @@ const StarredMessages = props => {
                         तूमचे आई वडिल जर तूमच्यासाठी एटीएम कार्ड बनू शकतात तर, तूम्ही त्यांचे आधार कार्ड का बनू शकत नाही ?
                       </span>
                       <div className="starred-messages-date-sent text-right">
-                        <img src={require("../../../assets/svg/rate-star-button.svg")} width="10" height="10" className="mr-1" />
+                        <img
+                          src={require("../../../assets/svg/rate-star-button.svg")}
+                          alt="rate-star"
+                          width="10"
+                          height="10"
+                          className="mr-1"
+                        />
                         10:16 PM
                       </div>
                     </div>

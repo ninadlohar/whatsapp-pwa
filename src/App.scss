@@ -284,6 +284,38 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .settings-section-image-section {
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .settings_section_logged_in_user_name {
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .settings_logos {
+    width: 74px;
+  }
+  .settings_each_logo {
+    height: 60px;
+  }
+  .settings_section_logged_in_user_status {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    margin-top: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .settings_options {
+    padding-right: 30px;
+  }
+  .settings-section {
+    padding-right: 24px !important;
+  }
   .custom_pl-3 {
     padding-left: 3px;
   }
@@ -300,6 +332,11 @@ body {
   .starred-messages-date-sent {
     color: rgba(0, 0, 0, 0.45);
     font-size: 11px;
+  }
+  .settings-section-image_img {
+    height: 82px;
+    width: 82px;
+    border-radius: 50%;
   }
   .starred-messages {
     padding: 6px 7px 8px 9px;
@@ -617,6 +654,44 @@ body {
 }
 
 @media (min-width: 768px) {
+  .settings-section-image_img {
+    height: 82px;
+    width: 82px;
+    border-radius: 50%;
+  }
+  .settings_section_logged_in_user_name {
+    font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .settings_each_logo {
+    height: 60px;
+  }
+  .settings_options {
+    padding-right: 30px;
+  }
+  .settings_logos {
+    width: 74px;
+  }
+  .settings-section {
+    padding-right: 24px !important;
+  }
+  .settings_section_logged_in_user_status {
+    margin-top: 2px;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .settings-section-image-section {
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
   .custom_pl-3 {
     padding-left: 3px;
   }

@@ -45,7 +45,9 @@ class DropDown extends React.Component {
         <div className="px-4 py-2" onClick={() => this.props.handleMenuClick("starredMessages")}>
           Starred
         </div>
-        <div className="px-4 py-2">Settings</div>
+        <div className="px-4 py-2" onClick={() => this.props.handleMenuClick("settings")}>
+          Settings
+        </div>
         <div className="px-4 py-2">Logout</div>
       </div>
     );
