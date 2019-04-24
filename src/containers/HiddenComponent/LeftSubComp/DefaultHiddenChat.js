@@ -41,7 +41,7 @@ class DefaultHiddenLeftChat extends React.Component {
             </div>
           </div>
         </header>
-        <SearchInputBox casualSearchBox={true} placeholder="Search Contacts" />
+        <SearchInputBox casualSearchBox="withSearchBox" placeholder="Search Contacts" />
         <section className="col-12 px-0 chat-section">
           <div className="row mx-0">
             {/** all chats will append here from API */}

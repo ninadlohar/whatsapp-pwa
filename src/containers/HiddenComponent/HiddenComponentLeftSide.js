@@ -2,6 +2,8 @@ import React from "react";
 import NewGroup from "./LeftSubComp/NewGroup";
 import Profile from "./LeftSubComp/Profile";
 import DefaultHiddenLeftChat from "./LeftSubComp/DefaultHiddenChat";
+import ArchievedChat from "./LeftSubComp/ArcheivedChat";
+import StarredMessages from "./LeftSubComp/StarredMessages";
 
 class HiddenComponentLeftSide extends React.Component {
   state = {
@@ -48,6 +50,8 @@ class HiddenComponentLeftSide extends React.Component {
         toggleHandlerOut={this.toggleHandlerOut}
       />
     );
+    let archievedChat = <ArchievedChat classes={classes} toggleHandlerOut={this.toggleHandlerOut} />;
+    let starredMessages = <StarredMessages classes={classes} toggleHandlerOut={this.toggleHandlerOut} />;
 
     switch (this.props.currentScreen) {
       case "newGroup":
@@ -55,6 +59,12 @@ class HiddenComponentLeftSide extends React.Component {
         break;
       case "profile":
         display = profile;
+        break;
+      case "archievedChat":
+        display = archievedChat;
+        break;
+      case "starredMessages":
+        display = starredMessages;
         break;
     }
 

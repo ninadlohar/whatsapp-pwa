@@ -31,7 +31,7 @@ class HiddenComponentRightSide extends React.Component {
     let onSearchActiveContainer = (
       <div>
         <div>
-          <SearchInputBox placeholder="Search..." casualSearchBox={true} />
+          <SearchInputBox placeholder="Search..." casualSearchBox="withSearchBox" />
         </div>
         <div className="p-50 text-center">
           <span className="hidden_box_p50_contents">Search for messages within 9139396939.</span>

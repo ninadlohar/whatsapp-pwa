@@ -284,6 +284,99 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .custom_pl-3 {
+    padding-left: 3px;
+  }
+  .custom_pr-3 {
+    padding-right: 3px;
+  }
+  .starred-messages-container {
+    background-color: #eeeeef;
+  }
+  .starred-messages-main {
+    padding-left: 29px;
+    padding-right: 12px;
+  }
+  .starred-messages-date-sent {
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 11px;
+  }
+  .starred-messages {
+    padding: 6px 7px 8px 9px;
+    background-color: white;
+    color: #262626;
+    border-radius: 7.5px;
+    margin-top: 7px;
+  }
+  .starred-messages-section {
+    padding: 10px 7px 10px 13px;
+    font-size: 14px;
+
+    background-color: #eeeeef;
+  }
+  .starred-messages-sender-image {
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+  }
+  .starred-messages-sender-image-main {
+    margin-right: 6px;
+  }
+  .profile_section_name_with_value_as_input {
+    border: transparent !important;
+    font-size: 17px !important;
+    font-weight: 100 !important;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    border-radius: 0px !important;
+    border-bottom: 2px solid #00bfa5;
+    // color: $search-input-box-text-color;
+  }
+  .no-archieved-chats {
+    color: #929fa6;
+    font-size: 14px;
+  }
+  .archieved-chats-cirle {
+    background-color: #e0e7e9;
+    border-radius: 50%;
+    margin-bottom: 32px;
+    height: 164px;
+    width: 164px;
+  }
+  .archievedChatSection {
+    background-color: #f7f7f7;
+    padding: 50px;
+  }
+  .profile_section {
+    background-color: #f7f7f7;
+  }
+  .profile_section_name {
+    color: #128c7e;
+    font-size: 14px;
+    line-height: normal;
+    margin-bottom: 14px;
+  }
+  .profile_section_name_with_value {
+    font-size: 17px;
+    margin: 8px 0px;
+  }
+  .static_text {
+    color: #929fa6;
+    font-size: 13px;
+    margin: 4px 20px 28px 30px;
+    background-color: #f7f7f7;
+  }
+  .leftDrawer_Profile_ImageSection {
+    margin-top: 28px;
+    margin-bottom: 28px;
+  }
+  .leftDrawer_Profile_ImageSection_image {
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 50%;
+  }
   .hashTag_child {
     padding-top: 30px;
     padding-left: 32px;
@@ -407,7 +500,7 @@ body {
   }
   .newChatActive {
     padding-top: 49px;
-    padding-left: 30px;
+    padding-left: 23px;
     padding-right: 20px;
     height: 108px;
     background-color: $new-chat-active-color;
@@ -524,6 +617,101 @@ body {
 }
 
 @media (min-width: 768px) {
+  .custom_pl-3 {
+    padding-left: 3px;
+  }
+  .custom_pr-3 {
+    padding-right: 3px;
+  }
+  .starred-messages-main {
+    padding-left: 29px;
+    padding-right: 12px;
+  }
+  .starred-messages-date-sent {
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 11px;
+  }
+  .starred-messages {
+    margin-top: 7px;
+    padding: 6px 7px 8px 9px;
+    background-color: white;
+    color: #262626;
+    border-radius: 7.5px;
+  }
+  .starred-messages-container {
+    background-color: #eeeeef;
+  }
+  .starred-messages-section {
+    padding: 10px 7px 10px 13px;
+    font-size: 14px;
+  }
+  .starred-messages-sender-image {
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+  }
+  .starred-messages-sender-image-main {
+    margin-right: 6px;
+  }
+  .profile_section_name_with_value_as_input {
+    border: transparent !important;
+    font-size: 17px !important;
+    font-weight: 100 !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    border-radius: 0px !important;
+    border-bottom: 2px solid #00bfa5;
+    // color: $search-input-box-text-color;
+  }
+  .profile_section {
+    background-color: #f7f7f7;
+  }
+  .no-archieved-chats {
+    color: #929fa6;
+    font-size: 14px;
+  }
+  .archieved-chats-cirle {
+    background-color: #e0e7e9;
+    border-radius: 50%;
+    margin-bottom: 32px;
+    height: 164px;
+    width: 164px;
+  }
+  .archievedChatSection {
+    background-color: #f7f7f7;
+    padding: 50px;
+  }
+  .leftDrawer_Profile_ImageSection {
+    margin-top: 28px;
+    margin-bottom: 28px;
+  }
+  .profile_section_name_with_value {
+    font-size: 17px;
+    margin: 8px 0px;
+  }
+  .static_text {
+    color: #929fa6;
+    font-size: 13px;
+    margin: 4px 20px 28px 30px;
+    background-color: #f7f7f7;
+  }
+  .profile_section_name {
+    color: #128c7e;
+    font-size: 14px;
+    line-height: normal;
+    margin-bottom: 14px;
+  }
+  .profile_section_basic_info {
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 14px 30px 10px 30px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+  .leftDrawer_Profile_ImageSection_image {
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 50%;
+  }
   .hashTag_child {
     padding-top: 30px;
     padding-left: 32px;
@@ -680,7 +868,7 @@ body {
   }
   .newChatActive {
     padding-top: 49px;
-    padding-left: 30px;
+    padding-left: 23px;
     padding-right: 20px;
     height: 108px;
     background-color: $new-chat-active-color;

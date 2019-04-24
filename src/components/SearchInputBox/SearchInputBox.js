@@ -61,7 +61,26 @@ class SearchInputBox extends React.Component {
         />
       </div>
     );
-    return this.props.casualSearchBox ? casualSearchBox : newSearch;
+    let profileInput = (
+      <div className="col-12 px-0">
+        <Input placeholder="Type Contact Name" value="Niko" classes="" type="text" />
+      </div>
+    );
+    let sb = null;
+    switch (this.props.casualSearchBox) {
+      case "withSearchBox":
+        sb = casualSearchBox;
+        break;
+      case "searchBoxWithLine":
+        sb = newSearch;
+        break;
+      case "profileInput":
+        sb = profileInput;
+        break;
+      default:
+        sb = profileInput;
+    }
+    return sb;
   }
 }
 
