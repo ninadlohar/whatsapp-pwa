@@ -33,10 +33,10 @@ class DropDown extends React.Component {
   render() {
     let leftMenu = (
       <div className="left-dropdown">
-        <div className="px-4 py-2" onClick={this.props.newGroup}>
+        <div className="px-4 py-2" onClick={() => this.props.handleMenuClick("newGroup")}>
           New Group
         </div>
-        <div className="px-4 py-2" onClick={this.props.openProfileLeftSideFn}>
+        <div className="px-4 py-2" onClick={() => this.props.handleMenuClick("profile")}>
           Profile
         </div>
         <div className="px-4 py-2">Archived</div>

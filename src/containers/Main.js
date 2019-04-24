@@ -25,9 +25,8 @@ class Main extends React.Component {
       /** props set for leftSideHiddenContainer end */
 
       /** left dropdown -> to hidden left component toggle start */
-      makeNewGroup: false,
-      defaultLeftHiddenChats: false,
-      openProfileLeftSide: false,
+      newGroup: false,
+      profile: false,
       /** left dropdown -> to hidden left component toggle end */
       hiddenClass: ["DOMChangedHiddenSide"],
       addClassesLeftSide: ["DOMChangedLeftSide_P-1301", "DOMChangedLeftSide"],
@@ -74,19 +73,14 @@ class Main extends React.Component {
     this.setState({ setLeftHiddenComponentVisible: true });
   };
 
-  makeNewGroupFn = () => {
-    this.setState({ makeNewGroup: true });
-  };
-
-  defaultLeftHiddenChatsFn = () => {
-    this.setState({ defaultLeftHiddenChats: true });
-  };
-  openProfileLeftSideFn = () => {
-    this.setState({ openProfileLeftSide: true });
+  setLeftSliderScreen = screen => {
+    this.setState({ currentScreen: screen }, () => {
+      console.log("sadasd", this);
+      this.LeftDrawer.toggleHandlerIn();
+    });
   };
 
   render() {
-    console.log(this.state.openProfileLeftSide);
     return (
       <div className="col-12 px-0">
         <div className="green-box">
@@ -96,17 +90,15 @@ class Main extends React.Component {
                 {/** d-flex enables flexbox -> 2 parts of screen */}
                 {/** divide screen into two parts -> chat-people and chat logs */}
 
-                {this.state.setLeftHiddenComponentVisible ? (
-                  <HiddenComponentLeftSide
-                    setLeftHiddenComponentVisible={this.state.setLeftHiddenComponentVisible}
-                    squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
-                    setHiddenComponentTrue={this.setHiddenComponentTrue}
-                    setHiddenComponentFalse={this.setHiddenComponentFalse}
-                    makeNewGroup={this.state.makeNewGroup}
-                    defaultLeftHiddenChats={this.state.defaultLeftHiddenChats}
-                    openProfileLeftSide={this.state.openProfileLeftSide}
-                  />
-                ) : null}
+                {/* {this.state.setLeftHiddenComponentVisible ? ( */}
+                <HiddenComponentLeftSide
+                  onRef={ref => (this.LeftDrawer = ref)}
+                  setLeftHiddenComponentVisible={this.state.setLeftHiddenComponentVisible}
+                  squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
+                  setHiddenComponentTrue={this.setHiddenComponentTrue}
+                  setHiddenComponentFalse={this.setHiddenComponentFalse}
+                  currentScreen={this.state.currentScreen}
+                />
 
                 <LeftSide
                   leftDropdown={this.state.leftDropdown}
@@ -117,11 +109,7 @@ class Main extends React.Component {
                   isChatARegularMessage={this.state.isChatARegularMessage}
                   isChatARegularMessageFn={this.isChatARegularMessageFn}
                   setLeftHiddenComponentVisible={this.state.setLeftHiddenComponentVisible}
-                  setLeftHiddenComponentVisibleFn={this.setLeftHiddenComponentVisibleFn}
-                  makeNewGroupFn={this.makeNewGroupFn}
-                  defaultLeftHiddenChatsFn={this.defaultLeftHiddenChatsFn}
-                  openProfileLeftSideFn={this.openProfileLeftSideFn}
-                  openProfileLeftSide={this.state.openProfileLeftSide}
+                  setLeftSliderScreen={this.setLeftSliderScreen}
                 />
                 <RightSide
                   rightDropdown={this.state.rightDropdown}
