@@ -52,7 +52,7 @@ class DefaultLoadedChat extends React.Component {
         <div className="remaining py-1 px-0">
           <div className="row mx-0">
             <div className="d-flex w-100">
-              <div className="col-3 chat-section-sending-user-data sender-name px-0">
+              <div className="col-9 chat-section-sending-user-data sender-name px-0">
                 <span>Angels Do Exist</span>
               </div>
               <div className="col-3 px-0 text-right">
