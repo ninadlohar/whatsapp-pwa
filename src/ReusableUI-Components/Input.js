@@ -37,6 +37,19 @@ class SearchBar extends React.Component {
           />
         );
       }
+      case "textarea": {
+        return (
+          <textarea
+            className={(defaultClass += " " + this.props.classes)}
+            type="text"
+            rows="1"
+            placeholder={this.props.placeholder}
+            value={this.props.value}
+            onChange={this.inputHandler}
+            onKeyPress={this.functionExecuteHandler}
+          />
+        );
+      }
     }
     return displayBox;
   }

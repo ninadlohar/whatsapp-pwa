@@ -41,8 +41,8 @@ class FooterAndMessageLogs extends React.Component {
     let transformIcons = this.state.sendMessageIcon ? (
       <i className="fas fa-paper-plane icon-color" id="plane-icon" />
     ) : (
-      <i className="fas fa-microphone microphone icon-color" />
-    );
+        <i className="fas fa-microphone microphone icon-color" />
+      );
     return (
       <Aux>
         <MessageLogs messageLogs={this.state.messageList} />
@@ -57,8 +57,8 @@ class FooterAndMessageLogs extends React.Component {
                 placeholder="Type a message.."
                 onChangeHandler={this.sendMessageIcon}
                 value={this.state.secondValue}
-                type="text"
-                classes="send-text-input-box"
+                type="textarea"
+                classes="textarea"
                 onClickHandler={this.appendDataToMessageLogScreen}
               />
             </div>

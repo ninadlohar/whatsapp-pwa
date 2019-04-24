@@ -284,6 +284,18 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .textarea {
+    font-weight: normal;
+    max-height: 100px;
+    min-height: 20px;
+    outline: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14px;
+  }
   .settings-section-image-section {
     padding-left: 19px;
     padding-right: 19px;
@@ -655,6 +667,25 @@ body {
 }
 
 @media (min-width: 768px) {
+  .textarea:focus,
+  .textarea:focus-within {
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+  .textarea {
+    font-weight: normal;
+    max-height: 100px;
+    min-height: 20px;
+    outline: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14px;
+    border-radius: 32px;
+    border: transparent !important;
+  }
   .settings-section-image_img {
     height: 82px;
     width: 82px;
