@@ -56,15 +56,7 @@ class LeftSide extends React.Component {
                 <div className="px-3" onClick={this.toggleHandlerIn}>
                   <img src={require("../../assets/svg/message-ballon.svg")} alt="message-ballon" height="20" width="20" />
                 </div>
-                <DropDown
-                  leftDropdown={this.props.leftDropdown}
-                  classes="fas fa-ellipsis-v"
-                  newGroupFn={this.props.newGroupFn}
-                  newGroup={this.props.newGroup}
-                  profile={this.props.profile}
-                  openProfileLeftSideFn={this.openProfileLeftSideFn}
-                  handleMenuClick={this.handleMenuClick}
-                />
+                <DropDown leftDropdown={this.props.leftDropdown} classes="fas fa-ellipsis-v" handleMenuClick={this.handleMenuClick} />
               </div>
             </div>
           </div>

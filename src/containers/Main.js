@@ -14,20 +14,13 @@ class Main extends React.Component {
       searchComponent: false,
       isTextAStatus: false,
       squeezeLayoutBoolean: false,
-      /** 3 types of user chats start */
+
       isChatWithStatusAndAdmin: false,
       isChatARegularMessage: false,
       isChatWithStatus: false,
-      /** 3 types of user chats end */
 
-      /** props set for leftSideHiddenContainer start */
       setLeftHiddenComponentVisible: false,
-      /** props set for leftSideHiddenContainer end */
 
-      /** left dropdown -> to hidden left component toggle start */
-      newGroup: false,
-      profile: false,
-      /** left dropdown -> to hidden left component toggle end */
       hiddenClass: ["DOMChangedHiddenSide"],
       addClassesLeftSide: ["DOMChangedLeftSide_P-1301", "DOMChangedLeftSide"],
       addClassesRightSide: ["DOMChangedRightSide_P-1301", "DOMChangedRightSide"]
@@ -75,7 +68,6 @@ class Main extends React.Component {
 
   setLeftSliderScreen = screen => {
     this.setState({ currentScreen: screen }, () => {
-      console.log("sadasd", this);
       this.LeftDrawer.toggleHandlerIn();
     });
   };

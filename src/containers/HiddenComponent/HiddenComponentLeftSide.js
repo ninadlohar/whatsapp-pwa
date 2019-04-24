@@ -8,6 +8,7 @@ class HiddenComponentLeftSide extends React.Component {
     baseClasses: ["row", "mx-0", "newChatActiveBox"],
     hiddenLeftClass: ["DOMChangedLeftHiddenSide"]
   };
+
   toggleHandlerIn() {
     this.setState({ setLeftHiddenComponentVisible: true }, () => {
       document.getElementById("message-logs").style.display = "none";
@@ -16,6 +17,7 @@ class HiddenComponentLeftSide extends React.Component {
       }, 100);
     });
   }
+
   toggleHandlerOut = () => {
     document.getElementById("newChatActiveBox").style.transform = "translate(-100%, 0)";
     setTimeout(() => {
@@ -25,9 +27,11 @@ class HiddenComponentLeftSide extends React.Component {
       });
     }, 200);
   };
+
   componentDidMount = () => {
     this.props.onRef(this);
   };
+
   render() {
     let appendClasses = this.props.setLeftHiddenComponentVisible
       ? this.state.baseClasses.concat(this.state.hiddenLeftClass).join(" ")
