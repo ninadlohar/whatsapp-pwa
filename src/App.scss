@@ -284,6 +284,13 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    border: 2px solid rgba(101, 101, 101, 0.85);
+    background-color: transparent;
+  }
   .clear__messages__title {
     font-size: 14.2px;
     color: #4b4b4b;
@@ -719,6 +726,13 @@ body {
   // .footer {
   //   position: relative;
   // }
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    border: 2px solid rgba(101, 101, 101, 0.85);
+    background-color: transparent;
+  }
   .clear__messages__clear__starred__messages {
     margin-top: 12px;
   }

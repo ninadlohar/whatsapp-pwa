@@ -4,10 +4,10 @@ import "../../../App.scss";
 const MessageLogs = props => {
   return (
     <div className="sender-chat-logs-main">
-      <div className="sender-chat-logs d-flex flex-column">
+      <div className="sender-chat-logs d-flex flex-column" id="message1List">
         {props.messageLogs
           ? props.messageLogs.map((k, i) => (
-              <li key={i} style={{ listStyleType: "none" }}>
+              <li key={i} style={{ listStyleType: "none" }} id={"message" + i}>
                 <div className="message">
                   <div className="arrowOnFirstMessage" />
                   <span> {k.textMessage} </span>

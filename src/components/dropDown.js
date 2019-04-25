@@ -41,6 +41,15 @@ class DropDown extends React.Component {
     }));
   };
 
+  selectMessages = () => {
+    var li = document.getElementById("message1List").getElementsByTagName("li");
+    for (let i = 0; i < li.length; i++) {
+      var textnode = document.createElement("input");
+      textnode.setAttribute("type", "checkbox");
+      li[i].appendChild(textnode);
+    }
+  };
+
   slideInToggler = () => {
     let leftSide = document.getElementById("col-xl-3-5");
     let rightSide = document.getElementById("col-xl-6-5");
@@ -79,7 +88,9 @@ class DropDown extends React.Component {
         <div className="px-4 py-2" onClick={this.slideInToggler}>
           Contact Info
         </div>
-        <div className="px-4 py-2">Selected Messages</div>
+        <div className="px-4 py-2" onClick={this.selectMessages}>
+          Selected Messages
+        </div>
         <div className="px-4 py-2" onClick={this.toggle}>
           Mute
         </div>
