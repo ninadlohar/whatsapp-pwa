@@ -7,6 +7,12 @@ class SearchBar extends React.Component {
     this.state = {};
     this.inputHandler = this.inputHandler.bind(this);
     this.functionExecuteHandler = this.functionExecuteHandler.bind(this);
+    this.textAreaAdjust = this.textAreaAdjust.bind(this);
+  }
+
+  textAreaAdjust(o) {
+    o.target.style.height = "1px";
+    o.target.style.height = 0 + o.target.scrollHeight + "px";
   }
 
   inputHandler(e) {
@@ -39,8 +45,8 @@ class SearchBar extends React.Component {
       }
       case "textarea": {
         return (
-          <div
-            contentEditable="true"
+          <textarea
+            id="textarea"
             className={(defaultClass += " " + this.props.classes)}
             type="text"
             rows="1"
@@ -48,6 +54,7 @@ class SearchBar extends React.Component {
             value={this.props.value}
             onChange={this.inputHandler}
             onKeyPress={this.functionExecuteHandler}
+            onKeyUp={this.textAreaAdjust}
           />
         );
       }
