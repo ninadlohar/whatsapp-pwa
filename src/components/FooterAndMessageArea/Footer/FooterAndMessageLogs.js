@@ -41,29 +41,31 @@ class FooterAndMessageLogs extends React.Component {
     let transformIcons = this.state.sendMessageIcon ? (
       <i className="fas fa-paper-plane icon-color" id="plane-icon" />
     ) : (
-        <i className="fas fa-microphone microphone icon-color" />
-      );
+      <i className="fas fa-microphone microphone icon-color" />
+    );
     return (
       <Aux>
         <MessageLogs messageLogs={this.state.messageList} />
-        <footer className="bottom-comment-box w-100 py-2">
-          <div className="row mx-0">
-            <div className="percent10  d-flex justify-content-center align-items-center">
-              <i className="far fa-grin-alt smiley icon-color" />
-            </div>
-            <div className="percent80 px-0 py-1">
-              <Input
-                id="send-text-input-box"
-                placeholder="Type a message.."
-                onChangeHandler={this.sendMessageIcon}
-                value={this.state.secondValue}
-                type="textarea"
-                classes="textarea"
-                onClickHandler={this.appendDataToMessageLogScreen}
-              />
-            </div>
-            <div className="percent10 d-flex justify-content-center align-items-center">
-              <span onClick={this.appendDataToMessageLogScreen}>{transformIcons}</span>
+        <footer className="footer">
+          <div className="bottom-comment-box w-100 d-flex align-items-center py-2">
+            <div className="row mx-0 w-100">
+              <div className="percent10  d-flex justify-content-center align-items-center">
+                <i className="far fa-grin-alt smiley icon-color" />
+              </div>
+              <div className="percent80 px-0 py-1">
+                <Input
+                  id="send-text-input-box"
+                  placeholder="Type a message.."
+                  onChangeHandler={this.sendMessageIcon}
+                  value={this.state.secondValue}
+                  type="textarea"
+                  classes="textarea"
+                  onClickHandler={this.appendDataToMessageLogScreen}
+                />
+              </div>
+              <div className="percent10 d-flex justify-content-center align-items-center">
+                <span onClick={this.appendDataToMessageLogScreen}>{transformIcons}</span>
+              </div>
             </div>
           </div>
         </footer>

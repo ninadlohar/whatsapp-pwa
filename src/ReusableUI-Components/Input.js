@@ -39,7 +39,8 @@ class SearchBar extends React.Component {
       }
       case "textarea": {
         return (
-          <textarea
+          <div
+            contentEditable="true"
             className={(defaultClass += " " + this.props.classes)}
             type="text"
             rows="1"

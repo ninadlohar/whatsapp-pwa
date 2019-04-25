@@ -91,7 +91,7 @@ body {
   }
   .bottom-comment-box {
     position: absolute;
-    min-height: 50px;
+    min-height: 62px;
     bottom: 0;
     background-color: $footer-color;
   }
@@ -240,7 +240,7 @@ body {
   }
   .bottom-comment-box {
     position: absolute;
-    min-height: 50px;
+    min-height: 62px;
     bottom: 0;
     background-color: $footer-color;
   }
@@ -284,11 +284,18 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .percent80 {
+    width: 80%;
+    position: relative;
+    border-radius: 32px;
+    background-color: white;
+  }
   .textarea {
     font-weight: normal;
     max-height: 100px;
     min-height: 20px;
     outline: none;
+    // height: 42px;
     overflow-x: hidden;
     overflow-y: auto;
     position: relative;
@@ -667,6 +674,9 @@ body {
 }
 
 @media (min-width: 768px) {
+  // .footer {
+  //   position: relative;
+  // }
   .textarea:focus,
   .textarea:focus-within {
     border-color: transparent !important;
@@ -677,6 +687,7 @@ body {
     max-height: 100px;
     min-height: 20px;
     outline: none;
+    // height: 42px;
     overflow-x: hidden;
     overflow-y: auto;
     position: relative;
@@ -994,6 +1005,9 @@ body {
   }
   .percent80 {
     width: 80%;
+    position: relative;
+    border-radius: 32px;
+    background-color: white;
   }
   .remaining {
     width: calc(100% - 72px);
