@@ -1,6 +1,6 @@
 import React from "react";
 import FooterAndMessageLogs from "../../components/FooterAndMessageArea/Footer/FooterAndMessageLogs";
-import DropDown from "../../components/dropDown";
+import DropDown from "../../ReusableUI-Components/dropDown";
 import Aux from "../../hoc/Aux";
 
 class RightSide extends React.Component {
@@ -33,7 +33,7 @@ class RightSide extends React.Component {
           {/* <div id="col-xl-6-5"> */}
           <div className="right-side-of-chat-window-child">
             <div className="row mx-0">
-              <header className="col-12 display-content-area-header px-0">
+              <header className="col-12 rightSide__header px-0">
                 <div className="row mx-0">
                   <div className="left-header-area">
                     <div className="row mx-0">

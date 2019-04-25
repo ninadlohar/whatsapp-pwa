@@ -1,5 +1,5 @@
 import React from "react";
-import DropDown from "../../../components/dropDown";
+import DropDown from "../../../ReusableUI-Components/dropDown";
 
 const StarredMessages = props => {
   return (

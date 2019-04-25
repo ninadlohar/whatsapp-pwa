@@ -1,13 +1,12 @@
 import React from "react";
 import SearchInputBox from "../../components/SearchInputBox/SearchInputBox";
-import DropDown from "../../components/dropDown";
+import DropDown from "../../ReusableUI-Components/dropDown";
 import DefaultLoadedChat from "../../components/TypesOfUserChats/DefaultLoadedChat";
 
 class LeftSide extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      setLeftHiddenComponentVisible: this.props.setLeftHiddenComponentVisible,
       baseClasses: ["col-xl-3-5", "left-side-of-chat-window", "px-0"],
       squeezeLayoutBoolean: this.props.squeezeLayoutBoolean,
       isChatARegularMessage: this.props.isChatARegularMessage
@@ -21,12 +20,9 @@ class LeftSide extends React.Component {
   }
 
   toggleHandlerIn() {
-    this.setState({ setLeftHiddenComponentVisible: true }, () => {
-      document.getElementById("message-logs").style.display = "none";
-      setTimeout(() => {
-        document.getElementById("newChatActiveBox").style.transform = "translate(0%, 0)";
-      }, 100);
-    });
+    setTimeout(() => {
+      document.getElementById("newChatActiveBox").style.transform = "translate(0%, 0)";
+    }, 100);
   }
 
   handleMenuClick = screen => {
@@ -37,10 +33,10 @@ class LeftSide extends React.Component {
     /** newChat component is too reusable */
     let messageLogs = (
       <div className="mx-0" id="message-logs">
-        <header className="col-12 display-content-area-header px-0">
+        <header className="col-12 leftSide__header px-0">
           <div className="row mx-0">
             <div className="col-3 px-0">
-              <div className="logged-in-user-image-div py-2 px-3">
+              <div className="logged-in-user-image-div px-3">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg"
                   alt="karl-benz"

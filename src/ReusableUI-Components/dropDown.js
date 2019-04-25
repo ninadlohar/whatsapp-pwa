@@ -1,6 +1,6 @@
 import React from "react";
 import Aux from "../hoc/Aux";
-import MainModel from ".././ReusableUI-Components/Modal";
+import MainModel from "./Modal";
 
 class DropDown extends React.Component {
   state = {

@@ -53,12 +53,17 @@ body {
     width: 49px;
     border-radius: 50%;
   }
-  .display-content-area-header {
-    // border-left: 1px solid $border-color;
+  .leftSide__header {
+    padding-top: 10px;
+    padding-bottom:10px;
     border-right: 1px solid $border-color;
     background-color: $display-content-area-header-color;
   }
-
+  .rightSide__header {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    background-color: $display-content-area-header-color;
+  }
   .phone-numbers {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -80,6 +85,7 @@ body {
   }
   .chat-section {
     position: relative;
+    background-color: white;
   }
   .chat-section-sending-user-data {
     overflow: hidden;
@@ -202,9 +208,15 @@ body {
     width: 49px;
     border-radius: 50%;
   }
-  .display-content-area-header {
-    // border-left: 1px solid $border-color;
+  .leftSide__header {
+    padding-top: 10px;
+    padding-bottom:10px;
     border-right: 1px solid $border-color;
+    background-color: $display-content-area-header-color;
+  } 
+  .rightSide__header {
+    padding-top: 2px;
+    padding-bottom: 2px;
     background-color: $display-content-area-header-color;
   }
   .phone-numbers {
@@ -229,6 +241,7 @@ body {
   }
   .chat-section {
     position: relative;
+    background-color: white;
   }
   .chat-section-sending-user-data {
     overflow: hidden;
