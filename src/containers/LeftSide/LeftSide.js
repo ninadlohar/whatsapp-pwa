@@ -7,6 +7,7 @@ class LeftSide extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      setLeftHiddenComponentVisible: this.props.setLeftHiddenComponentVisible,
       baseClasses: ["col-xl-3-5", "left-side-of-chat-window", "px-0"],
       squeezeLayoutBoolean: this.props.squeezeLayoutBoolean,
       isChatARegularMessage: this.props.isChatARegularMessage
@@ -20,9 +21,11 @@ class LeftSide extends React.Component {
   }
 
   toggleHandlerIn() {
-    setTimeout(() => {
-      document.getElementById("newChatActiveBox").style.transform = "translate(0%, 0)";
-    }, 100);
+    this.setState({ setLeftHiddenComponentVisible: true }, () => {
+      setTimeout(() => {
+        document.getElementById("newChatActiveBox").style.transform = "translate(0%, 0)";
+      }, 100);
+    });
   }
 
   handleMenuClick = screen => {

@@ -14,7 +14,6 @@ class HiddenComponentLeftSide extends React.Component {
 
   toggleHandlerIn() {
     this.setState({ setLeftHiddenComponentVisible: true }, () => {
-      document.getElementById("message-logs").style.display = "none";
       setTimeout(() => {
         document.getElementById("newChatActiveBox").style.transform = "translate(0%, 0)";
       }, 100);
@@ -24,7 +23,6 @@ class HiddenComponentLeftSide extends React.Component {
   toggleHandlerOut = () => {
     document.getElementById("newChatActiveBox").style.transform = "translate(-100%, 0)";
     setTimeout(() => {
-      document.getElementById("message-logs").style.display = "block";
       this.setState({
         setLeftHiddenComponentVisible: false
       });
