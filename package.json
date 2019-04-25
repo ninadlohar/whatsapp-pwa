@@ -45,6 +45,8 @@
     "react-contenteditable": "^3.2.6",
     "react-dev-utils": "^8.0.0",
     "react-dom": "^16.8.6",
+    "react-modal": "^3.8.1",
+    "reactstrap": "^8.0.0",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",

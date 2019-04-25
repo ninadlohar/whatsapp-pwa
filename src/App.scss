@@ -284,6 +284,47 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .clear__messages__title {
+    font-size: 14.2px;
+  }
+  .modal__cancel,
+  .modal__mute {
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 3px;
+  }
+  .modal__cancel {
+    color: #07bc4c;
+  }
+  .modal__mute {
+    color: white;
+    background-color: #07bc4c;
+  }
+  .modal__cancel__mute__button {
+    padding-top: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .modal__mute__radio__buttons_p-6 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 14.2px;
+  }
+  .modal__mute__radio__buttons {
+    margin-left: 6px;
+  }
+  .modal__popup {
+    width: 400px !important;
+    border: none !important;
+    border-radius: 0px !important;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+    padding: 22px 24px 20px 24px;
+  }
+  .mute__group__name {
+    margin-bottom: 20px;
+  }
   .percent80 {
     width: 80%;
     position: relative;
@@ -677,6 +718,53 @@ body {
   // .footer {
   //   position: relative;
   // }
+  .clear__messages__clear__starred__messages {
+    margin-top: 12px;
+  }
+  .clear_messages__fontSize__14 {
+    font-size: 14px;
+  }
+  .clear__messages__title {
+    font-size: 14.2px;
+  }
+  .modal__cancel,
+  .modal__mute {
+    font-size: 14px;
+    padding: 10px 24px;
+    border-radius: 3px;
+  }
+  .modal__cancel {
+    color: #07bc4c;
+  }
+  .modal__mute {
+    color: white;
+    background-color: #07bc4c;
+  }
+  .modal__cancel__mute__button {
+    padding-top: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .modal__mute__radio__buttons_p-6 {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 14.2px;
+  }
+  .modal__mute__radio__buttons {
+    margin-left: 6px;
+  }
+  .modal__popup {
+    width: 400px !important;
+    border: none !important;
+    border-radius: 0px !important;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0.24);
+    padding: 22px 24px 20px 24px;
+  }
+  .mute__group__name {
+    margin-bottom: 20px;
+  }
   .textarea:focus,
   .textarea:focus-within {
     border-color: transparent !important;

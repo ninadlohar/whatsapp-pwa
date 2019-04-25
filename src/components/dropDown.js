@@ -1,10 +1,13 @@
 import React from "react";
 import Aux from "../hoc/Aux";
+import MainModel from ".././ReusableUI-Components/Modal";
 
 class DropDown extends React.Component {
   state = {
     showMenu: false,
-    squeezeLayoutBoolean: this.props.squeezeLayoutBoolean
+    squeezeLayoutBoolean: this.props.squeezeLayoutBoolean,
+    showModal: false,
+    clearMessages: false
   };
 
   showMenu = event => {
@@ -18,6 +21,19 @@ class DropDown extends React.Component {
       document.removeEventListener("click", this.closeMenu);
     });
   };
+
+  toggle = () => {
+    this.setState(prevState => ({
+      showModal: !prevState.showModal
+    }));
+  };
+
+  clearMessagesToggle = () => {
+    this.setState(prevState => ({
+      clearMessages: !prevState.clearMessages
+    }));
+  };
+
   slideInToggler = () => {
     let leftSide = document.getElementById("col-xl-3-5");
     let rightSide = document.getElementById("col-xl-6-5");
@@ -57,8 +73,12 @@ class DropDown extends React.Component {
           Contact Info
         </div>
         <div className="px-4 py-2">Selected Messages</div>
-        <div className="px-4 py-2">Mute</div>
-        <div className="px-4 py-2">Clear Messages</div>
+        <div className="px-4 py-2" onClick={this.toggle}>
+          Mute
+        </div>
+        <div className="px-4 py-2" onClick={this.clearMessagesToggle}>
+          Clear Messages
+        </div>
         <div className="px-4 py-2">Delete Chat</div>
       </div>
     );
@@ -91,6 +111,46 @@ class DropDown extends React.Component {
           </i>
           {dropDownMenu}
         </div>
+        <MainModel isOpen={this.state.showModal} toggle={this.toggle}>
+          <h5 className="mute__group__name">Mute "Group1"</h5>
+          <div className="mute__radio__buttons">
+            <div className="modal__mute__radio__buttons_p-6">
+              <input type="radio" value="8 Hours" name="8 Hours" defaultChecked={true} />
+              <span className="modal__mute__radio__buttons"> 8 Hours</span>
+            </div>
+            <div className="modal__mute__radio__buttons_p-6">
+              <input type="radio" value="1 Week" name="1 Month" defaultChecked={false} />
+              <span className="modal__mute__radio__buttons">1 Month </span>
+            </div>
+            <div className="modal__mute__radio__buttons_p-6">
+              <input type="radio" value="1 Year" name="1 Year" defaultChecked={false} />
+              <span className="modal__mute__radio__buttons"> 1 Year</span>
+            </div>
+          </div>
+          <div className="modal__cancel__mute__button d-flex justify-content-end">
+            <div className="modal__cancel" onClick={this.toggle}>
+              CANCEL
+            </div>
+            <div className="modal__mute" onClick={this.toggle}>
+              MUTE
+            </div>
+          </div>
+        </MainModel>
+        <MainModel isOpen={this.state.clearMessages} toggle={this.clearMessagesToggle}>
+          <div className="clear__messages__title">Clear "Group 1"?</div>
+          <div className="clear__messages__clear__starred__messages">
+            <img src={require("../assets/svg/green-check-box.svg")} height="16" width="16" alt="checkbox-green" />
+            <span className="pl-2 clear_messages__fontSize__14">Keep Starred Messages</span>
+          </div>
+          <div className="modal__cancel__mute__button d-flex justify-content-end">
+            <div className="modal__cancel" onClick={this.toggle}>
+              CANCEL
+            </div>
+            <div className="modal__mute" onClick={this.toggle}>
+              CLEAR
+            </div>
+          </div>
+        </MainModel>
       </Aux>
     );
   }

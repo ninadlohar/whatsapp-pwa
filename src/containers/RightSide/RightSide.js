@@ -60,11 +60,7 @@ class RightSide extends React.Component {
                   <div className="right-header-area">
                     <div className="row justify-content-center align-items-center h-100 mx-0">
                       {/** F: [F] -> T */}
-                      <i
-                        className="fas fa-search icon-color px-3"
-                        onClick={this.slideInToggler}
-                        // onClick={this.state.squeezeLayoutBoolean ? this.toggleIfWindowLessThan1024 : this.slideInToggler}
-                      />
+                      <i className="fas fa-search icon-color px-3" onClick={this.slideInToggler} />
                       <DropDown attachment={this.state.attachment} classes="fas fa-paperclip icon-color" />
                       <DropDown
                         rightDropdown={this.props.rightDropdown}
