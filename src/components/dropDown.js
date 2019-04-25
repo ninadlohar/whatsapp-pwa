@@ -8,7 +8,8 @@ class DropDown extends React.Component {
     showModal: false,
     clearMessages: false,
     exitGroup: false,
-    squeezeLayoutBoolean: this.props.squeezeLayoutBoolean
+    squeezeLayoutBoolean: this.props.squeezeLayoutBoolean,
+    selectedMessages: false
   };
 
   showMenu = event => {

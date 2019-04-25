@@ -723,9 +723,30 @@ body {
 }
 
 @media (min-width: 768px) {
-  // .footer {
-  //   position: relative;
-  // }
+  .profile_width_45_static {
+    width: 70px;
+  }
+  .profile_chracters_left {
+    font-size: 14px;
+    color: #bbbbbb;
+    padding-top: 2px;
+  }
+  .profile_width_input_static {
+    width: calc(100% - 70px);
+  }
+  .simple__edit__pencil {
+    border: transparent;
+    color: #4b4b4b;
+    font-size: 17px;
+    padding: 8px 0;
+  }
+  .simple__edit__pencil:focus,
+  .simple__edit__pencil:focus-within {
+    border-color: transparent !important;
+    box-shadow: none !important;
+    color: #4b4b4b;
+    font-size: 17px;
+  }
   input[type="checkbox"] {
     width: 20px;
     height: 20px;

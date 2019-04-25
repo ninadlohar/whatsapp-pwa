@@ -63,7 +63,21 @@ class SearchInputBox extends React.Component {
     );
     let profileInput = (
       <div className="col-12 px-0">
-        <Input placeholder="Type Contact Name" value="Niko" classes="" type="text" />
+        <div className="row mx-0">
+          <div className="profile_width_input_static">
+            <Input placeholder="Type Contact Name" value="Niko" classes="simple__edit__pencil" type="text" />
+          </div>
+
+          <div className="profile_width_45_static d-flex justify-content-between pt-1">
+            <div className="profile_chracters_left">20</div>
+            <div className="">
+              <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
+            </div>
+            <div className="">
+              <img src={require("../../assets/svg/correct-signal.svg")} alt="tick-correct-signal" height="17" width="17" />
+            </div>
+          </div>
+        </div>
       </div>
     );
     let sb = null;
