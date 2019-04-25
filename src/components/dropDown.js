@@ -5,9 +5,10 @@ import MainModel from ".././ReusableUI-Components/Modal";
 class DropDown extends React.Component {
   state = {
     showMenu: false,
-    squeezeLayoutBoolean: this.props.squeezeLayoutBoolean,
     showModal: false,
-    clearMessages: false
+    clearMessages: false,
+    exitGroup: false,
+    squeezeLayoutBoolean: this.props.squeezeLayoutBoolean
   };
 
   showMenu = event => {
@@ -31,6 +32,12 @@ class DropDown extends React.Component {
   clearMessagesToggle = () => {
     this.setState(prevState => ({
       clearMessages: !prevState.clearMessages
+    }));
+  };
+
+  exitGroupToggle = () => {
+    this.setState(prevState => ({
+      exitGroup: !prevState.exitGroup
     }));
   };
 
@@ -79,7 +86,9 @@ class DropDown extends React.Component {
         <div className="px-4 py-2" onClick={this.clearMessagesToggle}>
           Clear Messages
         </div>
-        <div className="px-4 py-2">Delete Chat</div>
+        <div className="px-4 py-2" onClick={this.exitGroupToggle}>
+          Delete Chat
+        </div>
       </div>
     );
     let attachment = (
@@ -143,11 +152,22 @@ class DropDown extends React.Component {
             <span className="pl-2 clear_messages__fontSize__14">Keep Starred Messages</span>
           </div>
           <div className="modal__cancel__mute__button d-flex justify-content-end">
-            <div className="modal__cancel" onClick={this.toggle}>
+            <div className="modal__cancel" onClick={this.clearMessagesToggle}>
               CANCEL
             </div>
-            <div className="modal__mute" onClick={this.toggle}>
+            <div className="modal__mute" onClick={this.clearMessagesToggle}>
               CLEAR
+            </div>
+          </div>
+        </MainModel>
+        <MainModel isOpen={this.state.exitGroup} toggle={this.exitGroupToggle}>
+          <div className="clear__messages__title">Exit Group "Group 1"?</div>
+          <div className="modal__cancel__mute__button d-flex justify-content-end">
+            <div className="modal__cancel" onClick={this.exitGroupToggle}>
+              CANCEL
+            </div>
+            <div className="modal__mute" onClick={this.exitGroupToggle}>
+              EXIT
             </div>
           </div>
         </MainModel>
