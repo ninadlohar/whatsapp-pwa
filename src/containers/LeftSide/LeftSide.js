@@ -63,7 +63,7 @@ class LeftSide extends React.Component {
           </div>
         </header>
         {/** input box  */}
-        <SearchInputBox placeholder="Search or start new Chat" casualSearchBox="withSearchBox" />
+        <SearchInputBox placeholder="Search or start new Chat" searchBoxType="withSearchBox" />
         {/** chat section */}
         <section className="col-12 px-0 chat-section">
           <div className="row mx-0">

@@ -30,8 +30,8 @@ class SearchInputBox extends React.Component {
     let leftArrow = this.state.inputArrow ? (
       <i className="fas fa-arrow-down input-arrow px-2 py-2" id="input-arrow" />
     ) : (
-      <i className="fas fa-search icon-color input-search-icon px-3" />
-    );
+        <i className="fas fa-search icon-color input-search-icon px-3" />
+      );
     let casualSearchBox = (
       <div className="col-12 px-0 input-box" id="input-box">
         <div className="px-2 py-2 d-flex">
@@ -61,40 +61,58 @@ class SearchInputBox extends React.Component {
         />
       </div>
     );
-    let profileInput = (
+    let simpleInputForProfile__Name = (
       <div className="col-12 px-0">
         <div className="row mx-0">
           <div className="profile_width_input_static">
             <Input placeholder="Type Contact Name" value="Niko" classes="simple__edit__pencil" type="text" />
           </div>
-
           <div className="profile_width_45_static d-flex justify-content-between pt-1">
             <div className="profile_chracters_left">20</div>
             <div className="">
               <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
             </div>
-            <div className="">
+            <div className="" onClick={this.props.isEditingName}>
               <img src={require("../../assets/svg/correct-signal.svg")} alt="tick-correct-signal" height="17" width="17" />
             </div>
           </div>
         </div>
       </div>
     );
-    let sb = null;
-    switch (this.props.casualSearchBox) {
+    let simpleInputForProfile__About = (
+      <div className="col-12 px-0">
+        <div className="row mx-0">
+          <div className="profile_width_input_static">
+            <Input placeholder="Type Contact Name" value="Niko" classes="simple__edit__pencil" type="text" />
+          </div>
+          <div className="profile_width_45_static d-flex justify-content-between pt-1">
+            <div className="">
+              <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
+            </div>
+            <div className="" onClick={this.props.isEditingAbout}>
+              <img src={require("../../assets/svg/correct-signal.svg")} alt="tick-correct-signal" height="17" width="17" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+    let searchBox = null;
+    switch (this.props.searchBoxType) {
       case "withSearchBox":
-        sb = casualSearchBox;
+        searchBox = casualSearchBox;
         break;
       case "searchBoxWithLine":
-        sb = newSearch;
+        searchBox = newSearch;
         break;
-      case "profileInput":
-        sb = profileInput;
+      case "simpleInputForProfile__Name":
+        searchBox = simpleInputForProfile__Name;
         break;
+      case "simpleInputForProfile__About":
+        searchBox = simpleInputForProfile__About
       default:
-        sb = profileInput;
+        searchBox = simpleInputForProfile__Name;
     }
-    return sb;
+    return searchBox;
   }
 }
 
