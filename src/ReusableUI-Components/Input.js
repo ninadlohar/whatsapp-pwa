@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.scss";
+import Textarea from "react-textarea-autosize";
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -7,12 +8,6 @@ class SearchBar extends React.Component {
     this.state = {};
     this.inputHandler = this.inputHandler.bind(this);
     this.functionExecuteHandler = this.functionExecuteHandler.bind(this);
-    this.textAreaAdjust = this.textAreaAdjust.bind(this);
-  }
-
-  textAreaAdjust(o) {
-    o.target.style.height = "1px";
-    o.target.style.height = 0 + o.target.scrollHeight + "px";
   }
 
   inputHandler(e) {
@@ -20,10 +15,10 @@ class SearchBar extends React.Component {
   }
 
   functionExecuteHandler(event) {
-    if (this.props.onClickHandler) {
-      if (event.key === "Enter") {
-        this.props.onClickHandler();
-      }
+    if (event.key === "Enter") {
+      event.preventDefault();
+      this.props.onClickHandler();
+      return false;
     }
   }
 
@@ -45,16 +40,15 @@ class SearchBar extends React.Component {
       }
       case "textarea": {
         return (
-          <textarea
+          <Textarea
             id="textarea"
             className={(defaultClass += " " + this.props.classes)}
-            type="text"
-            rows="1"
+            minRows={1}
+            maxRows={5}
             placeholder={this.props.placeholder}
             value={this.props.value}
             onChange={this.inputHandler}
-            onKeyPress={this.functionExecuteHandler}
-            onKeyUp={this.textAreaAdjust}
+            onKeyDown={e => this.functionExecuteHandler(e)}
           />
         );
       }

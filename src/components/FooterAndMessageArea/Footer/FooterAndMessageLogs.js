@@ -46,7 +46,7 @@ class FooterAndMessageLogs extends React.Component {
     return (
       <Aux>
         <MessageLogs messageLogs={this.state.messageList} />
-        <footer className="footer">
+        <footer className="footer" id="footer">
           <div className="bottom-comment-box w-100 d-flex align-items-center py-2">
             <div className="row mx-0 w-100">
               <div className="percent10  d-flex justify-content-center align-items-center">
