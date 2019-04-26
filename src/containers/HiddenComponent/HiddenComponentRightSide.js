@@ -81,7 +81,7 @@ class HiddenComponentRightSide extends React.Component {
               <div className="d-flex">
                 <div className="contact-info-basic-details-sender-name w-100">German Shepherd</div>
                 <div className="pt-8_custom">
-                  <img src={require("../../assets/svg/pencil-edit.svg")} alt="edit" height="18" width="18" />
+                  <img src={require("../../assets/svg/create-new-pencil-button.svg")} alt="edit" height="18" width="18" />
                 </div>
               </div>
               <div className="contact-info-basic-details-sender-date">last seen today at 12:36pm</div>
@@ -92,7 +92,7 @@ class HiddenComponentRightSide extends React.Component {
             <div className="d-flex">
               <div className="add-group-description w-100">Add Group Description</div>
               <div>
-                <img src={require("../../assets/svg/pencil-edit.svg")} alt="pencil-edit" height="18" width="18" />
+                <img src={require("../../assets/svg/create-new-pencil-button.svg")} alt="pencil-edit" height="18" width="18" />
               </div>
             </div>
           </div>

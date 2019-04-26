@@ -18,7 +18,13 @@ class Profile extends React.Component {
       <div className="d-flex">
         <div className="profile_section_name_with_value w-100">Niko</div>
         <div className="profile_section_name_with_value_edit" onClick={this.isEditingNameFn}>
-          <img src={require("../../../assets/svg/pencil-edit.svg")} alt="edit" height="18" width="18" className="pt-3-custom" />
+          <img
+            src={require("../../../assets/svg/create-new-pencil-button.svg")}
+            alt="edit"
+            height="18"
+            width="18"
+            className="pt-3-custom"
+          />
         </div>
       </div>
     );
@@ -26,7 +32,13 @@ class Profile extends React.Component {
       <div className="d-flex">
         <div className="profile_section_name_with_value w-100">coding</div>
         <div className="profile_section_name_with_value_edit" onClick={this.isEditingAboutFn}>
-          <img src={require("../../../assets/svg/pencil-edit.svg")} alt="edit" height="18" width="18" className="pt-3-custom" />
+          <img
+            src={require("../../../assets/svg/create-new-pencil-button.svg")}
+            alt="edit"
+            height="18"
+            width="18"
+            className="pt-3-custom"
+          />
         </div>
       </div>
     );
