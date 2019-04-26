@@ -6,17 +6,18 @@ class Profile extends React.Component {
     isEditingName: false,
     isEditingAbout: false
   };
-  isEditingName = () => {
+  isEditingNameFn = () => {
     this.setState({ isEditingName: !this.state.isEditingName });
   };
-  isEditingAbout = () => {
+  isEditingAboutFn = () => {
+    console.log("isEditingAboutFn() => " + this.state.isEditingAbout);
     this.setState({ isEditingAbout: !this.state.isEditingAbout });
   };
   render() {
     let editName = (
       <div className="d-flex">
         <div className="profile_section_name_with_value w-100">Niko</div>
-        <div className="profile_section_name_with_value_edit" onClick={this.isEditingName}>
+        <div className="profile_section_name_with_value_edit" onClick={this.isEditingNameFn}>
           <img src={require("../../../assets/svg/pencil-edit.svg")} alt="edit" height="18" width="18" className="pt-3-custom" />
         </div>
       </div>
@@ -24,11 +25,11 @@ class Profile extends React.Component {
     let editAbout = (
       <div className="d-flex">
         <div className="profile_section_name_with_value w-100">coding</div>
-        <div className="profile_section_name_with_value_edit" onClick={this.isEditingAbout}>
+        <div className="profile_section_name_with_value_edit" onClick={this.isEditingAboutFn}>
           <img src={require("../../../assets/svg/pencil-edit.svg")} alt="edit" height="18" width="18" className="pt-3-custom" />
         </div>
       </div>
-    )
+    );
     return (
       <div className={this.props.classes} id="newChatActiveBox">
         <header className="col-12 px-0">
@@ -63,11 +64,11 @@ class Profile extends React.Component {
                   <div className="profile_section_name">Your Name</div>
                   {this.state.isEditingName ? (
                     <div>
-                      <SearchInputBox searchBoxType="simpleInputForProfile__Name" isEditingName={this.isEditingName} />
+                      <SearchInputBox searchBoxType="simpleInputForProfile__Name" isEditingNameFn={this.isEditingNameFn} />
                     </div>
                   ) : (
-                      editName
-                    )}
+                    editName
+                  )}
                 </div>
               </div>
               <div className="row mx-0">
@@ -75,16 +76,17 @@ class Profile extends React.Component {
                   <span>This is not your username or pin. This name will be visible to your WhatsApp contacts.</span>
                 </div>
               </div>
+
               {/* <div className="row mx-0"> */}
               <div className="profile_section_basic_info w-100">
                 <div className="profile_section_name">About</div>
                 {this.state.isEditingAbout ? (
                   <div>
-                    <SearchInputBox searchBoxType="simpleInputForProfile__About" isEditingAbout={this.isEditingAbout} />
+                    <SearchInputBox searchBoxType="simpleInputForProfile__About" isEditingAboutFn={this.isEditingAboutFn} />
                   </div>
                 ) : (
-                    editAbout
-                  )}
+                  editAbout
+                )}
               </div>
               {/* </div> */}
             </div>

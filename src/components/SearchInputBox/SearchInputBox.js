@@ -72,7 +72,7 @@ class SearchInputBox extends React.Component {
             <div className="">
               <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
             </div>
-            <div className="" onClick={this.props.isEditingName}>
+            <div className="" onClick={this.props.isEditingNameFn}>
               <img src={require("../../assets/svg/correct-signal.svg")} alt="tick-correct-signal" height="17" width="17" />
             </div>
           </div>
@@ -85,11 +85,11 @@ class SearchInputBox extends React.Component {
           <div className="profile_width_input_static">
             <Input placeholder="Type Contact Name" value="Niko" classes="simple__edit__pencil" type="text" />
           </div>
-          <div className="profile_width_45_static d-flex justify-content-between pt-1">
-            <div className="">
+          <div className="profile_width_45_static d-flex justify-content-end pt-1">
+            <div className="mr-2">
               <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
             </div>
-            <div className="" onClick={this.props.isEditingAbout}>
+            <div className="" onClick={this.props.isEditingAboutFn}>
               <img src={require("../../assets/svg/correct-signal.svg")} alt="tick-correct-signal" height="17" width="17" />
             </div>
           </div>
@@ -111,7 +111,7 @@ class SearchInputBox extends React.Component {
       case "simpleInputForProfile__About":
         searchBox = simpleInputForProfile__About;
       default:
-        searchBox = simpleInputForProfile__Name;
+        searchBox = simpleInputForProfile__About;
     }
     return searchBox;
   }
