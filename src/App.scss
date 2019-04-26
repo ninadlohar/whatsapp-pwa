@@ -1,4 +1,5 @@
 @import "./scss/colors.scss";
+@import "./scss/new.scss";
 @import "./scss/smallAlignments.scss";
 @import "./scss/hidden.scss";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
@@ -55,7 +56,7 @@ body {
   }
   .leftSide__header {
     padding-top: 10px;
-    padding-bottom:10px;
+    padding-bottom: 10px;
     border-right: 1px solid $border-color;
     background-color: $display-content-area-header-color;
   }
@@ -91,9 +92,6 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-  .sender-notification-count {
-    border-radius: 16px !important;
   }
   .bottom-comment-box {
     position: absolute;
@@ -210,10 +208,10 @@ body {
   }
   .leftSide__header {
     padding-top: 10px;
-    padding-bottom:10px;
+    padding-bottom: 10px;
     border-right: 1px solid $border-color;
     background-color: $display-content-area-header-color;
-  } 
+  }
   .rightSide__header {
     padding-top: 2px;
     padding-bottom: 2px;
@@ -248,9 +246,7 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .sender-notification-count {
-    border-radius: 16px !important;
-  }
+
   .bottom-comment-box {
     position: absolute;
     min-height: 62px;
@@ -691,10 +687,6 @@ body {
   }
   .single-user-chat-box:active {
     background-color: $chat-active-color;
-    cursor: pointer;
-  }
-  .single-user-chat-box:hover {
-    background-color: $chat-hover-color;
     cursor: pointer;
   }
   .right-side-of-chat-window {
@@ -1212,10 +1204,6 @@ body {
     cursor: pointer;
   }
 
-  .single-user-chat-box:hover {
-    background-color: $chat-hover-color;
-    cursor: pointer;
-  }
   .left-dropdown {
     transition: background-color 0.18s ease;
     background-color: white;

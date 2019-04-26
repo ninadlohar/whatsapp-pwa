@@ -41,40 +41,34 @@ class DefaultLoadedChat extends React.Component {
     let addChevron = this.state.onHoverState ? downArrow : null;
 
     return (
-      <div className="chat-1 w-100 py-2 d-flex single-user-chat-box pr-3" onMouseEnter={this.onHover} onMouseLeave={this.offHover}>
-        <div className="sender-image-padding py-1">
+      <div className="chat-1 w-100 d-flex single-user-chat-box" onMouseEnter={this.onHover} onMouseLeave={this.offHover}>
+        <div className="leftChat__user__image">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg"
             alt="karl-benz"
             className="sender-user-image"
           />
         </div>
-        <div className="remaining py-1 px-0">
-          <div className="row mx-0">
-            <div className="d-flex w-100">
-              <div className="col-9 chat-section-sending-user-data sender-name px-0">
-                <span>Angels Do Exist</span>
-              </div>
-              <div className="col-3 px-0 text-right">
-                <span className="chat-section-sending-user-data time">12:22 PM</span>
-              </div>
+        <div className="leftChat__user__details">
+          <div className="leftChat__senderName___time">
+            <div className="row mx-0">
+              <div className="leftChat__senderName noOverFlow">NiKO</div>
+              <div className="leftChat__time noOverFlow">08:33 PM</div>
             </div>
           </div>
-          <div className="row mx-0">
-            <div className="col-10 chat-section-sending-user-data sender-message px-0">
-              <span>
+          <div className="leftChat__message___messageLeftToRead">
+            <div className="row mx-0">
+              <div className="leftChat__message noOverFlow">
                 is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
                 since the 1500s
-              </span>
-            </div>
-            <div className="col-1 px-0 rollback-on-hover text-center">
-              <span className="badge badge-success sender-notification-count">2</span>
-            </div>
-            <div className="col-1 px-0" onClick={this.showMenu}>
-              <span>
-                {addChevron}
-                {dropdown}
-              </span>
+              </div>
+              <div className="leftChat__messageLeftToRead noOverFlow">
+                <span className="sender-notification-count">2</span>
+                <span onClick={this.showMenu} className="rollback-on-hover">
+                  {addChevron}
+                  {dropdown}
+                </span>
+              </div>
             </div>
           </div>
         </div>

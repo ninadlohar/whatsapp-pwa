@@ -30,8 +30,8 @@ class SearchInputBox extends React.Component {
     let leftArrow = this.state.inputArrow ? (
       <i className="fas fa-arrow-down input-arrow px-2 py-2" id="input-arrow" />
     ) : (
-        <i className="fas fa-search icon-color input-search-icon px-3" />
-      );
+      <i className="fas fa-search icon-color input-search-icon px-3" />
+    );
     let casualSearchBox = (
       <div className="col-12 px-0 input-box" id="input-box">
         <div className="px-2 py-2 d-flex">
@@ -108,7 +108,7 @@ class SearchInputBox extends React.Component {
         searchBox = simpleInputForProfile__Name;
         break;
       case "simpleInputForProfile__About":
-        searchBox = simpleInputForProfile__About
+        searchBox = simpleInputForProfile__About;
       default:
         searchBox = simpleInputForProfile__Name;
     }

@@ -1,0 +1,69 @@
+.leftChat__user__image {
+  padding-left: 13px;
+  padding-right: 15px;
+  padding-top: 12px;
+  padding-bottom: 11px;
+}
+
+.leftChat__user__details {
+  padding-right: 15px;
+  width: calc(100% - 77px);
+  padding-top: 12px;
+  padding-bottom: 8px;
+  border-top: 1px solid #f2f2f2;
+}
+
+.single-user-chat-box:hover {
+  .rollback-on-hover {
+    transition: all 0.3s;
+    transform: translate(-6px, 0px);
+  }
+}
+
+.leftChat__senderName___time {
+  .leftChat__senderName {
+    width: calc(100% - 56px);
+    font-size: 17px;
+    color: #000;
+  }
+
+  .leftChat__time {
+    width: 50px;
+    margin-left: 6px;
+    font-size: 12px;
+    color: #333333;
+  }
+}
+
+.leftChat__message___messageLeftToRead {
+  .leftChat__message {
+    width: calc(100% - 56px);
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .leftChat__messageLeftToRead {
+    width: 50px;
+    margin-left: 6px;
+    font-size: 12px;
+    color: #333333;
+    text-align: right;
+  }
+
+  .rollback-on-hover {
+    margin-left: 5px;
+  }
+
+  .sender-notification-count {
+    background-color: #09d261;
+    border-radius: 16px;
+    padding: 1px 6px 1px 6px;
+    color: white;
+  }
+}
+
+.noOverFlow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
