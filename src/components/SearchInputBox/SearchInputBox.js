@@ -97,6 +97,43 @@ class SearchInputBox extends React.Component {
       </div>
     );
 
+    let simpleInputForGroupInfo__Name = (
+      <div className="col-12 px-0">
+        <div className="row mx-0">
+          <div className="profile_width_input_static">
+            <Input placeholder="Type Contact Name" value="Niko" classes="simple__edit__pencil" type="text" />
+          </div>
+          <div className="profile_width_45_static d-flex justify-content-between pt-1">
+            <div className="profile_chracters_left">20</div>
+            <div className="">
+              <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
+            </div>
+            <div className="" onClick={this.props.isEditingNameGroupFn}>
+              <img src={require("../../assets/svg/correct-signal.svg")} alt="tick-correct-signal" height="17" width="17" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+
+    let simpleInputForGroupInfo__Description = (
+      <div className="col-12 px-0">
+        <div className="row mx-0">
+          <div className="profile_width_input_static">
+            <Input placeholder="Type Contact Name" value="Niko" classes="simple__edit__pencil" type="text" />
+          </div>
+          <div className="profile_width_45_static d-flex justify-content-end pt-1">
+            <div className="mr-2">
+              <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
+            </div>
+            <div className="" onClick={this.props.isEditingDescriptionFn}>
+              <img src={require("../../assets/svg/correct-signal.svg")} alt="tick-correct-signal" height="17" width="17" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+
     let searchBox = null;
     switch (this.props.searchBoxType) {
       case "withSearchBox":
@@ -110,6 +147,13 @@ class SearchInputBox extends React.Component {
         break;
       case "simpleInputForProfile__About":
         searchBox = simpleInputForProfile__About;
+        break;
+      case "simpleInputForGroupInfo__Name":
+        searchBox = simpleInputForGroupInfo__Name;
+        break;
+      case "simpleInputForGroupInfo__Description":
+        searchBox = simpleInputForGroupInfo__Description;
+        break;
       default:
         searchBox = simpleInputForProfile__About;
     }

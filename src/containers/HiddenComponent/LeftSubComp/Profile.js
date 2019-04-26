@@ -10,7 +10,6 @@ class Profile extends React.Component {
     this.setState({ isEditingName: !this.state.isEditingName });
   };
   isEditingAboutFn = () => {
-    console.log("isEditingAboutFn() => " + this.state.isEditingAbout);
     this.setState({ isEditingAbout: !this.state.isEditingAbout });
   };
   render() {

@@ -5,8 +5,17 @@ import ContactDataChatWithStataus from "../../components/TypesOfUserChats/Contac
 class HiddenComponentRightSide extends React.Component {
   state = {
     squeezeLayoutBoolean: false,
+    isEditingName: false,
+    isEditingDescription: false,
     isTextAStatus: this.props.isTextAStatus,
     isChatWithStatusAndAdmin: this.props.isChatWithStatusAndAdmin
+  };
+
+  isEditingNameGroupFn = () => {
+    this.setState({ isEditingName: !this.state.isEditingName });
+  };
+  isEditingDescriptionFn = () => {
+    this.setState({ isEditingDescription: !this.state.isEditingDescription });
   };
 
   slideOutToggler = () => {
@@ -68,6 +77,25 @@ class HiddenComponentRightSide extends React.Component {
       </div>
     );
 
+    /** edit name toggles to input when state changes true */
+    let editName = (
+      <div className="d-flex">
+        <div className="contact-info-basic-details-sender-name w-100">German Shepherd</div>
+        <div className="pt-8_custom" onClick={this.isEditingNameGroupFn}>
+          <img src={require("../../assets/svg/create-new-pencil-button.svg")} alt="edit" height="18" width="18" />
+        </div>
+      </div>
+    );
+
+    let editDescription = (
+      <div className="d-flex">
+        <div className="add-group-description w-100">Add Group Description</div>
+        <div onClick={this.isEditingDescriptionFn}>
+          <img src={require("../../assets/svg/create-new-pencil-button.svg")} alt="pencil-edit" height="18" width="18" />
+        </div>
+      </div>
+    );
+
     /** this container is popped out when the right side dropdown -> contact info button is clicked */
     let contactInfoContainer = (
       <div className="contactInfoContainer">
@@ -78,23 +106,26 @@ class HiddenComponentRightSide extends React.Component {
               <img src={require("../../assets/images/user-image.jpg")} alt="sender-images" className="contact-info-basic-details-image" />
             </div>
             <div>
-              <div className="d-flex">
-                <div className="contact-info-basic-details-sender-name w-100">German Shepherd</div>
-                <div className="pt-8_custom">
-                  <img src={require("../../assets/svg/create-new-pencil-button.svg")} alt="edit" height="18" width="18" />
+              {this.state.isEditingName ? (
+                <div>
+                  <SearchInputBox searchBoxType="simpleInputForGroupInfo__Name" isEditingNameGroupFn={this.isEditingNameGroupFn} />
                 </div>
-              </div>
+              ) : (
+                editName
+              )}
               <div className="contact-info-basic-details-sender-date">last seen today at 12:36pm</div>
             </div>
           </div>
           <div className="group-description-details">
             <div className="description">Description</div>
-            <div className="d-flex">
-              <div className="add-group-description w-100">Add Group Description</div>
+
+            {this.state.isEditingDescription ? (
               <div>
-                <img src={require("../../assets/svg/create-new-pencil-button.svg")} alt="pencil-edit" height="18" width="18" />
+                <SearchInputBox searchBoxType="simpleInputForGroupInfo__Description" isEditingDescriptionFn={this.isEditingDescriptionFn} />
               </div>
-            </div>
+            ) : (
+              editDescription
+            )}
           </div>
           <div className="media-links-docs">
             <div className="d-flex">
