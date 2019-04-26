@@ -1,6 +1,6 @@
 @import "./colors.scss";
 
-.hidden_header {
+.rightSlider__header {
   padding-left: 25px;
   padding-right: 20px;
   font-size: 17px;
@@ -33,14 +33,14 @@
   animation: 1s cubic-bezier(0.1, 0.82, 0.25, 1);
 }
 
-.contact-info-basic-details {
+.rightSlider__basicInfo__section {
   padding-top: 28px;
   padding-bottom: 19px;
   padding-left: 30px;
   padding-right: 30px;
   margin-bottom: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  .contact-info-basic-details-image {
+  .rightSlider__sender__basicInfo__image {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -49,7 +49,7 @@
   }
 }
 
-.contact-info-basic-details-image:active {
+.rightSlider__sender__basicInfo__image:active {
   opacity: 0.5;
 }
 
@@ -68,15 +68,15 @@
 .pt-3-custom {
   padding-top: 3px;
 }
-.contact-info-basic-details-sender-date {
+.rightSlider__sender__lastSeenDate {
   font-size: 13px;
   color: $hidden_box_content_color;
 }
-.group-description-details {
+.rightSlider__group__details {
   margin-bottom: 10px;
   padding: 14px 30px 10px 30px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  .description {
+  .rightSlider__group__description {
     color: #128c7e;
     font-size: 14px;
   }
@@ -90,23 +90,23 @@
   }
 }
 
-.media-links-docs {
+.rightSlider__media__links__section {
   padding: 14px 30px 10px 30px;
   margin-bottom: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  .media-links-docs-title {
+  .rightSlider__media__links__title {
     font-size: 14px;
     color: #128c7e;
   }
 }
-.media-links-docs-immage-section {
+.rightSlider__media__image__section {
   padding-top: 8px;
 }
-.media-links-docs-image {
+.rightSlider__media__docs__image {
   margin-right: 8px;
   margin-bottom: 8px;
 }
-.mute-and-starred-messages {
+.rightSlider__mute__starred__messages__section {
   padding-left: 30px;
   padding-right: 30px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -115,23 +115,23 @@
     padding-top: 18px;
     padding-bottom: 18px;
   }
-  .starred-messages {
+  .rightSlider__starred__messages {
     padding-top: 18px;
     padding-bottom: 18px;
   }
 }
 
-.participants-section-header {
+.rightSlider__participants__header {
   padding: 18px 30px 14px 30px;
   font-size: 14px;
   color: #128c7e;
 }
 
-.participant {
+.rightSlider__group__participant {
   padding-left: 14px;
 }
 
-.w-90 {
+.custom__width__90percent {
   width: 90%;
 }
 
@@ -153,7 +153,7 @@
   border-top: 1px solid #f2f2f2;
 }
 
-.more-people-section {
+.rightSlider__more__people {
   margin-bottom: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }

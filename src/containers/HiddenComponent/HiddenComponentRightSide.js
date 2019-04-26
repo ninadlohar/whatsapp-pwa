@@ -101,9 +101,9 @@ class HiddenComponentRightSide extends React.Component {
       <div className="rightSlider__contactInfo__parent">
         <div className="rightSlider__contactInfo__child">
           {/** start sub components -> boxes */}
-          <div className="contact-info-basic-details">
+          <div className="rightSlider__basicInfo__section">
             <div className="d-flex justify-content-center">
-              <img src={require("../../assets/images/user-image.jpg")} alt="sender-images" className="contact-info-basic-details-image" />
+              <img src={require("../../assets/images/user-image.jpg")} alt="sender-images" className="rightSlider__sender__basicInfo__image" />
             </div>
             <div>
               {this.state.isEditingName ? (
@@ -113,11 +113,11 @@ class HiddenComponentRightSide extends React.Component {
               ) : (
                   editName
                 )}
-              <div className="contact-info-basic-details-sender-date">last seen today at 12:36pm</div>
+              <div className="rightSlider__sender__lastSeenDate">last seen today at 12:36pm</div>
             </div>
           </div>
-          <div className="group-description-details">
-            <div className="description">Description</div>
+          <div className="rightSlider__group__details">
+            <div className="rightSlider__group__description">Description</div>
 
             {this.state.isEditingDescription ? (
               <div>
@@ -127,20 +127,20 @@ class HiddenComponentRightSide extends React.Component {
                 editDescription
               )}
           </div>
-          <div className="media-links-docs">
+          <div className="rightSlider__media__links__section">
             <div className="d-flex">
-              <div className="media-links-docs-title w-100">Media Links and Docs</div>
+              <div className="rightSlider__media__links__title w-100">Media Links and Docs</div>
               <div>
                 <img src={require("../../assets/svg/right-arrow.svg")} alt="right-arrow-angle" height="13" width="13" />
               </div>
             </div>
-            <div className="media-links-docs-immage-section d-flex justify-content-center">
-              <img src="https://via.placeholder.com/150" alt="" height="107" width1="104" className="media-links-docs-image" />
-              <img src="https://via.placeholder.com/150" alt="" height="107" width1="104" className="media-links-docs-image" />
-              <img src="https://via.placeholder.com/150" alt="" height="107" width1="104" className="media-links-docs-image" />
+            <div className="rightSlider__media__image__section d-flex justify-content-center">
+              <img src="https://via.placeholder.com/150" alt="" height="107" width1="104" className="rightSlider__media__docs__image" />
+              <img src="https://via.placeholder.com/150" alt="" height="107" width1="104" className="rightSlider__media__docs__image" />
+              <img src="https://via.placeholder.com/150" alt="" height="107" width1="104" className="rightSlider__media__docs__image" />
             </div>
           </div>
-          <div className="mute-and-starred-messages">
+          <div className="rightSlider__mute__starred__messages__section">
             <div className="d-flex">
               <div className="mute w-100">Mute</div>
               <div style={{ marginTop: "16px" }}>
@@ -148,44 +148,43 @@ class HiddenComponentRightSide extends React.Component {
               </div>
             </div>
             <div className="d-flex">
-              <div className="starred-messages w-100">Starred Messages</div>
+              <div className="rightSlider__starred__messages w-100">Starred Messages</div>
               <div style={{ marginTop: "15px" }}>
                 <img src={require("../../assets/svg/right-arrow.svg")} alt="right-arrow-angle" height="13" width="13" />
               </div>
             </div>
           </div>
-          <div className="participants-section">
-            <div className="d-flex">
-              <div className="participants-section-header w-90">Media Links and Docs</div>
-              <div style={{ marginTop: "13px" }}>
-                <img src={require("../../assets/svg/search.svg")} alt="search" height="15" width="15" />
-              </div>
-            </div>
-            <div>
-              <div className="participant">
-                <ContactDataChatWithStataus />
-              </div>
-              <div className="participant">
-                <ContactDataChatWithStataus />
-              </div>
-              <div className="participant">
-                <ContactDataChatWithStataus />
-              </div>
-              <div className="participant">
-                <ContactDataChatWithStataus />
-              </div>
-              <div className="participant">
-                <ContactDataChatWithStataus />
-              </div>
-              <div className="participant">
-                <ContactDataChatWithStataus />
-              </div>
-              <div className="participant">
-                <ContactDataChatWithStataus />
-              </div>
-              <div className="participant more-people-section">{morePeople}</div>
+          <div className="d-flex">
+            <div className="rightSlider__participants__header custom__width__90percent">Media Links and Docs</div>
+            <div style={{ marginTop: "13px" }}>
+              <img src={require("../../assets/svg/search.svg")} alt="search" height="15" width="15" />
             </div>
           </div>
+          <div>
+            <div className="rightSlider__group__participant">
+              <ContactDataChatWithStataus />
+            </div>
+            <div className="rightSlider__group__participant">
+              <ContactDataChatWithStataus />
+            </div>
+            <div className="rightSlider__group__participant">
+              <ContactDataChatWithStataus />
+            </div>
+            <div className="rightSlider__group__participant">
+              <ContactDataChatWithStataus />
+            </div>
+            <div className="rightSlider__group__participant">
+              <ContactDataChatWithStataus />
+            </div>
+            <div className="rightSlider__group__participant">
+              <ContactDataChatWithStataus />
+            </div>
+            <div className="rightSlider__group__participant">
+              <ContactDataChatWithStataus />
+            </div>
+            <div className="rightSlider__group__participant rightSlider__more__people">{morePeople}</div>
+          </div>
+
           {exitGroup}
           {reportGroup}
           <div style={{ marginBottom: "30px" }} />
@@ -196,12 +195,12 @@ class HiddenComponentRightSide extends React.Component {
 
     return (
       <div className={this.props.squeezeLayoutBoolean ? this.props.hiddenClass.join(" ") : null} id="DOMChangedHiddenSide">
-        <div className="col-30-child col-12 px-0" id="col-30-child">
-          <header className="hidden_header py-3 d-flex">
+        <div className="rightSlider__child__open col-12 px-0" id="col-30-child">
+          <header className="rightSlider__header py-3 d-flex">
             <div style={{ width: "54px" }} onClick={this.slideOutToggler}>
               <img src={require("../../assets/svg/cancel-real.svg")} alt="cancel" height="14" />
             </div>
-            <div className="hidden_header_text">
+            <div className="rightSlider__header__text">
               <span>{this.props.searchComponent ? "Search Messages" : "Group Info"}</span>
             </div>
           </header>
