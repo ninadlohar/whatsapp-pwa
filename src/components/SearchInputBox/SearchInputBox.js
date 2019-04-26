@@ -96,6 +96,7 @@ class SearchInputBox extends React.Component {
         </div>
       </div>
     );
+
     let searchBox = null;
     switch (this.props.searchBoxType) {
       case "withSearchBox":

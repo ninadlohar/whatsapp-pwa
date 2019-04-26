@@ -67,3 +67,14 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.leftChat__senderName___groupAdmin {
+  .leftChat__senderName__asAdmin {
+    font-size: 17px;
+    color: #000;
+    width: calc(100% - 76px);
+  }
+  .leftChat__groupAdmin {
+    width: 76px;
+  }
+}
