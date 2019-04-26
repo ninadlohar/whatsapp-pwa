@@ -42,7 +42,7 @@ class Profile extends React.Component {
       </div>
     );
     return (
-      <div className={this.props.classes} id="newChatActiveBox">
+      <div className={this.props.classes} id="leftSlider__chatActiveBox">
         <header className="col-12 px-0">
           <div className="newChatActive">
             <div className="row mx-0">
@@ -56,11 +56,9 @@ class Profile extends React.Component {
           </div>
         </header>
 
-        <section className="col-12 px-0 chat-section">
+        <section className="col-12 px-0 leftSide__chat__section">
           <div className="row mx-0">
-            {/** all chats will append here from API */}
-            {/** log-of-chats-new-chat-active will be true when active else log-of-chats toggle*/}
-            <div className="col-12 px-0 log-of-chats new-chat-active profile_section">
+            <div className="col-12 px-0 leftSide__log__of__chats new-chat-active profile_section">
               <div className="row mx-0">
                 <div className="leftDrawer_Profile_ImageSection w-100 d-flex justify-content-center">
                   <img
@@ -78,8 +76,8 @@ class Profile extends React.Component {
                       <SearchInputBox searchBoxType="simpleInputForProfile__Name" isEditingNameFn={this.isEditingNameFn} />
                     </div>
                   ) : (
-                    editName
-                  )}
+                      editName
+                    )}
                 </div>
               </div>
               <div className="row mx-0">
@@ -96,8 +94,8 @@ class Profile extends React.Component {
                     <SearchInputBox searchBoxType="simpleInputForProfile__About" isEditingAboutFn={this.isEditingAboutFn} />
                   </div>
                 ) : (
-                  editAbout
-                )}
+                    editAbout
+                  )}
               </div>
               {/* </div> */}
             </div>

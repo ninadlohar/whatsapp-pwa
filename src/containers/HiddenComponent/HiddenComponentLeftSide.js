@@ -8,20 +8,20 @@ import Settings from "./LeftSubComp/Settings";
 
 class HiddenComponentLeftSide extends React.Component {
   state = {
-    baseClasses: ["row", "mx-0", "newChatActiveBox"],
+    baseClasses: ["row", "mx-0", "leftSlider__chatActiveBox"],
     hiddenLeftClass: ["DOMChangedLeftHiddenSide"]
   };
 
   toggleHandlerIn() {
     this.setState({ setLeftHiddenComponentVisible: true }, () => {
       setTimeout(() => {
-        document.getElementById("newChatActiveBox").style.transform = "translate(0%, 0)";
+        document.getElementById("leftSlider__chatActiveBox").style.transform = "translate(0%, 0)";
       }, 100);
     });
   }
 
   toggleHandlerOut = () => {
-    document.getElementById("newChatActiveBox").style.transform = "translate(-100%, 0)";
+    document.getElementById("leftSlider__chatActiveBox").style.transform = "translate(-100%, 0)";
     setTimeout(() => {
       this.setState({
         setLeftHiddenComponentVisible: false

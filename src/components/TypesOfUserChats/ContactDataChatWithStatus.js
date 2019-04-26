@@ -13,7 +13,7 @@ class ContactDataChatWithStataus extends React.Component {
 
   render() {
     return (
-      <div className="chat-1 w-100 d-flex single-user-chat-box" onMouseEnter={this.onHover} onMouseLeave={this.offHover}>
+      <div className="chat-1 w-100 d-flex rightSlider__userInfo__box" onMouseEnter={this.onHover} onMouseLeave={this.offHover}>
         <div className="leftChat__user__image">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg"

@@ -104,14 +104,12 @@ class DropDown extends React.Component {
       </div>
     );
     let attachment = (
-      <div className="main-attachment">
-        <div className="main-attachment-dropdown">
-          <div className="attachment-dropdown">
-            <img src={require("../assets/images/gallery.png")} alt="gallery" className="attachment-icons" />
-            <img src={require("../assets/images/camera.png")} alt="camera" className="attachment-icons" />
-            <img src={require("../assets/images/file.jpg")} alt="file" className="attachment-icons" />
-            <img src={require("../assets/images/user.png")} alt="user" className="attachment-icons" />
-          </div>
+      <div className="main-attachment-dropdown">
+        <div className="attachment-dropdown">
+          <img src={require("../assets/images/gallery.png")} alt="gallery" className="attachment-icons" />
+          <img src={require("../assets/images/camera.png")} alt="camera" className="attachment-icons" />
+          <img src={require("../assets/images/file.jpg")} alt="file" className="attachment-icons" />
+          <img src={require("../assets/images/user.png")} alt="user" className="attachment-icons" />
         </div>
       </div>
     );

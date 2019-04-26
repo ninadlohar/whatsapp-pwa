@@ -26,12 +26,12 @@
     left: 0;
     display: flex;
   }
-  .left-side-of-chat-window-child {
+  .leftSide__chat__window__child {
     position: absolute;
     width: 100%;
     height: 100%;
   }
-  .right-side-of-chat-window-child {
+  .rightSide__chat__window__child {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -48,7 +48,7 @@
   .col-xl-3-5 {
     width: 40%;
   }
-  .newChatActiveBox {
+  .leftSlider__chatActiveBox {
     width: 40%;
   }
 
@@ -61,7 +61,7 @@
   .col-xl-3-5 {
     width: 35%;
   }
-  .newChatActiveBox {
+  .leftSlider__chatActiveBox {
     width: 35%;
   }
   .col-xl-6-5 {
@@ -73,7 +73,7 @@
   .col-xl-3-5 {
     width: 30%;
   }
-  .newChatActiveBox {
+  .leftSlider__chatActiveBox {
     width: 30%;
   }
   .col-xl-6-5 {

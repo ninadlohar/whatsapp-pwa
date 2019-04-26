@@ -3,7 +3,7 @@ import DropDown from "../../../ReusableUI-Components/dropDown";
 
 const StarredMessages = props => {
   return (
-    <div className={props.classes} id="newChatActiveBox">
+    <div className={props.classes} id="leftSlider__chatActiveBox">
       <header className="col-12 px-0">
         <div className="newChatActive">
           <div className="row mx-0">
@@ -21,11 +21,9 @@ const StarredMessages = props => {
           </div>
         </div>
       </header>
-      <section className="col-12 px-0 chat-section">
+      <section className="col-12 px-0 leftSide__chat__section">
         <div className="row mx-0">
-          {/** all chats will append here from API */}
-          {/** log-of-chats-new-chat-active will be true when active else log-of-chats toggle*/}
-          <div className="col-12 px-0 log-of-chats new-chat-active starred-messages-container">
+          <div className="col-12 px-0 leftSide__log__of__chats new-chat-active starred-messages-container">
             <div className="row mx-0">
               <div className="col-12 starred-messages-section w-100 ">
                 <div className="row mx-0 w-100 d-flex">

@@ -3,7 +3,7 @@ import React from "react";
 class Settings extends React.Component {
   render() {
     return (
-      <div className={this.props.classes} id="newChatActiveBox">
+      <div className={this.props.classes} id="leftSlider__chatActiveBox">
         <header className="col-12 px-0">
           <div className="newChatActive">
             <div className="row">
@@ -16,9 +16,9 @@ class Settings extends React.Component {
             </div>
           </div>
         </header>
-        <section className="col-12 px-0 chat-section">
+        <section className="col-12 px-0 leftSide__chat__section">
           <div className="row mx-0">
-            <div className="col-12 px-0 log-of-chats new-chat-active profile_section">
+            <div className="col-12 px-0 leftSide__log__of__chats new-chat-active profile_section">
               <div className="row mx-0">
                 <div className="col-12 px-0 settings-section d-flex  w-100">
                   <div className=" settings-section-image-section">

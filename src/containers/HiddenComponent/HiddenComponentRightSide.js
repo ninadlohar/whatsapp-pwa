@@ -42,30 +42,30 @@ class HiddenComponentRightSide extends React.Component {
         <div>
           <SearchInputBox placeholder="Search..." searchBoxType="withSearchBox" />
         </div>
-        <div className="p-50 text-center">
-          <span className="hidden_box_p50_contents">Search for messages within 9139396939.</span>
+        <div className="custom__padding50 text-center">
+          <span className="rightSlider__search__container__content">Search for messages within 9139396939.</span>
         </div>
       </div>
     );
     /** extra chat type of box for showing more people in your group ...29 more */
     let morePeople = (
-      <div className="chat-1 w-100 py-2 d-flex single-user-chat-box pr-3">
-        <div className="more-people-padding">
-          <div className="sender-image-padding py-3">
+      <div className="chat-1 w-100 py-2 d-flex rightSlider__userInfo__box pr-3">
+        <div className="rightSlider__userInfo__padding">
+          <div className="rightSlider__userInfo__image__padding py-3">
             <img src={require("../../assets/svg/down-arrow.svg")} alt="down-arrow" height="16" width="14" />
           </div>
         </div>
-        <div className="d-flex align-items-center more-people-text w-100 ">29 More</div>
+        <div className="d-flex align-items-center rightSlider__more__group__people__count w-100 ">29 More</div>
       </div>
     );
 
     /** exit group box next to more people [highlighted in alert red color] */
     let exitGroup = (
-      <div className="exit-logo-section d-flex">
+      <div className="rightSlider__exit__group d-flex">
         <div className="exit-logo-svg">
           <img src={require("../../assets/svg/exit.svg")} height="20" width="20" alt="exit-svg" />
         </div>
-        <div className="exit-group-text d-flex align-items-center">Exit Group</div>
+        <div className="rightSlider__exit__group__text d-flex align-items-center">Exit Group</div>
       </div>
     );
     let reportGroup = (
@@ -73,14 +73,14 @@ class HiddenComponentRightSide extends React.Component {
         <div className="exit-logo-svg">
           <img src={require("../../assets/svg/thumb-down.svg")} height="20" width="20" alt="report-svg" />
         </div>
-        <div className="exit-group-text d-flex align-items-center">Report Group</div>
+        <div className="rightSlider__exit__group__text d-flex align-items-center">Report Group</div>
       </div>
     );
 
     /** edit name toggles to input when state changes true */
     let editName = (
       <div className="d-flex">
-        <div className="contact-info-basic-details-sender-name w-100">German Shepherd</div>
+        <div className="rightSlider__profile__edit__name w-100">German Shepherd</div>
         <div className="pt-8_custom" onClick={this.isEditingNameGroupFn}>
           <img src={require("../../assets/svg/create-new-pencil-button.svg")} alt="edit" height="18" width="18" />
         </div>
@@ -89,7 +89,7 @@ class HiddenComponentRightSide extends React.Component {
 
     let editDescription = (
       <div className="d-flex">
-        <div className="add-group-description w-100">Add Group Description</div>
+        <div className="rightSlider__profile__edit__description w-100">Add Group Description</div>
         <div onClick={this.isEditingDescriptionFn}>
           <img src={require("../../assets/svg/create-new-pencil-button.svg")} alt="pencil-edit" height="18" width="18" />
         </div>
@@ -98,8 +98,8 @@ class HiddenComponentRightSide extends React.Component {
 
     /** this container is popped out when the right side dropdown -> contact info button is clicked */
     let contactInfoContainer = (
-      <div className="contactInfoContainer">
-        <div className="contactInfoContainer_child">
+      <div className="rightSlider__contactInfo__parent">
+        <div className="rightSlider__contactInfo__child">
           {/** start sub components -> boxes */}
           <div className="contact-info-basic-details">
             <div className="d-flex justify-content-center">
@@ -111,8 +111,8 @@ class HiddenComponentRightSide extends React.Component {
                   <SearchInputBox searchBoxType="simpleInputForGroupInfo__Name" isEditingNameGroupFn={this.isEditingNameGroupFn} />
                 </div>
               ) : (
-                editName
-              )}
+                  editName
+                )}
               <div className="contact-info-basic-details-sender-date">last seen today at 12:36pm</div>
             </div>
           </div>
@@ -124,8 +124,8 @@ class HiddenComponentRightSide extends React.Component {
                 <SearchInputBox searchBoxType="simpleInputForGroupInfo__Description" isEditingDescriptionFn={this.isEditingDescriptionFn} />
               </div>
             ) : (
-              editDescription
-            )}
+                editDescription
+              )}
           </div>
           <div className="media-links-docs">
             <div className="d-flex">

@@ -8,7 +8,7 @@ class LeftSide extends React.Component {
     super(props);
     this.state = {
       setLeftHiddenComponentVisible: this.props.setLeftHiddenComponentVisible,
-      baseClasses: ["col-xl-3-5", "left-side-of-chat-window", "px-0"],
+      baseClasses: ["col-xl-3-5", "leftSide__chat__window__parent", "px-0"],
       squeezeLayoutBoolean: this.props.squeezeLayoutBoolean,
       isChatARegularMessage: this.props.isChatARegularMessage
     };
@@ -23,7 +23,7 @@ class LeftSide extends React.Component {
   toggleHandlerIn() {
     this.setState({ setLeftHiddenComponentVisible: true }, () => {
       setTimeout(() => {
-        document.getElementById("newChatActiveBox").style.transform = "translate(0%, 0)";
+        document.getElementById("leftSlider__chatActiveBox").style.transform = "translate(0%, 0)";
       }, 100);
     });
   }
@@ -39,11 +39,11 @@ class LeftSide extends React.Component {
         <header className="col-12 leftSide__header px-0">
           <div className="row mx-0">
             <div className="col-3 px-0">
-              <div className="logged-in-user-image-div px-3">
+              <div className="px-3">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg"
                   alt="karl-benz"
-                  className="logged-in-user-image"
+                  className="logged__in__user__image__49px"
                 />
               </div>
             </div>
@@ -64,10 +64,10 @@ class LeftSide extends React.Component {
         {/** input box  */}
         <SearchInputBox placeholder="Search or start new Chat" searchBoxType="withSearchBox" />
         {/** chat section */}
-        <section className="col-12 px-0 chat-section">
+        <section className="col-12 px-0 leftSide__chat__section">
           <div className="row mx-0">
             {/** all chats will append here from API */}
-            <div className="col-12 px-0 log-of-chats">
+            <div className="col-12 px-0 leftSide__log__of__chats">
               <div className="row mx-0">
                 <DefaultLoadedChat />
                 <DefaultLoadedChat />
@@ -93,7 +93,7 @@ class LeftSide extends React.Component {
       : this.state.baseClasses.join(" ");
     return (
       <div className={appendClasses} id="col-xl-3-5">
-        <div className="left-side-of-chat-window-child">{messageLogs}</div>
+        <div className="leftSide__chat__window__child">{messageLogs}</div>
       </div>
     );
   }

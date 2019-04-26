@@ -9,7 +9,7 @@ const NewGroup = props => {
     </div>
   );
   return (
-    <div className={props.classes} id="newChatActiveBox">
+    <div className={props.classes} id="leftSlider__chatActiveBox">
       <header className="col-12 px-0">
         <div className="newChatActive">
           <div className="row">
@@ -22,12 +22,10 @@ const NewGroup = props => {
           </div>
         </div>
       </header>
-      <section className="col-12 px-0 chat-section">
+      <section className="col-12 px-0 leftSide__chat__section">
         <SearchInputBox searchBoxType="searchBoxWithLine" placeholder="Type Contact Name" />
         <div className="row mx-0">
-          {/** all chats will append here from API */}
-          {/** log-of-chats-new-chat-active will be true when active else log-of-chats toggle*/}
-          <div className="col-12 px-0 log-of-chats new-chat-active">
+          <div className="col-12 px-0 leftSide__log__of__chats new-chat-active">
             <div className="row mx-0">
               {hashTag}
               <NewUserChat />
