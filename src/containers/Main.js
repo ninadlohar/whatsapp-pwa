@@ -77,7 +77,7 @@ class Main extends React.Component {
       <div className="col-12 px-0">
         <div className="green-box">
           <div className="row mx-0 bgColor">
-            <div className="display-content-area d-flex">
+            <div className="display-content-area d-flex" id="page">
               <div className="display-content-area-child">
                 {/** d-flex enables flexbox -> 2 parts of screen */}
                 {/** divide screen into two parts -> chat-people and chat logs */}
