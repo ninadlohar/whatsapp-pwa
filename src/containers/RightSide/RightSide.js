@@ -22,6 +22,18 @@ class RightSide extends React.Component {
     });
   };
 
+  componentDidMount() {
+    var height = document.getElementById("page").clientHeight; // 100
+    var footer = document.getElementById("footer").clientHeight; // 62px
+    var headheight = document.getElementById("right__header").clientHeight; // 60px
+    var content = document.getElementById("message1List");
+
+    var step1 = height - headheight; // 100 - 10
+    var availableheight = step1 - footer; // 90 - 10
+    content.style.height = availableheight - 40 + "px";
+    content.style.overflow = "scroll";
+  }
+
   render() {
     let appendClasses = this.state.squeezeLayoutBoolean
       ? this.state.baseClasses.concat(this.props.addClassesRightSide).join(" ")
@@ -33,7 +45,7 @@ class RightSide extends React.Component {
           {/* <div id="col-xl-6-5"> */}
           <div className="rightSide__chat__window__child">
             <div className="row mx-0">
-              <header className="col-12 rightSide__header px-0">
+              <header className="col-12 rightSide__header px-0" id="right__header">
                 <div className="row mx-0">
                   <div className="rightSide__header__without__icons">
                     <div className="row mx-0">

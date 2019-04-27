@@ -32,11 +32,23 @@ class LeftSide extends React.Component {
     this.props.setLeftSliderScreen(screen);
   };
 
+  componentDidMount() {
+    var height = document.getElementById("page").clientHeight;
+    var inputBox = document.getElementById("input-box").clientHeight;
+    var headheight = document.getElementById("head").clientHeight;
+    var content = document.getElementById("content");
+
+    var step1 = height - headheight;
+    var availableheight = step1 - inputBox;
+    content.style.height = availableheight + "px";
+    content.style.overflow = "scroll";
+  }
+
   render() {
     /** newChat component is too reusable */
     let messageLogs = (
       <div className="mx-0" id="message-logs">
-        <header className="col-12 leftSide__header px-0">
+        <header className="col-12 leftSide__header px-0" id="head">
           <div className="row mx-0">
             <div className="col-3 px-0">
               <div className="px-3">
@@ -67,7 +79,7 @@ class LeftSide extends React.Component {
         <section className="col-12 px-0 leftSide__chat__section">
           <div className="row mx-0">
             {/** all chats will append here from API */}
-            <div className="col-12 px-0 leftSide__log__of__chats">
+            <div className="col-12 px-0 leftSide__log__of__chats" id="content">
               <div className="row mx-0">
                 <DefaultLoadedChat />
                 <DefaultLoadedChat />
