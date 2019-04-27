@@ -44,13 +44,13 @@ class Profile extends React.Component {
     return (
       <div className={this.props.classes} id="leftSlider__chatActiveBox">
         <header className="col-12 px-0">
-          <div className="newChatActive">
+          <div className="leftSlider__header__green_box">
             <div className="row mx-0">
-              <div className="col-12 px-0 d-flex h-59 align-items-center">
-                <span className="newChatLeftArrow" onClick={this.props.toggleHandlerOut}>
+              <div className="col-12 px-0 d-flex custom__59height align-items-center">
+                <span className="leftSlider__back__arrow" onClick={this.props.toggleHandlerOut}>
                   <i className="fas fa-arrow-left" />
                 </span>
-                <span className="newChatHeader">Profile</span>
+                <span className="leftSlider__greenBox__header">Profile</span>
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@ class Profile extends React.Component {
 
         <section className="col-12 px-0 leftSide__chat__section">
           <div className="row mx-0">
-            <div className="col-12 px-0 leftSide__log__of__chats new-chat-active profile_section">
+            <div className="col-12 px-0 leftSide__log__of__chats profile_section">
               <div className="row mx-0">
                 <div className="leftDrawer_Profile_ImageSection w-100 d-flex justify-content-center">
                   <img
@@ -76,8 +76,8 @@ class Profile extends React.Component {
                       <SearchInputBox searchBoxType="simpleInputForProfile__Name" isEditingNameFn={this.isEditingNameFn} />
                     </div>
                   ) : (
-                      editName
-                    )}
+                    editName
+                  )}
                 </div>
               </div>
               <div className="row mx-0">
@@ -94,8 +94,8 @@ class Profile extends React.Component {
                     <SearchInputBox searchBoxType="simpleInputForProfile__About" isEditingAboutFn={this.isEditingAboutFn} />
                   </div>
                 ) : (
-                    editAbout
-                  )}
+                  editAbout
+                )}
               </div>
               {/* </div> */}
             </div>

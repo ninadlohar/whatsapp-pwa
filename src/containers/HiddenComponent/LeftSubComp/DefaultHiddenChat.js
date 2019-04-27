@@ -28,13 +28,13 @@ class DefaultHiddenLeftChat extends React.Component {
     let newChat = (
       <div className={classes} id="leftSlider__chatActiveBox">
         <header className="col-12 display-content-area-header px-0">
-          <div className="newChatActive">
+          <div className="leftSlider__header__green_box">
             <div className="row">
-              <div className="col-12 d-flex h-59 align-items-center">
-                <span className="newChatLeftArrow" onClick={this.props.toggleHandlerOut}>
+              <div className="col-12 d-flex custom__59height align-items-center">
+                <span className="leftSlider__back__arrow" onClick={this.props.toggleHandlerOut}>
                   <i className="fas fa-arrow-left" />
                 </span>
-                <span className="newChatHeader">New Chat</span>
+                <span className="leftSlider__greenBox__header">New Chat</span>
               </div>
             </div>
           </div>
@@ -42,7 +42,7 @@ class DefaultHiddenLeftChat extends React.Component {
         <SearchInputBox searchBoxType="withSearchBox" placeholder="Search Contacts" />
         <section className="col-12 px-0 leftSide__chat__section">
           <div className="row mx-0">
-            <div className="col-12 px-0 leftSide__log__of__chats new-chat-active">
+            <div className="col-12 px-0 leftSide__log__of__chats ">
               <div className="row mx-0">
                 {newGroup}
                 {frequentlyContacted}

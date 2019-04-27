@@ -5,13 +5,13 @@ const StarredMessages = props => {
   return (
     <div className={props.classes} id="leftSlider__chatActiveBox">
       <header className="col-12 px-0">
-        <div className="newChatActive">
+        <div className="leftSlider__header__green_box">
           <div className="row mx-0">
-            <div className="col-10 d-flex h-59 align-items-center px-0">
-              <span className="newChatLeftArrow" onClick={props.toggleHandlerOut}>
+            <div className="col-10 d-flex custom__59height align-items-center px-0">
+              <span className="leftSlider__back__arrow" onClick={props.toggleHandlerOut}>
                 <i className="fas fa-arrow-left" />
               </span>
-              <span className="newChatHeader">Starred Messages</span>
+              <span className="leftSlider__greenBox__header">Starred Messages</span>
             </div>
             <div className="col-2 d-flex align-items-center px-0 justify-content-end">
               <div className=" row mx-0">
@@ -23,7 +23,7 @@ const StarredMessages = props => {
       </header>
       <section className="col-12 px-0 leftSide__chat__section">
         <div className="row mx-0">
-          <div className="col-12 px-0 leftSide__log__of__chats new-chat-active starred-messages-container">
+          <div className="col-12 px-0 leftSide__log__of__chats starred-messages-container">
             <div className="row mx-0">
               <div className="col-12 starred-messages-section w-100 ">
                 <div className="row mx-0 w-100 d-flex">

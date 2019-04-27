@@ -454,7 +454,7 @@ body {
     background-color: #f7f7f7;
     padding: 50px;
   }
-  .profile_section {
+  .leftSlider__profile__section {
     background-color: #f7f7f7;
   }
   .profile_section_name {
@@ -592,18 +592,18 @@ body {
     padding-left: 30px;
     color: $green-box-color;
   }
-  .newChatHeader {
+  .leftSlider__greenBox__header {
     color: white;
     font-size: 19px;
   }
-  .newChatLeftArrow {
+  .leftSlider__back__arrow {
     width: 53px;
     color: white;
   }
-  .h-59 {
+  .custom__59height {
     height: 59px;
   }
-  .newChatActive {
+  .leftSlider__header__green_box {
     padding-top: 49px;
     padding-left: 23px;
     padding-right: 20px;
@@ -904,7 +904,7 @@ body {
     border-bottom: 2px solid #00bfa5;
     // color: $search-input-box-text-color;
   }
-  .profile_section {
+  .leftSlider__profile__section {
     background-color: #f7f7f7;
   }
   .no-archieved-chats {
@@ -1096,18 +1096,18 @@ body {
     transform: translate(-100%, 0);
   }
 
-  .newChatHeader {
+  .leftSlider__greenBox__header {
     color: white;
     font-size: 19px;
   }
-  .newChatLeftArrow {
+  .leftSlider__back__arrow {
     width: 53px;
     color: white;
   }
-  .h-59 {
+  .custom__59height {
     height: 59px;
   }
-  .newChatActive {
+  .leftSlider__header__green_box {
     padding-top: 49px;
     padding-left: 23px;
     padding-right: 20px;
