@@ -8,11 +8,10 @@ class DefaultHiddenLeftChat extends React.Component {
     hiddenLeftClass: ["DOMChangedLeftHiddenSide"]
   };
   render() {
-    let appendClasses = this.props.setLeftHiddenComponentVisible
+    /** if the whole DOM is manipulated with the hidden right screen popped in then this classes is executed */
+    let classes = this.props.squeezeLayoutBoolean
       ? this.state.baseClasses.concat(this.state.hiddenLeftClass).join(" ")
       : this.state.baseClasses.join(" ");
-    /** if the whole DOM is manipulated with the hidden right screen popped in then this classes is executed */
-    let classes = this.props.squeezeLayoutBoolean ? appendClasses : this.state.baseClasses.join(" ");
     let frequentlyContacted = (
       <div className="chat-1 w-100 py-4 d-flex rightSlider__userInfo__box pr-3">
         <div className="rightSlider__userInfo__box d-flex align-items-center frequently-contacted">FREQUENTLY CONTACTED</div>
@@ -21,7 +20,7 @@ class DefaultHiddenLeftChat extends React.Component {
     let newGroup = (
       <div className="chat-1 w-100 py-2 d-flex rightSlider__userInfo__box pr-3">
         <div className="rightSlider__userInfo__image__padding py-1">
-          <img src={require("../../../assets/images/new-group.png")} alt="new-group" className="sender-user-image" />
+          <img src={require("../../../assets/images/new-group.png")} alt="new-group" className="logged__in__user__image__49px" />
         </div>
         <div className="remaining d-flex align-items-center">New Group</div>
       </div>

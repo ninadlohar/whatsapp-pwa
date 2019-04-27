@@ -49,11 +49,7 @@ body {
     width: 40px;
     border-radius: 50%;
   }
-  .sender-user-image {
-    height: 49px;
-    width: 49px;
-    border-radius: 50%;
-  }
+
   .leftSide__header {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -80,11 +76,11 @@ body {
     font-size: 16px;
     font-weight: normal;
   }
-  .input-box {
+  .input__box {
     background-color: $input-box-color;
     border: 2px solid $input-box-color;
   }
-  .leftSide__chat__section{
+  .leftSide__chat__section {
     position: relative;
     background-color: white;
   }
@@ -201,11 +197,7 @@ body {
     width: 40px;
     border-radius: 50%;
   }
-  .sender-user-image {
-    height: 49px;
-    width: 49px;
-    border-radius: 50%;
-  }
+
   .leftSide__header {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -233,7 +225,7 @@ body {
     font-weight: normal;
   }
 
-  .input-box {
+  .input__box {
     background-color: $input-box-color;
     border: 1px solid $input-box-color;
   }
@@ -446,7 +438,6 @@ body {
     padding-right: 0px !important;
     border-radius: 0px !important;
     border-bottom: 2px solid #00bfa5;
-    // color: $search-input-box-text-color;
   }
   .no-archieved-chats {
     color: #929fa6;
@@ -529,7 +520,7 @@ body {
   .rightSide__header__with__icons {
     width: 160px;
   }
-  .rightSide__header__without__icons{
+  .rightSide__header__without__icons {
     width: calc(100% - 160px);
   }
   .rightSide__chat__sender__message {
@@ -619,7 +610,7 @@ body {
     height: 108px;
     background-color: $new-chat-active-color;
   }
-  .search-input-box {
+  .search__input__box {
     border: transparent !important;
     font-size: 14px !important;
     font-weight: 100 !important;
@@ -649,8 +640,8 @@ body {
     border-color: transparent !important;
     box-shadow: none !important;
   }
-  .search-input-box:focus,
-  .search-input-box:focus-within {
+  .search__input__box:focus,
+  .search__input__box:focus-within {
     box-shadow: none !important;
     border-color: transparent !important;
   }
@@ -661,7 +652,7 @@ body {
     width: 8px;
     background: $scrollbar-color;
   }
-  .input-search-icon {
+  .input__search__icon {
     font-size: 15px;
     padding-top: 8px;
   }
@@ -672,7 +663,7 @@ body {
     position: absolute;
     transition: all 0.3s;
   }
-  .input-arrow {
+  .input__box__blue__arrow {
     font-size: 20px;
     color: dodgerblue;
     transform: rotate(90deg);
@@ -1000,7 +991,7 @@ body {
   .rightSide__header__with__icons {
     width: 160px;
   }
-  .rightSide__header__without__icons{
+  .rightSide__header__without__icons {
     width: calc(100% - 160px);
   }
   .time-and-tick {
@@ -1123,7 +1114,7 @@ body {
     height: 108px;
     background-color: $new-chat-active-color;
   }
-  .search-input-box {
+  .search__input__box {
     border: transparent !important;
     font-size: 14px !important;
     font-weight: 100 !important;
@@ -1162,8 +1153,8 @@ body {
     border-color: transparent !important;
     box-shadow: none !important;
   }
-  .search-input-box:focus,
-  .search-input-box:focus-within {
+  .search__input__box:focus,
+  .search__input__box:focus-within {
     box-shadow: none !important;
     border-color: transparent !important;
   }
@@ -1175,7 +1166,7 @@ body {
     background: $scrollbar-color;
   }
 
-  .input-search-icon {
+  .input__search__icon {
     font-size: 15px;
     padding-top: 8px;
   }
@@ -1185,7 +1176,7 @@ body {
   .main-left-arrow {
     position: absolute;
   }
-  .input-arrow {
+  .input__box__blue__arrow {
     font-size: 20px;
     color: dodgerblue;
     transform: rotate(90deg);

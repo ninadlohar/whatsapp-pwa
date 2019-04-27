@@ -34,11 +34,9 @@ class HiddenComponentLeftSide extends React.Component {
   };
 
   render() {
-    let appendClasses = this.props.setLeftHiddenComponentVisible
+    let classes = this.props.squeezeLayoutBoolean
       ? this.state.baseClasses.concat(this.state.hiddenLeftClass).join(" ")
       : this.state.baseClasses.join(" ");
-
-    let classes = this.props.squeezeLayoutBoolean ? appendClasses : this.state.baseClasses.join(" ");
 
     let makeNewGroup = <NewGroup classes={classes} toggleHandlerOut={this.toggleHandlerOut} />;
     let profile = <Profile classes={classes} toggleHandlerOut={this.toggleHandlerOut} />;
