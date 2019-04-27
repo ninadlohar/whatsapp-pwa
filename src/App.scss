@@ -489,12 +489,12 @@ body {
     font-size: 15px;
     color: $green-box-color;
   }
-  .newSearchInputBox {
+  .newGroup__input__section {
     padding-left: 34px !important;
     padding-bottom: 12px;
     padding-top: 26px;
   }
-  .searchInputBoxCustomized {
+  .newGroup__input__box {
     border: transparent !important;
     font-size: 14px !important;
     font-weight: 100 !important;
@@ -505,8 +505,8 @@ body {
     border-radius: 0px !important;
     color: $search-input-box-text-color;
   }
-  .searchInputBoxCustomized:focus,
-  .searchInputBoxCustomized:focus-within {
+  .newGroup__input__box:focus,
+  .newGroup__input__box:focus-within {
     border-color: transparent !important;
     box-shadow: none !important;
     border-bottom: 1px solid #d7d7d7 !important;
@@ -719,15 +719,15 @@ body {
 }
 
 @media (min-width: 768px) {
-  .profile_width_45_static {
+  .profile__input__icons__section {
     width: 70px;
   }
-  .profile_chracters_left {
+  .profile__input__characters__left {
     font-size: 14px;
     color: #bbbbbb;
     padding-top: 2px;
   }
-  .profile_width_input_static {
+  .profile__input__box {
     width: calc(100% - 70px);
   }
   .simple__edit__pencil {
@@ -960,18 +960,18 @@ body {
     font-size: 15px;
     color: $green-box-color;
   }
-  .newSearchInputBox {
+  .newGroup__input__section {
     padding-left: 34px !important;
     padding-bottom: 12px;
     padding-top: 26px;
   }
-  .searchInputBoxCustomized:focus,
-  .searchInputBoxCustomized:focus-within {
+  .newGroup__input__box:focus,
+  .newGroup__input__box:focus-within {
     border-color: transparent !important;
     box-shadow: none !important;
     border-bottom: 1px solid #d7d7d7 !important;
   }
-  .searchInputBoxCustomized {
+  .newGroup__input__box {
     border: transparent !important;
     font-size: 14px !important;
     font-weight: 100 !important;

@@ -50,13 +50,13 @@ class SearchInputBox extends React.Component {
         </div>
       </div>
     );
-    let newSearch = (
-      <div className="col-12 px-0 newSearchInputBox">
+    let typeContactNameInput = (
+      <div className="col-12 px-0 newGroup__input__section">
         <Input
           placeholder="Type Contact Name"
           onChangeHandler={this.searchUsersFn}
           value={this.state.value}
-          classes="searchInputBoxCustomized"
+          classes="newGroup__input__box"
           type="text"
         />
       </div>
@@ -64,11 +64,11 @@ class SearchInputBox extends React.Component {
     let simpleInputForProfile__Name = (
       <div className="col-12 px-0">
         <div className="row mx-0">
-          <div className="profile_width_input_static">
+          <div className="profile__input__box">
             <Input placeholder="Type Contact Name" value="Niko" classes="simple__edit__pencil" type="text" />
           </div>
-          <div className="profile_width_45_static d-flex justify-content-between pt-1">
-            <div className="profile_chracters_left">20</div>
+          <div className="profile__input__icons__section d-flex justify-content-between pt-1">
+            <div className="profile__input__characters__left">20</div>
             <div className="">
               <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
             </div>
@@ -82,10 +82,10 @@ class SearchInputBox extends React.Component {
     let simpleInputForProfile__About = (
       <div className="col-12 px-0">
         <div className="row mx-0">
-          <div className="profile_width_input_static">
+          <div className="profile__input__box">
             <Input placeholder="Type Contact Name" value="Niko" classes="simple__edit__pencil" type="text" />
           </div>
-          <div className="profile_width_45_static d-flex justify-content-end pt-1">
+          <div className="profile__input__icons__section d-flex justify-content-end pt-1">
             <div className="mr-2">
               <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
             </div>
@@ -100,11 +100,11 @@ class SearchInputBox extends React.Component {
     let simpleInputForGroupInfo__Name = (
       <div className="col-12 px-0">
         <div className="row mx-0">
-          <div className="profile_width_input_static">
+          <div className="profile__input__box ">
             <Input placeholder="Type Contact Name" value="Niko" classes="simple__edit__pencil" type="text" />
           </div>
-          <div className="profile_width_45_static d-flex justify-content-between pt-1">
-            <div className="profile_chracters_left">20</div>
+          <div className="profile__input__icons__section d-flex justify-content-between pt-1">
+            <div className="profile__input__characters__left">20</div>
             <div className="">
               <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
             </div>
@@ -119,10 +119,10 @@ class SearchInputBox extends React.Component {
     let simpleInputForGroupInfo__Description = (
       <div className="col-12 px-0">
         <div className="row mx-0">
-          <div className="profile_width_input_static">
+          <div className="profile__input__box ">
             <Input placeholder="Type Contact Name" value="Niko" classes="simple__edit__pencil" type="text" />
           </div>
-          <div className="profile_width_45_static d-flex justify-content-end pt-1">
+          <div className="profile__input__icons__section d-flex justify-content-end pt-1">
             <div className="mr-2">
               <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
             </div>
@@ -140,7 +140,7 @@ class SearchInputBox extends React.Component {
         searchBox = casualSearchBox;
         break;
       case "searchBoxWithLine":
-        searchBox = newSearch;
+        searchBox = typeContactNameInput;
         break;
       case "simpleInputForProfile__Name":
         searchBox = simpleInputForProfile__Name;
