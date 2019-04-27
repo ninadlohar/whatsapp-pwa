@@ -15,8 +15,7 @@ class RightSide extends React.Component {
     let rightSide = document.getElementById("col-xl-6-5");
 
     this.setState({ squeezeLayoutBoolean: true }, () => {
-      this.props.setHiddenComponentTrue();
-      this.props.setSearchComponentTrueFn();
+      this.props.squeezeBooleanTrue();
       leftSide.classList.add("DOMChangedLeftSide_P-1301", "DOMChangedLeftSide");
       rightSide.classList.add("DOMChangedRightSide_P-1301", "DOMChangedRightSide");
     });
@@ -79,8 +78,8 @@ class RightSide extends React.Component {
                         classes="fas fa-ellipsis-v"
                         click={this.slideInToggler}
                         squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
-                        setTrue={this.props.setHiddenComponentTrue}
-                        setDropdownTrueFn={this.props.setDropdownTrueFn}
+                        setTrue={this.props.squeezeBooleanTrue}
+                        setSearchComponentFalseFn={this.props.setSearchComponentFalseFn}
                       />
                     </div>
                   </div>

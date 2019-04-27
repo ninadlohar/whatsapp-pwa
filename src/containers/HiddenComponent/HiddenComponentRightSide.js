@@ -22,7 +22,7 @@ class HiddenComponentRightSide extends React.Component {
     let rightSide = document.getElementById("col-xl-6-5");
     let leftSide = document.getElementById("col-xl-3-5");
     this.setState({ squeezeLayoutBoolean: false }, () => {
-      this.props.setHiddenComponentFalse();
+      this.props.squeezeBooleanFalse();
       leftSide.classList.remove("DOMChangedLeftSide", "DOMChangedLeftSide_P-1301");
       rightSide.classList.remove("DOMChangedRightSide", "DOMChangedRightSide_P-1301");
     });
@@ -103,7 +103,11 @@ class HiddenComponentRightSide extends React.Component {
           {/** start sub components -> boxes */}
           <div className="rightSlider__basicInfo__section">
             <div className="d-flex justify-content-center">
-              <img src={require("../../assets/images/user-image.jpg")} alt="sender-images" className="rightSlider__sender__basicInfo__image" />
+              <img
+                src={require("../../assets/images/user-image.jpg")}
+                alt="sender-images"
+                className="rightSlider__sender__basicInfo__image"
+              />
             </div>
             <div>
               {this.state.isEditingName ? (
@@ -111,8 +115,8 @@ class HiddenComponentRightSide extends React.Component {
                   <SearchInputBox searchBoxType="simpleInputForGroupInfo__Name" isEditingNameGroupFn={this.isEditingNameGroupFn} />
                 </div>
               ) : (
-                  editName
-                )}
+                editName
+              )}
               <div className="rightSlider__sender__lastSeenDate">last seen today at 12:36pm</div>
             </div>
           </div>
@@ -124,8 +128,8 @@ class HiddenComponentRightSide extends React.Component {
                 <SearchInputBox searchBoxType="simpleInputForGroupInfo__Description" isEditingDescriptionFn={this.isEditingDescriptionFn} />
               </div>
             ) : (
-                editDescription
-              )}
+              editDescription
+            )}
           </div>
           <div className="rightSlider__media__links__section">
             <div className="d-flex">

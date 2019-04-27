@@ -56,7 +56,7 @@ class DropDown extends React.Component {
     let rightSide = document.getElementById("col-xl-6-5");
     this.setState({ squeezeLayoutBoolean: true }, () => {
       this.props.setTrue();
-      this.props.setDropdownTrueFn();
+      this.props.setSearchComponentFalseFn();
       leftSide.classList.add("DOMChangedLeftSide", "DOMChangedLeftSide_P-1301");
       rightSide.classList.add("DOMChangedRightSide", "DOMChangedRightSide_P-1301");
       console.log("dropdown called");
