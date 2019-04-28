@@ -19,16 +19,24 @@ class RightSide extends React.Component {
       leftSide.classList.add("DOMChangedLeftSide_P-1301", "DOMChangedLeftSide");
       rightSide.classList.add("DOMChangedRightSide_P-1301", "DOMChangedRightSide");
     });
-  };
+
+    if (this.state.squeezeLayoutBoolean === false) {
+      let cw = document.getElementById("page").clientWidth;
+      if (cw < 1025) {
+        document.getElementById("col-xl-6-5").style.display = "none";
+        document.getElementById("DOMChangedHiddenSide").style.width = "70%";
+      }
+    }
+  }
 
   componentDidMount() {
-    var height = document.getElementById("page").clientHeight; // 100
-    var footer = document.getElementById("footer").clientHeight; // 62px
-    var headheight = document.getElementById("right__header").clientHeight; // 60px
+    var height = document.getElementById("page").clientHeight;
+    var footer = document.getElementById("footer").clientHeight;
+    var headheight = document.getElementById("right__header").clientHeight;
     var content = document.getElementById("message1List");
 
-    var step1 = height - headheight; // 100 - 10
-    var availableheight = step1 - footer; // 90 - 10
+    var step1 = height - headheight;
+    var availableheight = step1 - footer;
     content.style.height = availableheight - 40 + "px";
     content.style.overflow = "scroll";
   }

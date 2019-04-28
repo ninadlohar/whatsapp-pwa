@@ -1,8 +1,17 @@
+@media (min-width: 200) and (min-width: 1024.9px) {
+  // .DOMChangedHiddenSide {
+  //   transition: 0.3s all;
+  //   width: 70%;
+  //   transform: translate(0%,0);
+  // }
+}
+
 .DOMChangedHiddenSide {
   width: 30%;
   transition: 0.3s all !important;
   background-color: white;
   position: relative;
+  transform: translate(0%,0);
 }
 
 .rightSlider__child__open {
