@@ -18,32 +18,6 @@ class HiddenComponentRightSide extends React.Component {
     this.setState({ isEditingDescription: !this.state.isEditingDescription });
   };
 
-  slideOutToggler = () => {
-    let rightSide = document.getElementById("col-xl-6-5");
-    let leftSide = document.getElementById("col-xl-3-5");
-    let hiddenRightC = document.getElementById("DOMChangedHiddenSide");
-    this.props.closeDrawer()
-    this.setState({ squeezeLayoutBoolean: false }, () => {
-      leftSide.classList.remove("DOMChangedLeftSide", "DOMChangedLeftSide_P-1301");
-      rightSide.classList.remove("DOMChangedRightSide", "DOMChangedRightSide_P-1301");
-      hiddenRightC.classList.remove("DOMChangedHiddenSide");
-    });
-    // if (document.getElementById("col-xl-6-5").clientWidth <= 0) {
-    //   document.getElementById("DOMChangedHiddenSide").style.width = "0%";
-    //   document.getElementById("col-xl-6-5").style.width = "70%";
-    // }
-
-    // if (
-    //   window.addEventListener("resize", function(e) {
-    //     if (document.getElementById("page").clientWidth > 1024) {
-    //       console.log(e);
-    //       document.getElementById("DOMChangedHiddenSide").style.width = "30%";
-    //     }
-    //   })
-    // ) {
-    // }
-  };
-
   slideInToggler = () => {
     let leftSide = document.getElementById("col-xl-3-5");
     let rightSide = document.getElementById("col-xl-6-5");
@@ -53,10 +27,29 @@ class HiddenComponentRightSide extends React.Component {
       rightSide.classList.add("DOMChangedRightSide_P-1301", "DOMChangedRightSide");
       hiddenRightC.classList.add("DOMChangedHiddenSide");
     });
-    // if (document.getElementById("page").clientWidth < 1025) {
-    //   document.getElementById("col-xl-6-5").style.width = "0%";
-    //   document.getElementById("DOMChangedHiddenSide").style.width = "70%";
-    // }
+    if (document.getElementById("page").clientWidth < 1024.9 && this.state.squeezeLayoutBoolean === false) {
+      this.setState({ squeezeLayoutBoolean: true })
+      document.getElementById("col-xl-6-5").style.width = "0%";
+      document.getElementById("DOMChangedHiddenSide").style.width = "70%";
+    }
+  };
+
+  slideOutToggler = () => {
+    let rightSide = document.getElementById("col-xl-6-5");
+    let leftSide = document.getElementById("col-xl-3-5");
+    let hiddenRightC = document.getElementById("DOMChangedHiddenSide");
+    let page = document.getElementById("page");
+    this.props.closeDrawer()
+    this.setState({ squeezeLayoutBoolean: false }, () => {
+      leftSide.classList.remove("DOMChangedLeftSide", "DOMChangedLeftSide_P-1301");
+      rightSide.classList.remove("DOMChangedRightSide", "DOMChangedRightSide_P-1301");
+      hiddenRightC.classList.remove("DOMChangedHiddenSide");
+    });
+    if ((page.clientWidth > 768 && page.clientWidth < 1024.9) && this.state.squeezeLayoutBoolean === true) {
+      this.setState({ squeezeLayoutBoolean: false })
+      document.getElementById("col-xl-6-5").style.width = "70%";
+      document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+    }
   };
 
   componentDidMount() {

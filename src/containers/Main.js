@@ -58,10 +58,9 @@ class Main extends React.Component {
   };
 
   setRightSliderScreen = screen1 => {
-    this.openDrawer()
+    this.openDrawer();
     this.setState({ currentScreen1: screen1 }, () => {
       this.RightDrawer.slideInToggler();
-
     });
   };
 
@@ -100,7 +99,6 @@ class Main extends React.Component {
                   onRef1={ref1 => (this.RightDrawer = ref1)}
                   squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
                   hiddenClass={this.state.hiddenClass}
-
                   closeDrawer={this.closeDrawer}
                   searchComponent={this.state.searchComponent}
                   isTextAStatus={this.state.isTextAStatus}
