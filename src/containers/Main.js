@@ -39,17 +39,17 @@ class Main extends React.Component {
   };
   /** 3 types of user chats end */
 
-  squeezeBooleanTrue = () => {
-    this.setState({ squeezeLayoutBoolean: true });
-  };
+  // squeezeBooleanTrue = () => {
+  //   this.setState({ squeezeLayoutBoolean: true });
+  // };
 
-  squeezeBooleanFalse = () => {
-    this.setState({ squeezeLayoutBoolean: false });
-  };
+  // squeezeBooleanFalse = () => {
+  //   this.setState({ squeezeLayoutBoolean: false });
+  // };
 
-  setSearchComponentFalseFn = () => {
-    this.setState({ searchComponent: false });
-  };
+  // setSearchComponentFalseFn = () => {
+  //   this.setState({ searchComponent: false });
+  // };
 
   isTextAStatusFn = () => {
     this.setState({ isTextAStatus: false });
@@ -69,6 +69,12 @@ class Main extends React.Component {
     });
   };
 
+  setRightSliderScreen = screen1 => {
+    this.setState({ currentScreen1: screen1 }, () => {
+      this.RightDrawer.slideInToggler();
+    });
+  };
+
   render() {
     return (
       <div className="col-12 px-0">
@@ -84,8 +90,8 @@ class Main extends React.Component {
                   onRef={ref => (this.LeftDrawer = ref)}
                   setLeftHiddenComponentVisible={this.state.setLeftHiddenComponentVisible}
                   squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
-                  squeezeBooleanTrue={this.squeezeBooleanTrue}
-                  squeezeBooleanFalse={this.squeezeBooleanFalse}
+                  // squeezeBooleanTrue={this.squeezeBooleanTrue}
+                  // squeezeBooleanFalse={this.squeezeBooleanFalse}
                   currentScreen={this.state.currentScreen}
                 />
 
@@ -104,22 +110,23 @@ class Main extends React.Component {
                   rightDropdown={this.state.rightDropdown}
                   addClassesRightSide={this.state.addClassesRightSide}
                   squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
-                  squeezeBooleanTrue={this.squeezeBooleanTrue}
-                  setSearchComponentFalseFn={this.setSearchComponentFalseFn}
+                  setRightSliderScreen={this.setRightSliderScreen}
+                  // squeezeBooleanTrue={this.squeezeBooleanTrue}
+                  // setSearchComponentFalseFn={this.setSearchComponentFalseFn}
                 />
-                {/* {this.state.squeezeLayoutBoolean ? ( */}
                 <HiddenComponentRightSide
+                  onRef1={ref1 => (this.RightDrawer = ref1)}
                   squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
                   hiddenClass={this.state.hiddenClass}
-                  squeezeBooleanTrue={this.squeezeBooleanTrue}
-                  squeezeBooleanFalse={this.squeezeBooleanFalse}
+                  // squeezeBooleanTrue={this.squeezeBooleanTrue}
+                  // squeezeBooleanFalse={this.squeezeBooleanFalse}
                   searchComponent={this.state.searchComponent}
                   isTextAStatus={this.state.isTextAStatus}
                   isTextAStatusFn={this.isTextAStatusFn}
                   isChatWithStatusAndAdmin={this.state.isChatWithStatusAndAdmin}
                   isChatWithStatusAndAdminFn={this.isChatWithStatusAndAdminFn}
+                  currentScreen1={this.state.currentScreen1}
                 />
-                {/* ) : null} */}
               </div>
             </div>
           </div>

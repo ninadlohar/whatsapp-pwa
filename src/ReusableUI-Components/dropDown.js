@@ -55,8 +55,8 @@ class DropDown extends React.Component {
     let leftSide = document.getElementById("col-xl-3-5");
     let rightSide = document.getElementById("col-xl-6-5");
     this.setState({ squeezeLayoutBoolean: true }, () => {
-      this.props.setTrue();
-      this.props.setSearchComponentFalseFn();
+      // this.props.setTrue();
+      // this.props.setSearchComponentFalseFn();
       leftSide.classList.add("DOMChangedLeftSide", "DOMChangedLeftSide_P-1301");
       rightSide.classList.add("DOMChangedRightSide", "DOMChangedRightSide_P-1301");
       console.log("dropdown called");
@@ -86,7 +86,7 @@ class DropDown extends React.Component {
     );
     let rightMenu = (
       <div className="right-dropdown">
-        <div className="px-4 py-2" onClick={this.slideInToggler}>
+        <div className="px-4 py-2" onClick={() => this.props.handleMenuClick1("CONTACT")}>
           Contact Info
         </div>
         <div className="px-4 py-2" onClick={this.selectMessages}>
