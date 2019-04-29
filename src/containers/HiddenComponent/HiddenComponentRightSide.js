@@ -22,8 +22,8 @@ class HiddenComponentRightSide extends React.Component {
     let rightSide = document.getElementById("col-xl-6-5");
     let leftSide = document.getElementById("col-xl-3-5");
     let hiddenRightC = document.getElementById("DOMChangedHiddenSide");
+
     this.setState({ squeezeLayoutBoolean: false }, () => {
-      // this.props.squeezeBooleanFalse();
       leftSide.classList.remove("DOMChangedLeftSide", "DOMChangedLeftSide_P-1301");
       rightSide.classList.remove("DOMChangedRightSide", "DOMChangedRightSide_P-1301");
       hiddenRightC.classList.remove("DOMChangedHiddenSide");

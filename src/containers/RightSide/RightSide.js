@@ -31,15 +31,16 @@ class RightSide extends React.Component {
   };
 
   componentDidMount() {
-    var height = document.getElementById("page").clientHeight;
-    var footer = document.getElementById("footer").clientHeight;
-    var headheight = document.getElementById("right__header").clientHeight;
-    var content = document.getElementById("message1List");
-
-    var step1 = height - headheight;
-    var availableheight = step1 - footer;
-    content.style.height = availableheight - 40 + "px";
-    content.style.overflow = "scroll";
+    window.addEventListener("resize", function(e) {
+      var height = document.getElementById("page").clientHeight;
+      var headerheight = document.getElementById("right__header").clientHeight;
+      var footer = document.getElementById("footer").clientHeight;
+      var content = document.getElementById("message1List");
+      var step1 = height - headerheight;
+      var availableheight = step1 - footer;
+      content.style.height = availableheight - 40 + "px";
+      content.style.overflow = "scroll";
+    });
   }
 
   render() {

@@ -12,6 +12,19 @@ class Profile extends React.Component {
   isEditingAboutFn = () => {
     this.setState({ isEditingAbout: !this.state.isEditingAbout });
   };
+
+  componentDidMount() {
+    window.addEventListener("resize", function() {
+      var height = document.getElementById("page").clientHeight;
+      var header = document.getElementById("leftSlider__header__green_box").clientHeight;
+      var content = document.getElementById("profile__section");
+      var step1 = height - header;
+      var availableheight = step1;
+      content.style.height = availableheight + "px";
+      content.style.overflow = "scroll";
+    });
+  }
+
   render() {
     let editName = (
       <div className="d-flex">
@@ -43,8 +56,8 @@ class Profile extends React.Component {
     );
     return (
       <div className={this.props.classes} id="leftSlider__chatActiveBox">
-        <header className="col-12 px-0">
-          <div className="leftSlider__header__green_box">
+        <header className="col-12 px-0" id="profile_header">
+          <div className="leftSlider__header__green_box" id="leftSlider__header__green_box">
             <div className="row mx-0">
               <div className="col-12 px-0 d-flex custom__59height align-items-center">
                 <span className="leftSlider__back__arrow" onClick={this.props.toggleHandlerOut}>
@@ -58,7 +71,7 @@ class Profile extends React.Component {
 
         <section className="col-12 px-0 leftSide__chat__section">
           <div className="row mx-0">
-            <div className="col-12 px-0 leftSide__log__of__chats profile_section">
+            <div className="col-12 px-0 leftSide__log__of__chats profile_section" id="profile__section">
               <div className="row mx-0">
                 <div className="leftDrawer_Profile_ImageSection w-100 d-flex justify-content-center">
                   <img

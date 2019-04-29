@@ -19,15 +19,16 @@ class LeftSide extends React.Component {
     this.setState({ isChatARegularMessage: true });
     this.props.isChatARegularMessageFn();
 
-    var height = document.getElementById("page").clientHeight;
-    var inputBox = document.getElementById("input-box").clientHeight;
-    var headheight = document.getElementById("head").clientHeight;
-    var content = document.getElementById("content");
-
-    var step1 = height - headheight;
-    var availableheight = step1 - inputBox;
-    content.style.height = availableheight + "px";
-    content.style.overflow = "scroll";
+    window.addEventListener("resize", function(e) {
+      var height = document.getElementById("page").clientHeight;
+      var inputBox = document.getElementById("input-box").clientHeight;
+      var headheight = document.getElementById("head").clientHeight;
+      var content = document.getElementById("content");
+      var step1 = height - headheight;
+      var availableheight = step1 - inputBox;
+      content.style.height = availableheight + "px";
+      content.style.overflow = "scroll";
+    });
   }
 
   toggleHandlerIn() {
@@ -41,7 +42,6 @@ class LeftSide extends React.Component {
   handleMenuClick = screen => {
     this.props.setLeftSliderScreen(screen);
   };
-
 
   render() {
     /** newChat component is too reusable */

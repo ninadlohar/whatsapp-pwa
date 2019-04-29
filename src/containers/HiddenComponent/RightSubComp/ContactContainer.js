@@ -11,6 +11,19 @@ class ContactContainer extends React.Component {
     isChatWithStatusAndAdmin: this.props.isChatWithStatusAndAdmin
   };
 
+  componentDidMount() {
+    window.addEventListener("resize", function() {
+      var height = document.getElementById("page").clientHeight;
+      var header = document.getElementById("rightSlider__header").clientHeight;
+      var content = document.getElementById("rightSlider__contactInfo__child");
+      var step1 = height - header;
+      var availableheight = step1;
+      console.log(availableheight);
+      // content.style.height = availableheight + "px";
+      // content.style.overflow = "scroll";
+    });
+  }
+
   isEditingNameGroupFn = () => {
     this.setState({ isEditingName: !this.state.isEditingName });
   };
@@ -68,7 +81,7 @@ class ContactContainer extends React.Component {
     return (
       // <div className={this.props.squeezeLayoutBoolean ? this.props.hiddenClass.join(" ") : null} id="DOMChangedHiddenSide">
       <div className="rightSlider__child__open col-12 px-0" id="col-30-child">
-        <header className="rightSlider__header d-flex">
+        <header className="rightSlider__header d-flex" id="rightSlider__header">
           <div style={{ width: "54px" }} onClick={this.props.slideOutToggler}>
             <img src={require("../../../assets/svg/cancel-real.svg")} alt="cancel" height="14" />
           </div>
@@ -77,7 +90,7 @@ class ContactContainer extends React.Component {
           </div>
         </header>
 
-        <div className="rightSlider__contactInfo__parent">
+        <div className="rightSlider__contactInfo__parent" id="rightSlider__contactInfo__child">
           <div className="rightSlider__contactInfo__child">
             {/** start sub components -> boxes */}
             <div className="rightSlider__basicInfo__section">

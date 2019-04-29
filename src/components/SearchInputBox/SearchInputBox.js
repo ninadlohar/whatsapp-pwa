@@ -51,7 +51,7 @@ class SearchInputBox extends React.Component {
       </div>
     );
     let typeContactNameInput = (
-      <div className="col-12 px-0 newGroup__input__section">
+      <div className="col-12 px-0 newGroup__input__section" id="newGroup__input__section">
         <Input
           placeholder="Type Contact Name"
           onChangeHandler={this.searchUsersFn}
