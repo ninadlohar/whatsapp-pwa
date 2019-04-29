@@ -22,26 +22,26 @@ class HiddenComponentRightSide extends React.Component {
     let rightSide = document.getElementById("col-xl-6-5");
     let leftSide = document.getElementById("col-xl-3-5");
     let hiddenRightC = document.getElementById("DOMChangedHiddenSide");
-
+    this.props.closeDrawer()
     this.setState({ squeezeLayoutBoolean: false }, () => {
       leftSide.classList.remove("DOMChangedLeftSide", "DOMChangedLeftSide_P-1301");
       rightSide.classList.remove("DOMChangedRightSide", "DOMChangedRightSide_P-1301");
       hiddenRightC.classList.remove("DOMChangedHiddenSide");
     });
-    if (document.getElementById("col-xl-6-5").clientWidth <= 0) {
-      document.getElementById("DOMChangedHiddenSide").style.width = "0%";
-      document.getElementById("col-xl-6-5").style.width = "70%";
-    }
+    // if (document.getElementById("col-xl-6-5").clientWidth <= 0) {
+    //   document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+    //   document.getElementById("col-xl-6-5").style.width = "70%";
+    // }
 
-    if (
-      window.addEventListener("resize", function(e) {
-        if (document.getElementById("page").clientWidth > 1024) {
-          console.log(e);
-          document.getElementById("DOMChangedHiddenSide").style.width = "30%";
-        }
-      })
-    ) {
-    }
+    // if (
+    //   window.addEventListener("resize", function(e) {
+    //     if (document.getElementById("page").clientWidth > 1024) {
+    //       console.log(e);
+    //       document.getElementById("DOMChangedHiddenSide").style.width = "30%";
+    //     }
+    //   })
+    // ) {
+    // }
   };
 
   slideInToggler = () => {
@@ -49,15 +49,14 @@ class HiddenComponentRightSide extends React.Component {
     let rightSide = document.getElementById("col-xl-6-5");
     let hiddenRightC = document.getElementById("DOMChangedHiddenSide");
     this.setState({ squeezeLayoutBoolean: true }, () => {
-      // this.props.squeezeBooleanTrue();
       leftSide.classList.add("DOMChangedLeftSide_P-1301", "DOMChangedLeftSide");
       rightSide.classList.add("DOMChangedRightSide_P-1301", "DOMChangedRightSide");
       hiddenRightC.classList.add("DOMChangedHiddenSide");
     });
-    if (document.getElementById("page").clientWidth < 1025) {
-      document.getElementById("col-xl-6-5").style.width = "0%";
-      document.getElementById("DOMChangedHiddenSide").style.width = "70%";
-    }
+    // if (document.getElementById("page").clientWidth < 1025) {
+    //   document.getElementById("col-xl-6-5").style.width = "0%";
+    //   document.getElementById("DOMChangedHiddenSide").style.width = "70%";
+    // }
   };
 
   componentDidMount() {

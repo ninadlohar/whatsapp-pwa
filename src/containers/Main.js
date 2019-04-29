@@ -19,15 +19,12 @@ class Main extends React.Component {
       isChatARegularMessage: false,
       isChatWithStatus: false,
 
-      setLeftHiddenComponentVisible: false,
-
       hiddenClass: ["DOMChangedHiddenSide"],
       addClassesLeftSide: ["DOMChangedLeftSide_P-1301", "DOMChangedLeftSide"],
       addClassesRightSide: ["DOMChangedRightSide_P-1301", "DOMChangedRightSide"]
     };
   }
 
-  /** 3 types of user chats start */
   isChatWithStatusAndAdminFn = () => {
     this.setState({ isChatWithStatusAndAdmin: true });
   };
@@ -37,19 +34,6 @@ class Main extends React.Component {
   isChatWithStatusFn = () => {
     this.setState({ isChatWithStatus: true });
   };
-  /** 3 types of user chats end */
-
-  // squeezeBooleanTrue = () => {
-  //   this.setState({ squeezeLayoutBoolean: true });
-  // };
-
-  // squeezeBooleanFalse = () => {
-  //   this.setState({ squeezeLayoutBoolean: false });
-  // };
-
-  // setSearchComponentFalseFn = () => {
-  //   this.setState({ searchComponent: false });
-  // };
 
   isTextAStatusFn = () => {
     this.setState({ isTextAStatus: false });
@@ -59,9 +43,13 @@ class Main extends React.Component {
     this.setState({ isTextAStatus: true });
   };
 
-  setLeftHiddenComponentVisibleFn = () => {
-    this.setState({ setLeftHiddenComponentVisible: true });
-  };
+  openDrawer = () => {
+    this.setState({ squeezeLayoutBoolean: true })
+  }
+
+  closeDrawer = () => {
+    this.setState({ squeezeLayoutBoolean: false })
+  }
 
   setLeftSliderScreen = screen => {
     this.setState({ currentScreen: screen }, () => {
@@ -70,28 +58,25 @@ class Main extends React.Component {
   };
 
   setRightSliderScreen = screen1 => {
+    this.openDrawer()
     this.setState({ currentScreen1: screen1 }, () => {
       this.RightDrawer.slideInToggler();
+
     });
   };
 
   render() {
+    console.log(this.state.squeezeLayoutBoolean)
     return (
       <div className="col-12 px-0">
         <div className="green-box">
           <div className="row mx-0 bgColor">
             <div className="display-content-area d-flex" id="page">
               <div className="display-content-area-child">
-                {/** d-flex enables flexbox -> 2 parts of screen */}
-                {/** divide screen into two parts -> chat-people and chat logs */}
 
-                {/* {this.state.setLeftHiddenComponentVisible ? ( */}
                 <HiddenComponentLeftSide
                   onRef={ref => (this.LeftDrawer = ref)}
-                  setLeftHiddenComponentVisible={this.state.setLeftHiddenComponentVisible}
                   squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
-                  // squeezeBooleanTrue={this.squeezeBooleanTrue}
-                  // squeezeBooleanFalse={this.squeezeBooleanFalse}
                   currentScreen={this.state.currentScreen}
                 />
 
@@ -103,7 +88,6 @@ class Main extends React.Component {
                   isTextAStatus={this.state.isTextAStatus}
                   isChatARegularMessage={this.state.isChatARegularMessage}
                   isChatARegularMessageFn={this.isChatARegularMessageFn}
-                  setLeftHiddenComponentVisible={this.state.setLeftHiddenComponentVisible}
                   setLeftSliderScreen={this.setLeftSliderScreen}
                 />
                 <RightSide
@@ -111,15 +95,13 @@ class Main extends React.Component {
                   addClassesRightSide={this.state.addClassesRightSide}
                   squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
                   setRightSliderScreen={this.setRightSliderScreen}
-                  // squeezeBooleanTrue={this.squeezeBooleanTrue}
-                  // setSearchComponentFalseFn={this.setSearchComponentFalseFn}
                 />
                 <HiddenComponentRightSide
                   onRef1={ref1 => (this.RightDrawer = ref1)}
                   squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
                   hiddenClass={this.state.hiddenClass}
-                  // squeezeBooleanTrue={this.squeezeBooleanTrue}
-                  // squeezeBooleanFalse={this.squeezeBooleanFalse}
+
+                  closeDrawer={this.closeDrawer}
                   searchComponent={this.state.searchComponent}
                   isTextAStatus={this.state.isTextAStatus}
                   isTextAStatusFn={this.isTextAStatusFn}

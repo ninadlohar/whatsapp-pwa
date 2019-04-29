@@ -13,20 +13,11 @@ class HiddenComponentLeftSide extends React.Component {
   };
 
   toggleHandlerIn() {
-    this.setState({ setLeftHiddenComponentVisible: true }, () => {
-      setTimeout(() => {
-        document.getElementById("leftSlider__chatActiveBox").style.transform = "translate(0%, 0)";
-      }, 100);
-    });
+    document.getElementById("leftSlider__chatActiveBox").style.transform = "translate(0%, 0)";
   }
 
   toggleHandlerOut = () => {
     document.getElementById("leftSlider__chatActiveBox").style.transform = "translate(-100%, 0)";
-    setTimeout(() => {
-      this.setState({
-        setLeftHiddenComponentVisible: false
-      });
-    }, 200);
   };
 
   componentDidMount = () => {
@@ -42,7 +33,6 @@ class HiddenComponentLeftSide extends React.Component {
     let profile = <Profile classes={classes} toggleHandlerOut={this.toggleHandlerOut} />;
     let display1 = (
       <DefaultHiddenLeftChat
-        setLeftHiddenComponentVisible={this.props.setLeftHiddenComponentVisible}
         squeezeLayoutBoolean={this.props.squeezeLayoutBoolean}
         toggleHandlerOut={this.toggleHandlerOut}
       />

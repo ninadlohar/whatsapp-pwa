@@ -7,7 +7,6 @@ class LeftSide extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      setLeftHiddenComponentVisible: this.props.setLeftHiddenComponentVisible,
       baseClasses: ["col-xl-3-5", "leftSide__chat__window__parent", "px-0"],
       squeezeLayoutBoolean: this.props.squeezeLayoutBoolean,
       isChatARegularMessage: this.props.isChatARegularMessage
@@ -19,7 +18,7 @@ class LeftSide extends React.Component {
     this.setState({ isChatARegularMessage: true });
     this.props.isChatARegularMessageFn();
 
-    window.addEventListener("resize", function(e) {
+    window.addEventListener("resize", function (e) {
       var height = document.getElementById("page").clientHeight;
       var inputBox = document.getElementById("input-box").clientHeight;
       var headheight = document.getElementById("head").clientHeight;
@@ -32,11 +31,7 @@ class LeftSide extends React.Component {
   }
 
   toggleHandlerIn() {
-    this.setState({ setLeftHiddenComponentVisible: true }, () => {
-      setTimeout(() => {
-        document.getElementById("leftSlider__chatActiveBox").style.transform = "translate(0%, 0)";
-      }, 100);
-    });
+    document.getElementById("leftSlider__chatActiveBox").style.transform = "translate(0%, 0)";
   }
 
   handleMenuClick = screen => {
