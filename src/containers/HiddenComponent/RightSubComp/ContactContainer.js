@@ -18,9 +18,8 @@ class ContactContainer extends React.Component {
       var content = document.getElementById("rightSlider__contactInfo__child");
       var step1 = height - header;
       var availableheight = step1;
-      console.log(availableheight);
-      // content.style.height = availableheight + "px";
-      // content.style.overflow = "scroll";
+      content.style.height = availableheight + "px";
+      content.style.overflow = "scroll";
     });
   }
 
