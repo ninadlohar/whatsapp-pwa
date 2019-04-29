@@ -18,6 +18,7 @@ class HiddenComponentRightSide extends React.Component {
     this.setState({ isEditingDescription: !this.state.isEditingDescription });
   };
 
+  /** moving towards 0 <- 1024 */
   slideInToggler = () => {
     let leftSide = document.getElementById("col-xl-3-5");
     let rightSide = document.getElementById("col-xl-6-5");
@@ -32,6 +33,13 @@ class HiddenComponentRightSide extends React.Component {
       document.getElementById("col-xl-6-5").style.width = "0%";
       document.getElementById("DOMChangedHiddenSide").style.width = "70%";
     }
+    /** screwing UI */
+    // window.addEventListener("resize", function () {
+    //   if (document.getElementById("page").clientWidth < 1025) {
+    //     document.getElementById("col-xl-6-5").style.width = "0%";
+    //     document.getElementById("DOMChangedHiddenSide").style.width = "70%";
+    //   }
+    // })
   };
 
   slideOutToggler = () => {
@@ -55,6 +63,14 @@ class HiddenComponentRightSide extends React.Component {
         document.getElementById("DOMChangedHiddenSide").style.width = "30% !important";
       })
     }
+    /** screwing UI */
+    // window.addEventListener("resize", function () {
+    //   if (this.state.squeezeLayoutBoolean === true && document.getElementById("page").clientWidth > 1024.9) {
+    //     this.setState({ squeezeLayoutBoolean: true })
+    //     document.getElementById("col-xl-6-5").style.width = "70%";
+    //     document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+    //   }
+    // })
   };
 
   componentDidMount() {
