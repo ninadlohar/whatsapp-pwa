@@ -19,15 +19,11 @@ class RightSide extends React.Component {
       leftSide.classList.add("DOMChangedLeftSide_P-1301", "DOMChangedLeftSide");
       rightSide.classList.add("DOMChangedRightSide_P-1301", "DOMChangedRightSide");
     });
-
-    if (this.state.squeezeLayoutBoolean === false) {
-      let cw = document.getElementById("page").clientWidth;
-      if (cw < 1025) {
-        document.getElementById("col-xl-6-5").style.display = "none";
-        document.getElementById("DOMChangedHiddenSide").style.width = "70%";
-      }
+    if (document.getElementById("page").clientWidth < 1025) {
+      document.getElementById("col-xl-6-5").style.width = "0%";
+      document.getElementById("DOMChangedHiddenSide").style.width = "70%";
     }
-  }
+  };
 
   componentDidMount() {
     var height = document.getElementById("page").clientHeight;

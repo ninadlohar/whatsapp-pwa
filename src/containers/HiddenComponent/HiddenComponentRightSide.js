@@ -26,13 +26,25 @@ class HiddenComponentRightSide extends React.Component {
       leftSide.classList.remove("DOMChangedLeftSide", "DOMChangedLeftSide_P-1301");
       rightSide.classList.remove("DOMChangedRightSide", "DOMChangedRightSide_P-1301");
     });
-
-    if (this.state.squeezeLayoutBoolean === false) {
-      let cw = document.getElementById("page").clientWidth;
-      if (cw < 1025) {
-        document.getElementById("col-xl-6-5").style.display = "block";
-        document.getElementById("DOMChangedHiddenSide").style.width = "0%";
-      }
+    if (document.getElementById("col-xl-6-5").clientWidth <= 0) {
+      document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+      document.getElementById("col-xl-6-5").style.width = "70%";
+    }
+    // if (this.state.squeezeLayoutBoolean === false) {
+    //   let cw = document.getElementById("page").clientWidth;
+    //   if (cw < 1025) {
+    //     document.getElementById("col-xl-6-5").style.display = "block";
+    //     document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+    //   }
+    // }
+    if (
+      window.addEventListener("resize", function(e) {
+        if (document.getElementById("page").clientWidth > 1024) {
+          console.log(e);
+          document.getElementById("DOMChangedHiddenSide").style.width = "30%";
+        }
+      })
+    ) {
     }
   };
 
@@ -123,8 +135,8 @@ class HiddenComponentRightSide extends React.Component {
                   <SearchInputBox searchBoxType="simpleInputForGroupInfo__Name" isEditingNameGroupFn={this.isEditingNameGroupFn} />
                 </div>
               ) : (
-                  editName
-                )}
+                editName
+              )}
               <div className="rightSlider__sender__lastSeenDate">last seen today at 12:36pm</div>
             </div>
           </div>
@@ -136,8 +148,8 @@ class HiddenComponentRightSide extends React.Component {
                 <SearchInputBox searchBoxType="simpleInputForGroupInfo__Description" isEditingDescriptionFn={this.isEditingDescriptionFn} />
               </div>
             ) : (
-                editDescription
-              )}
+              editDescription
+            )}
           </div>
           <div className="rightSlider__media__links__section">
             <div className="d-flex">
