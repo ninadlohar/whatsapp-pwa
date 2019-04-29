@@ -50,6 +50,11 @@ class HiddenComponentRightSide extends React.Component {
       document.getElementById("col-xl-6-5").style.width = "70%";
       document.getElementById("DOMChangedHiddenSide").style.width = "0%";
     }
+    if (page.clientWidth > 1025 && this.state.squeezeLayoutBoolean === false) {
+      this.setState({ squeezeLayoutBoolean: true }, () => {
+        document.getElementById("DOMChangedHiddenSide").style.width = "30% !important";
+      })
+    }
   };
 
   componentDidMount() {

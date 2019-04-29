@@ -1,5 +1,12 @@
-@media (min-width: 200) {
-}
+// @media (min-width: 1024.9) {
+  .DOMChangedHiddenSideX {
+    width: 30% !important;
+    transition: 0.3s all !important;
+    background-color: white !important;
+    position: relative !important;
+    transform: translate(0%, 0);
+  }
+// }
 
 .DOMChangedHiddenSide {
   width: 30%;
