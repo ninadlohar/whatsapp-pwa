@@ -3,10 +3,6 @@ import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
 import NewUserChat from "../../../components/TypesOfUserChats/NewUserChat";
 
 class NewGroup extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     window.addEventListener("resize", function(e) {
       var height = document.getElementById("page").clientHeight;

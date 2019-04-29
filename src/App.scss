@@ -285,6 +285,9 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .footer {
+    position: relative;
+  }
   input[type="checkbox"] {
     width: 20px;
     height: 20px;
@@ -657,6 +660,7 @@ body {
     padding-top: 8px;
   }
   .rightSide__chat__logScreen__parent {
+    height: calc(100% - 60px);
     position: relative !important;
   }
   .main-left-arrow {
@@ -719,6 +723,9 @@ body {
 }
 
 @media (min-width: 768px) {
+  .footer {
+    position: relative;
+  }
   .profile__input__icons__section {
     width: 70px;
   }
@@ -1171,6 +1178,7 @@ body {
     padding-top: 8px;
   }
   .rightSide__chat__logScreen__parent {
+    height: calc(100% - 60px);
     position: relative !important;
   }
   .main-left-arrow {

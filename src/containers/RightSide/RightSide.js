@@ -10,21 +10,6 @@ class RightSide extends React.Component {
     squeezeLayoutBoolean: this.props.squeezeLayoutBoolean
   };
 
-  // slideInToggler = () => {
-  //   let leftSide = document.getElementById("col-xl-3-5");
-  //   let rightSide = document.getElementById("col-xl-6-5");
-
-  //   this.setState({ squeezeLayoutBoolean: true }, () => {
-  //     // this.props.squeezeBooleanTrue();
-  //     leftSide.classList.add("DOMChangedLeftSide_P-1301", "DOMChangedLeftSide");
-  //     rightSide.classList.add("DOMChangedRightSide_P-1301", "DOMChangedRightSide");
-  //   });
-  //   if (document.getElementById("page").clientWidth < 1025) {
-  //     document.getElementById("col-xl-6-5").style.width = "0%";
-  //     document.getElementById("DOMChangedHiddenSide").style.width = "70%";
-  //   }
-  // };
-
   handleMenuClick1 = screen1 => {
     this.props.setRightSliderScreen(screen1);
     console.log(screen1 + " was clicked");
