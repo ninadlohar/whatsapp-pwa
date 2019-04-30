@@ -9,7 +9,8 @@ class DropDown extends React.Component {
     clearMessages: false,
     exitGroup: false,
     squeezeLayoutBoolean: this.props.squeezeLayoutBoolean,
-    selectedMessages: false
+    selectedMessages: false,
+    footerActive: false
   };
 
   showMenu = event => {
@@ -49,14 +50,16 @@ class DropDown extends React.Component {
       textnode.setAttribute("type", "checkbox");
       li[i].appendChild(textnode);
     }
+    this.setState({ footerActive: !this.state.footerActive }, () => {
+      document.getElementById("selectedMessagesFooter").style.transition = "0.3s";
+      document.getElementById("selectedMessagesFooter").style.transform = "translate(0,0%)";
+    });
   };
 
   slideInToggler = () => {
     let leftSide = document.getElementById("col-xl-3-5");
     let rightSide = document.getElementById("col-xl-6-5");
     this.setState({ squeezeLayoutBoolean: true }, () => {
-      // this.props.setTrue();
-      // this.props.setSearchComponentFalseFn();
       leftSide.classList.add("DOMChangedLeftSide", "DOMChangedLeftSide_P-1301");
       rightSide.classList.add("DOMChangedRightSide", "DOMChangedRightSide_P-1301");
       console.log("dropdown called");

@@ -294,6 +294,19 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .selectedMessages__count {
+    font-size: 14.5px;
+    color: #4b4b4b;
+    width: 74%;
+  }
+  .cancel-svg {
+    margin-right: 10px;
+  }
+  .slideUp__footer {
+    padding-left: 16px;
+
+    padding-right: 15px;
+  }
   .custom__width38 {
     width: 38px;
   }
@@ -737,6 +750,25 @@ body {
 }
 
 @media (min-width: 768px) {
+  .selectedMessagesFooter {
+    transform: translate(0, 100%);
+    transition: 0.3s;
+  }
+  .custom__padding_10 {
+    padding: 10px;
+  }
+  .selectedMessages__count {
+    font-size: 14.5px;
+    color: #4b4b4b;
+    width: 74%;
+  }
+  .slideUp__footer {
+    padding-left: 16px;
+    padding-right: 15px;
+  }
+  .cancel-svg {
+    margin-right: 10px;
+  }
   .custom__width38 {
     width: 38px;
   }
@@ -770,11 +802,11 @@ body {
     font-size: 17px;
   }
   input[type="checkbox"] {
-    width: 20px;
-    height: 20px;
-    border-radius: 2px;
-    border: 2px solid rgba(101, 101, 101, 0.85);
-    background-color: transparent;
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 2px !important;
+    border: 2px solid rgba(101, 101, 101, 0.85) !important;
+    background-color: red !important;
   }
   .clear__messages__clear__starred__messages {
     margin-top: 12px;
