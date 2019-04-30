@@ -7,7 +7,10 @@ class DefaultLoadedChat extends React.Component {
   };
 
   onHover = () => {
-    this.setState({ onHoverState: true });
+    this.setState({ onHoverState: true }, () => {
+      document.getElementById("rollback-on-hover").style.transform = "translate(-6px, 0)";
+      document.getElementById("rollback-on-hover").style.transition = "0.3s";
+    });
   };
   offHover = () => {
     this.setState({ onHoverState: false });
@@ -64,7 +67,7 @@ class DefaultLoadedChat extends React.Component {
               </div>
               <div className="leftChat__messageLeftToRead noOverFlow">
                 <span className="sender-notification-count">2</span>
-                <span onClick={this.showMenu} className="rollback-on-hover">
+                <span onClick={this.showMenu} className="rollback-on-hover" id="rollback-on-hover">
                   {addChevron}
                   {dropdown}
                 </span>
