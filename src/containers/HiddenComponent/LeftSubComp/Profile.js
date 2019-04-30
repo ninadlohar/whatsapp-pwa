@@ -14,7 +14,16 @@ class Profile extends React.Component {
   };
 
   componentDidMount() {
-    window.addEventListener("resize", function() {
+
+    var height = document.getElementById("page").clientHeight;
+    var header = document.getElementById("leftSlider__header__green_box").clientHeight;
+    var content = document.getElementById("profile__section");
+    var step1 = height - header;
+    var availableheight = step1;
+    content.style.height = availableheight + "px";
+    content.style.overflow = "scroll";
+
+    window.addEventListener("resize", function () {
       var height = document.getElementById("page").clientHeight;
       var header = document.getElementById("leftSlider__header__green_box").clientHeight;
       var content = document.getElementById("profile__section");
@@ -89,8 +98,8 @@ class Profile extends React.Component {
                       <SearchInputBox searchBoxType="simpleInputForProfile__Name" isEditingNameFn={this.isEditingNameFn} />
                     </div>
                   ) : (
-                    editName
-                  )}
+                      editName
+                    )}
                 </div>
               </div>
               <div className="row mx-0">
@@ -107,8 +116,8 @@ class Profile extends React.Component {
                     <SearchInputBox searchBoxType="simpleInputForProfile__About" isEditingAboutFn={this.isEditingAboutFn} />
                   </div>
                 ) : (
-                  editAbout
-                )}
+                    editAbout
+                  )}
               </div>
               {/* </div> */}
             </div>

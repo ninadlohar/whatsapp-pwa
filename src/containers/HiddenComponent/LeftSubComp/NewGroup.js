@@ -4,7 +4,18 @@ import NewUserChat from "../../../components/TypesOfUserChats/NewUserChat";
 
 class NewGroup extends React.Component {
   componentDidMount() {
-    window.addEventListener("resize", function(e) {
+
+    var height = document.getElementById("page").clientHeight;
+    var header = document.getElementById("newGroup_header").clientHeight;
+    var inputBox = document.getElementById("newGroup__input__section").clientHeight;
+    var content = document.getElementById("leftSide__log__of__chats_newGroup");
+
+    var step1 = height - header;
+    var availableheight = step1 - inputBox;
+    content.style.height = availableheight + "px";
+    content.style.overflow = "scroll";
+
+    window.addEventListener("resize", function (e) {
       var height = document.getElementById("page").clientHeight;
       var header = document.getElementById("newGroup_header").clientHeight;
       var inputBox = document.getElementById("newGroup__input__section").clientHeight;

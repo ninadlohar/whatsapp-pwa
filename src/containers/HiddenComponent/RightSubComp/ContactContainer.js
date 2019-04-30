@@ -12,7 +12,16 @@ class ContactContainer extends React.Component {
   };
 
   componentDidMount() {
-    window.addEventListener("resize", function() {
+
+    var height = document.getElementById("page").clientHeight;
+    var header = document.getElementById("rightSlider__header").clientHeight;
+    var content = document.getElementById("rightSlider__contactInfo__child");
+    var step1 = height - header;
+    var availableheight = step1;
+    content.style.height = availableheight + "px";
+    content.style.overflow = "scroll";
+
+    window.addEventListener("resize", function () {
       var height = document.getElementById("page").clientHeight;
       var header = document.getElementById("rightSlider__header").clientHeight;
       var content = document.getElementById("rightSlider__contactInfo__child");
@@ -106,8 +115,8 @@ class ContactContainer extends React.Component {
                     <SearchInputBox searchBoxType="simpleInputForGroupInfo__Name" isEditingNameGroupFn={this.isEditingNameGroupFn} />
                   </div>
                 ) : (
-                  editName
-                )}
+                    editName
+                  )}
                 <div className="rightSlider__sender__lastSeenDate">last seen today at 12:36pm</div>
               </div>
             </div>
@@ -122,8 +131,8 @@ class ContactContainer extends React.Component {
                   />
                 </div>
               ) : (
-                editDescription
-              )}
+                  editDescription
+                )}
             </div>
             <div className="rightSlider__media__links__section">
               <div className="d-flex">

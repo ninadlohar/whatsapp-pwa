@@ -3,6 +3,10 @@ import SearchContainer from "./RightSubComp/SearchContainer";
 import ContactContainer from "./RightSubComp/ContactContainer";
 
 class HiddenComponentRightSide extends React.Component {
+  constructor(props) {
+    super(props)
+    this.slideInToggler = this.slideInToggler.bind(this)
+  }
   state = {
     squeezeLayoutBoolean: false,
     isEditingName: false,
@@ -34,12 +38,12 @@ class HiddenComponentRightSide extends React.Component {
       document.getElementById("DOMChangedHiddenSide").style.width = "70%";
     }
     /** screwing UI */
-    // window.addEventListener("resize", function () {
-    //   if (document.getElementById("page").clientWidth < 1025) {
-    //     document.getElementById("col-xl-6-5").style.width = "0%";
-    //     document.getElementById("DOMChangedHiddenSide").style.width = "70%";
-    //   }
-    // })
+    window.addEventListener("resize", () => {
+      if (document.getElementById("page").clientWidth < 1025 && this.state.squeezeLayoutBoolean === true) {
+        document.getElementById("col-xl-6-5").style.width = "0%";
+        document.getElementById("DOMChangedHiddenSide").style.width = "70%";
+      }
+    })
   };
 
   slideOutToggler = () => {

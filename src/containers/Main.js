@@ -89,12 +89,14 @@ class Main extends React.Component {
                   isChatARegularMessageFn={this.isChatARegularMessageFn}
                   setLeftSliderScreen={this.setLeftSliderScreen}
                 />
+
                 <RightSide
                   rightDropdown={this.state.rightDropdown}
                   addClassesRightSide={this.state.addClassesRightSide}
                   squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
                   setRightSliderScreen={this.setRightSliderScreen}
                 />
+
                 <HiddenComponentRightSide
                   onRef1={ref1 => (this.RightDrawer = ref1)}
                   squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
