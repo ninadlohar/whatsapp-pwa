@@ -31,11 +31,11 @@ class DefaultLoadedChat extends React.Component {
   render() {
     let chatDropdownMenu = (
       <div className="chat-dropdown">
-        <div className="px-3 py-1">Archeive Chat</div>
-        <div className="px-3 py-1">Mute</div>
-        <div className="px-3 py-1">Delete Chat</div>
-        <div className="px-3 py-1">Pin Chat</div>
-        <div className="px-3 py-1">Mark as Unread</div>
+        <div className="chat-dropdown-links">Archeive Chat</div>
+        <div className="chat-dropdown-links">Mute</div>
+        <div className="chat-dropdown-links">Delete Chat</div>
+        <div className="chat-dropdown-links">Pin Chat</div>
+        <div className="chat-dropdown-links">Mark as Unread</div>
       </div>
     );
 

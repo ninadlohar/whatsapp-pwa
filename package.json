@@ -48,6 +48,7 @@
     "react-dom": "^16.8.6",
     "react-modal": "^3.8.1",
     "react-textarea-autosize": "^7.1.0",
+    "react-transition-group": "^4.0.0",
     "reactstrap": "^8.0.0",
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
