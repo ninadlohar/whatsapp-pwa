@@ -27,25 +27,37 @@ class HiddenComponentRightSide extends React.Component {
     let leftSide = document.getElementById("col-xl-3-5");
     let rightSide = document.getElementById("col-xl-6-5");
     let hiddenRightC = document.getElementById("DOMChangedHiddenSide");
+    let page = document.getElementById("page");
+
     document.getElementById("DOMChangedHiddenSide").style.width = "30%";
+
     this.setState({ squeezeLayoutBoolean: true }, () => {
       leftSide.classList.add("DOMChangedLeftSide_P-1301", "DOMChangedLeftSide");
       rightSide.classList.add("DOMChangedRightSide_P-1301", "DOMChangedRightSide");
       hiddenRightC.classList.add("DOMChangedHiddenSide");
     });
-    if (document.getElementById("page").clientWidth < 1024.9 && this.state.squeezeLayoutBoolean === false) {
+
+    if (page.clientWidth > 901 && page.clientWidth < 1024.9 && this.state.squeezeLayoutBoolean === false) {
       this.setState({ squeezeLayoutBoolean: true });
       document.getElementById("col-xl-6-5").style.width = "0%";
-      document.getElementById("DOMChangedHiddenSide").style.width = "70%";
+      document.getElementById("DOMChangedHiddenSide").style.width = "65%";
+    }
+    if (page.clientWidth < 900.9 && this.state.squeezeLayoutBoolean === false) {
+      this.setState({ squeezeLayoutBoolean: true });
+      document.getElementById("col-xl-6-5").style.width = "0%";
+      document.getElementById("DOMChangedHiddenSide").style.width = "60%";
     }
     /** screwing UI */
     window.addEventListener("resize", () => {
-      console.log("i am squeezing");
-      if (document.getElementById("page").clientWidth < 1025 && this.state.squeezeLayoutBoolean === true) {
+      if (page.clientWidth > 901 && page.clientWidth < 1024.9 && this.state.squeezeLayoutBoolean === true) {
         this.setState({ squeezeLayoutBoolean: true });
         document.getElementById("col-xl-6-5").style.width = "0%";
-        document.getElementById("DOMChangedHiddenSide").style.width = "70%";
-      } else if (document.getElementById("page").clientWidth > 1024.9 && this.state.squeezeLayoutBoolean === true) {
+        document.getElementById("DOMChangedHiddenSide").style.width = "65%";
+      } else if (page.clientWidth < 900.9 && this.state.squeezeLayoutBoolean === true) {
+        this.setState({ squeezeLayoutBoolean: true });
+        document.getElementById("col-xl-6-5").style.width = "0%";
+        document.getElementById("DOMChangedHiddenSide").style.width = "60%";
+      } else if (page.clientWidth > 1024.9 && this.state.squeezeLayoutBoolean === true) {
         this.setState({ squeezeLayoutBoolean: true });
         document.getElementById("col-xl-6-5").style.width = "40%";
         document.getElementById("DOMChangedHiddenSide").style.width = "30%";
@@ -64,9 +76,13 @@ class HiddenComponentRightSide extends React.Component {
       rightSide.classList.remove("DOMChangedRightSide", "DOMChangedRightSide_P-1301");
       hiddenRightC.classList.remove("DOMChangedHiddenSide");
     });
-    if (page.clientWidth > 768 && page.clientWidth < 1024.9 && this.state.squeezeLayoutBoolean === true) {
+    if (page.clientWidth > 901 && page.clientWidth < 1024.9 && this.state.squeezeLayoutBoolean === true) {
       this.setState({ squeezeLayoutBoolean: false });
-      document.getElementById("col-xl-6-5").style.width = "70%";
+      document.getElementById("col-xl-6-5").style.width = "65%";
+      document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+    } else if (page.clientWidth > 768 && page.clientWidth < 900.9 && this.state.squeezeLayoutBoolean === true) {
+      this.setState({ squeezeLayoutBoolean: false });
+      document.getElementById("col-xl-6-5").style.width = "60%";
       document.getElementById("DOMChangedHiddenSide").style.width = "0%";
     }
     if (page.clientWidth > 1025 && this.state.squeezeLayoutBoolean === false) {

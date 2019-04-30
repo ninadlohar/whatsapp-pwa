@@ -6,6 +6,18 @@
   transform: translate(0%, 0);
 }
 
+@media (min-width: 901px) and (max-width: 1024px) {
+  .leftSlider__chatActiveBox {
+    width: 35% !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 900px) {
+  .leftSlider__chatActiveBox {
+    width: 40% !important;
+  }
+}
+
 .DOMChangedHiddenSide {
   width: 30%;
   transition: 0.3s all !important;
