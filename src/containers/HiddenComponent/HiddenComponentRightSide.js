@@ -4,8 +4,8 @@ import ContactContainer from "./RightSubComp/ContactContainer";
 
 class HiddenComponentRightSide extends React.Component {
   constructor(props) {
-    super(props)
-    this.slideInToggler = this.slideInToggler.bind(this)
+    super(props);
+    this.slideInToggler = this.slideInToggler.bind(this);
   }
   state = {
     squeezeLayoutBoolean: false,
@@ -33,17 +33,23 @@ class HiddenComponentRightSide extends React.Component {
       hiddenRightC.classList.add("DOMChangedHiddenSide");
     });
     if (document.getElementById("page").clientWidth < 1024.9 && this.state.squeezeLayoutBoolean === false) {
-      this.setState({ squeezeLayoutBoolean: true })
+      this.setState({ squeezeLayoutBoolean: true });
       document.getElementById("col-xl-6-5").style.width = "0%";
       document.getElementById("DOMChangedHiddenSide").style.width = "70%";
     }
     /** screwing UI */
     window.addEventListener("resize", () => {
+      console.log("i am squeezing");
       if (document.getElementById("page").clientWidth < 1025 && this.state.squeezeLayoutBoolean === true) {
+        this.setState({ squeezeLayoutBoolean: true });
         document.getElementById("col-xl-6-5").style.width = "0%";
         document.getElementById("DOMChangedHiddenSide").style.width = "70%";
+      } else if (document.getElementById("page").clientWidth > 1024.9 && this.state.squeezeLayoutBoolean === true) {
+        this.setState({ squeezeLayoutBoolean: true });
+        document.getElementById("col-xl-6-5").style.width = "40%";
+        document.getElementById("DOMChangedHiddenSide").style.width = "30%";
       }
-    })
+    });
   };
 
   slideOutToggler = () => {
@@ -51,30 +57,22 @@ class HiddenComponentRightSide extends React.Component {
     let leftSide = document.getElementById("col-xl-3-5");
     let hiddenRightC = document.getElementById("DOMChangedHiddenSide");
     let page = document.getElementById("page");
-    this.props.closeDrawer()
+    this.props.closeDrawer();
     this.setState({ squeezeLayoutBoolean: false }, () => {
       leftSide.classList.remove("DOMChangedLeftSide", "DOMChangedLeftSide_P-1301");
       rightSide.classList.remove("DOMChangedRightSide", "DOMChangedRightSide_P-1301");
       hiddenRightC.classList.remove("DOMChangedHiddenSide");
     });
-    if ((page.clientWidth > 768 && page.clientWidth < 1024.9) && this.state.squeezeLayoutBoolean === true) {
-      this.setState({ squeezeLayoutBoolean: false })
+    if (page.clientWidth > 768 && page.clientWidth < 1024.9 && this.state.squeezeLayoutBoolean === true) {
+      this.setState({ squeezeLayoutBoolean: false });
       document.getElementById("col-xl-6-5").style.width = "70%";
       document.getElementById("DOMChangedHiddenSide").style.width = "0%";
     }
     if (page.clientWidth > 1025 && this.state.squeezeLayoutBoolean === false) {
       this.setState({ squeezeLayoutBoolean: true }, () => {
         document.getElementById("DOMChangedHiddenSide").style.width = "30% !important";
-      })
+      });
     }
-    /** screwing UI */
-    // window.addEventListener("resize", function () {
-    //   if (this.state.squeezeLayoutBoolean === true && document.getElementById("page").clientWidth > 1024.9) {
-    //     this.setState({ squeezeLayoutBoolean: true })
-    //     document.getElementById("col-xl-6-5").style.width = "70%";
-    //     document.getElementById("DOMChangedHiddenSide").style.width = "0%";
-    //   }
-    // })
   };
 
   componentDidMount() {
