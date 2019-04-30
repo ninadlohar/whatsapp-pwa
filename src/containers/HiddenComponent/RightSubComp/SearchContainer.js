@@ -2,11 +2,20 @@ import React from "react";
 import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
 
 class SearchContainer extends React.Component {
+  state = {
+    squeezeLayoutBoolean: this.props.squeezeLayoutBoolean
+  };
+  slideOutToggler = () => {
+    console.log("working");
+    this.props.slideOutToggler();
+    document.getElementById("col-xl-6-5").style.width = "70%";
+    document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+  };
   render() {
     return (
       <div className="rightSlider__child__open col-12 px-0" id="col-30-child">
         <header className="rightSlider__header d-flex">
-          <div style={{ width: "54px" }} onClick={this.props.slideOutToggler}>
+          <div style={{ width: "54px" }} onClick={this.slideOutToggler}>
             <img src={require("../../../assets/svg/cancel-real.svg")} alt="cancel" height="14" />
           </div>
           <div className="rightSlider__header__text">
