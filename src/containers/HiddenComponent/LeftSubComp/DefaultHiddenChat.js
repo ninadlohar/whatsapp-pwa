@@ -7,6 +7,18 @@ class DefaultHiddenLeftChat extends React.Component {
     baseClasses: ["row", "mx-0", "leftSlider__chatActiveBox"],
     hiddenLeftClass: ["DOMChangedLeftHiddenSide"]
   };
+
+  componentDidMount() {
+    var height = document.getElementById("page").clientHeight;
+    var inputBox = document.getElementById("input-box__newChat").clientHeight;
+    var headheight = document.getElementById("newChat__header").clientHeight;
+    var content = document.getElementById("content__newChat");
+    var step1 = height - headheight;
+    var availableheight = step1 - inputBox;
+    content.style.height = availableheight + 15 + "px";
+    content.style.overflow = "scroll";
+  }
+
   render() {
     /** if the whole DOM is manipulated with the hidden right screen popped in then this classes is executed */
     let classes = this.props.squeezeLayoutBoolean
@@ -18,16 +30,16 @@ class DefaultHiddenLeftChat extends React.Component {
       </div>
     );
     let newGroup = (
-      <div className="chat-1 w-100 py-2 d-flex rightSlider__userInfo__box pr-3">
+      <div className="chat-1 w-100 py-2 d-flex rightSlider__userInfo__box ">
         <div className="rightSlider__userInfo__image__padding py-1">
-          <img src={require("../../../assets/images/new-group.png")} alt="new-group" className="logged__in__user__image__49px" />
+          <img src={require("../../../assets/images/new-group.png")} alt="new-group" className="sender__image__left__window" />
         </div>
         <div className="remaining d-flex align-items-center">New Group</div>
       </div>
     );
     let newChat = (
       <div className={classes} id="leftSlider__chatActiveBox">
-        <header className="col-12 display-content-area-header px-0">
+        <header className="col-12 display-content-area-header px-0" id="newChat__header">
           <div className="leftSlider__header__green_box">
             <div className="row">
               <div className="col-12 d-flex custom__59height align-items-center">
@@ -39,10 +51,12 @@ class DefaultHiddenLeftChat extends React.Component {
             </div>
           </div>
         </header>
-        <SearchInputBox searchBoxType="withSearchBox" placeholder="Search Contacts" />
+        <div id="input-box__newChat">
+          <SearchInputBox searchBoxType="withSearchBox" placeholder="Search Contacts" />
+        </div>
         <section className="col-12 px-0 leftSide__chat__section">
           <div className="row mx-0">
-            <div className="col-12 px-0 leftSide__log__of__chats ">
+            <div className="col-12 px-0 leftSide__log__of__chats " id="content__newChat">
               <div className="row mx-0">
                 {newGroup}
                 {frequentlyContacted}
