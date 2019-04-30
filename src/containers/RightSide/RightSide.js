@@ -16,7 +16,6 @@ class RightSide extends React.Component {
   };
 
   componentDidMount() {
-
     var height = document.getElementById("page").clientHeight;
     var headerheight = document.getElementById("right__header").clientHeight;
     var footer = document.getElementById("footer").clientHeight;
@@ -26,7 +25,7 @@ class RightSide extends React.Component {
     content.style.height = availableheight - 40 + "px";
     content.style.overflow = "scroll";
 
-    window.addEventListener("resize", function (e) {
+    window.addEventListener("resize", function() {
       var height = document.getElementById("page").clientHeight;
       var headerheight = document.getElementById("right__header").clientHeight;
       var footer = document.getElementById("footer").clientHeight;
@@ -83,8 +82,8 @@ class RightSide extends React.Component {
                         classes="fas fa-ellipsis-v"
                         handleMenuClick1={this.handleMenuClick1}
                         squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
-                      // setTrue={this.props.squeezeBooleanTrue}
-                      // setSearchComponentFalseFn={this.props.setSearchComponentFalseFn}
+                        // setTrue={this.props.squeezeBooleanTrue}
+                        // setSearchComponentFalseFn={this.props.setSearchComponentFalseFn}
                       />
                     </div>
                   </div>

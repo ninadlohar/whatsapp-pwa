@@ -27,7 +27,7 @@ class LeftSide extends React.Component {
     content.style.height = availableheight + "px";
     content.style.overflow = "scroll";
 
-    window.addEventListener("resize", function (e) {
+    window.addEventListener("resize", function(e) {
       var height = document.getElementById("page").clientHeight;
       var inputBox = document.getElementById("input-box").clientHeight;
       var headheight = document.getElementById("head").clientHeight;
@@ -38,7 +38,6 @@ class LeftSide extends React.Component {
       content.style.overflow = "scroll";
     });
   }
-
 
   toggleHandlerIn() {
     document.getElementById("leftSlider__chatActiveBox").style.transform = "translate(0%, 0)";

@@ -46,7 +46,7 @@ class DefaultLoadedChat extends React.Component {
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg"
             alt="karl-benz"
-            className="logged__in__user__image__49px"
+            className="sender__image__left__window"
           />
         </div>
         <div className="leftChat__user__details">

@@ -11,8 +11,20 @@ class ContactContainer extends React.Component {
     isChatWithStatusAndAdmin: this.props.isChatWithStatusAndAdmin
   };
 
-  componentDidMount() {
+  slideOutToggler = () => {
+    console.log("working");
+    this.props.slideOutToggler();
+    document.getElementById("col-xl-6-5").style.width = "70%";
+    document.getElementById("DOMChangedHiddenSide").style.width = "0%";
 
+    if (this.state.squeezeLayoutBoolean === false) {
+      window.removeEventListener("resize", () => {
+        console.log("done");
+      });
+    }
+  };
+
+  componentDidMount() {
     var height = document.getElementById("page").clientHeight;
     var header = document.getElementById("rightSlider__header").clientHeight;
     var content = document.getElementById("rightSlider__contactInfo__child");
@@ -21,7 +33,7 @@ class ContactContainer extends React.Component {
     content.style.height = availableheight + "px";
     content.style.overflow = "scroll";
 
-    window.addEventListener("resize", function () {
+    window.addEventListener("resize", function() {
       var height = document.getElementById("page").clientHeight;
       var header = document.getElementById("rightSlider__header").clientHeight;
       var content = document.getElementById("rightSlider__contactInfo__child");
@@ -90,7 +102,7 @@ class ContactContainer extends React.Component {
       // <div className={this.props.squeezeLayoutBoolean ? this.props.hiddenClass.join(" ") : null} id="DOMChangedHiddenSide">
       <div className="rightSlider__child__open col-12 px-0" id="col-30-child">
         <header className="rightSlider__header d-flex" id="rightSlider__header">
-          <div style={{ width: "54px" }} onClick={this.props.slideOutToggler}>
+          <div style={{ width: "54px" }} onClick={this.slideOutToggler}>
             <img src={require("../../../assets/svg/cancel-real.svg")} alt="cancel" height="14" />
           </div>
           <div className="rightSlider__header__text">
@@ -115,8 +127,8 @@ class ContactContainer extends React.Component {
                     <SearchInputBox searchBoxType="simpleInputForGroupInfo__Name" isEditingNameGroupFn={this.isEditingNameGroupFn} />
                   </div>
                 ) : (
-                    editName
-                  )}
+                  editName
+                )}
                 <div className="rightSlider__sender__lastSeenDate">last seen today at 12:36pm</div>
               </div>
             </div>
@@ -131,8 +143,8 @@ class ContactContainer extends React.Component {
                   />
                 </div>
               ) : (
-                  editDescription
-                )}
+                editDescription
+              )}
             </div>
             <div className="rightSlider__media__links__section">
               <div className="d-flex">

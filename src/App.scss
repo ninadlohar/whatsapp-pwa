@@ -49,7 +49,11 @@ body {
     width: 40px;
     border-radius: 50%;
   }
-
+  .sender__image__left__window {
+    height: 49px;
+    width: 49px;
+    border-radius: 50%;
+  }
   .leftSide__header {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -197,7 +201,11 @@ body {
     width: 40px;
     border-radius: 50%;
   }
-
+  .sender__image__left__window {
+    height: 49px;
+    width: 49px;
+    border-radius: 50%;
+  }
   .leftSide__header {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -285,6 +293,9 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .custom__width38 {
+    width: 38px;
+  }
   .footer {
     position: relative;
   }
@@ -723,6 +734,9 @@ body {
 }
 
 @media (min-width: 768px) {
+  .custom__width38 {
+    width: 38px;
+  }
   .footer {
     position: relative;
   }
