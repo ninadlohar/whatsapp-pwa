@@ -16,12 +16,6 @@ class ContactContainer extends React.Component {
     this.props.slideOutToggler();
     document.getElementById("col-xl-6-5").style.width = "70%";
     document.getElementById("DOMChangedHiddenSide").style.width = "0%";
-
-    if (this.state.squeezeLayoutBoolean === false) {
-      window.removeEventListener("resize", () => {
-        console.log("done");
-      });
-    }
   };
 
   componentDidMount() {
@@ -32,16 +26,6 @@ class ContactContainer extends React.Component {
     var availableheight = step1;
     content.style.height = availableheight + "px";
     content.style.overflow = "scroll";
-
-    window.addEventListener("resize", function() {
-      var height = document.getElementById("page").clientHeight;
-      var header = document.getElementById("rightSlider__header").clientHeight;
-      var content = document.getElementById("rightSlider__contactInfo__child");
-      var step1 = height - header;
-      var availableheight = step1;
-      content.style.height = availableheight + "px";
-      content.style.overflow = "scroll";
-    });
   }
 
   isEditingNameGroupFn = () => {

@@ -27,16 +27,34 @@ class LeftSide extends React.Component {
     content.style.height = availableheight + "px";
     content.style.overflow = "scroll";
 
-    window.addEventListener("resize", function(e) {
+    window.addEventListener("resize", function() {
       var height = document.getElementById("page").clientHeight;
       var inputBox = document.getElementById("input-box").clientHeight;
       var headheight = document.getElementById("head").clientHeight;
       var content = document.getElementById("content");
       var step1 = height - headheight;
       var availableheight = step1 - inputBox;
-      content.style.height = availableheight + "px";
+      content.style.height = availableheight + 15 + "px";
       content.style.overflow = "scroll";
+
+      if (document.getElementById("page").clientWidth < 768) {
+        step1 = height - headheight;
+        availableheight = step1 - inputBox;
+        content.style.height = availableheight + 85 + "px";
+        content.style.overflow = "scroll";
+      }
     });
+    if (document.getElementById("page").clientWidth < 768) {
+      step1 = height - headheight;
+      availableheight = step1 - inputBox;
+      content.style.height = availableheight + 85 + "px";
+      content.style.overflow = "scroll";
+    }
+    if (document.getElementById("page").clientWidth > 768) {
+      availableheight = step1 - inputBox;
+      content.style.height = availableheight + 15 + "px";
+      content.style.overflow = "scroll";
+    }
   }
 
   toggleHandlerIn() {

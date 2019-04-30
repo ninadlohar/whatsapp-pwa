@@ -95,7 +95,7 @@ body {
   }
   .rightSide__footer__input__box {
     position: absolute;
-    min-height: 62px;
+    min-height: 62px !important;
     bottom: 0;
     background-color: $footer-color;
   }
@@ -249,6 +249,7 @@ body {
 
   .rightSide__footer__input__box {
     position: absolute;
+    min-height: 62px !important;
     min-height: 62px;
     bottom: 0;
     background-color: $footer-color;
@@ -595,6 +596,8 @@ body {
     height: 73vh;
   }
   .leftSlider__chatActiveBox {
+    display: block;
+    background: white;
     transition: all 0.3s;
     position: absolute;
     z-index: 999;
@@ -1109,6 +1112,8 @@ body {
     height: 72px;
   }
   .leftSlider__chatActiveBox {
+    display: block;
+    background: white;
     transition: all 0.3s;
     position: absolute;
     z-index: 999;
