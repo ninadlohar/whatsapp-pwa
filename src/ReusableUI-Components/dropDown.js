@@ -2,6 +2,10 @@ import React from "react";
 import Aux from "../hoc/Aux";
 import MainModel from "./Modal";
 
+import { CSSTransition } from 'react-transition-group';
+import '../scss/dropdown/dropdown.scss';
+
+
 class DropDown extends React.Component {
   state = {
     showMenu: false,
@@ -13,8 +17,8 @@ class DropDown extends React.Component {
     footerActive: false
   };
 
-  showMenu = event => {
-    event.preventDefault();
+  showMenu = () => {
+    // event.preventDefault();
     this.setState({ showMenu: true }, () => {
       document.addEventListener("click", this.closeMenu);
     });
@@ -119,19 +123,30 @@ class DropDown extends React.Component {
 
     let dropDownMenu = null;
     if (this.props.leftDropdown) {
+      // dropDownMenu = leftMenu
       dropDownMenu = this.props.leftDropdown && this.state.showMenu ? leftMenu : null;
     } else if (this.props.rightDropdown) {
       dropDownMenu = this.props.rightDropdown && this.state.showMenu ? rightMenu : null;
     } else if (this.props.attachment) {
       dropDownMenu = this.props.attachment && this.state.showMenu ? attachment : null;
     }
+
     return (
       <Aux>
         <div className={this.state.showMenu ? "px-3 icon-active align-items-center justify-items-center d-flex" : "px-3"}>
           <i className="icon-color">
             <i className={this.props.classes} onClick={this.showMenu} />
           </i>
-          {dropDownMenu}
+          <CSSTransition
+            timeout={200}
+            unmountOnExit
+            in={this.state.showMenu}
+            classNames="left-dropdown-main"
+            onEnter={() => this.showMenu}
+            onExited={() => this.closeMenu}
+          >
+            <Aux>{dropDownMenu}</Aux>
+          </CSSTransition>
         </div>
         <MainModel isOpen={this.state.showModal} toggle={this.toggle}>
           <h5 className="mute__group__name">Mute "Group1"</h5>
