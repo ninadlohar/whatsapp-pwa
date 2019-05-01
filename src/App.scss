@@ -137,21 +137,6 @@ body {
     color: rgba(0, 0, 0, 0.4);
     border-radius: 32px !important;
   }
-  .left-dropdown {
-    background-color: white;
-    border-radius: 3px;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.16);
-    padding: 9px 0px;
-    display: none;
-    width: 150px;
-    position: absolute;
-    display: block;
-    top: 40px;
-    left: 27%;
-    z-index: 2;
-    transition: background-color 0.18s ease;
-    font-size: 14px;
-  }
   .right-dropdown {
     background-color: white;
     border-radius: 3px;

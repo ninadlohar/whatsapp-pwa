@@ -14,7 +14,7 @@ class ContactContainer extends React.Component {
   slideOutToggler = () => {
     console.log("working");
     this.props.slideOutToggler();
-    // document.getElementById("col-xl-6-5").style.width = "70%";
+    document.getElementById("col-xl-6-5").style.width = "65%";
     document.getElementById("DOMChangedHiddenSide").style.width = "0%";
   };
 
@@ -111,8 +111,8 @@ class ContactContainer extends React.Component {
                     <SearchInputBox searchBoxType="simpleInputForGroupInfo__Name" isEditingNameGroupFn={this.isEditingNameGroupFn} />
                   </div>
                 ) : (
-                  editName
-                )}
+                    editName
+                  )}
                 <div className="rightSlider__sender__lastSeenDate">last seen today at 12:36pm</div>
               </div>
             </div>
@@ -127,8 +127,8 @@ class ContactContainer extends React.Component {
                   />
                 </div>
               ) : (
-                editDescription
-              )}
+                  editDescription
+                )}
             </div>
             <div className="rightSlider__media__links__section">
               <div className="d-flex">
