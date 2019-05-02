@@ -1,21 +1,21 @@
-.left-dropdown-main-enter {
+.setSearchActive-enter {
   transform-origin: right top;
   opacity: 0;
   transform: scale(0.5);
 }
 
-.left-dropdown-main-enter-active {
+.setSearchActive-enter-active {
   transform-origin: right top;
   opacity: 1;
   transform: translateX(0);
   transition: opacity 200ms, transform 200ms;
 }
 
-.left-dropdown-main-exit {
+.setSearchActive-exit {
   opacity: 1;
 }
 
-.left-dropdown-main-exit-active {
+.setSearchActive-exit-active {
   opacity: 0;
   transform: scale(0.9);
   transition: opacity 200ms, transform 200ms;

@@ -37,7 +37,9 @@ class SearchInputBox extends React.Component {
         <div className="px-2 py-2 d-flex">
           <div className="row mx-0 w-100">
             <div className="col-12 px-0">
-              <div className="main-left-arrow px-1">{leftArrow}</div>
+              <div className="main-left-arrow px-1" onClick={this.props.setSearchDeactiveFn}>
+                {leftArrow}
+              </div>
               <Input
                 placeholder={this.props.placeholder}
                 onChangeHandler={this.searchUsersFn}

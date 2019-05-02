@@ -35,7 +35,7 @@ class DefaultLoadedChat extends React.Component {
             <div className="row mx-0">
               <div className="leftChat__message noOverFlow">
                 <span className="pr-2">
-                  <img src={require("../../../assets/svg/call-received-arrow.svg")} height="11" width="11" />
+                  <img src={require("../../../assets/svg/call-received-arrow.svg")} height="11" width="11" alt="call-received" />
                 </span>
                 <span>Yesterday 10:30 AM</span>
               </div>

@@ -11,6 +11,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
 import Status from "../HiddenComponent/LeftSubComp/Status";
 import Calls from "../HiddenComponent/LeftSubComp/Calls";
+import { CSSTransition } from "react-transition-group";
 
 function TabContainer({ children, dir }) {
   return (
@@ -28,7 +29,6 @@ const styles = theme => ({
   tabsIndicator: {
     backgroundColor: "#FFF",
     opacity: "0.6"
-    // backgroundColor: "#255d53"
   },
   tabRoot: {
     textTransform: "initial",
@@ -67,14 +67,27 @@ class LeftSide extends React.Component {
       squeezeLayoutBoolean: this.props.squeezeLayoutBoolean,
       isChatARegularMessage: this.props.isChatARegularMessage,
       value: 0,
-      mobileViewDropDown: true
+      mobileViewDropDown: true,
+      enableAnimationOnButton: false,
+      setSearchActive: false
     };
-
     this.toggleHandlerIn = this.toggleHandlerIn.bind(this);
   }
 
   handleChange = (event, value) => {
     this.setState({ value });
+  };
+
+  setSearchActiveFn = () => {
+    this.setState({ setSearchActive: true }, () => {
+      document.getElementById("col-xl-3-5").style.transform = "translate(0, -65px)";
+    });
+  };
+
+  setSearchDeactiveFn = () => {
+    this.setState({ setSearchActive: false }, () => {
+      document.getElementById("col-xl-3-5").style.transform = "translate(0px, 0px)";
+    });
   };
 
   handleChangeIndex = index => {
@@ -172,43 +185,54 @@ class LeftSide extends React.Component {
       </Aux>
     );
     let mobileHeader = (
-      <header className="col-12 mobile__view__header px-0" id="head">
-        <div className="row mx-0">
-          <div className="col-12 d-flex">
-            <h3 className="brand__name py-3 mb-0">Sup</h3>
-            <div className="w-100 d-flex align-items-center justify-content-end">
-              <div />
-              <div className="px-3">
-                <img src={require("../../assets/svg/mobile-search.svg")} width="19" height="19" alt="search-svg" />
+      <Aux>
+        <header className="col-12 mobile__view__header px-0" id="head">
+          <div className="row mx-0">
+            <div className="col-12 d-flex">
+              <h3 className="brand__name py-3 mb-0">Sup</h3>
+              <div className="w-100 d-flex align-items-center justify-content-end">
+                <div />
+                <div className="px-3" onClick={() => this.setSearchActiveFn()}>
+                  <img src={require("../../assets/svg/mobile-search.svg")} width="19" height="19" alt="search-svg" />
+                </div>
+                <DropDown classes="fas fa-ellipsis-v" mobile={this.props.mobile} mobileViewDropDown={this.state.mobileViewDropDown} />
               </div>
-              <DropDown classes="fas fa-ellipsis-v" mobile={this.props.mobile} mobileViewDropDown={this.state.mobileViewDropDown} />
             </div>
           </div>
-        </div>
-        <div className="row mx-0" id="input-box">
-          <div className="col-12 pb-1 d-flex camera">
-            <div className="d-flex align-items-center pt-1">
-              <img src={require("../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
+
+          {this.state.setSearchActive ? (
+            <SearchInputBox
+              placeholder="Search or start new Chat"
+              searchBoxType="withSearchBox"
+              setSearchDeactiveFn={this.setSearchDeactiveFn}
+            />
+          ) : (
+            <div className="row mx-0" id="input-box">
+              <div className="col-12 pb-1 d-flex camera">
+                <div className="d-flex align-items-center pt-1">
+                  <img src={require("../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
+                </div>
+                <div className={classes.root}>
+                  <AppBar className="demo" position="static" color="inherit">
+                    <Tabs
+                      variant="fullWidth"
+                      value={value}
+                      onChange={this.handleChange}
+                      classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
+                    >
+                      <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CHATS" />
+                      <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="STATUS" />
+                      <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CALLS" />
+                    </Tabs>
+                  </AppBar>
+                </div>
+              </div>
             </div>
-            <div className={classes.root}>
-              <AppBar className="demo" position="static" color="inherit">
-                <Tabs
-                  variant="fullWidth"
-                  value={value}
-                  onChange={this.handleChange}
-                  classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
-                >
-                  <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CHATS" />
-                  <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="STATUS" />
-                  <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CALLS" />
-                </Tabs>
-              </AppBar>
-            </div>
-          </div>
-        </div>
-      </header>
+          )}
+        </header>
+      </Aux>
     );
-    let messageLogs = (
+    let messageLogs = this.props.mobile ? (
       <div className="mx-0" id="message-logs">
         {this.props.mobile ? mobileHeader : desktopHeader}
         <section className="col-12 px-0 leftSide__chat__section">
@@ -268,17 +292,74 @@ class LeftSide extends React.Component {
         </section>
         <div className="new__chat__green__logo-main">
           <div className="new__chat__green__logo">
-            <img src={require("../../assets/svg/new-chat-ballon.svg")} alt="message-ballon" height="20" width="20" />
+            {this.state.value === 0 ? (
+              <img src={require("../../assets/svg/new-chat-ballon.svg")} alt="message-ballon" height="18" width="18" />
+            ) : null}
+            {this.state.value === 1 ? (
+              <img src={require("../../assets/svg/emergency-call.svg")} alt="message-ballon" height="16" width="16" />
+            ) : null}
+            {this.state.value === 2 ? (
+              <img src={require("../../assets/svg/square-stop-button.svg")} alt="message-ballon" height="16" width="16" />
+            ) : null}
           </div>
         </div>
       </div>
+    ) : (
+      <div className="mx-0" id="message-logs">
+        <header className="col-12 leftSide__header px-0" id="head">
+          <div className="row mx-0">
+            <div className="col-3 px-0">
+              <div className="px-3">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg"
+                  alt="karl-benz"
+                  className="logged__in__user__image__49px"
+                />
+              </div>
+            </div>
+            <div className="col-9">
+              <div className="row mx-0 justify-content-end align-items-center h-100">
+                <div className="px-3">
+                  <img src={require("../../assets/svg/charging-circle.svg")} alt="status-v3" height="24" width="18" />
+                </div>
+                {/* <div className="px-3" onClick={this.toggleHandlerIn}>  */}
+                <div className="px-3" onClick={() => this.props.setLeftSliderScreen("defaultView")}>
+                  <img src={require("../../assets/svg/message-ballon.svg")} alt="message-ballon" height="20" width="20" />
+                </div>
+                <DropDown leftDropdown={this.props.leftDropdown} classes="fas fa-ellipsis-v" handleMenuClick={this.handleMenuClick} />
+              </div>
+            </div>
+          </div>
+        </header>
+        {/** input box  */}
+        <SearchInputBox placeholder="Search or start new Chat" searchBoxType="withSearchBox" />
+        {/** chat section */}
+        <section className="col-12 px-0 leftSide__chat__section">
+          <div className="row mx-0">
+            {/** all chats will append here from API */}
+            <div className="col-12 px-0 leftSide__log__of__chats" id="content">
+              <div className="row mx-0">
+                <DefaultLoadedChat />
+                <DefaultLoadedChat />
+                <DefaultLoadedChat />
+                <DefaultLoadedChat />
+                <DefaultLoadedChat />
+                <DefaultLoadedChat />
+                <DefaultLoadedChat />
+                <DefaultLoadedChat />
+                <DefaultLoadedChat />
+                <DefaultLoadedChat />
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     );
-    /** if hidden componenet toggle then -> pass props to display proper chatType -> then in Hidden<C> switch based on */
-    /** message logs is default */
-    /** only new chat will be shown on toggle. */
+
     let appendClasses = this.state.squeezeLayoutBoolean
       ? this.state.baseClasses.concat(this.props.addClassesLeftSide).join(" ")
       : this.state.baseClasses.join(" ");
+
     return (
       <div className={appendClasses} id="col-xl-3-5">
         <div className="leftSide__chat__window__child">{messageLogs}</div>
