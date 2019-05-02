@@ -48,11 +48,13 @@ body {
     height: 40px;
     width: 40px;
     border-radius: 50%;
+    object-fit: cover;
   }
   .sender__image__left__window {
     height: 49px;
     width: 49px;
     border-radius: 50%;
+    object-fit: cover;
   }
   .leftSide__header {
     padding-top: 10px;
@@ -188,6 +190,7 @@ body {
     height: 49px;
     width: 49px;
     border-radius: 50%;
+    object-fit: cover;
   }
   .leftSide__header {
     padding-top: 10px;
@@ -281,7 +284,7 @@ body {
     opacity: 1;
   }
   .new__chat__green__logo-main {
-    position: absolute;
+    position: fixed;
     bottom: 70px;
     right: 70px;
   }
@@ -1122,7 +1125,7 @@ body {
     position: relative;
   }
   .attachment-dropdown {
-    transition: all 0.3s;
+    transition: all 0.2s;
     position: absolute;
     top: 118px;
     background-color: transparent;

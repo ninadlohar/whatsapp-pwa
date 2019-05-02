@@ -9,6 +9,8 @@ import Aux from "../../hoc/Aux";
 import SwipeableViews from "react-swipeable-views";
 import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
+import Status from "../HiddenComponent/LeftSubComp/Status";
+import Calls from "../HiddenComponent/LeftSubComp/Calls";
 
 function TabContainer({ children, dir }) {
   return (
@@ -185,7 +187,7 @@ class LeftSide extends React.Component {
         </div>
         <div className="row mx-0" id="input-box">
           <div className="col-12 pb-1 d-flex camera">
-            <div className="d-flex align-items-center pt-2">
+            <div className="d-flex align-items-center pt-1">
               <img src={require("../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
             </div>
             <div className={classes.root}>
@@ -224,26 +226,43 @@ class LeftSide extends React.Component {
                     <DefaultLoadedChat />
                     <DefaultLoadedChat />
                     <DefaultLoadedChat />
+                    <DefaultLoadedChat />
+                    <DefaultLoadedChat />
+                    <DefaultLoadedChat />
+                    <DefaultLoadedChat />
                   </div>
                 </div>
               </TabContainer>
               <TabContainer dir={theme.direction}>
                 <div className="col-12 px-0 leftSide__log__of__chats" id="content">
                   <div className="row mx-0">
-                    <DefaultLoadedChat />
-                    <DefaultLoadedChat />
-                    <DefaultLoadedChat />
-                    <DefaultLoadedChat />
-                    <DefaultLoadedChat />
-                    <DefaultLoadedChat />
-                    <DefaultLoadedChat />
-                    <DefaultLoadedChat />
-                    <DefaultLoadedChat />
-                    <DefaultLoadedChat />
+                    <Status />
+                    <Status />
+                    <Status />
+                    <Status />
+                    <Status />
+                    <Status />
+                    <Status />
+                    <Status />
+                    <Status />
                   </div>
                 </div>
               </TabContainer>
-              <TabContainer dir={theme.direction}>Item One</TabContainer>
+              <TabContainer dir={theme.direction}>
+                <div className="col-12 px-0 leftSide__log__of__chats" id="content">
+                  <div className="row mx-0">
+                    <Calls />
+                    <Calls />
+                    <Calls />
+                    <Calls />
+                    <Calls />
+                    <Calls />
+                    <Calls />
+                    <Calls />
+                    <Calls />
+                  </div>
+                </div>
+              </TabContainer>
             </SwipeableViews>
           </div>
         </section>
