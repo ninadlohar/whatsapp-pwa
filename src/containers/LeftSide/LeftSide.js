@@ -49,7 +49,8 @@ class LeftSide extends React.Component {
       baseClasses: ["col-xl-3-5", "leftSide__chat__window__parent", "px-0"],
       squeezeLayoutBoolean: this.props.squeezeLayoutBoolean,
       isChatARegularMessage: this.props.isChatARegularMessage,
-      value: 0
+      value: 0,
+      mobileViewDropDown: true
     };
 
     this.toggleHandlerIn = this.toggleHandlerIn.bind(this);
@@ -136,7 +137,12 @@ class LeftSide extends React.Component {
                 <div className="px-3" onClick={() => this.props.setLeftSliderScreen("defaultView")}>
                   <img src={require("../../assets/svg/message-ballon.svg")} alt="message-ballon" height="20" width="20" />
                 </div>
-                <DropDown leftDropdown={this.props.leftDropdown} classes="fas fa-ellipsis-v" handleMenuClick={this.handleMenuClick} />
+                <DropDown
+                  mobile={this.props.mobile}
+                  leftDropdown={this.props.leftDropdown}
+                  classes="fas fa-ellipsis-v"
+                  handleMenuClick={this.handleMenuClick}
+                />
               </div>
             </div>
           </div>
@@ -154,14 +160,12 @@ class LeftSide extends React.Component {
               <div className="px-3">
                 <img src={require("../../assets/svg/mobile-search.svg")} width="19" height="19" alt="search-svg" />
               </div>
-              <div className="px-3">
-                <img src={require("../../assets/svg/ellipsis.svg")} width="19" height="19" alt="ellipsis-svg" />
-              </div>
+              <DropDown classes="fas fa-ellipsis-v" mobile={this.props.mobile} mobileViewDropDown={this.state.mobileViewDropDown} />
             </div>
           </div>
         </div>
         <div className="row mx-0" id="input-box">
-          <div className="col-12 pb-1 d-flex">
+          <div className="col-12 pb-1 d-flex camera">
             <div className="d-flex align-items-center pt-2">
               <img src={require("../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
             </div>

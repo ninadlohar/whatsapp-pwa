@@ -2,9 +2,8 @@ import React from "react";
 import Aux from "../hoc/Aux";
 import MainModel from "./Modal";
 
-import { CSSTransition } from 'react-transition-group';
-import '../scss/dropdown/dropdown.scss';
-
+import { CSSTransition } from "react-transition-group";
+import "../scss/dropdown/dropdown.scss";
 
 class DropDown extends React.Component {
   state = {
@@ -110,6 +109,14 @@ class DropDown extends React.Component {
         </div>
       </div>
     );
+    let mobileViewDropDown = (
+      <div className="right-dropdown">
+        <div className="px-4 py-2">New Group</div>
+        <div className="px-4 py-2">New Broadcast</div>
+        <div className="px-4 py-2">Starred Messages</div>
+        <div className="px-4 py-2">Settings</div>
+      </div>
+    );
     let attachment = (
       <div className="main-attachment-dropdown">
         <div className="attachment-dropdown">
@@ -123,18 +130,19 @@ class DropDown extends React.Component {
 
     let dropDownMenu = null;
     if (this.props.leftDropdown) {
-      // dropDownMenu = leftMenu
       dropDownMenu = this.props.leftDropdown && this.state.showMenu ? leftMenu : null;
     } else if (this.props.rightDropdown) {
       dropDownMenu = this.props.rightDropdown && this.state.showMenu ? rightMenu : null;
     } else if (this.props.attachment) {
       dropDownMenu = this.props.attachment && this.state.showMenu ? attachment : null;
+    } else if (this.props.mobileViewDropDown) {
+      dropDownMenu = this.props.mobileViewDropDown && this.state.showMenu ? mobileViewDropDown : null;
     }
 
     return (
       <Aux>
-        <div className={this.state.showMenu ? "px-3 icon-active align-items-center justify-items-center d-flex" : "px-3"}>
-          <i className="icon-color">
+        <div className={this.state.showMenu ? "px-3 icon-active align-items-center justify-items-center d-flex" : "px-3 "}>
+          <i className={this.props.mobile ? "" : "icon-color"}>
             <i className={this.props.classes} onClick={this.showMenu} />
           </i>
           <CSSTransition
