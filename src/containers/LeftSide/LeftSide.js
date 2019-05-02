@@ -85,14 +85,15 @@ class LeftSide extends React.Component {
       if (document.getElementById("page").clientWidth < 768) {
         step1 = height - headheight;
         availableheight = step1 - inputBox;
-        content.style.height = availableheight + 85 + "px";
+        content.style.height = availableheight + 65 + "px";
         content.style.overflow = "scroll";
       }
     });
+
     if (document.getElementById("page").clientWidth < 768) {
       step1 = height - headheight;
       availableheight = step1 - inputBox;
-      content.style.height = availableheight + 85 + "px";
+      content.style.height = availableheight + 65 + "px";
       content.style.overflow = "scroll";
     }
     if (document.getElementById("page").clientWidth > 768) {
@@ -160,7 +161,7 @@ class LeftSide extends React.Component {
           </div>
         </div>
         <div className="row mx-0" id="input-box">
-          <div className="col-12 pb-2 d-flex">
+          <div className="col-12 pb-1 d-flex">
             <div className="d-flex align-items-center pt-2">
               <img src={require("../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
             </div>
@@ -206,6 +207,11 @@ class LeftSide extends React.Component {
             </div>
           </div>
         </section>
+        <div className="new__chat__green__logo-main">
+          <div className="new__chat__green__logo">
+            <img src={require("../../assets/svg/new-chat-ballon.svg")} alt="message-ballon" height="20" width="20" />
+          </div>
+        </div>
       </div>
     );
     /** if hidden componenet toggle then -> pass props to display proper chatType -> then in Hidden<C> switch based on */

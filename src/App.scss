@@ -279,6 +279,21 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .new__chat__green__logo-main {
+    position: absolute;
+    bottom: 70px;
+    right: 70px;
+  }
+  .new__chat__green__logo {
+    background-color: #5ad570;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+  }
   .mobile__view__header {
     background-color: #255d53;
     color: white;

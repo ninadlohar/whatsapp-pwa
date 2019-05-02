@@ -47,8 +47,8 @@ class DefaultLoadedChat extends React.Component {
       <div className="chat-1 w-100 d-flex rightSlider__userInfo__box" onMouseEnter={this.onHover} onMouseLeave={this.offHover}>
         <div className="leftChat__user__image">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg"
-            alt="karl-benz"
+            src="https://upload.wikimedia.org/wikipedia/commons/1/10/McLaren_Senna_Genf_2018.jpg"
+            alt="mclaren"
             className="sender__image__left__window"
           />
         </div>
