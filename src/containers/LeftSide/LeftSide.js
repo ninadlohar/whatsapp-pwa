@@ -6,15 +6,26 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import DefaultLoadedChat from "../../components/TypesOfUserChats/DefaultLoadedChat";
 import Aux from "../../hoc/Aux";
+import SwipeableViews from "react-swipeable-views";
+import AppBar from "@material-ui/core/AppBar";
+import Typography from "@material-ui/core/Typography";
+
+function TabContainer({ children, dir }) {
+  return (
+    <Typography component="div" dir={dir}>
+      {children}
+    </Typography>
+  );
+}
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    backgrounColor: "#255d53"
+    backgroundColor: "#255d53"
   },
   tabsIndicator: {
     backgroundColor: "#FFF",
-    opacity: "1"
+    opacity: "0.6"
   },
   tabRoot: {
     textTransform: "initial",
@@ -33,7 +44,8 @@ const styles = theme => ({
     },
     "&:focus": {
       color: "#FFF",
-      outline: "none"
+      outline: "none",
+      opacity: "1"
     }
   },
   tabSelected: {},
@@ -58,6 +70,10 @@ class LeftSide extends React.Component {
 
   handleChange = (event, value) => {
     this.setState({ value });
+  };
+
+  handleChangeIndex = index => {
+    this.setState({ value: index });
   };
 
   componentDidMount() {
@@ -113,7 +129,7 @@ class LeftSide extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, theme } = this.props;
     const { value } = this.state;
 
     let desktopHeader = (
@@ -169,18 +185,19 @@ class LeftSide extends React.Component {
             <div className="d-flex align-items-center pt-2">
               <img src={require("../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
             </div>
-            {/* <div className="w-100 d-flex align-items-center"> */}
             <div className={classes.root}>
-              <Tabs
-                variant="fullWidth"
-                value={value}
-                onChange={this.handleChange}
-                classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
-              >
-                <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CHATS" />
-                <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="STATUS" />
-                <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CALLS" />
-              </Tabs>
+              <AppBar position="static" classes={classes.root.backgroundColor}>
+                <Tabs
+                  variant="fullWidth"
+                  value={value}
+                  onChange={this.handleChange}
+                  classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
+                >
+                  <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CHATS" />
+                  <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="STATUS" />
+                  <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CALLS" />
+                </Tabs>
+              </AppBar>
             </div>
           </div>
         </div>
@@ -189,26 +206,42 @@ class LeftSide extends React.Component {
     let messageLogs = (
       <div className="mx-0" id="message-logs">
         {this.props.mobile ? mobileHeader : desktopHeader}
-        {/** input box  */}
-        {/* <SearchInputBox placeholder="Search or start new Chat" searchBoxType="withSearchBox" /> */}
-        {/** chat section */}
         <section className="col-12 px-0 leftSide__chat__section">
-          <div className="row mx-0">
-            {/** all chats will append here from API */}
-            <div className="col-12 px-0 leftSide__log__of__chats" id="content">
-              <div className="row mx-0">
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-              </div>
-            </div>
+          <div className="row mx-0" style={{ height: "100vh" }}>
+            <SwipeableViews
+              axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+              index={this.state.value}
+              onChangeIndex={this.handleChangeIndex}
+              style={{ width: "100vw" }}
+            >
+              <TabContainer dir={theme.direction}>
+                <div className="col-12 px-0 leftSide__log__of__chats" id="content">
+                  <div className="row mx-0">
+                    <DefaultLoadedChat />
+                    <DefaultLoadedChat />
+                    <DefaultLoadedChat />
+                    <DefaultLoadedChat />
+                  </div>
+                </div>
+              </TabContainer>
+              <TabContainer dir={theme.direction}>
+                <div className="col-12 px-0 leftSide__log__of__chats" id="content">
+                  <div className="row mx-0">
+                    <DefaultLoadedChat />
+                    <DefaultLoadedChat />
+                    <DefaultLoadedChat />
+                    <DefaultLoadedChat />
+                    <DefaultLoadedChat />
+                    <DefaultLoadedChat />
+                    <DefaultLoadedChat />
+                    <DefaultLoadedChat />
+                    <DefaultLoadedChat />
+                    <DefaultLoadedChat />
+                  </div>
+                </div>
+              </TabContainer>
+              <TabContainer dir={theme.direction}>Item One</TabContainer>
+            </SwipeableViews>
           </div>
         </section>
         <div className="new__chat__green__logo-main">
@@ -232,4 +265,4 @@ class LeftSide extends React.Component {
   }
 }
 
-export default withStyles(styles)(LeftSide);
+export default withStyles(styles, { withTheme: true })(LeftSide);

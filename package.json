@@ -47,6 +47,7 @@
     "react-dev-utils": "^8.0.0",
     "react-dom": "^16.8.6",
     "react-modal": "^3.8.1",
+    "react-swipeable-views": "^0.13.1",
     "react-textarea-autosize": "^7.1.0",
     "react-transition-group": "^4.0.0",
     "reactstrap": "^8.0.0",
