@@ -5,6 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import DefaultLoadedChat from "../../components/TypesOfUserChats/DefaultLoadedChat";
+import Aux from "../../hoc/Aux";
 
 const styles = theme => ({
   root: {
@@ -112,10 +113,10 @@ class LeftSide extends React.Component {
   render() {
     const { classes } = this.props;
     const { value } = this.state;
-    /** newChat component is too reusable */
-    let messageLogs = (
-      <div className="mx-0" id="message-logs">
-        {/* <header className="col-12 leftSide__header px-0" id="head">
+
+    let desktopHeader = (
+      <Aux>
+        <header className="col-12 leftSide__header px-0" id="head">
           <div className="row mx-0">
             <div className="col-3 px-0">
               <div className="px-3">
@@ -138,47 +139,51 @@ class LeftSide extends React.Component {
               </div>
             </div>
           </div>
-        </header> */}
-        <header className="col-12 mobile__view__header px-0" id="head">
-          <div className="row mx-0">
-            <div className="col-12 d-flex">
-              <h3 className="brand__name py-3 mb-0">Sup</h3>
-              <div className="w-100 d-flex align-items-center justify-content-end">
-                <div />
-                <div className="px-3">
-                  <img src={require("../../assets/svg/mobile-search.svg")} width="19" height="19" alt="search-svg" />
-                </div>
-                <div className="px-3">
-                  <img src={require("../../assets/svg/ellipsis.svg")} width="19" height="19" alt="ellipsis-svg" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="row mx-0">
-            <div className="col-12 pb-2 d-flex">
-              <div className="d-flex align-items-center pt-2">
-                <img src={require("../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
-              </div>
-              {/* <div className="w-100 d-flex align-items-center"> */}
-              <div className={classes.root}>
-                <Tabs
-                  variant="fullWidth"
-                  value={value}
-                  onChange={this.handleChange}
-                  classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
-                >
-                  <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CHATS" />
-                  <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="STATUS" />
-                  <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CALLS" />
-                </Tabs>
-                {/* <div>CHATS</div>
-                <div>STATUS</div>
-                <div>CALLS</div> */}
-              </div>
-            </div>
-          </div>
         </header>
-
+        <SearchInputBox placeholder="Search or start new Chat" searchBoxType="withSearchBox" />
+      </Aux>
+    );
+    let mobileHeader = (
+      <header className="col-12 mobile__view__header px-0" id="head">
+        <div className="row mx-0">
+          <div className="col-12 d-flex">
+            <h3 className="brand__name py-3 mb-0">Sup</h3>
+            <div className="w-100 d-flex align-items-center justify-content-end">
+              <div />
+              <div className="px-3">
+                <img src={require("../../assets/svg/mobile-search.svg")} width="19" height="19" alt="search-svg" />
+              </div>
+              <div className="px-3">
+                <img src={require("../../assets/svg/ellipsis.svg")} width="19" height="19" alt="ellipsis-svg" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row mx-0" id="input-box">
+          <div className="col-12 pb-2 d-flex">
+            <div className="d-flex align-items-center pt-2">
+              <img src={require("../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
+            </div>
+            {/* <div className="w-100 d-flex align-items-center"> */}
+            <div className={classes.root}>
+              <Tabs
+                variant="fullWidth"
+                value={value}
+                onChange={this.handleChange}
+                classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
+              >
+                <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CHATS" />
+                <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="STATUS" />
+                <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CALLS" />
+              </Tabs>
+            </div>
+          </div>
+        </div>
+      </header>
+    );
+    let messageLogs = (
+      <div className="mx-0" id="message-logs">
+        {this.props.mobile ? mobileHeader : desktopHeader}
         {/** input box  */}
         {/* <SearchInputBox placeholder="Search or start new Chat" searchBoxType="withSearchBox" /> */}
         {/** chat section */}
