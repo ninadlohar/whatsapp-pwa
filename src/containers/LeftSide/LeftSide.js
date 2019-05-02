@@ -26,17 +26,20 @@ const styles = theme => ({
   tabsIndicator: {
     backgroundColor: "#FFF",
     opacity: "0.6"
+    // backgroundColor: "#255d53"
   },
   tabRoot: {
     textTransform: "initial",
     minWidth: 72,
     fontWeight: "900",
+    backgroundColor: "#255d53",
     marginRight: theme.spacing.unit * 4,
     fontFamily: ['"Segoe UI"'].join(","),
     "&:hover": {
       color: "#FFF"
     },
     "&$tabSelected": {
+      backgroundColor: "#255d53",
       color: "#FFF",
       outline: "none",
       fontWeight: "900",
@@ -186,7 +189,7 @@ class LeftSide extends React.Component {
               <img src={require("../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
             </div>
             <div className={classes.root}>
-              <AppBar position="static" classes={classes.root.backgroundColor}>
+              <AppBar className="demo" position="static" color="inherit">
                 <Tabs
                   variant="fullWidth"
                   value={value}

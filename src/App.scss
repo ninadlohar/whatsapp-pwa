@@ -1314,3 +1314,24 @@ body {
     padding-right: 58px;
   }
 }
+
+.demo {
+  box-shadow: none !important;
+  > div {
+    > div {
+      > div {
+        > div {
+          > button {
+            background-color: #255d53 !important;
+            margin-right: 0 !important;
+            opacity: unset !important;
+            &:active,
+            &:focus {
+              background-color: #255d53 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
