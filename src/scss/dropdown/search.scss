@@ -7,7 +7,7 @@
 .setSearchActive-enter-active {
   transform-origin: right top;
   opacity: 1;
-  transform: translateX(0);
+  transform: translate(90px,0);
   transition: opacity 200ms, transform 200ms;
 }
 

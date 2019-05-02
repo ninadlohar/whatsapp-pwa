@@ -107,7 +107,7 @@ class LeftSide extends React.Component {
     content.style.height = availableheight + "px";
     content.style.overflow = "scroll";
 
-    window.addEventListener("resize", function() {
+    window.addEventListener("resize", function () {
       var height = document.getElementById("page").clientHeight;
       var inputBox = document.getElementById("input-box").clientHeight;
       var headheight = document.getElementById("head").clientHeight;
@@ -202,33 +202,33 @@ class LeftSide extends React.Component {
 
           {this.state.setSearchActive ? (
             <SearchInputBox
-              placeholder="Search or start new Chat"
-              searchBoxType="withSearchBox"
+              placeholder="Search..."
+              searchBoxType="mobileSearchBox"
               setSearchDeactiveFn={this.setSearchDeactiveFn}
             />
           ) : (
-            <div className="row mx-0" id="input-box">
-              <div className="col-12 pb-1 d-flex camera">
-                <div className="d-flex align-items-center pt-1">
-                  <img src={require("../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
-                </div>
-                <div className={classes.root}>
-                  <AppBar className="demo" position="static" color="inherit">
-                    <Tabs
-                      variant="fullWidth"
-                      value={value}
-                      onChange={this.handleChange}
-                      classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
-                    >
-                      <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CHATS" />
-                      <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="STATUS" />
-                      <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CALLS" />
-                    </Tabs>
-                  </AppBar>
+              <div className="row mx-0" id="input-box">
+                <div className="col-12 pb-1 d-flex camera">
+                  <div className="d-flex align-items-center pt-1">
+                    <img src={require("../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
+                  </div>
+                  <div className={classes.root}>
+                    <AppBar className="demo" position="static" color="inherit">
+                      <Tabs
+                        variant="fullWidth"
+                        value={value}
+                        onChange={this.handleChange}
+                        classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
+                      >
+                        <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CHATS" />
+                        <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="STATUS" />
+                        <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CALLS" />
+                      </Tabs>
+                    </AppBar>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
         </header>
       </Aux>
     );
@@ -305,56 +305,56 @@ class LeftSide extends React.Component {
         </div>
       </div>
     ) : (
-      <div className="mx-0" id="message-logs">
-        <header className="col-12 leftSide__header px-0" id="head">
-          <div className="row mx-0">
-            <div className="col-3 px-0">
-              <div className="px-3">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg"
-                  alt="karl-benz"
-                  className="logged__in__user__image__49px"
-                />
-              </div>
-            </div>
-            <div className="col-9">
-              <div className="row mx-0 justify-content-end align-items-center h-100">
+        <div className="mx-0" id="message-logs">
+          <header className="col-12 leftSide__header px-0" id="head">
+            <div className="row mx-0">
+              <div className="col-3 px-0">
                 <div className="px-3">
-                  <img src={require("../../assets/svg/charging-circle.svg")} alt="status-v3" height="24" width="18" />
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg"
+                    alt="karl-benz"
+                    className="logged__in__user__image__49px"
+                  />
                 </div>
-                {/* <div className="px-3" onClick={this.toggleHandlerIn}>  */}
-                <div className="px-3" onClick={() => this.props.setLeftSliderScreen("defaultView")}>
-                  <img src={require("../../assets/svg/message-ballon.svg")} alt="message-ballon" height="20" width="20" />
+              </div>
+              <div className="col-9">
+                <div className="row mx-0 justify-content-end align-items-center h-100">
+                  <div className="px-3">
+                    <img src={require("../../assets/svg/charging-circle.svg")} alt="status-v3" height="24" width="18" />
+                  </div>
+                  {/* <div className="px-3" onClick={this.toggleHandlerIn}>  */}
+                  <div className="px-3" onClick={() => this.props.setLeftSliderScreen("defaultView")}>
+                    <img src={require("../../assets/svg/message-ballon.svg")} alt="message-ballon" height="20" width="20" />
+                  </div>
+                  <DropDown leftDropdown={this.props.leftDropdown} classes="fas fa-ellipsis-v" handleMenuClick={this.handleMenuClick} />
                 </div>
-                <DropDown leftDropdown={this.props.leftDropdown} classes="fas fa-ellipsis-v" handleMenuClick={this.handleMenuClick} />
               </div>
             </div>
-          </div>
-        </header>
-        {/** input box  */}
-        <SearchInputBox placeholder="Search or start new Chat" searchBoxType="withSearchBox" />
-        {/** chat section */}
-        <section className="col-12 px-0 leftSide__chat__section">
-          <div className="row mx-0">
-            {/** all chats will append here from API */}
-            <div className="col-12 px-0 leftSide__log__of__chats" id="content">
-              <div className="row mx-0">
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
-                <DefaultLoadedChat />
+          </header>
+          {/** input box  */}
+          <SearchInputBox placeholder="Search or start new Chat" searchBoxType="withSearchBox" />
+          {/** chat section */}
+          <section className="col-12 px-0 leftSide__chat__section">
+            <div className="row mx-0">
+              {/** all chats will append here from API */}
+              <div className="col-12 px-0 leftSide__log__of__chats" id="content">
+                <div className="row mx-0">
+                  <DefaultLoadedChat />
+                  <DefaultLoadedChat />
+                  <DefaultLoadedChat />
+                  <DefaultLoadedChat />
+                  <DefaultLoadedChat />
+                  <DefaultLoadedChat />
+                  <DefaultLoadedChat />
+                  <DefaultLoadedChat />
+                  <DefaultLoadedChat />
+                  <DefaultLoadedChat />
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      </div>
-    );
+          </section>
+        </div>
+      );
 
     let appendClasses = this.state.squeezeLayoutBoolean
       ? this.state.baseClasses.concat(this.props.addClassesLeftSide).join(" ")

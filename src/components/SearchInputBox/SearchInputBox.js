@@ -1,15 +1,17 @@
 import React from "react";
 import Input from "../../ReusableUI-Components/Input";
-import "../../App.scss";
+import '../../scss/dropdown/search.scss';
 
 class SearchInputBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       inputArrow: false,
-      value: ""
+      value: "",
+      mobileSearchBoxValue: ''
     };
     this.searchUsersFn = this.searchUsersFn.bind(this);
+    this.mobileSearchBoxFn = this.mobileSearchBoxFn.bind(this)
   }
 
   searchUsersFn(e) {
@@ -26,12 +28,27 @@ class SearchInputBox extends React.Component {
       }
     });
   }
+
+  mobileSearchBoxFn(e) {
+    let docInputBox = document.getElementById("search-input-box");
+    // docInputBox.style.background = "red";
+    docInputBox.style.boxShadow = "0px 4px 5px 0px rgba(205,205,205,1)";
+    this.setState({ mobileSearchBoxValue: e, inputArrow: true }, () => {
+      docInputBox.style.backgroundColor = "#f8f8f8";
+      docInputBox.style.boxShadow = "none";
+    });
+  }
+
+  activeInputValue = () => {
+    this.setState({ inputArrow: true })
+  }
+
   render() {
     let leftArrow = this.state.inputArrow ? (
       <i className="fas fa-arrow-down input__box__blue__arrow px-2 py-2" id="input-arrow" />
     ) : (
-      <i className="fas fa-search icon-color input__search__icon px-3" />
-    );
+        <i className="fas fa-search icon-color input__search__icon px-3" />
+      );
     let casualSearchBox = (
       <div className="col-12 px-0 input__box" id="input-box">
         <div className="px-2 py-2 d-flex">
@@ -136,6 +153,29 @@ class SearchInputBox extends React.Component {
       </div>
     );
 
+    let mobileSearchBox = (
+
+      <div className="col-12 px-0 input__box" id="search-input-box">
+        <div className="px-2 py-2 d-flex">
+          <div className="row mx-0 w-100">
+            <div className="col-12 px-0">
+              <div className="main-left-arrow px-1" onClick={this.props.setSearchDeactiveFn}>
+                <i className="fas fa-arrow-down input__box__green__arrow px-2 py-2" id="input-arrow" />
+              </div>
+              <Input
+                placeholder={this.props.placeholder}
+                onChangeHandler={this.mobileSearchBoxFn}
+                value={this.state.mobileSearchBoxValue}
+                classes="search__input__box"
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    )
+
     let searchBox = null;
     switch (this.props.searchBoxType) {
       case "withSearchBox":
@@ -155,6 +195,9 @@ class SearchInputBox extends React.Component {
         break;
       case "simpleInputForGroupInfo__Description":
         searchBox = simpleInputForGroupInfo__Description;
+        break;
+      case "mobileSearchBox":
+        searchBox = mobileSearchBox
         break;
       default:
         searchBox = simpleInputForProfile__About;
