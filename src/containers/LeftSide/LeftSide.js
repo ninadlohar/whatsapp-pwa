@@ -1,7 +1,45 @@
 import React from "react";
 import SearchInputBox from "../../components/SearchInputBox/SearchInputBox";
 import DropDown from "../../ReusableUI-Components/dropDown";
+import { withStyles } from "@material-ui/core/styles";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
 import DefaultLoadedChat from "../../components/TypesOfUserChats/DefaultLoadedChat";
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    backgrounColor: "#255d53"
+  },
+  tabsIndicator: {
+    backgroundColor: "#FFF",
+    opacity: "1"
+  },
+  tabRoot: {
+    textTransform: "initial",
+    minWidth: 72,
+    fontWeight: "900",
+    marginRight: theme.spacing.unit * 4,
+    fontFamily: ['"Segoe UI"'].join(","),
+    "&:hover": {
+      color: "#FFF"
+    },
+    "&$tabSelected": {
+      color: "#FFF",
+      outline: "none",
+      fontWeight: "900",
+      opacity: "1"
+    },
+    "&:focus": {
+      color: "#FFF",
+      outline: "none"
+    }
+  },
+  tabSelected: {},
+  typography: {
+    padding: theme.spacing.unit * 3
+  }
+});
 
 class LeftSide extends React.Component {
   constructor(props) {
@@ -9,10 +47,16 @@ class LeftSide extends React.Component {
     this.state = {
       baseClasses: ["col-xl-3-5", "leftSide__chat__window__parent", "px-0"],
       squeezeLayoutBoolean: this.props.squeezeLayoutBoolean,
-      isChatARegularMessage: this.props.isChatARegularMessage
+      isChatARegularMessage: this.props.isChatARegularMessage,
+      value: 0
     };
+
     this.toggleHandlerIn = this.toggleHandlerIn.bind(this);
   }
+
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
 
   componentDidMount() {
     this.setState({ isChatARegularMessage: true });
@@ -66,10 +110,12 @@ class LeftSide extends React.Component {
   };
 
   render() {
+    const { classes } = this.props;
+    const { value } = this.state;
     /** newChat component is too reusable */
     let messageLogs = (
       <div className="mx-0" id="message-logs">
-        <header className="col-12 leftSide__header px-0" id="head">
+        {/* <header className="col-12 leftSide__header px-0" id="head">
           <div className="row mx-0">
             <div className="col-3 px-0">
               <div className="px-3">
@@ -85,7 +131,6 @@ class LeftSide extends React.Component {
                 <div className="px-3">
                   <img src={require("../../assets/svg/charging-circle.svg")} alt="status-v3" height="24" width="18" />
                 </div>
-                {/* <div className="px-3" onClick={this.toggleHandlerIn}>  */}
                 <div className="px-3" onClick={() => this.props.setLeftSliderScreen("defaultView")}>
                   <img src={require("../../assets/svg/message-ballon.svg")} alt="message-ballon" height="20" width="20" />
                 </div>
@@ -93,9 +138,49 @@ class LeftSide extends React.Component {
               </div>
             </div>
           </div>
+        </header> */}
+        <header className="col-12 mobile__view__header px-0" id="head">
+          <div className="row mx-0">
+            <div className="col-12 d-flex">
+              <h3 className="brand__name py-3 mb-0">Sup</h3>
+              <div className="w-100 d-flex align-items-center justify-content-end">
+                <div />
+                <div className="px-3">
+                  <img src={require("../../assets/svg/mobile-search.svg")} width="19" height="19" alt="search-svg" />
+                </div>
+                <div className="px-3">
+                  <img src={require("../../assets/svg/ellipsis.svg")} width="19" height="19" alt="ellipsis-svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row mx-0">
+            <div className="col-12 pb-2 d-flex">
+              <div className="d-flex align-items-center pt-2">
+                <img src={require("../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
+              </div>
+              {/* <div className="w-100 d-flex align-items-center"> */}
+              <div className={classes.root}>
+                <Tabs
+                  variant="fullWidth"
+                  value={value}
+                  onChange={this.handleChange}
+                  classes={{ root: classes.tabsRoot, indicator: classes.tabsIndicator }}
+                >
+                  <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CHATS" />
+                  <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="STATUS" />
+                  <Tab disableRipple classes={{ root: classes.tabRoot, selected: classes.tabSelected }} label="CALLS" />
+                </Tabs>
+                {/* <div>CHATS</div>
+                <div>STATUS</div>
+                <div>CALLS</div> */}
+              </div>
+            </div>
+          </div>
         </header>
+
         {/** input box  */}
-        <SearchInputBox placeholder="Search or start new Chat" searchBoxType="withSearchBox" />
+        {/* <SearchInputBox placeholder="Search or start new Chat" searchBoxType="withSearchBox" /> */}
         {/** chat section */}
         <section className="col-12 px-0 leftSide__chat__section">
           <div className="row mx-0">
@@ -132,4 +217,4 @@ class LeftSide extends React.Component {
   }
 }
 
-export default LeftSide;
+export default withStyles(styles)(LeftSide);

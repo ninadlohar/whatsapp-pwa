@@ -104,6 +104,7 @@ class Main extends React.Component {
                     isChatARegularMessage={this.state.isChatARegularMessage}
                     isChatARegularMessageFn={this.isChatARegularMessageFn}
                     setLeftSliderScreen={this.setLeftSliderScreen}
+                    mobile={mobile}
                   />
                 </div>
               </div>
