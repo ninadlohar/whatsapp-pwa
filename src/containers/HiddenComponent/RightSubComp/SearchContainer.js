@@ -8,7 +8,7 @@ class SearchContainer extends React.Component {
   slideOutToggler = () => {
     console.log("working");
     this.props.slideOutToggler();
-    document.getElementById("col-xl-6-5").style.width = "65%";
+    document.getElementById("col-xl-6-5").style.width = "70%";
     document.getElementById("DOMChangedHiddenSide").style.width = "0%";
   };
   render() {
