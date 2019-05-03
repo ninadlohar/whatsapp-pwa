@@ -22,14 +22,14 @@ class SearchContainer extends React.Component {
             <span>Search Messages</span>
           </div>
         </header>
-        {/* <Aux> */}
+        {/* <Auxillary> */}
         <div>
           <SearchInputBox placeholder="Search..." searchBoxType="withSearchBox" />
         </div>
         <div className="custom__padding50 text-center">
           <span className="rightSlider__search__container__content">Search for messages within 9139396939.</span>
         </div>
-        {/* </Aux> */}
+        {/* </Auxillary> */}
       </div>
     );
   }

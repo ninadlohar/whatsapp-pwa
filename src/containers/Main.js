@@ -4,7 +4,7 @@ import RightSide from "./RightSide/RightSide";
 import LeftSide from "./LeftSide/LeftSide";
 import HiddenComponentRightSide from "./HiddenComponent/HiddenComponentRightSide";
 import HiddenComponentLeftSide from "./HiddenComponent/HiddenComponentLeftSide";
-// import Aux from "../hoc/Aux";
+// import Auxillary from "../hoc/Auxillary";
 
 class Main extends React.Component {
   constructor(props) {

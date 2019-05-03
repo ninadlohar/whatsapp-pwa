@@ -1,7 +1,7 @@
 import React from "react";
 import Input from "../../../ReusableUI-Components/Input";
 import MessageLogs from "../MessageLogs/MessageLogs";
-import Aux from "../../../hoc/Aux";
+import Auxillary from "../../../hoc/Auxillary";
 import "../../../App.scss";
 
 class FooterAndMessageLogs extends React.Component {
@@ -51,7 +51,7 @@ class FooterAndMessageLogs extends React.Component {
       <i className="fas fa-microphone microphone icon-color" />
     );
     return (
-      <Aux>
+      <Auxillary>
         {/* <div className="row mx-0"> */}
         <MessageLogs messageLogs={this.state.messageList} />
         {/* </div> */}
@@ -112,7 +112,7 @@ class FooterAndMessageLogs extends React.Component {
             </div>
           </footer>
         </div>
-      </Aux>
+      </Auxillary>
     );
   }
 }

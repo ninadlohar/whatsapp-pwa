@@ -1,7 +1,7 @@
 import React from "react";
 import FooterAndMessageLogs from "../../components/FooterAndMessageArea/Footer/FooterAndMessageLogs";
 import DropDown from "../../ReusableUI-Components/dropDown";
-import Aux from "../../hoc/Aux";
+import Auxillary from "../../hoc/Auxillary";
 
 class RightSide extends React.Component {
   state = {
@@ -45,7 +45,7 @@ class RightSide extends React.Component {
       : this.state.baseClasses.join(" ");
 
     return (
-      <Aux>
+      <Auxillary>
         <div className={appendClasses} id="col-xl-6-5">
           {/* <div id="col-xl-6-5"> */}
           <div className="rightSide__chat__window__child">
@@ -95,7 +95,7 @@ class RightSide extends React.Component {
             <FooterAndMessageLogs /> {/** it includes message logs area */}
           </div>
         </div>
-      </Aux>
+      </Auxillary>
     );
   }
 }

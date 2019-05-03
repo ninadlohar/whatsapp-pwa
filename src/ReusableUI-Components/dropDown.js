@@ -1,5 +1,5 @@
 import React from "react";
-import Aux from "../hoc/Aux";
+import Auxillary from "../hoc/Auxillary";
 import MainModel from "./Modal";
 
 import { CSSTransition } from "react-transition-group";
@@ -140,7 +140,7 @@ class DropDown extends React.Component {
     }
 
     return (
-      <Aux>
+      <Auxillary>
         <div className={this.state.showMenu ? "px-3 icon-active align-items-center justify-items-center d-flex" : "px-3 "}>
           <i className={this.props.mobile ? "" : "icon-color"}>
             <i className={this.props.classes} onClick={this.showMenu} />
@@ -153,7 +153,7 @@ class DropDown extends React.Component {
             onEnter={() => this.showMenu}
             onExited={() => this.closeMenu}
           >
-            <Aux>{dropDownMenu}</Aux>
+            <Auxillary>{dropDownMenu}</Auxillary>
           </CSSTransition>
         </div>
         <MainModel isOpen={this.state.showModal} toggle={this.toggle}>
@@ -207,7 +207,7 @@ class DropDown extends React.Component {
             </div>
           </div>
         </MainModel>
-      </Aux>
+      </Auxillary>
     );
   }
 }
