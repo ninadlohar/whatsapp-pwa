@@ -1,6 +1,6 @@
 import React from "react";
 
-class ContactDataChatWStatus extends React.Component {
+class ContactDataChatWStataus extends React.Component {
   state = {
     onHoverState: false
   };
@@ -31,9 +31,6 @@ class ContactDataChatWStatus extends React.Component {
               <div className="leftChat__senderName__asAdmin noOverFlow">
                 NiKO
               </div>
-              <div className="leftChat__groupAdmin noOverFlow">
-                <span className="group-admin">Group Admin</span>
-              </div>
             </div>
           </div>
           <div className="leftChat__message___messageLeftToRead">
@@ -47,4 +44,4 @@ class ContactDataChatWStatus extends React.Component {
   }
 }
 
-export default ContactDataChatWStatus;
+export default ContactDataChatWStataus;

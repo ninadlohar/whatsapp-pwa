@@ -279,8 +279,21 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .mobile__newChat__selectedContact {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .mobile__newChat__contactLength {
+    font-size: 14px;
+    font-weight: 100;
+  }
+  .bottomDrawer {
+    height: 100vh;
+    width: 100%;
+    outline: none;
+  }
   .input__box__green__arrow {
-    color:#255d53;
+    color: #255d53;
     transform: rotate(90deg);
   }
   .camera {
@@ -717,6 +730,12 @@ body {
   .main-left-arrow {
     position: absolute;
     transition: all 0.3s;
+  }
+  .mobileView__selectContactSection {
+    width: calc(100% - 130px);
+  }
+  .mobile__newChat__options {
+    width: 100px;
   }
   .input__box__blue__arrow {
     font-size: 20px;
@@ -1178,6 +1197,7 @@ body {
     position: absolute;
     z-index: 999;
     height: 100%;
+    transition: all 0.3s cubic-bezier(0, 0.7, 0.4, 0);
     // width: 30%;
     transform: translate(-100%, 0);
   }

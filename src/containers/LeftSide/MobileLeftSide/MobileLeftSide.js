@@ -11,6 +11,8 @@ import { withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import DefaultLoadedChat from "../../../components/TypesOfUserChats/DefaultLoadedChat";
+import BottomToTopDrawer from "../DropUps/BottomToTopDrawer";
+import Drawer from "@material-ui/core/Drawer";
 
 function TabContainer({ children, dir }) {
   return (
@@ -21,6 +23,10 @@ function TabContainer({ children, dir }) {
 }
 
 const styles = theme => ({
+  fullList: {
+    width: "auto",
+    height: "100vh"
+  },
   root: {
     flexGrow: 1,
     backgroundColor: "#255d53"
@@ -60,11 +66,11 @@ const styles = theme => ({
 
 class MobileLeftSide extends React.Component {
   state = {
-    baseClasses: ["col-xl-3-5", "leftSide__chat__window__parent", "px-0"],
-    squeezeLayoutBoolean: this.props.squeezeLayoutBoolean,
     value: 0,
     mobileViewDropDown: true,
-    setSearchActive: false
+    setSearchActive: false,
+    bottomDrawer: false,
+    bottom: false
   };
   setSearchActiveFn = () => {
     this.setState({ setSearchActive: true }, () => {
@@ -85,6 +91,23 @@ class MobileLeftSide extends React.Component {
     this.setState({ setSearchActive: false }, () => {
       document.getElementById("col-xl-3-5").style.transform =
         "translate(0px, 0px)";
+    });
+  };
+
+  // setDrawerOpen = () => {
+  //   this.setState({ bottomDrawer: true }, () => {
+  //     document.getElementById("bottomDrawer").style.transform =
+  //       "translate(0,-100%)";
+  //   });
+  // };
+
+  setDrawerFalse = () => {
+    this.setState({ bottomDrawer: false });
+  };
+
+  toggleDrawer = (side, open) => () => {
+    this.setState({
+      [side]: open
     });
   };
 
@@ -133,192 +156,210 @@ class MobileLeftSide extends React.Component {
     const { classes, theme } = this.props;
     const { value } = this.state;
 
-    let appendClasses = this.state.squeezeLayoutBoolean
-      ? this.state.baseClasses.concat(this.props.addClassesLeftSide).join(" ")
-      : this.state.baseClasses.join(" ");
-
-    return (
-      // <div className={appendClasses} id="col-xl-3-5">
-      //   <div className="leftSide__chat__window__child">
+    let defaultScreen = (
       <Auxillary>
-        <header className="col-12 mobile__view__header px-0" id="head">
-          <div className="row mx-0">
-            <div className="col-12 d-flex">
-              <h3 className="brand__name py-3 mb-0">Sup</h3>
-              <div className="w-100 d-flex align-items-center justify-content-end">
-                <div />
-                <div className="px-3" onClick={() => this.setSearchActiveFn()}>
-                  <img
-                    src={require("../../../assets/svg/mobile-search.svg")}
-                    width="19"
-                    height="19"
-                    alt="search-svg"
+        <div>
+          <header className="col-12 mobile__view__header px-0" id="head">
+            <div className="row mx-0">
+              <div className="col-12 d-flex">
+                <h3 className="brand__name py-3 mb-0">Sup</h3>
+                <div className="w-100 d-flex align-items-center justify-content-end">
+                  <div />
+                  <div
+                    className="px-3"
+                    onClick={() => this.setSearchActiveFn()}
+                  >
+                    <img
+                      src={require("../../../assets/svg/mobile-search.svg")}
+                      width="19"
+                      height="19"
+                      alt="search-svg"
+                    />
+                  </div>
+                  <DropDown
+                    classes="fas fa-ellipsis-v"
+                    mobile={this.props.mobile}
+                    mobileViewDropDown={this.state.mobileViewDropDown}
                   />
                 </div>
-                <DropDown
-                  classes="fas fa-ellipsis-v"
-                  mobile={this.props.mobile}
-                  mobileViewDropDown={this.state.mobileViewDropDown}
-                />
               </div>
             </div>
-          </div>
 
-          {this.state.setSearchActive ? (
-            <SearchInputBox
-              placeholder="Search..."
-              searchBoxType="mobileSearchBox"
-              setSearchDeactiveFn={this.setSearchDeactiveFn}
-            />
-          ) : (
-            <div className="row mx-0" id="input-box">
-              <div className="col-12 pb-1 d-flex camera">
-                <div className="d-flex align-items-center pt-1">
-                  <img
-                    src={require("../../../assets/svg/camera.svg")}
-                    width="20"
-                    height="20"
-                    alt="camera-svg"
-                  />
-                </div>
-                <div className={classes.root}>
-                  <AppBar className="demo" position="static" color="inherit">
-                    <Tabs
-                      variant="fullWidth"
-                      value={value}
-                      onChange={this.handleChange}
-                      classes={{
-                        root: classes.tabsRoot,
-                        indicator: classes.tabsIndicator
-                      }}
-                    >
-                      <Tab
-                        disableRipple
+            {this.state.setSearchActive ? (
+              <SearchInputBox
+                placeholder="Search..."
+                searchBoxType="mobileSearchBox"
+                setSearchDeactiveFn={this.setSearchDeactiveFn}
+              />
+            ) : (
+              <div className="row mx-0" id="input-box">
+                <div className="col-12 pb-1 d-flex camera">
+                  <div className="d-flex align-items-center pt-1">
+                    <img
+                      src={require("../../../assets/svg/camera.svg")}
+                      width="20"
+                      height="20"
+                      alt="camera-svg"
+                    />
+                  </div>
+                  <div className={classes.root}>
+                    <AppBar className="demo" position="static" color="inherit">
+                      <Tabs
+                        variant="fullWidth"
+                        value={value}
+                        onChange={this.handleChange}
                         classes={{
-                          root: classes.tabRoot,
-                          selected: classes.tabSelected
+                          root: classes.tabsRoot,
+                          indicator: classes.tabsIndicator
                         }}
-                        label="CHATS"
-                      />
-                      <Tab
-                        disableRipple
-                        classes={{
-                          root: classes.tabRoot,
-                          selected: classes.tabSelected
-                        }}
-                        label="STATUS"
-                      />
-                      <Tab
-                        disableRipple
-                        classes={{
-                          root: classes.tabRoot,
-                          selected: classes.tabSelected
-                        }}
-                        label="CALLS"
-                      />
-                    </Tabs>
-                  </AppBar>
+                      >
+                        <Tab
+                          disableRipple
+                          classes={{
+                            root: classes.tabRoot,
+                            selected: classes.tabSelected
+                          }}
+                          label="CHATS"
+                        />
+                        <Tab
+                          disableRipple
+                          classes={{
+                            root: classes.tabRoot,
+                            selected: classes.tabSelected
+                          }}
+                          label="STATUS"
+                        />
+                        <Tab
+                          disableRipple
+                          classes={{
+                            root: classes.tabRoot,
+                            selected: classes.tabSelected
+                          }}
+                          label="CALLS"
+                        />
+                      </Tabs>
+                    </AppBar>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
-        </header>
-        <div className="mx-0" id="message-logs">
-          <section className="col-12 px-0 leftSide__chat__section">
-            <div className="row mx-0" style={{ height: "100vh" }}>
-              <SwipeableViews
-                axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-                index={this.state.value}
-                onChangeIndex={this.handleChangeIndex}
-                style={{ width: "100vw" }}
-              >
-                <TabContainer dir={theme.direction}>
-                  <div
-                    className="col-12 px-0 leftSide__log__of__chats"
-                    id="content"
-                  >
-                    <div className="row mx-0">
-                      <DefaultLoadedChat />
-                      <DefaultLoadedChat />
-                      <DefaultLoadedChat />
-                      <DefaultLoadedChat />
-                      <DefaultLoadedChat />
-                      <DefaultLoadedChat />
-                      <DefaultLoadedChat />
-                      <DefaultLoadedChat />
+            )}
+          </header>
+          <div className="mx-0" id="message-logs">
+            <section className="col-12 px-0 leftSide__chat__section">
+              <div className="row mx-0" style={{ height: "100vh" }}>
+                <SwipeableViews
+                  axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+                  index={this.state.value}
+                  onChangeIndex={this.handleChangeIndex}
+                  style={{ width: "100vw" }}
+                >
+                  <TabContainer dir={theme.direction}>
+                    <div
+                      className="col-12 px-0 leftSide__log__of__chats"
+                      id="content"
+                    >
+                      <div className="row mx-0">
+                        <DefaultLoadedChat />
+                        <DefaultLoadedChat />
+                        <DefaultLoadedChat />
+                        <DefaultLoadedChat />
+                        <DefaultLoadedChat />
+                        <DefaultLoadedChat />
+                        <DefaultLoadedChat />
+                        <DefaultLoadedChat />
+                      </div>
                     </div>
-                  </div>
-                </TabContainer>
-                <TabContainer dir={theme.direction}>
-                  <div
-                    className="col-12 px-0 leftSide__log__of__chats"
-                    id="content"
-                  >
-                    <div className="row mx-0">
-                      <Status />
-                      <Status />
-                      <Status />
-                      <Status />
-                      <Status />
-                      <Status />
-                      <Status />
-                      <Status />
-                      <Status />
+                  </TabContainer>
+                  <TabContainer dir={theme.direction}>
+                    <div
+                      className="col-12 px-0 leftSide__log__of__chats"
+                      id="content"
+                    >
+                      <div className="row mx-0">
+                        <Status />
+                        <Status />
+                        <Status />
+                        <Status />
+                        <Status />
+                        <Status />
+                        <Status />
+                        <Status />
+                        <Status />
+                      </div>
                     </div>
-                  </div>
-                </TabContainer>
-                <TabContainer dir={theme.direction}>
-                  <div
-                    className="col-12 px-0 leftSide__log__of__chats"
-                    id="content"
-                  >
-                    <div className="row mx-0">
-                      <Calls />
-                      <Calls />
-                      <Calls />
-                      <Calls />
-                      <Calls />
-                      <Calls />
-                      <Calls />
-                      <Calls />
-                      <Calls />
+                  </TabContainer>
+                  <TabContainer dir={theme.direction}>
+                    <div
+                      className="col-12 px-0 leftSide__log__of__chats"
+                      id="content"
+                    >
+                      <div className="row mx-0">
+                        <Calls />
+                        <Calls />
+                        <Calls />
+                        <Calls />
+                        <Calls />
+                        <Calls />
+                        <Calls />
+                        <Calls />
+                        <Calls />
+                      </div>
                     </div>
-                  </div>
-                </TabContainer>
-              </SwipeableViews>
-            </div>
-          </section>
-          <div className="new__chat__green__logo-main">
-            <div className="new__chat__green__logo">
-              {this.state.value === 0 ? (
-                <img
-                  src={require("../../../assets/svg/new-chat-ballon.svg")}
-                  alt="message-ballon"
-                  height="18"
-                  width="18"
-                />
-              ) : null}
-              {this.state.value === 1 ? (
-                <img
-                  src={require("../../../assets/svg/emergency-call.svg")}
-                  alt="message-ballon"
-                  height="16"
-                  width="16"
-                />
-              ) : null}
-              {this.state.value === 2 ? (
-                <img
-                  src={require("../../../assets/svg/square-stop-button.svg")}
-                  alt="message-ballon"
-                  height="16"
-                  width="16"
-                />
-              ) : null}
+                  </TabContainer>
+                </SwipeableViews>
+              </div>
+            </section>
+            <div
+              className="new__chat__green__logo-main"
+              // onClick={this.setDrawerOpen}
+              onClick={this.toggleDrawer("bottom", true)}
+            >
+              <div className="new__chat__green__logo">
+                {this.state.value === 0 ? (
+                  <img
+                    src={require("../../../assets/svg/new-chat-ballon.svg")}
+                    alt="message-ballon"
+                    height="18"
+                    width="18"
+                  />
+                ) : null}
+                {this.state.value === 1 ? (
+                  <img
+                    src={require("../../../assets/svg/emergency-call.svg")}
+                    alt="message-ballon"
+                    height="16"
+                    width="16"
+                  />
+                ) : null}
+                {this.state.value === 2 ? (
+                  <img
+                    src={require("../../../assets/svg/square-stop-button.svg")}
+                    alt="message-ballon"
+                    height="16"
+                    width="16"
+                  />
+                ) : null}
+              </div>
             </div>
           </div>
         </div>
+
+        <Drawer
+          anchor="bottom"
+          open={this.state.bottom}
+          onClose={this.toggleDrawer("bottom", false)}
+        >
+          <div className="bottomDrawer" tabIndex={0} role="button">
+            <BottomToTopDrawer
+              setDrawerFalse={this.setDrawerFalse}
+              closeDrawer={this.toggleDrawer("bottom", false)}
+            />
+          </div>
+        </Drawer>
       </Auxillary>
     );
+
+    return defaultScreen;
   }
 }
 
