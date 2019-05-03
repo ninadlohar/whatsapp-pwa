@@ -112,7 +112,7 @@ class DropDown extends React.Component {
 
     let mobileViewDropDown = (
       <div className="right-dropdown">
-        <div className="px-4 py-2" onClick={this.props.newGroupHandler}>
+        <div className="px-4 py-2" onClick={this.props.setNewGroupTrue}>
           New Group
         </div>
         <div className="px-4 py-2">New Broadcast</div>

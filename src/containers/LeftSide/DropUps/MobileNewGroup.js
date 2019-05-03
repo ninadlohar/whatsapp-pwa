@@ -34,7 +34,7 @@ class MobileNewGroup extends React.Component {
                 <div className="row mx-0 w-100">
                   <div
                     className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                    onClick={this.props.closeDrawer}
+                    onClick={this.props.closeGroupDrawer}
                   >
                     <img src={require("../../../assets/svg/left.svg")} width="24" height="24" />
                   </div>

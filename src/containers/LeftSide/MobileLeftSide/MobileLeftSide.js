@@ -11,8 +11,9 @@ import { withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import DefaultLoadedChat from "../../../components/TypesOfUserChats/DefaultLoadedChat";
-import BottomToTopDrawer from "../DropUps/BottomToTopDrawer";
-import Drawer from "@material-ui/core/Drawer";
+import MainBottomDrawer from "../DropUps/BottomDrawer";
+import MobileNewChat from "../DropUps/MobileNewChat";
+import MobileNewGroup from "../DropUps/MobileNewGroup";
 
 function TabContainer({ children, dir }) {
   return (
@@ -61,6 +62,12 @@ const styles = theme => ({
   tabSelected: {},
   typography: {
     padding: theme.spacing.unit * 3
+  },
+  list: {
+    width: 250
+  },
+  fullList: {
+    width: "auto"
   }
 });
 
@@ -70,7 +77,9 @@ class MobileLeftSide extends React.Component {
     mobileViewDropDown: true,
     setSearchActive: false,
     bottom: false,
-    screen: null
+    screen: null,
+    newChat: false,
+    newGroup: false
   };
   setSearchActiveFn = () => {
     this.setState({ setSearchActive: true }, () => {
@@ -92,11 +101,20 @@ class MobileLeftSide extends React.Component {
     });
   };
 
-  toggleDrawer = (side, open, screen) => () => {
-    this.setState({
-      [side]: open
-    });
-    this.props.setDrawer(screen);
+  setNewChatTrue = () => {
+    this.setState({ newChat: true });
+  };
+
+  setNewChatFalse = () => {
+    this.setState({ newChat: false });
+  };
+
+  setNewGroupTrue = () => {
+    this.setState({ newGroup: true });
+  };
+
+  setNewGroupFalse = () => {
+    this.setState({ newGroup: false });
   };
 
   componentDidMount() {
@@ -166,7 +184,7 @@ class MobileLeftSide extends React.Component {
                     classes="fas fa-ellipsis-v"
                     mobile={this.props.mobile}
                     mobileViewDropDown={this.state.mobileViewDropDown}
-                    newGroupHandler={this.toggleDrawer("bottom", true, "newGroup")}
+                    setNewGroupTrue={this.setNewGroupTrue}
                   />
                 </div>
               </div>
@@ -283,8 +301,7 @@ class MobileLeftSide extends React.Component {
               </div>
             </section>
 
-            {/* <div className="new__chat__green__logo-main" onClick={this.toggleDrawer("bottom", true)}> */}
-            <div className="new__chat__green__logo-main" onClick={this.toggleDrawer("bottom", true, "newChat")}>
+            <div className="new__chat__green__logo-main" onClick={this.setNewChatTrue}>
               <div className="new__chat__green__logo">
                 {this.state.value === 0 ? (
                   <img
@@ -314,15 +331,12 @@ class MobileLeftSide extends React.Component {
             </div>
           </div>
         </div>
-
-        <Drawer anchor="bottom" open={this.state.bottom} onClose={this.toggleDrawer("bottom", false, "")}>
-          <div className="bottomDrawer" tabIndex={0} role="button">
-            <BottomToTopDrawer
-              currentScreen2={this.props.currentScreen2}
-              closeDrawer={this.toggleDrawer("bottom", false, "")}
-            />
-          </div>
-        </Drawer>
+        <MainBottomDrawer onOpen={this.setNewChatTrue} open={this.state.newChat}>
+          <MobileNewChat closeDrawer={this.setNewChatFalse} />
+        </MainBottomDrawer>
+        <MainBottomDrawer onOpen={this.setNewGroupTrue} open={this.state.newGroup}>
+          <MobileNewGroup closeGroupDrawer={this.setNewGroupFalse} />
+        </MainBottomDrawer>
       </Auxillary>
     );
 
