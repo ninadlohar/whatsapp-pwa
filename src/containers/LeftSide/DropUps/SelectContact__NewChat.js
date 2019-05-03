@@ -1,19 +1,19 @@
-import React from 'react';
-import DefaultLoadedChat from '../../HiddenComponent/LeftSubComp/Calls';
+// import React from 'react';
+// import DefaultLoadedChat from '../../HiddenComponent/LeftSubComp/NewGroup';
 
-class SelectContact__NewChat extends React.Component {
-  render() {
-    return (
-      <div>
-          <DefaultLoadedChat />
-          <DefaultLoadedChat />
-          <DefaultLoadedChat />
-          <DefaultLoadedChat />
-          <DefaultLoadedChat />
-          <DefaultLoadedChat />
-      </div>
-    )
-  }
-}
+// class SelectContact__NewChat extends React.Component {
+//   render() {
+//     return (
+//       <div>
+//           <DefaultLoadedChat />
+//           <DefaultLoadedChat />
+//           <DefaultLoadedChat />
+//           <DefaultLoadedChat />
+//           <DefaultLoadedChat />
+//           <DefaultLoadedChat />
+//       </div>
+//     )
+//   }
+// }
 
-export default SelectContact__NewChat;
+// export default SelectContact__NewChat;
