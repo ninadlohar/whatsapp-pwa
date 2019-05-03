@@ -115,7 +115,9 @@ class DropDown extends React.Component {
         <div className="px-4 py-2" onClick={this.props.setNewGroupTrue}>
           New Group
         </div>
-        <div className="px-4 py-2">New Broadcast</div>
+        <div className="px-4 py-2" onClick={this.props.setNewBroadcastTrue}>
+          New Broadcast
+        </div>
         <div className="px-4 py-2">Starred Messages</div>
         <div className="px-4 py-2">Settings</div>
       </div>

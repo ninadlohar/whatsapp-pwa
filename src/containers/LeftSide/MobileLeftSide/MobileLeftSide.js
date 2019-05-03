@@ -14,6 +14,7 @@ import DefaultLoadedChat from "../../../components/TypesOfUserChats/DefaultLoade
 import MainBottomDrawer from "../DropUps/BottomDrawer";
 import MobileNewChat from "../DropUps/MobileNewChat";
 import MobileNewGroup from "../DropUps/MobileNewGroup";
+import MobileNewBroadcast from "../DropUps/MobileNewBroadcast";
 
 function TabContainer({ children, dir }) {
   return (
@@ -79,7 +80,8 @@ class MobileLeftSide extends React.Component {
     bottom: false,
     screen: null,
     newChat: false,
-    newGroup: false
+    newGroup: false,
+    newBroadcast: false
   };
   setSearchActiveFn = () => {
     this.setState({ setSearchActive: true }, () => {
@@ -115,6 +117,14 @@ class MobileLeftSide extends React.Component {
 
   setNewGroupFalse = () => {
     this.setState({ newGroup: false });
+  };
+
+  setNewBroadcastTrue = () => {
+    this.setState({ newBroadcast: true });
+  };
+
+  setNewBroadcastFalse = () => {
+    this.setState({ newBroadcast: false });
   };
 
   componentDidMount() {
@@ -185,6 +195,7 @@ class MobileLeftSide extends React.Component {
                     mobile={this.props.mobile}
                     mobileViewDropDown={this.state.mobileViewDropDown}
                     setNewGroupTrue={this.setNewGroupTrue}
+                    setNewBroadcastTrue={this.setNewBroadcastTrue}
                   />
                 </div>
               </div>
@@ -336,6 +347,9 @@ class MobileLeftSide extends React.Component {
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setNewGroupTrue} open={this.state.newGroup}>
           <MobileNewGroup closeGroupDrawer={this.setNewGroupFalse} />
+        </MainBottomDrawer>
+        <MainBottomDrawer onOpen={this.setNewBroadcastTrue} open={this.state.newBroadcast}>
+          <MobileNewBroadcast closeBroadcastDrawer={this.setNewBroadcastFalse} />
         </MainBottomDrawer>
       </Auxillary>
     );
