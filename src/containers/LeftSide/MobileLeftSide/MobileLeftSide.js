@@ -69,13 +69,11 @@ class MobileLeftSide extends React.Component {
     value: 0,
     mobileViewDropDown: true,
     setSearchActive: false,
-    bottomDrawer: false,
     bottom: false
   };
   setSearchActiveFn = () => {
     this.setState({ setSearchActive: true }, () => {
-      document.getElementById("col-xl-3-5").style.transform =
-        "translate(0, -65px)";
+      document.getElementById("col-xl-3-5").style.transform = "translate(0, -65px)";
     });
   };
 
@@ -89,20 +87,8 @@ class MobileLeftSide extends React.Component {
 
   setSearchDeactiveFn = () => {
     this.setState({ setSearchActive: false }, () => {
-      document.getElementById("col-xl-3-5").style.transform =
-        "translate(0px, 0px)";
+      document.getElementById("col-xl-3-5").style.transform = "translate(0px, 0px)";
     });
-  };
-
-  // setDrawerOpen = () => {
-  //   this.setState({ bottomDrawer: true }, () => {
-  //     document.getElementById("bottomDrawer").style.transform =
-  //       "translate(0,-100%)";
-  //   });
-  // };
-
-  setDrawerFalse = () => {
-    this.setState({ bottomDrawer: false });
   };
 
   toggleDrawer = (side, open) => () => {
@@ -110,6 +96,13 @@ class MobileLeftSide extends React.Component {
       [side]: open
     });
   };
+
+  // setMobileLeft = screen1 => {
+  //   this.openDrawer();
+  //   this.setState({ currentScreen1: screen1 }, () => {
+  //     this.RightDrawer.slideInToggler();
+  //   });
+  // };
 
   componentDidMount() {
     var height = document.getElementById("page").clientHeight;
@@ -165,10 +158,7 @@ class MobileLeftSide extends React.Component {
                 <h3 className="brand__name py-3 mb-0">Sup</h3>
                 <div className="w-100 d-flex align-items-center justify-content-end">
                   <div />
-                  <div
-                    className="px-3"
-                    onClick={() => this.setSearchActiveFn()}
-                  >
+                  <div className="px-3" onClick={() => this.setSearchActiveFn()}>
                     <img
                       src={require("../../../assets/svg/mobile-search.svg")}
                       width="19"
@@ -180,6 +170,7 @@ class MobileLeftSide extends React.Component {
                     classes="fas fa-ellipsis-v"
                     mobile={this.props.mobile}
                     mobileViewDropDown={this.state.mobileViewDropDown}
+                    newGroupHandler={this.toggleDrawer}
                   />
                 </div>
               </div>
@@ -195,12 +186,7 @@ class MobileLeftSide extends React.Component {
               <div className="row mx-0" id="input-box">
                 <div className="col-12 pb-1 d-flex camera">
                   <div className="d-flex align-items-center pt-1">
-                    <img
-                      src={require("../../../assets/svg/camera.svg")}
-                      width="20"
-                      height="20"
-                      alt="camera-svg"
-                    />
+                    <img src={require("../../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
                   </div>
                   <div className={classes.root}>
                     <AppBar className="demo" position="static" color="inherit">
@@ -254,10 +240,7 @@ class MobileLeftSide extends React.Component {
                   style={{ width: "100vw" }}
                 >
                   <TabContainer dir={theme.direction}>
-                    <div
-                      className="col-12 px-0 leftSide__log__of__chats"
-                      id="content"
-                    >
+                    <div className="col-12 px-0 leftSide__log__of__chats" id="content">
                       <div className="row mx-0">
                         <DefaultLoadedChat />
                         <DefaultLoadedChat />
@@ -271,10 +254,7 @@ class MobileLeftSide extends React.Component {
                     </div>
                   </TabContainer>
                   <TabContainer dir={theme.direction}>
-                    <div
-                      className="col-12 px-0 leftSide__log__of__chats"
-                      id="content"
-                    >
+                    <div className="col-12 px-0 leftSide__log__of__chats" id="content">
                       <div className="row mx-0">
                         <Status />
                         <Status />
@@ -289,10 +269,7 @@ class MobileLeftSide extends React.Component {
                     </div>
                   </TabContainer>
                   <TabContainer dir={theme.direction}>
-                    <div
-                      className="col-12 px-0 leftSide__log__of__chats"
-                      id="content"
-                    >
+                    <div className="col-12 px-0 leftSide__log__of__chats" id="content">
                       <div className="row mx-0">
                         <Calls />
                         <Calls />
@@ -309,11 +286,7 @@ class MobileLeftSide extends React.Component {
                 </SwipeableViews>
               </div>
             </section>
-            <div
-              className="new__chat__green__logo-main"
-              // onClick={this.setDrawerOpen}
-              onClick={this.toggleDrawer("bottom", true)}
-            >
+            <div className="new__chat__green__logo-main" onClick={this.toggleDrawer("bottom", true)}>
               <div className="new__chat__green__logo">
                 {this.state.value === 0 ? (
                   <img
@@ -344,16 +317,9 @@ class MobileLeftSide extends React.Component {
           </div>
         </div>
 
-        <Drawer
-          anchor="bottom"
-          open={this.state.bottom}
-          onClose={this.toggleDrawer("bottom", false)}
-        >
+        <Drawer anchor="bottom" open={this.state.bottom} onClose={this.toggleDrawer("bottom", false)}>
           <div className="bottomDrawer" tabIndex={0} role="button">
-            <BottomToTopDrawer
-              setDrawerFalse={this.setDrawerFalse}
-              closeDrawer={this.toggleDrawer("bottom", false)}
-            />
+            <BottomToTopDrawer closeDrawer={this.toggleDrawer("bottom", false)} newChat="newChat" newGroup="newGroup" />
           </div>
         </Drawer>
       </Auxillary>

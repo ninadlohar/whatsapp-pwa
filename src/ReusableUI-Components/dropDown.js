@@ -111,7 +111,9 @@ class DropDown extends React.Component {
     );
     let mobileViewDropDown = (
       <div className="right-dropdown">
-        <div className="px-4 py-2">New Group</div>
+        <div className="px-4 py-2" onClick={() => this.props.newGroupHandler("bottom", true)}>
+          New Group
+        </div>
         <div className="px-4 py-2">New Broadcast</div>
         <div className="px-4 py-2">Starred Messages</div>
         <div className="px-4 py-2">Settings</div>
@@ -141,7 +143,9 @@ class DropDown extends React.Component {
 
     return (
       <Auxillary>
-        <div className={this.state.showMenu ? "px-3 icon-active align-items-center justify-items-center d-flex" : "px-3 "}>
+        <div
+          className={this.state.showMenu ? "px-3 icon-active align-items-center justify-items-center d-flex" : "px-3 "}
+        >
           <i className={this.props.mobile ? "" : "icon-color"}>
             <i className={this.props.classes} onClick={this.showMenu} />
           </i>
