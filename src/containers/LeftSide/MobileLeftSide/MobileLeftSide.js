@@ -69,7 +69,8 @@ class MobileLeftSide extends React.Component {
     value: 0,
     mobileViewDropDown: true,
     setSearchActive: false,
-    bottom: false
+    bottom: false,
+    screen: null
   };
   setSearchActiveFn = () => {
     this.setState({ setSearchActive: true }, () => {
@@ -91,20 +92,15 @@ class MobileLeftSide extends React.Component {
     });
   };
 
-  toggleDrawer = (side, open) => () => {
+  toggleDrawer = (side, open, screen) => () => {
     this.setState({
       [side]: open
     });
+    this.props.setDrawer(screen);
   };
 
-  // setMobileLeft = screen1 => {
-  //   this.openDrawer();
-  //   this.setState({ currentScreen1: screen1 }, () => {
-  //     this.RightDrawer.slideInToggler();
-  //   });
-  // };
-
   componentDidMount() {
+    this.props.onRef2(this);
     var height = document.getElementById("page").clientHeight;
     var inputBox = document.getElementById("input-box").clientHeight;
     var headheight = document.getElementById("head").clientHeight;
@@ -170,7 +166,7 @@ class MobileLeftSide extends React.Component {
                     classes="fas fa-ellipsis-v"
                     mobile={this.props.mobile}
                     mobileViewDropDown={this.state.mobileViewDropDown}
-                    newGroupHandler={this.toggleDrawer}
+                    newGroupHandler={this.toggleDrawer("bottom", true, "newGroup")}
                   />
                 </div>
               </div>
@@ -286,7 +282,9 @@ class MobileLeftSide extends React.Component {
                 </SwipeableViews>
               </div>
             </section>
-            <div className="new__chat__green__logo-main" onClick={this.toggleDrawer("bottom", true)}>
+
+            {/* <div className="new__chat__green__logo-main" onClick={this.toggleDrawer("bottom", true)}> */}
+            <div className="new__chat__green__logo-main" onClick={this.toggleDrawer("bottom", true, "newChat")}>
               <div className="new__chat__green__logo">
                 {this.state.value === 0 ? (
                   <img
@@ -317,9 +315,12 @@ class MobileLeftSide extends React.Component {
           </div>
         </div>
 
-        <Drawer anchor="bottom" open={this.state.bottom} onClose={this.toggleDrawer("bottom", false)}>
+        <Drawer anchor="bottom" open={this.state.bottom} onClose={this.toggleDrawer("bottom", false, "")}>
           <div className="bottomDrawer" tabIndex={0} role="button">
-            <BottomToTopDrawer closeDrawer={this.toggleDrawer("bottom", false)} newChat="newChat" newGroup="newGroup" />
+            <BottomToTopDrawer
+              currentScreen2={this.props.currentScreen2}
+              closeDrawer={this.toggleDrawer("bottom", false, "")}
+            />
           </div>
         </Drawer>
       </Auxillary>

@@ -64,17 +64,27 @@ class LeftSide extends React.Component {
   }
 
   toggleHandlerIn() {
-    document.getElementById("leftSlider__chatActiveBox").style.transform =
-      "translate(0%, 0)";
+    document.getElementById("leftSlider__chatActiveBox").style.transform = "translate(0%, 0)";
   }
 
   handleMenuClick = screen => {
     this.props.setLeftSliderScreen(screen);
   };
 
+  setDrawer = screen2 => {
+    this.setState({ currentScreen2: screen2 }, () => {
+      this.setDrawerFn.toggleDrawer();
+    });
+  };
+
   render() {
     let mobileLeftSide = (
-      <MobileLeftSide squeezeLayoutBoolean={this.props.squeezeLayoutBoolean} />
+      <MobileLeftSide
+        squeezeLayoutBoolean={this.props.squeezeLayoutBoolean}
+        setDrawer={this.setDrawer}
+        onRef2={ref2 => (this.setDrawerFn = ref2)}
+        currentScreen2={this.state.currentScreen2}
+      />
     );
     let desktopLeftSide = (
       <div className="mx-0" id="message-logs">
@@ -92,17 +102,9 @@ class LeftSide extends React.Component {
             <div className="col-9">
               <div className="row mx-0 justify-content-end align-items-center h-100">
                 <div className="px-3">
-                  <img
-                    src={require("../../assets/svg/charging-circle.svg")}
-                    alt="status-v3"
-                    height="24"
-                    width="18"
-                  />
+                  <img src={require("../../assets/svg/charging-circle.svg")} alt="status-v3" height="24" width="18" />
                 </div>
-                <div
-                  className="px-3"
-                  onClick={() => this.props.setLeftSliderScreen("defaultView")}
-                >
+                <div className="px-3" onClick={() => this.props.setLeftSliderScreen("defaultView")}>
                   <img
                     src={require("../../assets/svg/message-ballon.svg")}
                     alt="message-ballon"
@@ -119,10 +121,7 @@ class LeftSide extends React.Component {
             </div>
           </div>
         </header>
-        <SearchInputBox
-          placeholder="Search or start new Chat"
-          searchBoxType="withSearchBox"
-        />
+        <SearchInputBox placeholder="Search or start new Chat" searchBoxType="withSearchBox" />
         <section className="col-12 px-0 leftSide__chat__section">
           <div className="row mx-0">
             <div className="col-12 px-0 leftSide__log__of__chats" id="content">
@@ -150,9 +149,7 @@ class LeftSide extends React.Component {
 
     return (
       <div className={appendClasses} id="col-xl-3-5">
-        <div className="leftSide__chat__window__child">
-          {this.props.mobile ? mobileLeftSide : desktopLeftSide}
-        </div>
+        <div className="leftSide__chat__window__child">{this.props.mobile ? mobileLeftSide : desktopLeftSide}</div>
       </div>
     );
   }
