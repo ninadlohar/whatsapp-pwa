@@ -279,6 +279,20 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .mobile__settings__basicInfo__section {
+    border-bottom: 1px solid #f7f7f7;
+  }
+  .mobile__settings__header__name {
+    font-size: 16px;
+  }
+  .mobile__settings__header__status {
+    font-size: 14px;
+  }
+  .mobile__basicUserInfo__image {
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+  }
   .mobile__newChat__selectedContact {
     font-size: 18px;
     font-weight: 700;

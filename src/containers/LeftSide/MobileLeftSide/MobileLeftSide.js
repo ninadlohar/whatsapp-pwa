@@ -16,6 +16,7 @@ import MobileNewChat from "../DropUps/MobileNewChat";
 import MobileNewGroup from "../DropUps/MobileNewGroup";
 import MobileNewBroadcast from "../DropUps/MobileNewBroadcast";
 import MobileStarredMessages from "../DropUps/MobileStarredMessages";
+import MobileSettings from "../DropUps/MobileSettings";
 
 function TabContainer({ children, dir }) {
   return (
@@ -83,7 +84,8 @@ class MobileLeftSide extends React.Component {
     newChat: false,
     newGroup: false,
     newBroadcast: false,
-    starredMessages: false
+    starredMessages: false,
+    settings: false
   };
   setSearchActiveFn = () => {
     this.setState({ setSearchActive: true }, () => {
@@ -135,6 +137,14 @@ class MobileLeftSide extends React.Component {
 
   setStarredMessagesFalse = () => {
     this.setState({ starredMessages: false });
+  };
+
+  setSettingsTrue = () => {
+    this.setState({ settings: true });
+  };
+
+  setSettingsFalse = () => {
+    this.setState({ settings: false });
   };
 
   componentDidMount() {
@@ -207,6 +217,7 @@ class MobileLeftSide extends React.Component {
                     setNewGroupTrue={this.setNewGroupTrue}
                     setNewBroadcastTrue={this.setNewBroadcastTrue}
                     setStarredMessagesTrue={this.setStarredMessagesTrue}
+                    setSettingsTrue={this.setSettingsTrue}
                   />
                 </div>
               </div>
@@ -364,6 +375,9 @@ class MobileLeftSide extends React.Component {
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setStarredMessagesTrue} open={this.state.starredMessages}>
           <MobileStarredMessages closeStarredMessagesDrawer={this.setStarredMessagesFalse} />
+        </MainBottomDrawer>
+        <MainBottomDrawer onOpen={this.setSettingsTrue} open={this.state.settings}>
+          <MobileSettings closeSettingsDrawer={this.setSettingsFalse} />
         </MainBottomDrawer>
       </Auxillary>
     );
