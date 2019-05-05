@@ -279,7 +279,31 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
-  .mobile__settings__basicInfo__section {
+  .enable-button {
+    position: absolute;
+    background-color: #07bc4c;
+    color: white;
+    font-weight: 900;
+    bottom: 36px;
+    border-radius: 3px;
+    padding: 6px 15px;
+  }
+  .enable-button-parent {
+    position: inherit;
+  }
+  .privacy {
+    color: #255d53;
+    font-weight: bolder;
+    font-size: 14px;
+  }
+  .privacy__text {
+    font-size: 14px;
+  }
+  .privacy__child__text {
+    font-size: 14px;
+    color: rgba(0,0,0,0.6);
+  }
+  .mobile__security__logo ,.mobile__settings__basicInfo__section {
     border-bottom: 1px solid #f7f7f7;
   }
   .mobile__settings__header__name {

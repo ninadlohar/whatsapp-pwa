@@ -1,6 +1,5 @@
 import React from "react";
 import ContactDataWStatus from "../../../components/TypesOfUserChats/ContactDataWStatus";
-import DropDown from "../../../ReusableUI-Components/dropDown";
 import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
 
 class MobileNewGroup extends React.Component {
@@ -28,35 +27,35 @@ class MobileNewGroup extends React.Component {
             setSearchDeactiveFn={this.setSearchDeactiveFn}
           />
         ) : (
-          <header className="col-12 mobile__view__header px-3" id="head">
-            <div className="row mx-0 w-100">
-              <div className="col-12 px-0 py-1 d-flex">
-                <div className="row mx-0 w-100">
-                  <div
-                    className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                    onClick={this.props.closeGroupDrawer}
-                  >
-                    <img src={require("../../../assets/svg/left.svg")} width="24" height="24" />
-                  </div>
-                  <div className="mobileView__selectContactSection pl-3">
-                    <div className="mobile__newChat__selectedContact">New Group</div>
-                    <div className="mobile__newChat__contactLength">Add Participants</div>
-                  </div>
-                  <div className="mobile__newChat__options d-flex justify-content-end align-items-center">
-                    <div className="px-3" onClick={() => this.setSearchActiveFn()}>
-                      <img
-                        src={require("../../../assets/svg/mobile-search.svg")}
-                        width="19"
-                        height="19"
-                        alt="search-svg"
-                      />
+            <header className="col-12 mobile__view__header px-3" id="head">
+              <div className="row mx-0 w-100">
+                <div className="col-12 px-0 py-1 d-flex">
+                  <div className="row mx-0 w-100">
+                    <div
+                      className="mobileView__left__arrow d-flex align-items-center justify-content-start"
+                      onClick={this.props.closeGroupDrawer}
+                    >
+                      <img src={require("../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                    </div>
+                    <div className="mobileView__selectContactSection pl-3">
+                      <div className="mobile__newChat__selectedContact">New Group</div>
+                      <div className="mobile__newChat__contactLength">Add Participants</div>
+                    </div>
+                    <div className="mobile__newChat__options d-flex justify-content-end align-items-center">
+                      <div className="px-3" onClick={() => this.setSearchActiveFn()}>
+                        <img
+                          src={require("../../../assets/svg/mobile-search.svg")}
+                          width="19"
+                          height="19"
+                          alt="search-svg"
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </header>
-        )}
+            </header>
+          )}
         <ContactDataWStatus />
         <ContactDataWStatus />
         <ContactDataWStatus />

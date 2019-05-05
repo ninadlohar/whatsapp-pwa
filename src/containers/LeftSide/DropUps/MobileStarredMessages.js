@@ -28,39 +28,39 @@ class MobileStarredMessages extends React.Component {
             setSearchDeactiveFn={this.setSearchDeactiveFn}
           />
         ) : (
-          <header className="col-12 mobile__view__starred__Messages__Header py-2" id="head">
-            <div className="row mx-0 w-100">
-              <div className="col-12 px-0 py-1 d-flex">
-                <div className="row mx-0 w-100">
-                  <div
-                    className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                    onClick={this.props.closeStarredMessagesDrawer}
-                  >
-                    <img src={require("../../../assets/svg/left.svg")} width="24" height="24" />
-                  </div>
-                  <div className="mobileView__selectContactSection pl-3">
-                    <div className="mobile__newChat__selectedContact">Starred Messages</div>
-                  </div>
-                  <div className="mobile__newChat__options d-flex justify-content-end align-items-center">
-                    <div className="px-3" onClick={() => this.setSearchActiveFn()}>
-                      <img
-                        src={require("../../../assets/svg/mobile-search.svg")}
-                        width="19"
-                        height="19"
-                        alt="search-svg"
+            <header className="col-12 mobile__view__starred__Messages__Header py-2" id="head">
+              <div className="row mx-0 w-100">
+                <div className="col-12 px-0 py-1 d-flex">
+                  <div className="row mx-0 w-100">
+                    <div
+                      className="mobileView__left__arrow d-flex align-items-center justify-content-start"
+                      onClick={this.props.closeStarredMessagesDrawer}
+                    >
+                      <img src={require("../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                    </div>
+                    <div className="mobileView__selectContactSection pl-3">
+                      <div className="mobile__newChat__selectedContact">Starred Messages</div>
+                    </div>
+                    <div className="mobile__newChat__options d-flex justify-content-end align-items-center">
+                      <div className="px-3" onClick={() => this.setSearchActiveFn()}>
+                        <img
+                          src={require("../../../assets/svg/mobile-search.svg")}
+                          width="19"
+                          height="19"
+                          alt="search-svg"
+                        />
+                      </div>
+                      <DropDown
+                        classes="fas fa-ellipsis-v"
+                        mobile={this.props.mobile}
+                        mobileViewDropDown={this.state.mobileViewDropDown}
                       />
                     </div>
-                    <DropDown
-                      classes="fas fa-ellipsis-v"
-                      mobile={this.props.mobile}
-                      mobileViewDropDown={this.state.mobileViewDropDown}
-                    />
                   </div>
                 </div>
               </div>
-            </div>
-          </header>
-        )}
+            </header>
+          )}
         <section className="col-12 px-0 leftSide__chat__section">
           <div className="row mx-0">
             <div className="col-12 px-0 leftSide__log__of__chats starred-messages-container">

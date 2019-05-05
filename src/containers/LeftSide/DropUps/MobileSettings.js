@@ -50,7 +50,7 @@ class MobileStarredMessages extends React.Component {
                     className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                     onClick={this.props.closeSettingsDrawer}
                   >
-                    <img src={require("../../../assets/svg/left.svg")} width="24" height="24" />
+                    <img src={require("../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow"/>
                   </div>
                   <div className="mobileView__selectContactSection pl-3">
                     <div className="mobile__newChat__selectedContact">Settings</div>
