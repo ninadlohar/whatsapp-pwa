@@ -282,8 +282,20 @@ body {
   .prefix__plus {
     font-size: 28px;
   }
+  .deleteAccount__head__section {
+    border-bottom: 1px solid #f7f7f7;
+  }
+  .delelteAccount__ul {
+    padding-left: 20px !important;
+    font-size: 14px;
+  }
+  .deleteAccount__1st__header {
+    font-size: 16px;
+    color: #df3333;
+  }
   .mobileChangeNumberInputs {
     border: transparent;
+    padding: 0px !important;
     background-color: transparent;
     border-radius: 0px !important;
     border-bottom: 2px solid rgba(0, 0, 0, 0.6) !important;
@@ -333,6 +345,20 @@ body {
     background-color: #07bc4c;
     color: white;
     font-weight: 900;
+    bottom: 36px;
+    border-radius: 3px;
+    padding: 6px 15px;
+  }
+  .change_number {
+    background-color: #07bc4c;
+    color: white;
+    bottom: 36px;
+    border-radius: 3px;
+    padding: 6px 15px;
+  }
+  .delete_account {
+    background-color: #df3333;
+    color: white;
     bottom: 36px;
     border-radius: 3px;
     padding: 6px 15px;

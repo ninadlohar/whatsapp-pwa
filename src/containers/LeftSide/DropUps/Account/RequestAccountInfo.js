@@ -29,11 +29,19 @@ class RequestAccountInfo extends React.Component {
                   <div className="d-flex justify-content-center">
                     <div className="archieved-chats-cirle">
                       <div className="h-100 d-flex justify-content-center align-items-center">
-                        <img src={require("../../../../assets/svg/sim-card.svg")} alt="sim-card" width="70" height="70" />
+                        <img
+                          src={require("../../../../assets/svg/sim-card.svg")}
+                          alt="sim-card"
+                          width="70"
+                          height="70"
+                        />
                       </div>
                     </div>
                   </div>
-                  <div className="mobile__settings__header__name">Create report of your WhatsApp account information and settings, which you can access or port to another app. This report does not include your messages.</div>
+                  <div className="mobile__settings__header__name">
+                    Create report of your WhatsApp account information and settings, which you can access or port to
+                    another app. This report does not include your messages.
+                  </div>
                   <div className="col-12 py-3 d-flex px-0">
                     <div className="d-flex align-items-center pr-3">
                       <img
@@ -45,21 +53,27 @@ class RequestAccountInfo extends React.Component {
                     </div>
                     <div className="d-flex align-items-center w-100">
                       <div>
-                        <div className="mobile__settings__header__name">Request senet</div>
+                        <div className="mobile__settings__header__name">Request sent</div>
                         <div className="mobile__settings__header__status">Ready by May 8, 2019</div>
                       </div>
                     </div>
                   </div>
-                  <div className="no-archieved-chats pt-2">Your reports will be ready in about 3 days. You'll have a few weeks to download your report after it's available.</div>
-                  <div className="no-archieved-chats pt-2">Your request will be cancelled if you make changes yo your account such as your number or deleting your account.</div>
+                  <div className="no-archieved-chats pt-2">
+                    Your reports will be ready in about 3 days. You'll have a few weeks to download your report after
+                    it's available.
+                  </div>
+                  <div className="no-archieved-chats pt-2">
+                    Your request will be cancelled if you make changes yo your account such as your number or deleting
+                    your account.
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
       </div>
-    )
+    );
   }
-};
+}
 
 export default RequestAccountInfo;

@@ -6,6 +6,7 @@ import Security from "./Security";
 import TwoStepVerification from "./TwoStepVerificaiton/TwoStepVerification";
 import ChangeNumber from "./ChangeNumber/ChangeNumber";
 import RequestAccountInfo from "./RequestAccountInfo";
+import DeleteMyAccount from "./DeleteMyAccount";
 
 class Account extends React.Component {
   state = {
@@ -14,7 +15,8 @@ class Account extends React.Component {
     Security: false,
     TwoStepVerification: false,
     ChangeNumber: false,
-    RequestAccountInfo: false
+    RequestAccountInfo: false,
+    deleteAccount: false
   };
   setSearchActiveFn = () => {
     this.setState({ setSearchActive: true }, () => {
@@ -65,6 +67,14 @@ class Account extends React.Component {
 
   setRequestAccountInfoFalse = () => {
     this.setState({ RequestAccountInfo: false });
+  };
+
+  deleteAccountTrue = () => {
+    this.setState({ deleteAccount: true });
+  };
+
+  deleteAccountFalse = () => {
+    this.setState({ deleteAccount: false });
   };
 
   render() {
@@ -165,7 +175,7 @@ class Account extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="col-12 py-3 d-flex">
+              <div className="col-12 py-3 d-flex" onClick={this.deleteAccountTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
                   <img
                     src={require("../../../../assets/svg/delete-bin.svg")}
@@ -197,6 +207,9 @@ class Account extends React.Component {
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setRequestAccountInfoTrue} open={this.state.RequestAccountInfo}>
           <RequestAccountInfo closeDrawer={this.setRequestAccountInfoFalse} />
+        </MainBottomDrawer>
+        <MainBottomDrawer onOpen={this.deleteAccountTrue} open={this.state.deleteAccount}>
+          <DeleteMyAccount closeDrawer={this.deleteAccountFalse} />
         </MainBottomDrawer>
       </Auxilliary>
     );
