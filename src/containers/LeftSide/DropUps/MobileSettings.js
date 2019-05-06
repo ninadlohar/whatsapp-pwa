@@ -123,7 +123,7 @@ class MobileStarredMessages extends React.Component {
               <div className="col-12 py-3 d-flex" onClick={this.setChatTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
                   <img
-                    src={require("../../../assets/svg/message-ballon.svg")}
+                    src={require("../../../assets/svg/message-ballon2.svg")}
                     alt="sender-images"
                     height="18"
                     width="18"
@@ -139,7 +139,7 @@ class MobileStarredMessages extends React.Component {
               <div className="col-12 py-3 d-flex" onClick={this.setNotificationsTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
                   <img
-                    src={require("../../../assets/svg/notification.svg")}
+                    src={require("../../../assets/svg/notification2.svg")}
                     alt="sender-images"
                     height="18"
                     width="18"
@@ -155,7 +155,7 @@ class MobileStarredMessages extends React.Component {
               <div className="col-12 py-3 d-flex" onClick={this.setDataAndStorageTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
                   <img
-                    src={require("../../../assets/svg/charging-circle.svg")}
+                    src={require("../../../assets/svg/charging-circle2.svg")}
                     alt="sender-images"
                     height="18"
                     width="18"
@@ -168,14 +168,9 @@ class MobileStarredMessages extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="col-12 py-3 d-flex">
+              <div className="col-12 py-3 d-flex" onClick={this.setHelpTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
-                  <img
-                    src={require("../../../assets/svg/information.svg")}
-                    alt="sender-images"
-                    height="18"
-                    width="18"
-                  />
+                  <img src={require("../../../assets/svg/information.svg")} alt="information" height="18" width="18" />
                 </div>
                 <div className="d-flex align-items-center w-100">
                   <div>
@@ -186,7 +181,7 @@ class MobileStarredMessages extends React.Component {
               </div>
               <div className="col-12 py-3 d-flex">
                 <div className="d-flex align-items-center pl-3 pr-4">
-                  <img src={require("../../../assets/svg/user2.svg")} alt="sender-images" height="18" width="18" />
+                  <img src={require("../../../assets/svg/user2.svg")} alt="two-users" height="18" width="18" />
                 </div>
                 <div className="d-flex align-items-center w-100">
                   <div>

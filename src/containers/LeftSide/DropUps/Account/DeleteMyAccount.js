@@ -95,17 +95,17 @@ class DeleteMyAccount extends React.Component {
                 <div className="col-12 py-3 d-flex deleteAccount__head__section">
                   <div className="d-flex pt-1 pl-3 pr-4">
                     <img
-                      src={require("../../../../assets/svg/danger.svg")}
+                      src={require("../../../../assets/svg/smartphone.svg")}
                       alt="sender-images"
                       height="18"
                       width="18"
                     />
                   </div>
                   <div className="w-100 deleteAccount__head__section">
-                    <div className="deleteAccount__1st__header pb-1">Change number instead</div>
+                    <div className=" pb-1">Change number instead</div>
                     <div className="w-100 d-flex">
                       <div className="change_number">
-                        <div className="d-flex justify-content-center">NEXT</div>
+                        <div className="d-flex justify-content-center">CHANGE NUMBER</div>
                       </div>
                     </div>
                   </div>

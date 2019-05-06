@@ -30,7 +30,7 @@ class Help extends React.Component {
                     className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                     onClick={this.props.setHelpFalse}
                   >
-                    <img src={require("../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow"/>
+                    <img src={require("../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                   </div>
                   <div className="mobileView__selectContactSection pl-3">
                     <div className="mobile__newChat__selectedContact">Account</div>
@@ -43,7 +43,7 @@ class Help extends React.Component {
             <div className="row mx-0">
               <div className="col-12 py-3 d-flex">
                 <div className="d-flex align-items-center pl-3 pr-4">
-                  <img src={require("../../../assets/svg/key.svg")} alt="sender-images" height="18" width="18" />
+                  <img src={require("../../../assets/svg/information.svg")} alt="information" height="18" width="18" />
                 </div>
                 <div className="d-flex align-items-center w-100">
                   <div>
@@ -53,12 +53,7 @@ class Help extends React.Component {
               </div>
               <div className="col-12 py-3 d-flex">
                 <div className="d-flex align-items-center pl-3 pr-4">
-                  <img
-                    src={require("../../../assets/svg/message-ballon.svg")}
-                    alt="sender-images"
-                    height="18"
-                    width="18"
-                  />
+                  <img src={require("../../../assets/svg/user2.svg")} alt="two-users" height="18" width="18" />
                 </div>
                 <div className="d-flex align-items-center w-100">
                   <div>
@@ -68,12 +63,7 @@ class Help extends React.Component {
               </div>
               <div className="col-12 py-3 d-flex">
                 <div className="d-flex align-items-center pl-3 pr-4">
-                  <img
-                    src={require("../../../assets/svg/notification.svg")}
-                    alt="sender-images"
-                    height="18"
-                    width="18"
-                  />
+                  <img src={require("../../../assets/svg/text-file.svg")} alt="text-file" height="18" width="18" />
                 </div>
                 <div className="d-flex align-items-center w-100">
                   <div>
@@ -84,7 +74,7 @@ class Help extends React.Component {
               <div className="col-12 py-3 d-flex">
                 <div className="d-flex align-items-center pl-3 pr-4">
                   <img
-                    src={require("../../../assets/svg/charging-circle.svg")}
+                    src={require("../../../assets/svg/information-circular-button-symbol.svg")}
                     alt="sender-images"
                     height="18"
                     width="18"

@@ -178,7 +178,7 @@ class Account extends React.Component {
               <div className="col-12 py-3 d-flex" onClick={this.deleteAccountTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
                   <img
-                    src={require("../../../../assets/svg/delete-bin.svg")}
+                    src={require("../../../../assets/svg/delete-bin2.svg")}
                     alt="sender-images"
                     height="18"
                     width="18"
