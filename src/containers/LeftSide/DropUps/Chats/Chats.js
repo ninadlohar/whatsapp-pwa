@@ -93,7 +93,7 @@ class Chats extends React.Component {
           </div>
           <div className="col-12 py-3 d-flex">
             <div className="d-flex align-items-center pl-3 pr-4">
-              <img src={require("../../../../assets/svg/gallery.svg")} alt="gallery" height="18" width="18" />
+              <img src={require("../../../../assets/svg/gallery2.svg")} alt="gallery" height="18" width="18" />
             </div>
             <div className="d-flex align-items-center w-100">
               <div>
@@ -105,7 +105,7 @@ class Chats extends React.Component {
             <div className="d-flex align-items-center pl-3 pr-4">
               <img
                 src={require("../../../../assets/svg/cloud-storage-uploading-option.svg")}
-                alt="message-ballon"
+                alt="cloud upload"
                 height="18"
                 width="18"
               />
@@ -118,7 +118,7 @@ class Chats extends React.Component {
           </div>
           <div className="col-12 py-3 d-flex">
             <div className="d-flex align-items-center pl-3 pr-4">
-              <img src={require("../../../../assets/svg/history.svg")} alt="message-ballon" height="18" width="18" />
+              <img src={require("../../../../assets/svg/history.svg")} alt="history" height="18" width="18" />
             </div>
             <div className="d-flex align-items-center w-100">
               <div>
