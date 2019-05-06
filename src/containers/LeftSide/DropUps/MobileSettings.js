@@ -4,13 +4,15 @@ import MainBottomDrawer from "./BottomDrawer";
 import Account from "./Account/Account";
 import Help from "./Help";
 import Chats from "./Chats/Chats";
+import Notifications from "./Notifications/Notifications";
 
 class MobileStarredMessages extends React.Component {
   state = {
     setSearchActive: false,
     account: false,
     Help: false,
-    chats: false
+    chats: false,
+    notifications: false
   };
   setSearchActiveFn = () => {
     this.setState({ setSearchActive: true }, () => {
@@ -46,6 +48,14 @@ class MobileStarredMessages extends React.Component {
 
   setChatFalse = () => {
     this.setState({ chats: false });
+  };
+
+  setNotificationsTrue = () => {
+    this.setState({ notifications: true });
+  };
+
+  setNotificationsFalse = () => {
+    this.setState({ notifications: false });
   };
 
   render() {
@@ -116,7 +126,7 @@ class MobileStarredMessages extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="col-12 py-3 d-flex">
+              <div className="col-12 py-3 d-flex" onClick={this.setNotificationsTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
                   <img
                     src={require("../../../assets/svg/notification.svg")}
@@ -185,6 +195,9 @@ class MobileStarredMessages extends React.Component {
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setChatTrue} open={this.state.chats}>
           <Chats closeDrawer={this.setChatFalse} />
+        </MainBottomDrawer>
+        <MainBottomDrawer onOpen={this.setNotificationsTrue} open={this.state.notifications}>
+          <Notifications closeDrawer={this.setNotificationsFalse} />
         </MainBottomDrawer>
       </Auxilliary>
     );
