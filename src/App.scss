@@ -279,6 +279,25 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .prefix__plus {
+    font-size: 28px;
+  }
+  .mobileChangeNumberInputs {
+    border: transparent;
+    background-color: transparent;
+    border-radius: 0px !important;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.6) !important;
+  }
+  .mobileChangeNumberInputs:focus,
+  .mobileChangeNumberInputs:focus-within {
+    border-color: transparent !important;
+    background-color: transparent;
+
+    box-shadow: none !important;
+    border-radius: 0px !important;
+    border-bottom: 2px solid #255d53 !important;
+  }
+
   .mobileTSVInput:focus,
   .mobileTSVInput:focus-within {
     border-color: transparent !important;

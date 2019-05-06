@@ -4,7 +4,7 @@ import MainBottomDrawer from "../BottomDrawer";
 import Privacy from "./Privacy";
 import Security from "./Security";
 import TwoStepVerification from "./TwoStepVerificaiton/TwoStepVerification";
-import ChangeNumber from "./ChangeNumber";
+import ChangeNumber from "./ChangeNumber/ChangeNumber";
 import RequestAccountInfo from "./RequestAccountInfo";
 
 class Account extends React.Component {

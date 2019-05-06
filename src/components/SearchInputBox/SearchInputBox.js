@@ -226,6 +226,22 @@ class SearchInputBox extends React.Component {
       </div>
     );
 
+    let mobileChangeNumberInputs = (
+      <div className="col-12 px-0 input__box" id="search-input-box">
+        <div className="px-2 py-2 d-flex">
+          <div className="row mx-0 w-100 justify-content-center">
+            <Input
+              placeholder={this.props.placeholder}
+              onChangeHandler={this.mobileSearchBoxFn}
+              value={this.props.p91}
+              classes="mobileChangeNumberInputs"
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+    );
+
     let searchBox = null;
     switch (this.props.searchBoxType) {
       case "withSearchBox":
@@ -254,6 +270,9 @@ class SearchInputBox extends React.Component {
         break;
       case "mobileTSVInput3":
         searchBox = mobileTSVInput3;
+        break;
+      case "mobileChangeNumberInputs":
+        searchBox = mobileChangeNumberInputs;
         break;
       default:
         searchBox = simpleInputForProfile__About;
