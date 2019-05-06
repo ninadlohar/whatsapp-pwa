@@ -279,6 +279,9 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .custom__width85 {
+    width: 85%;
+  }
   .prefix__plus {
     font-size: 28px;
   }

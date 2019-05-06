@@ -3,12 +3,14 @@ import Auxilliary from "../../../hoc/Auxillary";
 import MainBottomDrawer from "./BottomDrawer";
 import Account from "./Account/Account";
 import Help from "./Help";
+import Chats from "./Chats/Chats";
 
 class MobileStarredMessages extends React.Component {
   state = {
     setSearchActive: false,
     account: false,
-    Help: false
+    Help: false,
+    chats: false
   };
   setSearchActiveFn = () => {
     this.setState({ setSearchActive: true }, () => {
@@ -38,6 +40,14 @@ class MobileStarredMessages extends React.Component {
     this.setState({ Help: false });
   };
 
+  setChatTrue = () => {
+    this.setState({ chats: true });
+  };
+
+  setChatFalse = () => {
+    this.setState({ chats: false });
+  };
+
   render() {
     return (
       <Auxilliary>
@@ -50,7 +60,7 @@ class MobileStarredMessages extends React.Component {
                     className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                     onClick={this.props.closeSettingsDrawer}
                   >
-                    <img src={require("../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow"/>
+                    <img src={require("../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                   </div>
                   <div className="mobileView__selectContactSection pl-3">
                     <div className="mobile__newChat__selectedContact">Settings</div>
@@ -90,7 +100,7 @@ class MobileStarredMessages extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="col-12 py-3 d-flex">
+              <div className="col-12 py-3 d-flex" onClick={this.setChatTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
                   <img
                     src={require("../../../assets/svg/message-ballon.svg")}
@@ -172,6 +182,9 @@ class MobileStarredMessages extends React.Component {
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setHelpTrue} open={this.state.Help}>
           <Help setHelpFalse={this.setHelpFalse} />
+        </MainBottomDrawer>
+        <MainBottomDrawer onOpen={this.setChatTrue} open={this.state.chats}>
+          <Chats closeDrawer={this.setChatFalse} />
         </MainBottomDrawer>
       </Auxilliary>
     );
