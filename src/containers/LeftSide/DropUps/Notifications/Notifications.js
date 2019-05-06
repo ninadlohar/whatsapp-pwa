@@ -1,6 +1,6 @@
 import React from "react";
 import Auxilliary from "../../../../hoc/Auxillary";
-import MainBottomDrawer from "../BottomDrawer";
+// import MainBottomDrawer from "../BottomDrawer";
 import Switch from "@material-ui/core/Switch";
 
 class Notifications extends React.Component {

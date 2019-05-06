@@ -5,6 +5,7 @@ import Account from "./Account/Account";
 import Help from "./Help";
 import Chats from "./Chats/Chats";
 import Notifications from "./Notifications/Notifications";
+import DataAndStorage from "./DataAndStorage/DataAndStorage";
 
 class MobileStarredMessages extends React.Component {
   state = {
@@ -12,6 +13,7 @@ class MobileStarredMessages extends React.Component {
     account: false,
     Help: false,
     chats: false,
+    dataAndStorage: false,
     notifications: false
   };
   setSearchActiveFn = () => {
@@ -56,6 +58,14 @@ class MobileStarredMessages extends React.Component {
 
   setNotificationsFalse = () => {
     this.setState({ notifications: false });
+  };
+
+  setDataAndStorageTrue = () => {
+    this.setState({ dataAndStorage: true });
+  };
+
+  setDataAndStorageFalse = () => {
+    this.setState({ dataAndStorage: false });
   };
 
   render() {
@@ -142,7 +152,7 @@ class MobileStarredMessages extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="col-12 py-3 d-flex">
+              <div className="col-12 py-3 d-flex" onClick={this.setDataAndStorageTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
                   <img
                     src={require("../../../assets/svg/charging-circle.svg")}
@@ -167,7 +177,7 @@ class MobileStarredMessages extends React.Component {
                     width="18"
                   />
                 </div>
-                <div className="d-flex align-items-center w-100" onClick={this.setHelpTrue}>
+                <div className="d-flex align-items-center w-100">
                   <div>
                     <div className="mobile__settings__header__name">Help</div>
                     <div className="mobile__settings__header__status">FAQ, contact us, privacy policy</div>
@@ -198,6 +208,9 @@ class MobileStarredMessages extends React.Component {
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setNotificationsTrue} open={this.state.notifications}>
           <Notifications closeDrawer={this.setNotificationsFalse} />
+        </MainBottomDrawer>
+        <MainBottomDrawer onOpen={this.setDataAndStorageTrue} open={this.state.dataAndStorage}>
+          <DataAndStorage closeDrawer={this.setDataAndStorageFalse} />
         </MainBottomDrawer>
       </Auxilliary>
     );

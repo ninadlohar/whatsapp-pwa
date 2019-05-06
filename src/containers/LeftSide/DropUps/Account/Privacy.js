@@ -1,12 +1,12 @@
 import React from "react";
 import Auxilliary from "../../../../hoc/Auxillary";
-import MainBottomDrawer from "../BottomDrawer";
-import Switch from '@material-ui/core/Switch';
+// import MainBottomDrawer from "../BottomDrawer";
+import Switch from "@material-ui/core/Switch";
 
 class Privacy extends React.Component {
   state = {
     checkedA: false
-  }
+  };
   handleChange = name => event => {
     this.setState({ [name]: event.target.checked });
   };
@@ -32,7 +32,9 @@ class Privacy extends React.Component {
         </header>
         <div className="col-12 py-3">
           <div className="privacy">Who can see my personal Info</div>
-          <div className="privacy__text">If you don't share your Last Seen, you won't be able to see other people's Last Seen</div>
+          <div className="privacy__text">
+            If you don't share your Last Seen, you won't be able to see other people's Last Seen
+          </div>
         </div>
         <div className="col-12 py-3">
           <div className="w-100 privacy__header">
@@ -74,15 +76,13 @@ class Privacy extends React.Component {
               <div className="mobile__settings__header__name">Read Receipts</div>
             </div>
             <div className="w-100 ">
-              <div className="privacy__child__text">If turned off, you won't send or receive Read receipts. Read receipts are always sent for group chats</div>
+              <div className="privacy__child__text">
+                If turned off, you won't send or receive Read receipts. Read receipts are always sent for group chats
+              </div>
             </div>
           </div>
           <div className="switch">
-            <Switch
-              checked={this.state.checkedA}
-              onChange={this.handleChange('checkedA')}
-              value="checkedA"
-            />
+            <Switch checked={this.state.checkedA} onChange={this.handleChange("checkedA")} value="checkedA" />
           </div>
         </div>
         {/** */}
