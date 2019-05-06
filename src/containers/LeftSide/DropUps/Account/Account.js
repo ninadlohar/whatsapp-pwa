@@ -2,10 +2,10 @@ import React from "react";
 import Auxilliary from "../../../../hoc/Auxillary";
 import MainBottomDrawer from "../BottomDrawer";
 import Privacy from "./Privacy";
-import Security from './Security';
-import TwoStepVerification from "./TwoStepVerification";
+import Security from "./Security";
+import TwoStepVerification from "./TwoStepVerificaiton/TwoStepVerification";
 import ChangeNumber from "./ChangeNumber";
-import RequestAccountInfo from './RequestAccountInfo';
+import RequestAccountInfo from "./RequestAccountInfo";
 
 class Account extends React.Component {
   state = {
@@ -29,43 +29,43 @@ class Account extends React.Component {
   };
 
   setPrivacyTrue = () => {
-    this.setState({ privacy: true })
-  }
+    this.setState({ privacy: true });
+  };
 
   setPrivacyFalse = () => {
-    this.setState({ privacy: false })
-  }
+    this.setState({ privacy: false });
+  };
 
   setSecurityTrue = () => {
-    this.setState({ Security: true })
-  }
+    this.setState({ Security: true });
+  };
 
   setSecurityFalse = () => {
-    this.setState({ Security: false })
-  }
+    this.setState({ Security: false });
+  };
   setTwoStepVerificationTrue = () => {
-    this.setState({ TwoStepVerification: true })
-  }
+    this.setState({ TwoStepVerification: true });
+  };
 
   setTwoStepVerificationFalse = () => {
-    this.setState({ TwoStepVerification: false })
-  }
+    this.setState({ TwoStepVerification: false });
+  };
 
   setChangeNumberTrue = () => {
-    this.setState({ ChangeNumber: true })
-  }
+    this.setState({ ChangeNumber: true });
+  };
 
   setChangeNumberFalse = () => {
-    this.setState({ ChangeNumber: false })
-  }
+    this.setState({ ChangeNumber: false });
+  };
 
   setRequestAccountInfoTrue = () => {
-    this.setState({ RequestAccountInfo: true })
-  }
+    this.setState({ RequestAccountInfo: true });
+  };
 
   setRequestAccountInfoFalse = () => {
-    this.setState({ RequestAccountInfo: false })
-  }
+    this.setState({ RequestAccountInfo: false });
+  };
 
   render() {
     return (
@@ -92,7 +92,12 @@ class Account extends React.Component {
             <div className="row mx-0">
               <div className="col-12 py-3 d-flex" onClick={this.setPrivacyTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
-                  <img src={require("../../../../assets/svg/locked-padlock.svg")} alt="sender-images" height="18" width="18" />
+                  <img
+                    src={require("../../../../assets/svg/locked-padlock.svg")}
+                    alt="sender-images"
+                    height="18"
+                    width="18"
+                  />
                 </div>
                 <div className="d-flex align-items-center w-100">
                   <div>
@@ -162,7 +167,12 @@ class Account extends React.Component {
               </div>
               <div className="col-12 py-3 d-flex">
                 <div className="d-flex align-items-center pl-3 pr-4">
-                  <img src={require("../../../../assets/svg/delete-bin.svg")} alt="sender-images" height="18" width="18" />
+                  <img
+                    src={require("../../../../assets/svg/delete-bin.svg")}
+                    alt="sender-images"
+                    height="18"
+                    width="18"
+                  />
                 </div>
                 <div className="d-flex align-items-center w-100">
                   <div>

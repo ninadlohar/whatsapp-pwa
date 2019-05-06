@@ -1,6 +1,6 @@
 import React from "react";
 import Input from "../../ReusableUI-Components/Input";
-import '../../scss/dropdown/search.scss';
+import "../../scss/dropdown/search.scss";
 
 class SearchInputBox extends React.Component {
   constructor(props) {
@@ -8,10 +8,10 @@ class SearchInputBox extends React.Component {
     this.state = {
       inputArrow: false,
       value: "",
-      mobileSearchBoxValue: ''
+      mobileSearchBoxValue: ""
     };
     this.searchUsersFn = this.searchUsersFn.bind(this);
-    this.mobileSearchBoxFn = this.mobileSearchBoxFn.bind(this)
+    this.mobileSearchBoxFn = this.mobileSearchBoxFn.bind(this);
   }
 
   searchUsersFn(e) {
@@ -40,15 +40,15 @@ class SearchInputBox extends React.Component {
   }
 
   activeInputValue = () => {
-    this.setState({ inputArrow: true })
-  }
+    this.setState({ inputArrow: true });
+  };
 
   render() {
     let leftArrow = this.state.inputArrow ? (
       <i className="fas fa-arrow-down input__box__blue__arrow px-2 py-2" id="input-arrow" />
     ) : (
-        <i className="fas fa-search icon-color input__search__icon px-3" />
-      );
+      <i className="fas fa-search icon-color input__search__icon px-3" />
+    );
     let casualSearchBox = (
       <div className="col-12 px-0 input__box" id="input-box">
         <div className="px-2 py-2 d-flex">
@@ -92,7 +92,12 @@ class SearchInputBox extends React.Component {
               <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
             </div>
             <div className="" onClick={this.props.isEditingNameFn}>
-              <img src={require("../../assets/svg/correct-signal.svg")} alt="tick-correct-signal" height="17" width="17" />
+              <img
+                src={require("../../assets/svg/correct-signal.svg")}
+                alt="tick-correct-signal"
+                height="17"
+                width="17"
+              />
             </div>
           </div>
         </div>
@@ -109,7 +114,12 @@ class SearchInputBox extends React.Component {
               <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
             </div>
             <div className="" onClick={this.props.isEditingAboutFn}>
-              <img src={require("../../assets/svg/correct-signal.svg")} alt="tick-correct-signal" height="17" width="17" />
+              <img
+                src={require("../../assets/svg/correct-signal.svg")}
+                alt="tick-correct-signal"
+                height="17"
+                width="17"
+              />
             </div>
           </div>
         </div>
@@ -128,7 +138,12 @@ class SearchInputBox extends React.Component {
               <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
             </div>
             <div className="" onClick={this.props.isEditingNameGroupFn}>
-              <img src={require("../../assets/svg/correct-signal.svg")} alt="tick-correct-signal" height="17" width="17" />
+              <img
+                src={require("../../assets/svg/correct-signal.svg")}
+                alt="tick-correct-signal"
+                height="17"
+                width="17"
+              />
             </div>
           </div>
         </div>
@@ -146,7 +161,12 @@ class SearchInputBox extends React.Component {
               <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
             </div>
             <div className="" onClick={this.props.isEditingDescriptionFn}>
-              <img src={require("../../assets/svg/correct-signal.svg")} alt="tick-correct-signal" height="17" width="17" />
+              <img
+                src={require("../../assets/svg/correct-signal.svg")}
+                alt="tick-correct-signal"
+                height="17"
+                width="17"
+              />
             </div>
           </div>
         </div>
@@ -154,7 +174,6 @@ class SearchInputBox extends React.Component {
     );
 
     let mobileSearchBox = (
-
       <div className="col-12 px-0 input__box" id="search-input-box">
         <div className="px-2 py-2 d-flex">
           <div className="row mx-0 w-100">
@@ -173,8 +192,39 @@ class SearchInputBox extends React.Component {
           </div>
         </div>
       </div>
+    );
 
-    )
+    let mobileTSVInput = (
+      <div className="col-12 px-0 input__box" id="search-input-box">
+        <div className="px-2 py-2 d-flex">
+          <div className="row mx-0 w-100 justify-content-center">
+            <Input
+              placeholder={this.props.placeholder}
+              onChangeHandler={this.mobileSearchBoxFn}
+              value={this.state.mobileSearchBoxValue}
+              classes="mobileTSVInput text-center"
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+    );
+
+    let mobileTSVInput3 = (
+      <div className="col-12 px-0 input__box" id="search-input-box">
+        <div className="px-2 py-2 d-flex">
+          <div className="row mx-0 w-100 justify-content-center">
+            <Input
+              placeholder={this.props.placeholder}
+              onChangeHandler={this.mobileSearchBoxFn}
+              value={this.state.mobileSearchBoxValue}
+              classes="mobileTSVInput3 text-center"
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+    );
 
     let searchBox = null;
     switch (this.props.searchBoxType) {
@@ -197,7 +247,13 @@ class SearchInputBox extends React.Component {
         searchBox = simpleInputForGroupInfo__Description;
         break;
       case "mobileSearchBox":
-        searchBox = mobileSearchBox
+        searchBox = mobileSearchBox;
+        break;
+      case "mobileTSVInput":
+        searchBox = mobileTSVInput;
+        break;
+      case "mobileTSVInput3":
+        searchBox = mobileTSVInput3;
         break;
       default:
         searchBox = simpleInputForProfile__About;

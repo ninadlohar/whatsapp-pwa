@@ -279,6 +279,36 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .mobileTSVInput:focus,
+  .mobileTSVInput:focus-within {
+    border-color: transparent !important;
+    background-color: transparent;
+    letter-spacing: 14px;
+    box-shadow: none !important;
+    border-radius: 0px !important;
+    border-bottom: 2px solid #255d53 !important;
+  }
+  .mobileTSVInput {
+    width: 150px;
+    border: transparent;
+    background-color: transparent;
+    border-radius: 0px !important;
+    border-bottom: 2px solid #255d53 !important;
+  }
+  .mobileTSVInput3 {
+    border: transparent;
+    background-color: transparent;
+    border-radius: 0px !important;
+    border-bottom: 2px solid #255d53 !important;
+  }
+  .mobileTSVInput3:focus,
+  .mobileTSVInput3:focus-within {
+    border-color: transparent !important;
+    background-color: transparent;
+    box-shadow: none !important;
+    border-radius: 0px !important;
+    border-bottom: 2px solid #255d53 !important;
+  }
   .enable-button {
     position: absolute;
     background-color: #07bc4c;
@@ -301,9 +331,10 @@ body {
   }
   .privacy__child__text {
     font-size: 14px;
-    color: rgba(0,0,0,0.6);
+    color: rgba(0, 0, 0, 0.6);
   }
-  .mobile__security__logo ,.mobile__settings__basicInfo__section {
+  .mobile__security__logo,
+  .mobile__settings__basicInfo__section {
     border-bottom: 1px solid #f7f7f7;
   }
   .mobile__settings__header__name {
