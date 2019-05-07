@@ -1471,6 +1471,13 @@ body {
   }
 }
 
+.mobile__modal {
+  > div {
+    padding: 12px !important;
+    border-radius: 3px !important;
+  }
+}
+
 .demo {
   box-shadow: none !important;
   > div {

@@ -1,15 +1,39 @@
 import React from "react";
 import Auxilliary from "../../../../hoc/Auxillary";
-// import MainBottomDrawer from "../BottomDrawer";
+import MobileDropdown from "../../../../ReusableUI-Components/MobileModal";
 import Switch from "@material-ui/core/Switch";
 
 class Privacy extends React.Component {
   state = {
-    checkedA: false
+    checkedA: false,
+    privacy: false,
+    profilePhoto: false,
+    about: false
   };
   handleChange = name => event => {
     this.setState({ [name]: event.target.checked });
   };
+  openPrivacyModal = () => {
+    this.setState({ privacy: true });
+  };
+  closePrivacyModal = () => {
+    this.setState({ privacy: false });
+  };
+
+  openProfilePhotoModal = () => {
+    this.setState({ profilePhoto: true });
+  };
+  closeProfilePhotoModal = () => {
+    this.setState({ profilePhoto: false });
+  };
+
+  openAboutModal = () => {
+    this.setState({ about: true });
+  };
+  closeAboutModal = () => {
+    this.setState({ about: false });
+  };
+
   render() {
     return (
       <Auxilliary>
@@ -36,7 +60,7 @@ class Privacy extends React.Component {
             If you don't share your Last Seen, you won't be able to see other people's Last Seen
           </div>
         </div>
-        <div className="col-12 py-3">
+        <div className="col-12 py-3" onClick={this.openPrivacyModal}>
           <div className="w-100 privacy__header">
             <div className="mobile__settings__header__name">Last Seen</div>
           </div>
@@ -44,7 +68,7 @@ class Privacy extends React.Component {
             <div className="privacy__child__text">Everyone</div>
           </div>
         </div>
-        <div className="col-12 py-3">
+        <div className="col-12 py-3" onClick={this.openProfilePhotoModal}>
           <div className="w-100 privacy__header">
             <div className="mobile__settings__header__name">Profile Photo</div>
           </div>
@@ -52,7 +76,7 @@ class Privacy extends React.Component {
             <div className="privacy__child__text">Everyone</div>
           </div>
         </div>
-        <div className="col-12 py-3">
+        <div className="col-12 py-3" onClick={this.openAboutModal}>
           <div className="w-100 privacy__header">
             <div className="mobile__settings__header__name">About</div>
           </div>
@@ -110,9 +134,24 @@ class Privacy extends React.Component {
             <div className="privacy__child__text">None</div>
           </div>
         </div>
-        {/* <MainBottomDrawer onOpen={this.setNewChatTrue} open={this.state.newChat}>
-         <MobileNewChat closeDrawer={this.setNewChatFalse} /> 
-        </MainBottomDrawer> */}
+        <MobileDropdown
+          openModal={this.openPrivacyModal}
+          open={this.state.privacy}
+          closeModal={this.closePrivacyModal}
+          h6="Last Seen"
+        />
+        <MobileDropdown
+          openModal={this.openProfilePhotoModal}
+          open={this.state.profilePhoto}
+          closeModal={this.closeProfilePhotoModal}
+          h6="Profile Photo"
+        />
+        <MobileDropdown
+          openModal={this.openAboutModal}
+          open={this.state.about}
+          closeModal={this.closeAboutModal}
+          h6="About"
+        />
       </Auxilliary>
     );
   }
