@@ -49,14 +49,15 @@ class MobileModal extends React.Component {
               <Typography variant="subtitle1" id="simple-modal-description">
                 <FormControl component="fieldset" className={classes.formControl}>
                   <RadioGroup className={classes.group} value={this.state.value} onChange={this.handleChange}>
-                    {this.state.key2.map(k => (
-                      <FormControlLabel
-                        value={k.key}
-                        control={<Radio />}
-                        label={k.value}
-                        onClick={this.props.closeModal}
-                      />
-                    ))}
+                    {this.props.key2 &&
+                      this.props.key2.map(k => (
+                        <FormControlLabel
+                          value={k.key}
+                          control={<Radio />}
+                          label={k.value}
+                          onClick={this.props.closeModal}
+                        />
+                      ))}
                   </RadioGroup>
                 </FormControl>
               </Typography>

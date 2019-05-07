@@ -2,13 +2,21 @@ import React from "react";
 import Auxilliary from "../../../../hoc/Auxillary";
 import MobileDropdown from "../../../../ReusableUI-Components/MobileModal";
 import Switch from "@material-ui/core/Switch";
+import BottomDrawer from "../BottomDrawer";
+import StatusPrivacy from "./StatusPrivacy";
 
 class Privacy extends React.Component {
   state = {
     checkedA: false,
     privacy: false,
     profilePhoto: false,
-    about: false
+    about: false,
+    statusPrivacy: false,
+    key2: [
+      { key: "Everyone", value: "Everyone" },
+      { key: "My Contacts", value: "My Contacts" },
+      { key: "Nobody", value: "Nobody" }
+    ]
   };
   handleChange = name => event => {
     this.setState({ [name]: event.target.checked });
@@ -32,6 +40,13 @@ class Privacy extends React.Component {
   };
   closeAboutModal = () => {
     this.setState({ about: false });
+  };
+
+  openStatusPrivacy = () => {
+    this.setState({ statusPrivacy: true });
+  };
+  closeStatusPrivacy = () => {
+    this.setState({ statusPrivacy: false });
   };
 
   render() {
@@ -84,7 +99,7 @@ class Privacy extends React.Component {
             <div className="privacy__child__text">Everyone</div>
           </div>
         </div>
-        <div className="col-12 py-3">
+        <div className="col-12 py-3" onClick={this.openStatusPrivacy}>
           <div className="w-100 privacy__header">
             <div className="mobile__settings__header__name">Status</div>
           </div>
@@ -134,23 +149,29 @@ class Privacy extends React.Component {
             <div className="privacy__child__text">None</div>
           </div>
         </div>
+        <BottomDrawer onOpen={this.openStatusPrivacy} open={this.state.statusPrivacy}>
+          <StatusPrivacy closeDrawer={this.closeStatusPrivacy} />
+        </BottomDrawer>
         <MobileDropdown
           openModal={this.openPrivacyModal}
           open={this.state.privacy}
           closeModal={this.closePrivacyModal}
           h6="Last Seen"
+          key2={this.state.key2}
         />
         <MobileDropdown
           openModal={this.openProfilePhotoModal}
           open={this.state.profilePhoto}
           closeModal={this.closeProfilePhotoModal}
           h6="Profile Photo"
+          key2={this.state.key2}
         />
         <MobileDropdown
           openModal={this.openAboutModal}
           open={this.state.about}
           closeModal={this.closeAboutModal}
           h6="About"
+          key2={this.state.key2}
         />
       </Auxilliary>
     );
