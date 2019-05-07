@@ -21,7 +21,7 @@ const styles = theme => ({
 
 class MobileModal extends React.Component {
   state = {
-    value: "Everyone",
+    value: this.props.value,
     key2: [
       { key: "Everyone", value: "Everyone" },
       { key: "My Contacts", value: "My Contacts" },

@@ -1,6 +1,6 @@
 import React from "react";
 import Auxilliary from "../../../../hoc/Auxillary";
-import MobileDropdown from "../../../../ReusableUI-Components/MobileModal";
+import MobileModal from "../../../../ReusableUI-Components/MobileModal";
 import Switch from "@material-ui/core/Switch";
 import BottomDrawer from "../BottomDrawer";
 import Groups from "./Groups";
@@ -188,26 +188,29 @@ class Privacy extends React.Component {
         <BottomDrawer onOpen={this.openBlockedUser} open={this.state.blockedUser}>
           <BlockedContact closeDrawer={this.closeBlockedUser} />
         </BottomDrawer>
-        <MobileDropdown
+        <MobileModal
           openModal={this.openPrivacyModal}
           open={this.state.privacy}
           closeModal={this.closePrivacyModal}
           h6="Last Seen"
           key2={this.state.key2}
+          value="Everyone"
         />
-        <MobileDropdown
+        <MobileModal
           openModal={this.openProfilePhotoModal}
           open={this.state.profilePhoto}
           closeModal={this.closeProfilePhotoModal}
           h6="Profile Photo"
           key2={this.state.key2}
+          value="Everyone"
         />
-        <MobileDropdown
+        <MobileModal
           openModal={this.openAboutModal}
           open={this.state.about}
           closeModal={this.closeAboutModal}
           h6="About"
           key2={this.state.key2}
+          value="Everyone"
         />
       </Auxilliary>
     );

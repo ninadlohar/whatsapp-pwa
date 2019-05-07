@@ -279,6 +279,9 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .chatBackup__text {
+    font-size: 15px;
+  }
   .custom__width85 {
     width: 85%;
   }

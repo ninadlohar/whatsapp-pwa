@@ -1,26 +1,57 @@
 import React from "react";
 import Auxilliary from "../../../../hoc/Auxillary";
-// import MainBottomDrawer from "../BottomDrawer";
+import MobileModal from "../../../../ReusableUI-Components/MobileModal";
 import Switch from "@material-ui/core/Switch";
+import BottomDrawer from "../BottomDrawer";
+import ChatHistory from "./ChatHistory";
+import ChatBackup from "./ChatBackup";
 
 class Chats extends React.Component {
   state = {
-    setSearchActive: false,
-    checkedA: false
+    checkedA: false,
+    fontSize: false,
+    language: false,
+    chatHistory: false,
+    chatBackup: false,
+    key2: [{ key: "Small", value: "Small" }, { key: "Medium", value: "Medium" }, { key: "Large", value: "Large" }],
+    langKey: [
+      { key: "Phone's Language(English)", value: "Phone's Language(English)" },
+      { key: "हिंदी", value: "हिंदी" },
+      { key: "मराठी", value: "मराठी" },
+      { key: "ಕನ್ನಡ", value: "ಕನ್ನಡ" },
+      { key: "తెలుగు", value: "తెలుగు" }
+    ]
+  };
+  openFontSizeModal = () => {
+    this.setState({ fontSize: true });
+  };
+  closeFontSizeModal = () => {
+    this.setState({ fontSize: false });
+  };
+  openLanguageModal = () => {
+    this.setState({ language: true });
+  };
+  closeLanguageModal = () => {
+    this.setState({ language: false });
   };
   handleChange = name => event => {
     this.setState({ [name]: event.target.checked });
   };
-  setSearchActiveFn = () => {
-    this.setState({ setSearchActive: true }, () => {
-      document.getElementById("col-xl-3-5").style.transform = "translate(0, -65px)";
-    });
+
+  openChatHistory = () => {
+    this.setState({ chatHistory: true });
   };
 
-  setSearchDeactiveFn = () => {
-    this.setState({ setSearchActive: false }, () => {
-      document.getElementById("col-xl-3-5").style.transform = "translate(0px, 0px)";
-    });
+  closeChatHistory = () => {
+    this.setState({ chatHistory: false });
+  };
+
+  openChatBackup = () => {
+    this.setState({ chatBackup: true });
+  };
+
+  closeChatBackup = () => {
+    this.setState({ chatBackup: false });
   };
 
   render() {
@@ -71,7 +102,7 @@ class Chats extends React.Component {
                   <Switch checked={this.state.checkedA} onChange={this.handleChange("checkedA")} value="checkedA" />
                 </div>
               </div>
-              <div className="col-12 py-3 d-flex">
+              <div className="col-12 py-3 d-flex" onClick={this.openFontSizeModal}>
                 <div className="d-flex align-items-center pl-4 pr-4" />
                 <div className="d-flex align-items-center w-100 pl-2">
                   <div>
@@ -80,7 +111,7 @@ class Chats extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="col-12 py-3 d-flex mobile__settings__basicInfo__section">
+              <div className="col-12 py-3 d-flex mobile__settings__basicInfo__section" onClick={this.openLanguageModal}>
                 <div className="d-flex align-items-center pl-4 pr-4" />
                 <div className="d-flex align-items-center w-100 pl-2">
                   <div>
@@ -110,13 +141,13 @@ class Chats extends React.Component {
                 width="18"
               />
             </div>
-            <div className="d-flex align-items-center w-100">
+            <div className="d-flex align-items-center w-100" onClick={this.openChatBackup}>
               <div>
                 <div className="mobile__settings__header__name">Chat Backup</div>
               </div>
             </div>
           </div>
-          <div className="col-12 py-3 d-flex">
+          <div className="col-12 py-3 d-flex" onClick={this.openChatHistory}>
             <div className="d-flex align-items-center pl-3 pr-4">
               <img src={require("../../../../assets/svg/history.svg")} alt="history" height="18" width="18" />
             </div>
@@ -127,12 +158,28 @@ class Chats extends React.Component {
             </div>
           </div>
         </div>
-        {/* <MainBottomDrawer onOpen={this.setAccountTrue} open={this.state.account}>
-          <Account setAccountFalse={this.setAccountFalse} />
-        </MainBottomDrawer>
-        <MainBottomDrawer onOpen={this.setHelpTrue} open={this.state.Help}>
-          <Help setHelpFalse={this.setHelpFalse} />
-        </MainBottomDrawer> */}
+        <MobileModal
+          openModal={this.openFontSizeModal}
+          open={this.state.fontSize}
+          closeModal={this.closeFontSizeModal}
+          h6="Font Size"
+          key2={this.state.key2}
+          value="Medium"
+        />
+        <MobileModal
+          openModal={this.openLanguageModal}
+          open={this.state.language}
+          closeModal={this.closeLanguageModal}
+          h6="App Language"
+          key2={this.state.langKey}
+          value="Phone's Language(English)"
+        />
+        <BottomDrawer onOpen={this.openChatHistory} open={this.state.chatHistory}>
+          <ChatHistory closeDrawer={this.closeChatHistory} />
+        </BottomDrawer>
+        <BottomDrawer onOpen={this.openChatBackup} open={this.state.chatBackup}>
+          <ChatBackup closeDrawer={this.closeChatBackup} />
+        </BottomDrawer>
       </Auxilliary>
     );
   }
