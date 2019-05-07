@@ -3,7 +3,9 @@ import Auxilliary from "../../../../hoc/Auxillary";
 import MobileDropdown from "../../../../ReusableUI-Components/MobileModal";
 import Switch from "@material-ui/core/Switch";
 import BottomDrawer from "../BottomDrawer";
+import Groups from "./Groups";
 import StatusPrivacy from "./StatusPrivacy";
+import LiveLocation from "./LiveLocation";
 
 class Privacy extends React.Component {
   state = {
@@ -12,6 +14,8 @@ class Privacy extends React.Component {
     profilePhoto: false,
     about: false,
     statusPrivacy: false,
+    group: false,
+    liveLocation: false,
     key2: [
       { key: "Everyone", value: "Everyone" },
       { key: "My Contacts", value: "My Contacts" },
@@ -47,6 +51,19 @@ class Privacy extends React.Component {
   };
   closeStatusPrivacy = () => {
     this.setState({ statusPrivacy: false });
+  };
+  openGroup = () => {
+    this.setState({ group: true });
+  };
+  closeGroup = () => {
+    this.setState({ group: false });
+  };
+
+  openLiveLocation = () => {
+    this.setState({ liveLocation: true });
+  };
+  closeLiveLocation = () => {
+    this.setState({ liveLocation: false });
   };
 
   render() {
@@ -125,7 +142,7 @@ class Privacy extends React.Component {
           </div>
         </div>
         {/** */}
-        <div className="col-12 py-3">
+        <div className="col-12 py-3" onClick={this.openGroup}>
           <div className="w-100 privacy__header">
             <div className="mobile__settings__header__name">Groups</div>
           </div>
@@ -133,7 +150,7 @@ class Privacy extends React.Component {
             <div className="privacy__child__text">Everyone</div>
           </div>
         </div>
-        <div className="col-12 py-3">
+        <div className="col-12 py-3" onClick={this.openLiveLocation}>
           <div className="w-100 privacy__header">
             <div className="mobile__settings__header__name">Live Location</div>
           </div>
@@ -151,6 +168,12 @@ class Privacy extends React.Component {
         </div>
         <BottomDrawer onOpen={this.openStatusPrivacy} open={this.state.statusPrivacy}>
           <StatusPrivacy closeDrawer={this.closeStatusPrivacy} />
+        </BottomDrawer>
+        <BottomDrawer onOpen={this.openGroup} open={this.state.group}>
+          <Groups closeDrawer={this.closeGroup} />
+        </BottomDrawer>
+        <BottomDrawer onOpen={this.openLiveLocation} open={this.state.liveLocation}>
+          <LiveLocation closeDrawer={this.LiveLocation} />
         </BottomDrawer>
         <MobileDropdown
           openModal={this.openPrivacyModal}
