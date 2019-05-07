@@ -1,9 +1,39 @@
 import React from "react";
 import Auxilliary from "../../../../hoc/Auxillary";
-// import MobileModal from "../../../../ReusableUI-Components/MobileModal";
+import MobileModal from "../../../../ReusableUI-Components/MobileModal";
 
 class ChatHistory extends React.Component {
+  state = {
+    archiveChats: false,
+    clearChats: false,
+    deleteChats: false,
+    clearC: [
+      { key: "checkedB", value: false, message: "Delete related media from my device" },
+      { key: "checkedC", value: false, message: "Delete starred messages" }
+    ],
+    deleteC: [{ key: "checkedA", value: true, message: "Delete media from my phone" }]
+  };
+
+  openArchiveChatsModal = () => {
+    this.setState({ archiveChats: true });
+  };
+  closeArchiveChatsModal = () => {
+    this.setState({ archiveChats: false });
+  };
+  openClearChats = () => {
+    this.setState({ clearChats: true });
+  };
+  closeClearChats = () => {
+    this.setState({ clearChats: false });
+  };
+  openDeleteChats = () => {
+    this.setState({ deleteChats: true });
+  };
+  closeDeleteChats = () => {
+    this.setState({ deleteChats: false });
+  };
   render() {
+    console.log(this.state);
     return (
       <Auxilliary>
         <div>
@@ -34,7 +64,7 @@ class ChatHistory extends React.Component {
               </div>
             </div>
           </div>
-          <div className="col-12 py-3 d-flex">
+          <div className="col-12 py-3 d-flex" onClick={this.openArchiveChatsModal}>
             <div className="d-flex align-items-center pl-3 pr-4">
               <img src={require("../../../../assets/svg/archive.svg")} alt="cloud upload" height="18" width="18" />
             </div>
@@ -44,7 +74,7 @@ class ChatHistory extends React.Component {
               </div>
             </div>
           </div>
-          <div className="col-12 py-3 d-flex">
+          <div className="col-12 py-3 d-flex" onClick={this.openClearChats}>
             <div className="d-flex align-items-center pl-3 pr-4">
               <img src={require("../../../../assets/svg/minus.svg")} alt="minus" height="18" width="18" />
             </div>
@@ -55,7 +85,7 @@ class ChatHistory extends React.Component {
             </div>
           </div>
 
-          <div className="col-12 py-3 d-flex">
+          <div className="col-12 py-3 d-flex" onClick={this.openDeleteChats}>
             <div className="d-flex align-items-center pl-3 pr-4">
               <img src={require("../../../../assets/svg/delete-bin2.svg")} alt="delete-bin" height="18" width="18" />
             </div>
@@ -66,22 +96,32 @@ class ChatHistory extends React.Component {
             </div>
           </div>
         </div>
-        {/* <MobileModal
-          openModal={this.openFontSizeModal}
-          open={this.state.fontSize}
-          closeModal={this.closeFontSizeModal}
-          h6="Font Size"
-          key2={this.state.key2}
-          value="Medium"
+        <MobileModal
+          openModal={this.openArchiveChatsModal}
+          open={this.state.archiveChats}
+          closeModal={this.closeArchiveChatsModal}
+          simpleText="Are you sure you want to archive ALL chats ?"
+          button1="CANCEL"
+          button2="OK"
         />
         <MobileModal
-          openModal={this.openLanguageModal}
-          open={this.state.language}
-          closeModal={this.closeLanguageModal}
-          h6="App Language"
-          key2={this.state.langKey}
-          value="Phone's Language(English)"
-        /> */}
+          openModal={this.openClearChats}
+          open={this.state.clearChats}
+          closeModal={this.closeClearChats}
+          simpleText="Messages in all chats will disappear forever."
+          button1="CANCEL"
+          button2="CLEAR MESSAGES"
+          clearC={this.state.clearC}
+        />
+        <MobileModal
+          openModal={this.openDeleteChats}
+          open={this.state.deleteChats}
+          closeModal={this.closeDeleteChats}
+          simpleText="Are you sure you want to delete All chats and thier messages."
+          button1="CANCEL"
+          button2="DELETE"
+          clearC={this.state.deleteC}
+        />
       </Auxilliary>
     );
   }

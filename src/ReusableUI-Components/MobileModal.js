@@ -7,6 +7,8 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
+import Checkbox from "@material-ui/core/Checkbox";
+import green from "@material-ui/core/colors/green";
 
 const styles = theme => ({
   paper: {
@@ -16,7 +18,14 @@ const styles = theme => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing.unit * 4,
     outline: "none"
-  }
+  },
+  root: {
+    color: green[600],
+    "&$checked": {
+      color: green[500]
+    }
+  },
+  checked: {}
 });
 
 class MobileModal extends React.Component {
@@ -31,6 +40,11 @@ class MobileModal extends React.Component {
   handleChange = event => {
     this.setState({ value: event.target.value });
   };
+
+  handleCheckbox = name => event => {
+    this.setState({ [name]: event.target.checked });
+  };
+
   render() {
     const { classes } = this.props;
     return (
@@ -46,6 +60,7 @@ class MobileModal extends React.Component {
               <Typography variant="h6" id="modal-title">
                 {this.props.h6}
               </Typography>
+              <Typography variant="subtitle2">{this.props.simpleText}</Typography>
               <Typography variant="subtitle1" id="simple-modal-description">
                 <FormControl component="fieldset" className={classes.formControl}>
                   <RadioGroup className={classes.group} value={this.state.value} onChange={this.handleChange}>
@@ -61,6 +76,25 @@ class MobileModal extends React.Component {
                   </RadioGroup>
                 </FormControl>
               </Typography>
+              <div className="MAT_UI__checkboxes">
+                {this.props.clearC &&
+                  this.props.clearC.map(k => (
+                    <FormControlLabel
+                      control={<Checkbox value={k.value} classes={{ root: classes.root, checked: classes.checked }} />}
+                      onChange={this.handleCheckbox(k.key)}
+                      label={k.message}
+                    />
+                  ))}
+                <Typography variant="subtitle2">{this.props.dangerMessage}</Typography>
+              </div>
+              <div className="MAT_UI__buttons">
+                <Typography variant="button" align="right" onClick={this.props.closeModal}>
+                  {this.props.button1}
+                </Typography>
+                <Typography variant="button" align="right">
+                  {this.props.button2}
+                </Typography>
+              </div>
               <MobileModalWrapped />
             </div>
           </div>
