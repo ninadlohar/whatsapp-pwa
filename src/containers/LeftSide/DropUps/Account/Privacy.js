@@ -6,6 +6,7 @@ import BottomDrawer from "../BottomDrawer";
 import Groups from "./Groups";
 import StatusPrivacy from "./StatusPrivacy";
 import LiveLocation from "./LiveLocation";
+import BlockedContact from "./BlockedContact";
 
 class Privacy extends React.Component {
   state = {
@@ -16,6 +17,7 @@ class Privacy extends React.Component {
     statusPrivacy: false,
     group: false,
     liveLocation: false,
+    blockedUser: false,
     key2: [
       { key: "Everyone", value: "Everyone" },
       { key: "My Contacts", value: "My Contacts" },
@@ -64,6 +66,14 @@ class Privacy extends React.Component {
   };
   closeLiveLocation = () => {
     this.setState({ liveLocation: false });
+  };
+
+  openBlockedUser = () => {
+    this.setState({ blockedUser: true });
+  };
+
+  closeBlockedUser = () => {
+    this.setState({ blockedUser: false });
   };
 
   render() {
@@ -158,7 +168,7 @@ class Privacy extends React.Component {
             <div className="privacy__child__text">None</div>
           </div>
         </div>
-        <div className="col-12 py-3">
+        <div className="col-12 py-3" onClick={this.openBlockedUser}>
           <div className="w-100 privacy__header">
             <div className="mobile__settings__header__name">Blocked Contacts</div>
           </div>
@@ -173,7 +183,10 @@ class Privacy extends React.Component {
           <Groups closeDrawer={this.closeGroup} />
         </BottomDrawer>
         <BottomDrawer onOpen={this.openLiveLocation} open={this.state.liveLocation}>
-          <LiveLocation closeDrawer={this.LiveLocation} />
+          <LiveLocation closeDrawer={this.closeLiveLocation} />
+        </BottomDrawer>
+        <BottomDrawer onOpen={this.openBlockedUser} open={this.state.blockedUser}>
+          <BlockedContact closeDrawer={this.closeBlockedUser} />
         </BottomDrawer>
         <MobileDropdown
           openModal={this.openPrivacyModal}
