@@ -1,43 +1,3 @@
-.DOMChangedHiddenSideX {
-  width: 30% !important;
-  transition: 0.3s all !important;
-  background-color: white !important !important;
-  position: relative !important;
-  transform: translate(0%, 0);
-}
-
-@media (min-width: 901px) and (max-width: 1024px) {
-  .leftSlider__chatActiveBox {
-    width: 35% !important;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 900px) {
-  .leftSlider__chatActiveBox {
-    width: 40% !important;
-  }
-}
-
-.DOMChangedHiddenSide {
-  width: 30%;
-  transition: 0.3s all !important;
-  background-color: white !important;
-  position: relative !important;
-  transform: translate(0%, 0);
-}
-
-.rightSlider__child__open {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  background-color: white !important;
-}
-
-.col-xl-3-5,
-.col-xl-6-5 {
-  transition: 0.3s all !important;
-}
-
 @media (min-width: 200px) {
   .display-content-area-child {
     position: absolute;
@@ -60,23 +20,41 @@
   }
 }
 
+.rightSlider__child__open {
+  width: 100%;
+  height: 100vh;
+  background-color: white !important;
+}
+
+.col-xl-3-5,
+.col-xl-6-5 {
+  transition: 0.3s all !important;
+}
+
+/* squeezeBooleanFalse **/
+
 @media (min-width: 768px) and (max-width: 900px) {
-  .col-xl-3-5 {
-    width: 40%;
-  }
+  .col-xl-3-5,
   .leftSlider__chatActiveBox {
     width: 40%;
   }
-
   .col-xl-6-5 {
     width: 60%;
   }
 }
 
-@media (min-width: 901px) and (max-width: 1300px) {
-  .col-xl-3-5 {
+@media (min-width: 901px) and (max-width: 1024px) {
+  .col-xl-3-5,
+  .leftSlider__chatActiveBox {
     width: 35%;
   }
+  .col-xl-6-5 {
+    width: 65%;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1300px) {
+  .col-xl-3-5,
   .leftSlider__chatActiveBox {
     width: 35%;
   }
@@ -86,9 +64,7 @@
 }
 
 @media (min-width: 1301px) {
-  .col-xl-3-5 {
-    width: 30%;
-  }
+  .col-xl-3-5,
   .leftSlider__chatActiveBox {
     width: 30%;
   }
@@ -97,30 +73,56 @@
   }
 }
 
-@media (min-width: 1025px) and (max-width: 1300px) {
-  .DOMChangedLeftSide {
-    width: 30% !important;
+/* squeezeBooleanTrue **/
+
+@media (min-width: 768px) and (max-width: 900px) {
+  .DOMChangedLeftSide_P-1301,
+  .DOMChangedLeftHiddenSide {
+    width: 40%;
   }
+  .DOMChangedRightSide_P-1301 {
+    width: 60%;
+  }
+  .DOMChangedHiddenSide {
+    width: 60%;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1024px) {
+  .DOMChangedLeftSide_P-1301,
+  .DOMChangedLeftHiddenSide {
+    width: 35%;
+  }
+  .DOMChangedRightSide_P-1301 {
+    width: 65%;
+  }
+  .DOMChangedHiddenSide {
+    width: 65%;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1300px) {
+  .DOMChangedLeftSide_P-1301,
   .DOMChangedLeftHiddenSide {
     width: 30% !important;
   }
-
-  .DOMChangedRightSide {
+  .DOMChangedRightSide_P-1301 {
     width: 40% !important;
+  }
+  .DOMChangedHiddenSide {
+    width: 30% !important;
   }
 }
 
 @media (min-width: 1301px) {
-  .DOMChangedLeftSide_P-1301 {
-    width: 25% !important;
-  }
+  .DOMChangedLeftSide_P-1301,
   .DOMChangedLeftHiddenSide {
     width: 25% !important;
   }
-
   .DOMChangedRightSide_P-1301 {
     width: 45% !important;
   }
+  .DOMChangedHiddenSide {
+    width: 30% !important;
+  }
 }
-
-/** custom alignment for the whatsapp */

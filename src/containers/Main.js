@@ -83,85 +83,55 @@ class Main extends React.Component {
     console.log(this.state.squeezeLayoutBoolean);
     const { width } = this.state;
     const mobile = width < 768;
-    if (mobile) {
-      return (
-        <div className="col-12 px-0">
-          <div className="green-box">
-            <div className="row mx-0 bgColor">
-              <div className="display-content-area d-flex" id="page">
-                <div className="display-content-area-child">
-                  <HiddenComponentLeftSide
-                    onRef={ref => (this.LeftDrawer = ref)}
-                    squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
-                    currentScreen={this.state.currentScreen}
-                  />
-                  <LeftSide
-                    leftDropdown={this.state.leftDropdown}
-                    squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
-                    addClassesLeftSide={this.state.addClassesLeftSide}
-                    isTextAMessageFn={this.isTextAMessageFn}
-                    isTextAStatus={this.state.isTextAStatus}
-                    isChatARegularMessage={this.state.isChatARegularMessage}
-                    isChatARegularMessageFn={this.isChatARegularMessageFn}
-                    setLeftSliderScreen={this.setLeftSliderScreen}
-                    mobile={mobile}
-                  />
-                </div>
+    return (
+      <div className="col-12 px-0">
+        <div className="green-box">
+          <div className="row mx-0 bgColor">
+            <div className="display-content-area d-flex" id="page">
+              <div className="display-content-area-child">
+                <HiddenComponentLeftSide
+                  onRef={ref => (this.LeftDrawer = ref)}
+                  squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
+                  currentScreen={this.state.currentScreen}
+                />
+
+                <LeftSide
+                  leftDropdown={this.state.leftDropdown}
+                  squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
+                  addClassesLeftSide={this.state.addClassesLeftSide}
+                  isTextAMessageFn={this.isTextAMessageFn}
+                  isTextAStatus={this.state.isTextAStatus}
+                  isChatARegularMessage={this.state.isChatARegularMessage}
+                  isChatARegularMessageFn={this.isChatARegularMessageFn}
+                  setLeftSliderScreen={this.setLeftSliderScreen}
+                  mobile={mobile}
+                />
+
+                <RightSide
+                  rightDropdown={this.state.rightDropdown}
+                  addClassesRightSide={this.state.addClassesRightSide}
+                  squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
+                  setRightSliderScreen={this.setRightSliderScreen}
+                />
+
+                <HiddenComponentRightSide
+                  onRef1={ref1 => (this.RightDrawer = ref1)}
+                  squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
+                  hiddenClass={this.state.hiddenClass}
+                  closeDrawer={this.closeDrawer}
+                  searchComponent={this.state.searchComponent}
+                  isTextAStatus={this.state.isTextAStatus}
+                  isTextAStatusFn={this.isTextAStatusFn}
+                  isChatWithStatusAndAdmin={this.state.isChatWithStatusAndAdmin}
+                  isChatWithStatusAndAdminFn={this.isChatWithStatusAndAdminFn}
+                  currentScreen1={this.state.currentScreen1}
+                />
               </div>
             </div>
           </div>
         </div>
-      );
-    } else {
-      return (
-        <div className="col-12 px-0">
-          <div className="green-box">
-            <div className="row mx-0 bgColor">
-              <div className="display-content-area d-flex" id="page">
-                <div className="display-content-area-child">
-                  <HiddenComponentLeftSide
-                    onRef={ref => (this.LeftDrawer = ref)}
-                    squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
-                    currentScreen={this.state.currentScreen}
-                  />
-
-                  <LeftSide
-                    leftDropdown={this.state.leftDropdown}
-                    squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
-                    addClassesLeftSide={this.state.addClassesLeftSide}
-                    isTextAMessageFn={this.isTextAMessageFn}
-                    isTextAStatus={this.state.isTextAStatus}
-                    isChatARegularMessage={this.state.isChatARegularMessage}
-                    isChatARegularMessageFn={this.isChatARegularMessageFn}
-                    setLeftSliderScreen={this.setLeftSliderScreen}
-                  />
-
-                  <RightSide
-                    rightDropdown={this.state.rightDropdown}
-                    addClassesRightSide={this.state.addClassesRightSide}
-                    squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
-                    setRightSliderScreen={this.setRightSliderScreen}
-                  />
-
-                  <HiddenComponentRightSide
-                    onRef1={ref1 => (this.RightDrawer = ref1)}
-                    squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
-                    hiddenClass={this.state.hiddenClass}
-                    closeDrawer={this.closeDrawer}
-                    searchComponent={this.state.searchComponent}
-                    isTextAStatus={this.state.isTextAStatus}
-                    isTextAStatusFn={this.isTextAStatusFn}
-                    isChatWithStatusAndAdmin={this.state.isChatWithStatusAndAdmin}
-                    isChatWithStatusAndAdminFn={this.isChatWithStatusAndAdminFn}
-                    currentScreen1={this.state.currentScreen1}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
-    }
+      </div>
+    );
   }
 }
 

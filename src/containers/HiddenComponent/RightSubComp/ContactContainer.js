@@ -12,7 +12,6 @@ class ContactContainer extends React.Component {
   };
 
   slideOutToggler = () => {
-    console.log("working");
     this.props.slideOutToggler();
     document.getElementById("col-xl-6-5").style.width = "70%";
     document.getElementById("DOMChangedHiddenSide").style.width = "0%";
@@ -78,7 +77,12 @@ class ContactContainer extends React.Component {
       <div className="d-flex">
         <div className="rightSlider__profile__edit__description w-100">Add Group Description</div>
         <div onClick={this.isEditingDescriptionFn}>
-          <img src={require("../../../assets/svg/create-new-pencil-button.svg")} alt="pencil-edit" height="18" width="18" />
+          <img
+            src={require("../../../assets/svg/create-new-pencil-button.svg")}
+            alt="pencil-edit"
+            height="18"
+            width="18"
+          />
         </div>
       </div>
     );
@@ -108,7 +112,10 @@ class ContactContainer extends React.Component {
               <div>
                 {this.state.isEditingName ? (
                   <div>
-                    <SearchInputBox searchBoxType="simpleInputForGroupInfo__Name" isEditingNameGroupFn={this.isEditingNameGroupFn} />
+                    <SearchInputBox
+                      searchBoxType="simpleInputForGroupInfo__Name"
+                      isEditingNameGroupFn={this.isEditingNameGroupFn}
+                    />
                   </div>
                 ) : (
                   editName
@@ -134,13 +141,36 @@ class ContactContainer extends React.Component {
               <div className="d-flex">
                 <div className="rightSlider__media__links__title w-100">Media Links and Docs</div>
                 <div>
-                  <img src={require("../../../assets/svg/right-arrow.svg")} alt="right-arrow-angle" height="13" width="13" />
+                  <img
+                    src={require("../../../assets/svg/right-arrow.svg")}
+                    alt="right-arrow-angle"
+                    height="13"
+                    width="13"
+                  />
                 </div>
               </div>
               <div className="rightSlider__media__image__section d-flex justify-content-center">
-                <img src="https://via.placeholder.com/150" alt="" height="107" width1="104" className="rightSlider__media__docs__image" />
-                <img src="https://via.placeholder.com/150" alt="" height="107" width1="104" className="rightSlider__media__docs__image" />
-                <img src="https://via.placeholder.com/150" alt="" height="107" width1="104" className="rightSlider__media__docs__image" />
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt=""
+                  height="107"
+                  width1="104"
+                  className="rightSlider__media__docs__image"
+                />
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt=""
+                  height="107"
+                  width1="104"
+                  className="rightSlider__media__docs__image"
+                />
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt=""
+                  height="107"
+                  width1="104"
+                  className="rightSlider__media__docs__image"
+                />
               </div>
             </div>
             <div className="rightSlider__mute__starred__messages__section">
@@ -153,7 +183,12 @@ class ContactContainer extends React.Component {
               <div className="d-flex">
                 <div className="rightSlider__starred__messages w-100">Starred Messages</div>
                 <div style={{ marginTop: "15px" }}>
-                  <img src={require("../../../assets/svg/right-arrow.svg")} alt="right-arrow-angle" height="13" width="13" />
+                  <img
+                    src={require("../../../assets/svg/right-arrow.svg")}
+                    alt="right-arrow-angle"
+                    height="13"
+                    width="13"
+                  />
                 </div>
               </div>
             </div>
