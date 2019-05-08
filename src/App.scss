@@ -47,8 +47,8 @@ body {
     overflow: hidden;
   }
   .logged__in__user__image__49px {
-    height: 40px;
-    width: 40px;
+    height: 49px;
+    width: 49px;
     border-radius: 50%;
     object-fit: cover;
   }
@@ -184,8 +184,8 @@ body {
     width: 100%;
   }
   .logged__in__user__image__49px {
-    height: 40px;
-    width: 40px;
+    height: 49px;
+    width: 49px;
     border-radius: 50%;
   }
   .sender__image__left__window {
@@ -409,7 +409,7 @@ body {
   }
   .mobile__newChat__selectedContact {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 500;
   }
   .mobile__newChat__contactLength {
     font-size: 14px;
@@ -457,7 +457,7 @@ body {
   }
   .brand__name {
     // font-size: 18px;
-    font-weight: 900;
+    font-weight: 500;
   }
   .chat-dropdown-links {
     padding-top: 13px;
@@ -1478,6 +1478,12 @@ body {
   }
 }
 
+.header__image {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
 .MAT_UI__buttons {
   display: flex;
   justify-content: flex-end;
@@ -1499,6 +1505,7 @@ body {
     padding: 0px;
   }
   > label {
+    display: flex;
     > span {
       padding: 0px;
     }

@@ -1,26 +1,56 @@
+/** clearC for checkboxes and key2 for radio buttons */
+
 import React from "react";
 import Auxilliary from "../../../../hoc/Auxillary";
-// import MainBottomDrawer from "../BottomDrawer";
+import MobileModal from "../../../../ReusableUI-Components/MobileModal";
 import Switch from "@material-ui/core/Switch";
+import { timingSafeEqual } from "crypto";
 
 class DataAndStorage extends React.Component {
   state = {
     setSearchActive: false,
-    checkedA: false
+    whenUsingMobileData: false,
+    whenConnectedToWifi: false,
+    whenRoaming: false,
+    whenUsingMobileDataOptions: [
+      { key: "Photos", value: true, message: "Photos" },
+      { key: "Audio", value: false, message: "Audio" },
+      { key: "Video", value: false, message: "Video" },
+      { key: "Documents", value: false, message: "Documents" }
+    ],
+    whenConnectedToWifiOptions: [
+      { key: "Photos", value: true, message: "Photos" },
+      { key: "Audio", value: true, message: "Audio" },
+      { key: "Video", value: true, message: "Video" },
+      { key: "Documents", value: true, message: "Documents" }
+    ],
+    whenRoamingOptions: [
+      { key: "Photos", value: true, message: "Photos" },
+      { key: "Audio", value: true, message: "Audio" },
+      { key: "Video", value: true, message: "Video" },
+      { key: "Documents", value: true, message: "Documents" }
+    ]
   };
   handleChange = name => event => {
     this.setState({ [name]: event.target.checked });
   };
-  setSearchActiveFn = () => {
-    this.setState({ setSearchActive: true }, () => {
-      document.getElementById("col-xl-3-5").style.transform = "translate(0, -65px)";
-    });
+  openWhenUsingMobileData = () => {
+    this.setState({ whenUsingMobileData: true });
   };
-
-  setSearchDeactiveFn = () => {
-    this.setState({ setSearchActive: false }, () => {
-      document.getElementById("col-xl-3-5").style.transform = "translate(0px, 0px)";
-    });
+  closeWhenUsingMobileData = () => {
+    this.setState({ whenUsingMobileData: false });
+  };
+  openWhenConnectedToWifi = () => {
+    this.setState({ whenConnectedToWifi: true });
+  };
+  closeWhenConnectedToWifi = () => {
+    this.setState({ whenConnectedToWifi: false });
+  };
+  openWhenRoaming = () => {
+    this.setState({ whenRoaming: true });
+  };
+  closeWhenRoaming = () => {
+    this.setState({ whenRoaming: false });
   };
 
   render() {
@@ -68,7 +98,7 @@ class DataAndStorage extends React.Component {
 
               <div className="notifcations__header pb-1 pt-3 pl-4">Media auto-download</div>
 
-              <div className="col-12 py-3 d-flex">
+              <div className="col-12 py-3 d-flex" onClick={this.openWhenUsingMobileData}>
                 <div className="d-flex align-items-center w-100 pl-2">
                   <div className="custom__width85">
                     <div className="mobile__settings__header__name">When using mobile data</div>
@@ -77,7 +107,7 @@ class DataAndStorage extends React.Component {
                 </div>
               </div>
 
-              <div className="col-12 py-3 d-flex">
+              <div className="col-12 py-3 d-flex" onClick={this.openWhenConnectedToWifi}>
                 <div className="d-flex align-items-center w-100 pl-2">
                   <div className="custom__width85">
                     <div className="mobile__settings__header__name">When connected on Wi-Fi</div>
@@ -86,7 +116,7 @@ class DataAndStorage extends React.Component {
                 </div>
               </div>
 
-              <div className="col-12 py-3 d-flex mobile__settings__basicInfo__section">
+              <div className="col-12 py-3 d-flex mobile__settings__basicInfo__section" onClick={this.openWhenRoaming}>
                 <div className="d-flex align-items-center w-100 pl-2">
                   <div className="custom__width85">
                     <div className="mobile__settings__header__name">When roaming</div>
@@ -112,12 +142,46 @@ class DataAndStorage extends React.Component {
             </div>
           </div>
         </div>
-        {/* <MainBottomDrawer onOpen={this.setAccountTrue} open={this.state.account}>
-          <Account setAccountFalse={this.setAccountFalse} />
-        </MainBottomDrawer>
-        <MainBottomDrawer onOpen={this.setHelpTrue} open={this.state.Help}>
-          <Help setHelpFalse={this.setHelpFalse} />
-        </MainBottomDrawer> */}
+        <MobileModal
+          openModal={this.openWhenUsingMobileData}
+          open={this.state.whenUsingMobileData}
+          closeModal={this.closeWhenUsingMobileData}
+          h6="When using mobile data"
+          clearC={this.state.whenUsingMobileDataOptions}
+          value="Photos"
+          button1="CANCEL"
+          button2="OK"
+        />
+        <MobileModal
+          openModal={this.openWhenConnectedToWifi}
+          open={this.state.whenConnectedToWifi}
+          closeModal={this.closeWhenConnectedToWifi}
+          h6="When connected to Wi-Fi"
+          clearC={this.state.whenConnectedToWifiOptions}
+          value="Photos"
+          button1="CANCEL"
+          button2="OK"
+        />
+        <MobileModal
+          openModal={this.openWhenConnectedToWifi}
+          open={this.state.whenConnectedToWifi}
+          closeModal={this.closeWhenConnectedToWifi}
+          h6="When connected to Wi-Fi"
+          clearC={this.state.whenConnectedToWifiOptions}
+          value="Photos"
+          button1="CANCEL"
+          button2="OK"
+        />
+        <MobileModal
+          openModal={this.openWhenRoaming}
+          open={this.state.whenRoaming}
+          closeModal={this.closeWhenRoaming}
+          h6="When roaming"
+          clearC={this.state.whenRoamingOptions}
+          value="Photos"
+          button1="CANCEL"
+          button2="OK"
+        />
       </Auxilliary>
     );
   }

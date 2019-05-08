@@ -37,7 +37,7 @@ class HiddenComponentRightSide extends React.Component {
       document.getElementById("col-xl-6-5").style.width = "0%";
       document.getElementById("DOMChangedHiddenSide").style.width = "70%";
     }
-    /** screwing UI */
+
     window.addEventListener("resize", () => {
       if (
         document.getElementById("page").clientWidth > 768 &&
@@ -120,7 +120,10 @@ class HiddenComponentRightSide extends React.Component {
         break;
     }
     return (
-      <div className={this.props.squeezeLayoutBoolean ? this.props.hiddenClass.join(" ") : null} id="DOMChangedHiddenSide">
+      <div
+        className={this.props.squeezeLayoutBoolean ? this.props.hiddenClass.join(" ") : null}
+        id="DOMChangedHiddenSide"
+      >
         {display}
       </div>
     );

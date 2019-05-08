@@ -42,7 +42,7 @@ const styles = theme => ({
   tabRoot: {
     textTransform: "initial",
     minWidth: 72,
-    fontWeight: "900",
+    fontWeight: "500",
     backgroundColor: "#255d53",
     marginRight: theme.spacing.unit * 4,
     fontFamily: ['"Segoe UI"'].join(","),
@@ -53,7 +53,7 @@ const styles = theme => ({
       backgroundColor: "#255d53",
       color: "#FFF",
       outline: "none",
-      fontWeight: "900",
+      fontWeight: "500",
       opacity: "1"
     },
     "&:focus": {
@@ -331,31 +331,39 @@ class MobileLeftSide extends React.Component {
               </div>
             </section>
 
-            <div className="new__chat__green__logo-main" onClick={this.setNewChatTrue}>
+            <div className="new__chat__green__logo-main">
               <div className="new__chat__green__logo">
                 {this.state.value === 0 ? (
-                  <img
-                    src={require("../../../assets/svg/new-chat-ballon.svg")}
-                    alt="message-ballon"
-                    height="18"
-                    width="18"
-                  />
+                  <div onClick={this.setNewChatTrue}>
+                    <img
+                      src={require("../../../assets/svg/new-chat-ballon.svg")}
+                      alt="message-ballon"
+                      height="18"
+                      width="18"
+                    />
+                  </div>
                 ) : null}
+
                 {this.state.value === 1 ? (
-                  <img
-                    src={require("../../../assets/svg/emergency-call.svg")}
-                    alt="message-ballon"
-                    height="16"
-                    width="16"
-                  />
+                  <div>
+                    <img
+                      src={require("../../../assets/svg/square-stop-button.svg")}
+                      alt="message-ballon"
+                      height="16"
+                      width="16"
+                    />
+                  </div>
                 ) : null}
+
                 {this.state.value === 2 ? (
-                  <img
-                    src={require("../../../assets/svg/square-stop-button.svg")}
-                    alt="message-ballon"
-                    height="16"
-                    width="16"
-                  />
+                  <div>
+                    <img
+                      src={require("../../../assets/svg/emergency-call.svg")}
+                      alt="message-ballon"
+                      height="16"
+                      width="16"
+                    />
+                  </div>
                 ) : null}
               </div>
             </div>

@@ -11,6 +11,9 @@
   padding-top: 16px;
   padding-bottom: 6px;
   border-top: 1px solid #f2f2f2;
+  > strong {
+    font-weight: 500;
+  }
 }
 
 .calls__user__details {

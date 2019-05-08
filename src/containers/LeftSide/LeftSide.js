@@ -95,7 +95,7 @@ class LeftSide extends React.Component {
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg"
                   alt="karl-benz"
-                  className="logged__in__user__image__49px"
+                  className="header__image"
                 />
               </div>
             </div>
