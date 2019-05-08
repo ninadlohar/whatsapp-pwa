@@ -12,7 +12,7 @@ class HiddenComponentRightSide extends React.Component {
     isEditingName: false,
     isEditingDescription: false,
     isTextAStatus: this.props.isTextAStatus,
-    isChatWithStatusAndAdmin: this.props.isChatWithStatusAndAdmin
+    isChatWithStatusAndAdmin: this.props.isChatWithStatusAndAdmin,
   };
 
   isEditingNameGroupFn = () => {
@@ -22,36 +22,52 @@ class HiddenComponentRightSide extends React.Component {
     this.setState({ isEditingDescription: !this.state.isEditingDescription });
   };
 
-  /** moving towards 0 <- 1024 ;;; onclick open drawer from right */
+  withoutResize = (page) => {
+    if (page > 768 && page <= 900 && this.state.squeezeLayoutBoolean === false) {
+      document.getElementById("col-xl-6-5").style.width = "60%";
+      document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+    } else if (page >= 901 && page <= 1024 && this.state.squeezeLayoutBoolean === false) {
+      document.getElementById("col-xl-6-5").style.width = "65%";
+      document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+    } else if (page >= 1025 && page <= 1300 && this.state.squeezeLayoutBoolean === false) {
+      document.getElementById("col-xl-6-5").style.width = "65%";
+      document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+    } else if (page >= 1301 && this.state.squeezeLayoutBoolean === false) {
+      document.getElementById("col-xl-6-5").style.width = "70%";
+      document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+    }
+  }
+
+  resize = (page) => {
+    window.addEventListener("resize", () => {
+      if (page > 768 && page <= 900 && this.state.squeezeLayoutBoolean === false) {
+        document.getElementById("col-xl-6-5").style.width = "60%";
+        document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+      } else if (page >= 901 && page <= 1024 && this.state.squeezeLayoutBoolean === false) {
+        document.getElementById("col-xl-6-5").style.width = "65%";
+        document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+      } else if (page >= 1025 && page <= 1300 && this.state.squeezeLayoutBoolean === false) {
+        document.getElementById("col-xl-6-5").style.width = "65%";
+        document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+      } else if (page >= 1301 && this.state.squeezeLayoutBoolean === false) {
+        document.getElementById("col-xl-6-5").style.width = "70%";
+        document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+      }
+    })
+  }
+
   slideInToggler = () => {
     let leftSide = document.getElementById("col-xl-3-5");
     let rightSide = document.getElementById("col-xl-6-5");
-    let page = document.getElementById("page").clientWidth;
     let hiddenRightC = document.getElementById("DOMChangedHiddenSide");
+    let page = document.getElementById("page").clientWidth
     this.setState({ squeezeLayoutBoolean: true }, () => {
       leftSide.classList.add("DOMChangedLeftSide_P-1301", "DOMChangedLeftSide");
       rightSide.classList.add("DOMChangedRightSide_P-1301", "DOMChangedRightSide");
       hiddenRightC.classList.add("DOMChangedHiddenSide");
     });
-
-    if (page > 768 && page < 901 && this.state.squeezeLayoutBoolean === false) {
-      this.setState({ squeezeLayoutBoolean: true });
-      document.getElementById("col-xl-6-5").style.width = "0%";
-      document.getElementById("DOMChangedHiddenSide").style.width = "60%";
-    }
-    if (page > 901 && page < 1024.9 && this.state.squeezeLayoutBoolean === false) {
-      this.setState({ squeezeLayoutBoolean: true });
-      document.getElementById("col-xl-6-5").style.width = "0%";
-      document.getElementById("DOMChangedHiddenSide").style.width = "65%";
-    }
-
-    // window.addEventListener("resize", () => {
-    //   if (page > 768 && page < 900 && this.state.squeezeLayoutBoolean === true) {
-    //     this.setState({ squeezeLayoutBoolean: true });
-    //     document.getElementById("col-xl-6-5").style.width = "0%";
-    //     document.getElementById("DOMChangedHiddenSide").style.width = "60%";
-    //   }
-    // });
+    // this.withoutResize(page);
+    this.resize(page)
   };
 
   slideOutToggler = () => {
@@ -59,33 +75,25 @@ class HiddenComponentRightSide extends React.Component {
     let leftSide = document.getElementById("col-xl-3-5");
     let hiddenRightC = document.getElementById("DOMChangedHiddenSide");
     let page = document.getElementById("page");
-    // this.props.closeDrawer();
+    this.props.closeDrawer();
     this.setState({ squeezeLayoutBoolean: false }, () => {
       leftSide.classList.remove("DOMChangedLeftSide", "DOMChangedLeftSide_P-1301");
       rightSide.classList.remove("DOMChangedRightSide", "DOMChangedRightSide_P-1301");
       hiddenRightC.classList.remove("DOMChangedHiddenSide");
     });
-    // if (page > 768 && page < 900 && this.state.squeezeLayoutBoolean === true) {
-    //   this.setState({ squeezeLayoutBoolean: false });
-    //   document.getElementById("col-xl-6-5").style.width = "0%";
-    //   document.getElementById("DOMChangedHiddenSide").style.width = "60%";
-    // }
-    // if (page > 901 && page < 1024.9 && this.state.squeezeLayoutBoolean === true) {
-    //   this.setState({ squeezeLayoutBoolean: false });
-    //   document.getElementById("col-xl-6-5").style.width = "0%";
-    //   document.getElementById("DOMChangedHiddenSide").style.width = "65%";
-    // }
-
-    // if (page.clientWidth > 768 && page.clientWidth < 1024.9 && this.state.squeezeLayoutBoolean === true) {
-    //   this.setState({ squeezeLayoutBoolean: false });
-    //   document.getElementById("col-xl-6-5").style.width = "60%";
-    //   document.getElementById("DOMChangedHiddenSide").style.width = "0%";
-    // }
-    // if (page.clientWidth > 1025 && this.state.squeezeLayoutBoolean === false) {
-    //   this.setState({ squeezeLayoutBoolean: true }, () => {
-    //     document.getElementById("DOMChangedHiddenSide").style.width = "30% !important";
-    //   });
-    // }
+    if (page > 768 && page <= 900 && this.state.squeezeLayoutBoolean === true) {
+      document.getElementById("col-xl-6-5").style.width = "60%";
+      // document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+    } else if (page >= 901 && page <= 1024 && this.state.squeezeLayoutBoolean === true) {
+      document.getElementById("col-xl-6-5").style.width = "65%";
+      // document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+    } else if (page >= 1025 && page <= 1300 && this.state.squeezeLayoutBoolean === true) {
+      document.getElementById("col-xl-6-5").style.width = "65%";
+      // document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+    } else if (page >= 1301 && this.state.squeezeLayoutBoolean === true) {
+      document.getElementById("col-xl-6-5").style.width = "70%";
+      // document.getElementById("DOMChangedHiddenSide").style.width = "0%";
+    }
   };
 
   componentDidMount() {

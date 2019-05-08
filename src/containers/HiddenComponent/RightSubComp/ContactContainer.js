@@ -13,8 +13,6 @@ class ContactContainer extends React.Component {
 
   slideOutToggler = () => {
     this.props.slideOutToggler();
-    document.getElementById("col-xl-6-5").style.width = "70%";
-    document.getElementById("DOMChangedHiddenSide").style.width = "0%";
   };
 
   componentDidMount() {
@@ -118,8 +116,8 @@ class ContactContainer extends React.Component {
                     />
                   </div>
                 ) : (
-                  editName
-                )}
+                    editName
+                  )}
                 <div className="rightSlider__sender__lastSeenDate">last seen today at 12:36pm</div>
               </div>
             </div>
@@ -134,8 +132,8 @@ class ContactContainer extends React.Component {
                   />
                 </div>
               ) : (
-                editDescription
-              )}
+                  editDescription
+                )}
             </div>
             <div className="rightSlider__media__links__section">
               <div className="d-flex">
