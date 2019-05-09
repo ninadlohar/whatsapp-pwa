@@ -1,11 +1,42 @@
 import React from "react";
 import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
 
+// onSearchActive={this.onSearchActive} onResizeSearchActive={this.onResizeSearchActive
+
 class MobileUserChat extends React.Component {
+  constructor(props) {
+    super(props);
+    this.resizeFn = this.resizeFn.bind(this);
+  }
+  resizeFn() {
+    var height = document.getElementById("page").clientHeight;
+    var headheight = document.getElementById("head1").clientHeight;
+    var footer = document.getElementById("footer3").clientHeight;
+    var content = document.getElementById("content1");
+    var step1 = height - headheight;
+    var availableheight = step1 - footer;
+    content.style.height = availableheight + 38 + "px";
+    content.style.overflow = "scroll";
+  }
+
+  componentDidMount() {
+    var height = document.getElementById("page").clientHeight;
+    var headheight = document.getElementById("head1").clientHeight;
+    var footer = document.getElementById("footer3").clientHeight;
+    var content = document.getElementById("content1");
+    var step1 = height - headheight;
+    var availableheight = step1 - footer;
+    content.style.height = availableheight + 38 + "px";
+    content.style.overflow = "scroll";
+    window.addEventListener("resize", this.resizeFn);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.resizeFn);
+  }
   render() {
     return (
       <div>
-        <header className="col-12 mobile__view__chat__Messages__Header" id="head">
+        <header className="col-12 mobile__view__chat__Messages__Header" id="head1">
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
@@ -52,7 +83,10 @@ class MobileUserChat extends React.Component {
           <div className="custom__width90">
             <SearchInputBox searchBoxType="mobileMainChat" />
           </div>
-          <div className="d-flex justify-content-center align-items-center mobile__screen__microphone ml-1">
+          <div
+            className="d-flex justify-content-center align-items-center mobile__screen__microphone ml-1"
+            id="footer3"
+          >
             <img src={require("../../../assets/svg/microphone-black.svg")} alt="microphone" width="18" height="18" />
           </div>
         </div>
