@@ -8,7 +8,8 @@ class SearchInputBox extends React.Component {
     this.state = {
       inputArrow: false,
       value: "",
-      mobileSearchBoxValue: ""
+      mobileSearchBoxValue: "",
+      mobileSearch: ""
     };
     this.searchUsersFn = this.searchUsersFn.bind(this);
     this.mobileSearchBoxFn = this.mobileSearchBoxFn.bind(this);
@@ -38,6 +39,10 @@ class SearchInputBox extends React.Component {
       docInputBox.style.boxShadow = "none";
     });
   }
+
+  mobileChatFn = e => {
+    this.setState({ mobileChat: e });
+  };
 
   activeInputValue = () => {
     this.setState({ inputArrow: true });
@@ -241,6 +246,21 @@ class SearchInputBox extends React.Component {
         </div>
       </div>
     );
+    let mobileMainChat = (
+      <div className="col-12 px-0" id="mobileSearch-input-box">
+        <div className="py-2 d-flex">
+          <div className="row mx-0 w-100 justify-content-center">
+            <Input
+              placeholder={this.props.placeholder}
+              classes="mobileSearchTextArea"
+              onChangeHandler={this.mobileChatFn}
+              type="textarea"
+              placeholder="Type a message"
+            />
+          </div>
+        </div>
+      </div>
+    );
 
     let searchBox = null;
     switch (this.props.searchBoxType) {
@@ -273,6 +293,9 @@ class SearchInputBox extends React.Component {
         break;
       case "mobileChangeNumberInputs":
         searchBox = mobileChangeNumberInputs;
+        break;
+      case "mobileMainChat":
+        searchBox = mobileMainChat;
         break;
       default:
         searchBox = simpleInputForProfile__About;

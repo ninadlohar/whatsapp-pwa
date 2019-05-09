@@ -274,11 +274,55 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  #content1 {
+    background: url("./assets/images/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+  }
+  .mobileSearchTextArea:focus,
+  .mobileSearchTextArea:focus-within {
+    border-color: transparent !important;
+    background-color: transparent;
+    box-shadow: none !important;
+    border-radius: 0px !important;
+  }
+
+  .mobile__screen__microphone {
+    background-color: #07bc4c;
+    width: 38px;
+    border-radius: 50%;
+    height: 38px;
+  }
+  .mobileSearchTextArea {
+    border-bottom-right-radius: 32px !important;
+    border-bottom-left-radius: 32px !important;
+    border-top-left-radius: 32px !important;
+    border-top-right-radius: 32px !important;
+    padding-left: 40px;
+    padding-right: 60px;
+    font-size: 13px !important;
+  }
+  .mobile__screen__input {
+    position: absolute;
+    bottom: 0;
+  }
+  .mobile__sender__user__options {
+    width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .mobile__sender__user__image {
+    height: 40px;
+    border-radius: 50%;
+    width: 40px;
+  }
   .chatBackup__text {
     font-size: 15px;
   }
   .custom__width85 {
     width: 85%;
+  }
+  .custom__width90 {
+    width: 90%;
   }
   .prefix__plus {
     font-size: 28px;
@@ -449,6 +493,12 @@ body {
     color: white;
     padding-top: 11px !important;
     padding-bottom: 10px !important;
+  }
+  .mobile__view__chat__Messages__Header {
+    background-color: #255d53;
+    color: white;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
   }
   .brand__name {
     // font-size: 18px;
@@ -1043,8 +1093,6 @@ body {
     max-height: 100px;
     font-weight: normal;
     outline: none;
-    // overflow-x: hidden;
-    // overflow-y: auto;
     position: relative;
     white-space: pre-wrap;
     word-wrap: break-word;

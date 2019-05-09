@@ -17,6 +17,7 @@ import MobileNewGroup from "../DropUps/MobileNewGroup";
 import MobileNewBroadcast from "../DropUps/MobileNewBroadcast";
 import MobileStarredMessages from "../DropUps/MobileStarredMessages";
 import MobileSettings from "../DropUps/MobileSettings";
+import MobileUserChat from "../DropUps/MobileUserChat";
 
 function TabContainer({ children, dir }) {
   return (
@@ -82,7 +83,8 @@ class MobileLeftSide extends React.Component {
     newGroup: false,
     newBroadcast: false,
     starredMessages: false,
-    settings: false
+    settings: false,
+    chat: false
   };
 
   onSearchActive = (height, inputBox, content) => {
@@ -122,6 +124,14 @@ class MobileLeftSide extends React.Component {
     this.setState({ setSearchActive: false }, () => {
       document.getElementById("col-xl-3-5").style.transform = "translate(0px, 0px)";
     });
+  };
+
+  openChatTrue = () => {
+    this.setState({ chat: true });
+  };
+
+  openChatFalse = () => {
+    this.setState({ chat: false });
   };
 
   setNewChatTrue = () => {
@@ -169,7 +179,7 @@ class MobileLeftSide extends React.Component {
     var height = document.getElementById("page").clientHeight;
     var inputBox = document.getElementById("input-box").clientHeight;
     var headheight = document.getElementById("head").clientHeight;
-    var content = document.getElementById("content");
+    var content = document.getElementById("content") || document.getElementById("content1");
     var step1 = height - headheight;
     var availableheight = step1 - inputBox;
     content.style.height = availableheight + "px";
@@ -294,14 +304,36 @@ class MobileLeftSide extends React.Component {
                   <TabContainer dir={theme.direction}>
                     <div className="col-12 px-0 leftSide__log__of__chats" id="content">
                       <div className="row mx-0">
-                        <DefaultLoadedChat />
-                        <DefaultLoadedChat />
-                        <DefaultLoadedChat />
-                        <DefaultLoadedChat />
-                        <DefaultLoadedChat />
-                        <DefaultLoadedChat />
-                        <DefaultLoadedChat />
-                        <DefaultLoadedChat />
+                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                          <DefaultLoadedChat />
+                        </div>
+                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                          <DefaultLoadedChat />
+                        </div>
+                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                          <DefaultLoadedChat />
+                        </div>
+                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                          <DefaultLoadedChat />
+                        </div>
+                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                          <DefaultLoadedChat />
+                        </div>
+                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                          <DefaultLoadedChat />
+                        </div>
+                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                          <DefaultLoadedChat />
+                        </div>
+                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                          <DefaultLoadedChat />
+                        </div>
+                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                          <DefaultLoadedChat />
+                        </div>
+                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                          <DefaultLoadedChat />
+                        </div>
                       </div>
                     </div>
                   </TabContainer>
@@ -391,6 +423,9 @@ class MobileLeftSide extends React.Component {
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setSettingsTrue} open={this.state.settings}>
           <MobileSettings closeSettingsDrawer={this.setSettingsFalse} />
+        </MainBottomDrawer>
+        <MainBottomDrawer onOpen={this.openChatTrue} open={this.state.chat}>
+          <MobileUserChat closeDrawer={this.openChatFalse} />
         </MainBottomDrawer>
       </Auxillary>
     );

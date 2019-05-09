@@ -46,9 +46,7 @@ class FooterAndMessageLogs extends React.Component {
       return;
     } else if (this.state.secondValue !== "") {
       this.setState({
-        messageList: this.state.messageList.concat({
-          textMessage: this.state.secondValue
-        }),
+        messageList: this.state.messageList.concat({ textMessage: this.state.secondValue }),
         secondValue: ""
       });
     }
@@ -67,7 +65,7 @@ class FooterAndMessageLogs extends React.Component {
         {/* </div> */}
         <div className="row mx-0">
           <footer className="footer w-100" id="footer">
-            <div className="rightSide__footer__input__box w-100 d-flex align-items-center py-2">
+            <div className="rightSide__footer__input__box w-100 d-flex align-items-center py-2" id="child-footer">
               <div className="row mx-0 w-100">
                 <div className="rightSide__footer__icons__w__10percent d-flex justify-content-center align-items-center">
                   <i className="far fa-grin-alt smiley icon-color" />
