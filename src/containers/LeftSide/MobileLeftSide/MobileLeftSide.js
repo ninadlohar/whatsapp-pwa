@@ -88,8 +88,13 @@ class MobileLeftSide extends React.Component {
   onSearchActive = (height, inputBox, content) => {
     var step1 = height;
     var availableheight = step1 - inputBox;
-    console.log(availableheight);
     content.style.height = availableheight + 20 + "px";
+    content.style.overflow = "scroll";
+  };
+  onResizeSearchActive = (height, inputBox, content) => {
+    var step1 = height;
+    var availableheight = step1 - inputBox;
+    content.style.height = availableheight + 40 + "px";
     content.style.overflow = "scroll";
   };
   setSearchActiveFn = () => {
@@ -99,6 +104,9 @@ class MobileLeftSide extends React.Component {
       var inputBox = document.getElementById("search-input-box").clientHeight;
       var content = document.getElementById("content");
       this.onSearchActive(height, inputBox, content);
+      window.addEventListener("resize", () => {
+        this.onResizeSearchActive(height, inputBox, content);
+      });
     });
   };
 
