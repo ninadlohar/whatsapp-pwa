@@ -84,9 +84,21 @@ class MobileLeftSide extends React.Component {
     starredMessages: false,
     settings: false
   };
+
+  onSearchActive = (height, inputBox, content) => {
+    var step1 = height;
+    var availableheight = step1 - inputBox;
+    console.log(availableheight);
+    content.style.height = availableheight + 20 + "px";
+    content.style.overflow = "scroll";
+  };
   setSearchActiveFn = () => {
     this.setState({ setSearchActive: true }, () => {
       document.getElementById("col-xl-3-5").style.transform = "translate(0, -65px)";
+      var height = document.getElementById("page").clientHeight;
+      var inputBox = document.getElementById("search-input-box").clientHeight;
+      var content = document.getElementById("content");
+      this.onSearchActive(height, inputBox, content);
     });
   };
 
@@ -164,26 +176,7 @@ class MobileLeftSide extends React.Component {
       var availableheight = step1 - inputBox;
       content.style.height = availableheight + 15 + "px";
       content.style.overflow = "scroll";
-
-      if (document.getElementById("page").clientWidth < 768) {
-        step1 = height - headheight;
-        availableheight = step1 - inputBox;
-        content.style.height = availableheight + 65 + "px";
-        content.style.overflow = "scroll";
-      }
     });
-
-    if (document.getElementById("page").clientWidth < 768) {
-      step1 = height - headheight;
-      availableheight = step1 - inputBox;
-      content.style.height = availableheight + 65 + "px";
-      content.style.overflow = "scroll";
-    }
-    if (document.getElementById("page").clientWidth > 768) {
-      availableheight = step1 - inputBox;
-      content.style.height = availableheight + 15 + "px";
-      content.style.overflow = "scroll";
-    }
   }
 
   render() {

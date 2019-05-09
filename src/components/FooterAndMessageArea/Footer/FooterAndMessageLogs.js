@@ -16,10 +16,8 @@ class FooterAndMessageLogs extends React.Component {
   }
 
   hideSelectedChatFooter = () => {
-    // this.setState({ footerActive: !this.state.footerActive }, () => {
     document.getElementById("selectedMessagesFooter").style.transition = "0.3s";
     document.getElementById("selectedMessagesFooter").style.transform = "translate(0,100%)";
-    // });
   };
 
   sendMessageIcon(e) {
@@ -95,16 +93,36 @@ class FooterAndMessageLogs extends React.Component {
                   </div>
                   <div className="d-flex justify-content-end">
                     <div className="custom__padding_10 cancel-svg">
-                      <img src={require("../../../assets/svg/rate-star-button.svg")} height="18" width="18" alt="star-svg" />
+                      <img
+                        src={require("../../../assets/svg/rate-star-button.svg")}
+                        height="18"
+                        width="18"
+                        alt="star-svg"
+                      />
                     </div>
                     <div className="custom__padding_10 cancel-svg">
-                      <img src={require("../../../assets/svg/delete-bin.svg")} height="18" width="18" alt="delete-bin-svg" />
+                      <img
+                        src={require("../../../assets/svg/delete-bin.svg")}
+                        height="18"
+                        width="18"
+                        alt="delete-bin-svg"
+                      />
                     </div>
                     <div className="custom__padding_10 cancel-svg">
-                      <img src={require("../../../assets/svg/forward-arrow.svg")} height="18" width="18" alt="forward-arrow-svg" />
+                      <img
+                        src={require("../../../assets/svg/forward-arrow.svg")}
+                        height="18"
+                        width="18"
+                        alt="forward-arrow-svg"
+                      />
                     </div>
                     <div className="custom__padding_10">
-                      <img src={require("../../../assets/svg/download-button.svg")} height="18" width="18" alt="download-svg" />
+                      <img
+                        src={require("../../../assets/svg/download-button.svg")}
+                        height="18"
+                        width="18"
+                        alt="download-svg"
+                      />
                     </div>
                   </div>
                 </div>
