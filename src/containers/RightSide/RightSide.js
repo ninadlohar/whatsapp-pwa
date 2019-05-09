@@ -12,7 +12,6 @@ class RightSide extends React.Component {
 
   handleMenuClick1 = screen1 => {
     this.props.setRightSliderScreen(screen1);
-    console.log(screen1 + " was clicked");
   };
 
   componentDidMount() {
@@ -24,6 +23,17 @@ class RightSide extends React.Component {
     var availableheight = step1 - footer;
     content.style.height = availableheight - 40 + "px";
     content.style.overflow = "scroll";
+
+    window.addEventListener("resize", function() {
+      var height = document.getElementById("page").clientHeight;
+      var headerheight = document.getElementById("right__header").clientHeight;
+      var footer = document.getElementById("footer").clientHeight;
+      var content = document.getElementById("message1List");
+      var step1 = height - headerheight;
+      var availableheight = step1 - footer;
+      content.style.height = availableheight - 40 + "px";
+      content.style.overflow = "scroll";
+    });
   }
 
   render() {
