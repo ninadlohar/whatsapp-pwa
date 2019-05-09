@@ -16,7 +16,19 @@ class FooterAndMessageLogs extends React.Component {
   }
 
   hideSelectedChatFooter = () => {
-    document.getElementById("selectedMessagesFooter").style.transition = "0.3s";
+    var li = document.getElementById("message1List").querySelectorAll("li");
+    var checkBox = document.getElementsByName("checkboxMessage");
+    for (let i = 0; i < li.length; i++) {
+      let x = li[i].lastChild;
+      for (let j = 0; j < checkBox.length; j++) {
+        if (checkBox[j].checked) {
+          document.getElementById("list" + j).style.backgroundColor = "transparent";
+        }
+      }
+      x.remove();
+    }
+
+    document.getElementById("selectedMessagesFooter").style.transition = "0.1s";
     document.getElementById("selectedMessagesFooter").style.transform = "translate(0,100%)";
   };
 

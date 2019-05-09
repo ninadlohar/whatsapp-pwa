@@ -186,8 +186,8 @@ class MobileLeftSide extends React.Component {
       content.style.overflow = "scroll";
 
       if (document.getElementById("page").clientWidth < 768) {
-        var step1 = height - headheight;
-        var availableheight = step1 - inputBox;
+        step1 = height - headheight;
+        availableheight = step1 - inputBox;
         content.style.height = availableheight + 67 + "px";
         content.style.overflow = "scroll";
       }

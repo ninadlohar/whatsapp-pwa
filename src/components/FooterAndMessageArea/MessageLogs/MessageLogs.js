@@ -7,19 +7,23 @@ const MessageLogs = props => {
       <div className="rightSide__chat__logScreen__child d-flex flex-column" id="message1List">
         {props.messageLogs
           ? props.messageLogs.map((k, i) => (
-            <li key={i} style={{ listStyleType: "none" }} id={"message" + i}>
-              <div className="rightSide__chat__sender__message">
-                <div className="rightSide__chat__sender__firstMessage" />
-                <span> {k.textMessage} </span>
-                <span className="time-and-tick text-right">
-                  <span> 12: 36 </span>
-                  <span>
-                    <img src={require("../../../assets/svg/double-click.svg")} alt="double-tick" className="double-tick" />
+              <li key={i} style={{ listStyleType: "none" }} id={"list" + i}>
+                <div className="rightSide__chat__sender__message">
+                  <div className="rightSide__chat__sender__firstMessage" />
+                  <span> {k.textMessage} </span>
+                  <span className="time-and-tick text-right">
+                    <span> 12: 36 </span>
+                    <span>
+                      <img
+                        src={require("../../../assets/svg/double-click.svg")}
+                        alt="double-tick"
+                        className="double-tick"
+                      />
+                    </span>
                   </span>
-                </span>
-              </div>
-            </li>
-          ))
+                </div>
+              </li>
+            ))
           : null}
       </div>
     </div>

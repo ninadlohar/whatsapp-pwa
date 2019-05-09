@@ -48,13 +48,27 @@ class DropDown extends React.Component {
 
   selectMessages = () => {
     var li = document.getElementById("message1List").getElementsByTagName("li");
+    var checkBox = document.getElementsByName("checkboxMessage");
+
     for (let i = 0; i < li.length; i++) {
       var textnode = document.createElement("input");
       textnode.setAttribute("type", "checkbox");
+      textnode.name = "checkboxMessage";
+      textnode.id = "checkboxMessage" + i;
       li[i].appendChild(textnode);
     }
+
+    for (let i = 0; i < checkBox.length; i++) {
+      checkBox[i].addEventListener("click", () => {
+        if (checkBox[i].checked) {
+          document.getElementById("list" + i).style.backgroundColor = "rgba(0,191,195,0.08)";
+        } else {
+          document.getElementById("list" + i).style.backgroundColor = "transparent";
+        }
+      });
+    }
     this.setState({ footerActive: !this.state.footerActive }, () => {
-      document.getElementById("selectedMessagesFooter").style.transition = "0.3s";
+      document.getElementById("selectedMessagesFooter").style.transition = "0.1s";
       document.getElementById("selectedMessagesFooter").style.transform = "translate(0,0%)";
     });
   };

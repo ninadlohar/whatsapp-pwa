@@ -67,6 +67,7 @@ class MobileModal extends React.Component {
                     {this.props.key2 &&
                       this.props.key2.map(k => (
                         <FormControlLabel
+                          key={k.key}
                           value={k.key}
                           control={<Radio />}
                           label={k.value}
@@ -80,6 +81,7 @@ class MobileModal extends React.Component {
                 {this.props.clearC &&
                   this.props.clearC.map(k => (
                     <FormControlLabel
+                      key={k.key}
                       control={<Checkbox value={k.value} classes={{ root: classes.root, checked: classes.checked }} />}
                       onChange={this.handleCheckbox(k.key)}
                       label={k.message}
