@@ -106,8 +106,8 @@ body {
   }
   .rightSide__chat__logScreen__child {
     position: absolute;
-    height: 90vh;
-    overflow-y: scroll;
+    // height: 90vh;
+    // overflow-y: scroll;
     width: 100%;
     padding-left: 9%;
     padding-right: 9%;
@@ -246,9 +246,9 @@ body {
   .rightSide__chat__logScreen__child {
     padding-left: 9%;
     padding-right: 9%;
-    height: 100vh;
-    height: 90vh;
-    overflow-y: scroll;
+    // height: 100vh;
+    // height: 90vh;
+    // overflow-y: scroll;
     background: url("./assets/images/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
   }
   .sender-name {
@@ -827,10 +827,10 @@ body {
     color: $sender-message-color;
     font-size: 13px;
   }
-  .log-of-chats-new-chat-active {
-    overflow-y: scroll;
-    height: 73vh;
-  }
+  // .log-of-chats-new-chat-active {
+  //   overflow-y: scroll;
+  //   height: 73vh;
+  // }
   .leftSlider__chatActiveBox {
     display: block;
     background: white;
@@ -883,11 +883,11 @@ body {
   .col-xl-3-5 {
     width: 100%;
   }
-  .leftSide__log__of__chats {
-    overflow-y: scroll;
-    position: absolute;
-    height: 90vh;
-  }
+  // .leftSide__log__of__chats {
+  //   overflow-y: scroll;
+  //   position: absolute;
+  //   height: 90vh;
+  // }
   .send-text-input-box:focus,
   .send-text-input-box:focus-within {
     border-color: transparent !important;
@@ -1365,11 +1365,11 @@ body {
     color: $sender-message-color;
     font-size: 13px;
   }
-  .log-of-chats-new-chat-active {
-    overflow-y: scroll;
-    height: 73vh;
-    z-index: 999;
-  }
+  // .log-of-chats-new-chat-active {
+  //   overflow-y: scroll;
+  //   height: 73vh;
+  //   z-index: 999;
+  // }
   .frequently-contacted {
     padding-left: 30px;
     color: $green-box-color;
@@ -1436,11 +1436,11 @@ body {
   .rightSide__chat__window__parent {
     position: relative;
   }
-  .leftSide__log__of__chats {
-    overflow-y: scroll;
-    // position: absolute;
-    height: 90vh;
-  }
+  // .leftSide__log__of__chats {
+  //   overflow-y: scroll;
+  //   // position: absolute;
+  //   height: 90vh;
+  // }
   .send-text-input-box:focus,
   .send-text-input-box:focus-within {
     border-color: transparent !important;

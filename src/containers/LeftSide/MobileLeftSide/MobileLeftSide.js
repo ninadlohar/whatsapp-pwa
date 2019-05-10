@@ -112,14 +112,6 @@ class MobileLeftSide extends React.Component {
     });
   };
 
-  handleChange = (event, value) => {
-    this.setState({ value });
-  };
-
-  handleChangeIndex = index => {
-    this.setState({ value: index });
-  };
-
   setSearchDeactiveFn = () => {
     this.setState({ setSearchActive: false }, () => {
       document.getElementById("col-xl-3-5").style.transform = "translate(0px, 0px)";
@@ -174,34 +166,69 @@ class MobileLeftSide extends React.Component {
     this.setState({ settings: false });
   };
 
-  componentDidMount() {
-    this.props.onRef2(this);
+  resizeFn = () => {
     var height = document.getElementById("page").clientHeight;
     var inputBox = document.getElementById("input-box").clientHeight;
     var headheight = document.getElementById("head").clientHeight;
-    var content = document.getElementById("content") || document.getElementById("content1");
+    var content = document.getElementById("content");
     var step1 = height - headheight;
     var availableheight = step1 - inputBox;
-    content.style.height = availableheight + "px";
+    content.style.height = availableheight + 15 + "px";
     content.style.overflow = "scroll";
 
-    window.addEventListener("resize", function() {
-      var height = document.getElementById("page").clientHeight;
-      var inputBox = document.getElementById("input-box").clientHeight;
-      var headheight = document.getElementById("head").clientHeight;
-      var content = document.getElementById("content");
-      var step1 = height - headheight;
-      var availableheight = step1 - inputBox;
-      content.style.height = availableheight + 15 + "px";
+    if (document.getElementById("page").clientWidth < 768) {
+      step1 = height - headheight;
+      availableheight = step1 - inputBox;
+      content.style.height = availableheight + 67 + "px";
       content.style.overflow = "scroll";
+    }
+  };
 
-      if (document.getElementById("page").clientWidth < 768) {
-        step1 = height - headheight;
-        availableheight = step1 - inputBox;
-        content.style.height = availableheight + 67 + "px";
-        content.style.overflow = "scroll";
-      }
-    });
+  resizeFor1and2Tab = (height, headheight, content) => {
+    var step1 = height - headheight;
+    content.style.marginTop = headheight + "px";
+    content.style.height = step1 + "px";
+    content.style.overflow = "scroll";
+  };
+
+  handleChange = (event, value) => {
+    var height = document.getElementById("page").clientHeight;
+    var headheight = document.getElementById("head").clientHeight;
+    var content8 = document.getElementById("content8");
+    var content9 = document.getElementById("content9");
+    this.setState({ value });
+    if (value === 1 || value === "1") {
+      this.withoutResizeFn(height, headheight, content8);
+      window.addEventListener("resize", () => {
+        this.resizeFor1and2Tab(height, headheight, content8);
+      });
+    } else if (value === 2 || value === "2") {
+      this.withoutResizeFn(height, headheight, content9);
+      window.addEventListener("resize", () => {
+        this.resizeFor1and2Tab(height, headheight, content9);
+      });
+    }
+  };
+
+  handleChangeIndex = index => {
+    this.setState({ value: index });
+    console.log(index);
+  };
+
+  withoutResizeFn = (height, headheight, content) => {
+    var step1 = height - headheight;
+    content.style.marginTop = headheight + "px";
+    content.style.height = step1 + "px";
+    content.style.overflow = "scroll";
+  };
+
+  componentDidMount() {
+    this.props.onRef2(this);
+    var height = document.getElementById("page").clientHeight;
+    var headheight = document.getElementById("head").clientHeight;
+    var content = document.getElementById("content");
+    this.withoutResizeFn(height, headheight, content);
+    window.addEventListener("resize", this.resizeFn);
   }
 
   render() {
@@ -211,7 +238,7 @@ class MobileLeftSide extends React.Component {
     let defaultScreen = (
       <Auxillary>
         <div>
-          <header className="col-12 mobile__view__header px-0" id="head">
+          <header className="col-12 mobile__view__header fixed-top px-0" id="head">
             <div className="row mx-0">
               <div className="col-12 d-flex">
                 <h3 className="brand__name py-3 mb-0">Sup</h3>
@@ -339,7 +366,7 @@ class MobileLeftSide extends React.Component {
                     </div>
                   </TabContainer>
                   <TabContainer dir={theme.direction}>
-                    <div className="col-12 px-0 leftSide__log__of__chats" id="content">
+                    <div className="col-12 px-0 leftSide__log__of__chats" id="content8" name="swipe">
                       <div className="row mx-0">
                         <Status />
                         <Status />
@@ -354,7 +381,7 @@ class MobileLeftSide extends React.Component {
                     </div>
                   </TabContainer>
                   <TabContainer dir={theme.direction}>
-                    <div className="col-12 px-0 leftSide__log__of__chats" id="content">
+                    <div className="col-12 px-0 leftSide__log__of__chats" id="content9" name="swipe">
                       <div className="row mx-0">
                         <Calls />
                         <Calls />

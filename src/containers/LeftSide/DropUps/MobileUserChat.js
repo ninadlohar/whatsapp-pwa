@@ -12,7 +12,7 @@ class MobileUserChat extends React.Component {
     var height = document.getElementById("page").clientHeight;
     var headheight = document.getElementById("head1").clientHeight;
     var footer = document.getElementById("footer3").clientHeight;
-    var content = document.getElementById("content1");
+    var content = document.getElementById("content2");
     var step1 = height - headheight;
     var availableheight = step1 - footer;
     content.style.height = availableheight + 38 + "px";
@@ -23,7 +23,7 @@ class MobileUserChat extends React.Component {
     var height = document.getElementById("page").clientHeight;
     var headheight = document.getElementById("head1").clientHeight;
     var footer = document.getElementById("footer3").clientHeight;
-    var content = document.getElementById("content1");
+    var content = document.getElementById("content2");
     var step1 = height - headheight;
     var availableheight = step1 - footer;
     content.style.height = availableheight + 38 + "px";
@@ -76,7 +76,7 @@ class MobileUserChat extends React.Component {
             </div>
           </div>
         </header>
-        <div className="col-12 px-0" id="content1">
+        <div className="col-12 px-0" id="content2">
           <div className="row mx-0" />
         </div>
         <div className="mobile__screen__input justify-content-center px-1 align-items-center w-100 d-flex">
