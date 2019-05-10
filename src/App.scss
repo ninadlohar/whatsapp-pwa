@@ -274,6 +274,13 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .mobile__dropdown__ellipsis {
+    padding-top: 4px;
+    font-size: 19px;
+  }
+  .single-icons {
+    width: 40px;
+  }
   #content1 {
     background: url("./assets/images/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
   }
@@ -973,6 +980,9 @@ body {
 }
 
 @media (min-width: 768px) {
+  .single-icons {
+    width: 40px;
+  }
   .icon-color {
     color: $icon-color;
   }

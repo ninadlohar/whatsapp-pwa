@@ -50,7 +50,7 @@ class DefaultLoadedChat extends React.Component {
       >
         <div className="leftChat__user__image">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/1/10/McLaren_Senna_Genf_2018.jpg"
+            src={require("../../assets/images/220px-Chris_Hemsworth_as_Thor.jpg")}
             alt="mclaren"
             className="sender__image__left__window"
           />

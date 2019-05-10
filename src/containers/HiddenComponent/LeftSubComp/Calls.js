@@ -17,10 +17,14 @@ class DefaultLoadedChat extends React.Component {
 
   render() {
     return (
-      <div className="chat-1 w-100 d-flex rightSlider__userInfo__box" onMouseEnter={this.onHover} onMouseLeave={this.offHover}>
+      <div
+        className="chat-1 w-100 d-flex rightSlider__userInfo__box"
+        onMouseEnter={this.onHover}
+        onMouseLeave={this.offHover}
+      >
         <div className="leftChat__user__image">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Tom_Holland_by_Gage_Skidmore.jpg"
+            src={require("../../../assets/images/BB_S5B_004_sm.jpg")}
             alt="tim-holland"
             className="sender__image__left__window"
           />
@@ -35,7 +39,12 @@ class DefaultLoadedChat extends React.Component {
             <div className="row mx-0">
               <div className="leftChat__message noOverFlow">
                 <span className="pr-2">
-                  <img src={require("../../../assets/svg/call-received-arrow.svg")} height="11" width="11" alt="call-received" />
+                  <img
+                    src={require("../../../assets/svg/call-received-arrow.svg")}
+                    height="11"
+                    width="11"
+                    alt="call-received"
+                  />
                 </span>
                 <span>Yesterday 10:30 AM</span>
               </div>

@@ -216,7 +216,6 @@ class MobileLeftSide extends React.Component {
               <div className="col-12 d-flex">
                 <h3 className="brand__name py-3 mb-0">Sup</h3>
                 <div className="w-100 d-flex align-items-center justify-content-end">
-                  <div />
                   <div className="px-3" onClick={() => this.setSearchActiveFn()}>
                     <img
                       src={require("../../../assets/svg/mobile-search.svg")}
@@ -225,15 +224,17 @@ class MobileLeftSide extends React.Component {
                       alt="search-svg"
                     />
                   </div>
-                  <DropDown
-                    classes="fas fa-ellipsis-v"
-                    mobile={this.props.mobile}
-                    mobileViewDropDown={this.state.mobileViewDropDown}
-                    setNewGroupTrue={this.setNewGroupTrue}
-                    setNewBroadcastTrue={this.setNewBroadcastTrue}
-                    setStarredMessagesTrue={this.setStarredMessagesTrue}
-                    setSettingsTrue={this.setSettingsTrue}
-                  />
+                  <div className="mobile__dropdown__ellipsis">
+                    <DropDown
+                      classes="fas fa-ellipsis-v"
+                      mobile={this.props.mobile}
+                      mobileViewDropDown={this.state.mobileViewDropDown}
+                      setNewGroupTrue={this.setNewGroupTrue}
+                      setNewBroadcastTrue={this.setNewBroadcastTrue}
+                      setStarredMessagesTrue={this.setStarredMessagesTrue}
+                      setSettingsTrue={this.setSettingsTrue}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

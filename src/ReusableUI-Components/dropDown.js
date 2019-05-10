@@ -17,7 +17,6 @@ class DropDown extends React.Component {
   };
 
   showMenu = () => {
-    // event.preventDefault();
     this.setState({ showMenu: true }, () => {
       document.addEventListener("click", this.closeMenu);
     });
@@ -79,7 +78,6 @@ class DropDown extends React.Component {
     this.setState({ squeezeLayoutBoolean: true }, () => {
       leftSide.classList.add("DOMChangedLeftSide", "DOMChangedLeftSide_P-1301");
       rightSide.classList.add("DOMChangedRightSide", "DOMChangedRightSide_P-1301");
-      console.log("dropdown called");
     });
   };
 
@@ -164,23 +162,19 @@ class DropDown extends React.Component {
 
     return (
       <Auxillary>
-        <div
-          className={this.state.showMenu ? "px-3 icon-active align-items-center justify-items-center d-flex" : "px-3 "}
+        <i className={this.props.mobile ? "" : "icon-color"}>
+          <i className={this.props.classes + "  single-icons d-flex justify-content-center"} onClick={this.showMenu} />
+        </i>
+        <CSSTransition
+          timeout={200}
+          unmountOnExit
+          in={this.state.showMenu}
+          classNames="left-dropdown-main"
+          onEnter={() => this.showMenu}
+          onExited={() => this.closeMenu}
         >
-          <i className={this.props.mobile ? "" : "icon-color"}>
-            <i className={this.props.classes} onClick={this.showMenu} />
-          </i>
-          <CSSTransition
-            timeout={200}
-            unmountOnExit
-            in={this.state.showMenu}
-            classNames="left-dropdown-main"
-            onEnter={() => this.showMenu}
-            onExited={() => this.closeMenu}
-          >
-            <Auxillary>{dropDownMenu}</Auxillary>
-          </CSSTransition>
-        </div>
+          <Auxillary>{dropDownMenu}</Auxillary>
+        </CSSTransition>
         <MainModel isOpen={this.state.showModal} toggle={this.toggle}>
           <h5 className="mute__group__name">Mute "Group1"</h5>
           <div className="mute__radio__buttons">

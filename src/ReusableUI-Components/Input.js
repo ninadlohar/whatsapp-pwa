@@ -1,6 +1,5 @@
 import React from "react";
 import "../App.scss";
-import Textarea from "react-textarea-autosize";
 import TextareaAutosize from "react-textarea-autosize";
 
 class SearchBar extends React.Component {
