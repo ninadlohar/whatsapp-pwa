@@ -18,11 +18,18 @@ class Help extends React.Component {
     });
   };
 
+  componentDidMount() {
+    let header = document.getElementById("info__section__header").clientHeight;
+    let infoSection = document.getElementById("info-section");
+    infoSection.style.marginTop = header + "px";
+    infoSection.style.overflow = "scroll";
+  }
+
   render() {
     return (
       <Auxilliary>
         <div>
-          <header className="col-12 mobile__view__starred__Messages__Header py-2" id="head">
+          <header className="col-12 fixed-top mobile__view__starred__Messages__Header py-2" id="info__section__header">
             <div className="row mx-0 w-100">
               <div className="col-12 px-0 py-1 d-flex">
                 <div className="row mx-0 w-100">
@@ -39,7 +46,7 @@ class Help extends React.Component {
               </div>
             </div>
           </header>
-          <div className="col-12 px-0">
+          <div className="col-12 px-0" id="info-section">
             <div className="row mx-0">
               <div className="col-12 py-3 d-flex">
                 <div className="d-flex align-items-center pl-3 pr-4">

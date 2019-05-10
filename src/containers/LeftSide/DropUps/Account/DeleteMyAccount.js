@@ -3,6 +3,7 @@ import SearchInputBox from "../../../../components/SearchInputBox/SearchInputBox
 import TextField from "@material-ui/core/TextField";
 import { withStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
+import Auxillary from "../../../../hoc/Auxillary";
 
 const styles = theme => ({
   container: {
@@ -44,14 +45,23 @@ class DeleteMyAccount extends React.Component {
     currency: "EUR"
   };
 
+  componentDidMount() {
+    let header = document.getElementById("mobile__deleteAccount__head");
+    let infoSection = document.getElementById("mobile__deleteAccount__section");
+    this.props.componentWithoutSearchBar(header, infoSection);
+  }
+
   handleChange = name => event => {
     this.setState({ [name]: event.target.value });
   };
   render() {
     const { classes } = this.props;
     return (
-      <div>
-        <header className="col-12 mobile__view__starred__Messages__Header py-2" id="head">
+      <Auxillary>
+        <header
+          className="col-12 fixed-top mobile__view__starred__Messages__Header py-2"
+          id="mobile__deleteAccount__head"
+        >
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
@@ -68,7 +78,7 @@ class DeleteMyAccount extends React.Component {
             </div>
           </div>
         </header>
-        <section className="col-12 px-0 leftSide__chat__section">
+        <section className="col-12 px-0 leftSide__chat__section" id="mobile__deleteAccount__section">
           <div className="row mx-0">
             <div className="col-12 px-0 leftSide__log__of__chats leftSlider__profile__section">
               <div className="row mx-0">
@@ -161,7 +171,7 @@ class DeleteMyAccount extends React.Component {
             </div>
           </div>
         </section>
-      </div>
+      </Auxillary>
     );
   }
 }

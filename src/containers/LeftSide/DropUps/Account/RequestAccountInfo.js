@@ -1,10 +1,19 @@
 import React from "react";
+import Auxillary from "../../../../hoc/Auxillary";
 
 class RequestAccountInfo extends React.Component {
+  componentDidMount() {
+    let header = document.getElementById("mobile__reqAccountInfo__head");
+    let infoSection = document.getElementById("mobile__reqAccountInfo__section");
+    this.props.componentWithoutSearchBar(header, infoSection);
+  }
   render() {
     return (
-      <div>
-        <header className="col-12 mobile__view__starred__Messages__Header py-2" id="head">
+      <Auxillary>
+        <header
+          className="col-12 fixed-top mobile__view__starred__Messages__Header py-2"
+          id="mobile__reqAccountInfo__head"
+        >
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
@@ -21,7 +30,7 @@ class RequestAccountInfo extends React.Component {
             </div>
           </div>
         </header>
-        <section className="col-12 px-0 leftSide__chat__section">
+        <section className="col-12 px-0 leftSide__chat__section" id="mobile__reqAccountInfo__section">
           <div className="row mx-0">
             <div className="col-12 px-0 leftSide__log__of__chats leftSlider__profile__section">
               <div className="row mx-0">
@@ -71,7 +80,7 @@ class RequestAccountInfo extends React.Component {
             </div>
           </div>
         </section>
-      </div>
+      </Auxillary>
     );
   }
 }

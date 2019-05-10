@@ -54,27 +54,33 @@ class Chats extends React.Component {
     this.setState({ chatBackup: false });
   };
 
+  componentDidMount() {
+    let header = document.getElementById("mobile__chats__head");
+    let infoSection = document.getElementById("mobile__chats__section");
+    this.props.componentWithoutSearchBar(header, infoSection);
+  }
+
   render() {
     return (
       <Auxilliary>
-        <div>
-          <header className="col-12 mobile__view__starred__Messages__Header py-2" id="head">
-            <div className="row mx-0 w-100">
-              <div className="col-12 px-0 py-1 d-flex">
-                <div className="row mx-0 w-100">
-                  <div
-                    className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                    onClick={this.props.closeDrawer}
-                  >
-                    <img src={require("../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
-                  </div>
-                  <div className="mobileView__selectContactSection pl-3">
-                    <div className="mobile__newChat__selectedContact">Chats</div>
-                  </div>
+        <header className="col-12 fixed-top mobile__view__starred__Messages__Header py-2" id="mobile__chats__head">
+          <div className="row mx-0 w-100">
+            <div className="col-12 px-0 py-1 d-flex">
+              <div className="row mx-0 w-100">
+                <div
+                  className="mobileView__left__arrow d-flex align-items-center justify-content-start"
+                  onClick={this.props.closeDrawer}
+                >
+                  <img src={require("../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                </div>
+                <div className="mobileView__selectContactSection pl-3">
+                  <div className="mobile__newChat__selectedContact">Chats</div>
                 </div>
               </div>
             </div>
-          </header>
+          </div>
+        </header>
+        <div id="mobile__chats__section">
           <div className="col-12 px-0">
             <div className="row mx-0">
               <div className="col-12 py-3 d-flex">
@@ -175,10 +181,16 @@ class Chats extends React.Component {
           value="Phone's Language(English)"
         />
         <BottomDrawer onOpen={this.openChatHistory} open={this.state.chatHistory}>
-          <ChatHistory closeDrawer={this.closeChatHistory} />
+          <ChatHistory
+            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
+            closeDrawer={this.closeChatHistory}
+          />
         </BottomDrawer>
         <BottomDrawer onOpen={this.openChatBackup} open={this.state.chatBackup}>
-          <ChatBackup closeDrawer={this.closeChatBackup} />
+          <ChatBackup
+            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
+            closeDrawer={this.closeChatBackup}
+          />
         </BottomDrawer>
       </Auxilliary>
     );

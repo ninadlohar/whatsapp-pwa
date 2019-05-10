@@ -51,27 +51,36 @@ class Notifications extends React.Component {
     this.setState({ color: false });
   };
 
+  componentDidMount() {
+    let header = document.getElementById("mobile__notification__head");
+    let infoSection = document.getElementById("mobile__notification__section");
+    this.props.componentWithoutSearchBar(header, infoSection);
+  }
+
   render() {
     return (
       <Auxilliary>
-        <div>
-          <header className="col-12 mobile__view__starred__Messages__Header py-2" id="head">
-            <div className="row mx-0 w-100">
-              <div className="col-12 px-0 py-1 d-flex">
-                <div className="row mx-0 w-100">
-                  <div
-                    className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                    onClick={this.props.closeDrawer}
-                  >
-                    <img src={require("../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
-                  </div>
-                  <div className="mobileView__selectContactSection pl-3">
-                    <div className="mobile__newChat__selectedContact">Notifications</div>
-                  </div>
+        <header
+          className="col-12 fixed-top mobile__view__starred__Messages__Header py-2"
+          id="mobile__notification__head"
+        >
+          <div className="row mx-0 w-100">
+            <div className="col-12 px-0 py-1 d-flex">
+              <div className="row mx-0 w-100">
+                <div
+                  className="mobileView__left__arrow d-flex align-items-center justify-content-start"
+                  onClick={this.props.closeDrawer}
+                >
+                  <img src={require("../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                </div>
+                <div className="mobileView__selectContactSection pl-3">
+                  <div className="mobile__newChat__selectedContact">Notifications</div>
                 </div>
               </div>
             </div>
-          </header>
+          </div>
+        </header>
+        <div id="mobile__notification__section">
           <div className="col-12 px-0">
             <div className="row mx-0">
               <div className="col-12 py-3 d-flex mobile__settings__basicInfo__section">

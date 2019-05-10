@@ -13,32 +13,35 @@ class TSVFinallyDone extends React.Component {
   setStep2False = () => {
     this.setState({ step2: false });
   };
+  componentDidMount() {
+    let header = document.getElementById("mobile__twoStepVerificationFinallyDone__head");
+    let infoSection = document.getElementById("mobile__twoStepVerificationFinallyDone__section");
+    this.props.componentWithoutSearchBar(header, infoSection);
+  }
   render() {
     return (
       <Auxillary>
-        <div>
-          <header className="col-12 mobile__view__starred__Messages__Header py-2" id="head">
-            <div className="row mx-0 w-100">
-              <div className="col-12 px-0 py-1 d-flex">
-                <div className="row mx-0 w-100">
-                  <div
-                    className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                    onClick={this.props.closeDrawer}
-                  >
-                    <img
-                      src={require("../../../../../../assets/svg/left.svg")}
-                      width="24"
-                      height="24"
-                      alt="left-arrow"
-                    />
-                  </div>
-                  <div className="mobileView__selectContactSection pl-3">
-                    <div className="mobile__newChat__selectedContact">Two-Step Verification</div>
-                  </div>
+        <header
+          className="col-12 fixed-top mobile__view__starred__Messages__Header py-2"
+          id="mobile__twoStepVerificationFinallyDone__head"
+        >
+          <div className="row mx-0 w-100">
+            <div className="col-12 px-0 py-1 d-flex">
+              <div className="row mx-0 w-100">
+                <div
+                  className="mobileView__left__arrow d-flex align-items-center justify-content-start"
+                  onClick={this.props.closeDrawer}
+                >
+                  <img src={require("../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                </div>
+                <div className="mobileView__selectContactSection pl-3">
+                  <div className="mobile__newChat__selectedContact">Two-Step Verification</div>
                 </div>
               </div>
             </div>
-          </header>
+          </div>
+        </header>
+        <div id="mobile__twoStepVerificationFinallyDone__section">
           <section className="col-12 px-0 leftSide__chat__section">
             <div className="row mx-0">
               <div className="col-12 px-0 leftSide__log__of__chats leftSlider__profile__section">
@@ -121,9 +124,6 @@ class TSVFinallyDone extends React.Component {
             </div>
           </div>
         </div>
-        {/* <MainBottomDrawer onOpen={this.setStep2True} open={this.state.step2}>
-          <Account closeDrawer={this.setStep2False} />
-        </MainBottomDrawer> */}
       </Auxillary>
     );
   }

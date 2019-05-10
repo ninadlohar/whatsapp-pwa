@@ -77,11 +77,17 @@ class Account extends React.Component {
     this.setState({ deleteAccount: false });
   };
 
+  componentDidMount() {
+    let header = document.getElementById("mobile__account__head");
+    let infoSection = document.getElementById("mobile__account__section");
+    this.props.componentWithoutSearchBar(header, infoSection);
+  }
+
   render() {
     return (
       <Auxilliary>
         <div>
-          <header className="col-12 mobile__view__starred__Messages__Header py-2" id="head">
+          <header className="col-12 fixed-top mobile__view__starred__Messages__Header py-2" id="mobile__account__head">
             <div className="row mx-0 w-100">
               <div className="col-12 px-0 py-1 d-flex">
                 <div className="row mx-0 w-100">
@@ -98,7 +104,7 @@ class Account extends React.Component {
               </div>
             </div>
           </header>
-          <div className="col-12 px-0">
+          <div className="col-12 px-0" id="mobile__account__section">
             <div className="row mx-0">
               <div className="col-12 py-3 d-flex" onClick={this.setPrivacyTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
@@ -194,22 +200,40 @@ class Account extends React.Component {
           </div>
         </div>
         <MainBottomDrawer onOpen={this.setPrivacyTrue} open={this.state.privacy}>
-          <Privacy closeDrawer={this.setPrivacyFalse} />
+          <Privacy
+            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
+            closeDrawer={this.setPrivacyFalse}
+          />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setSecurityTrue} open={this.state.Security}>
-          <Security closeDrawer={this.setSecurityFalse} />
+          <Security
+            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
+            closeDrawer={this.setSecurityFalse}
+          />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setTwoStepVerificationTrue} open={this.state.TwoStepVerification}>
-          <TwoStepVerification closeDrawer={this.setTwoStepVerificationFalse} />
+          <TwoStepVerification
+            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
+            closeDrawer={this.setTwoStepVerificationFalse}
+          />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setChangeNumberTrue} open={this.state.ChangeNumber}>
-          <ChangeNumber closeDrawer={this.setChangeNumberFalse} />
+          <ChangeNumber
+            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
+            closeDrawer={this.setChangeNumberFalse}
+          />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setRequestAccountInfoTrue} open={this.state.RequestAccountInfo}>
-          <RequestAccountInfo closeDrawer={this.setRequestAccountInfoFalse} />
+          <RequestAccountInfo
+            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
+            closeDrawer={this.setRequestAccountInfoFalse}
+          />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.deleteAccountTrue} open={this.state.deleteAccount}>
-          <DeleteMyAccount closeDrawer={this.deleteAccountFalse} />
+          <DeleteMyAccount
+            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
+            closeDrawer={this.deleteAccountFalse}
+          />
         </MainBottomDrawer>
       </Auxilliary>
     );

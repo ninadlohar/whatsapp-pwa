@@ -14,11 +14,19 @@ class TwoStepVerificationStep1 extends React.Component {
   setTwoStepVerification2False = () => {
     this.setState({ TwoStepVerification2: false });
   };
+  componentDidMount() {
+    let header = document.getElementById("mobile__twoStepVerification1__head");
+    let infoSection = document.getElementById("mobile__twoStepVerification1__section");
+    this.props.componentWithoutSearchBar(header, infoSection);
+  }
   render() {
     return (
       <Auxillary>
         <div>
-          <header className="col-12 mobile__view__starred__Messages__Header py-2" id="head">
+          <header
+            className="col-12 fixed-top mobile__view__starred__Messages__Header py-2"
+            id="mobile__twoStepVerification1__head"
+          >
             <div className="row mx-0 w-100">
               <div className="col-12 px-0 py-1 d-flex">
                 <div className="row mx-0 w-100">
@@ -40,33 +48,38 @@ class TwoStepVerificationStep1 extends React.Component {
               </div>
             </div>
           </header>
-          <section className="col-12 px-0 leftSide__chat__section">
-            <div className="row mx-0">
-              <div className="col-12 px-0 leftSide__log__of__chats leftSlider__profile__section">
-                <div className="row mx-0">
-                  <div className="p-3 w-100">
-                    <div className="no-archieved-chats text-center">
-                      Enter a 6-Digit PIN which you'll be asked for when you register your phone number with WhatsApp
-                    </div>
-                    <div className="twoStepVerification__input">
-                      <SearchInputBox searchBoxType="mobileTSVInput" placeholder="* * * * * *" />
+          <div id="mobile__twoStepVerification1__section">
+            <section className="col-12 px-0 leftSide__chat__section">
+              <div className="row mx-0">
+                <div className="col-12 px-0 leftSide__log__of__chats leftSlider__profile__section">
+                  <div className="row mx-0">
+                    <div className="p-3 w-100">
+                      <div className="no-archieved-chats text-center">
+                        Enter a 6-Digit PIN which you'll be asked for when you register your phone number with WhatsApp
+                      </div>
+                      <div className="twoStepVerification__input">
+                        <SearchInputBox searchBoxType="mobileTSVInput" placeholder="* * * * * *" />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
-          <div
-            className="enable-button-parent w-100 d-flex justify-content-center"
-            onClick={this.setTwoStepVerifcation2True}
-          >
-            <div className="enable-button">
-              <div className="d-flex justify-content-center">NEXT</div>
+            </section>
+            <div
+              className="enable-button-parent w-100 d-flex justify-content-center"
+              onClick={this.setTwoStepVerifcation2True}
+            >
+              <div className="enable-button">
+                <div className="d-flex justify-content-center">NEXT</div>
+              </div>
             </div>
           </div>
         </div>
         <MainBottomDrawer onOpen={this.setTwoStepVerifcation2True} open={this.state.TwoStepVerification2}>
-          <TwoStepVerificationStep2 closeDrawer={this.setTwoStepVerification2False} />
+          <TwoStepVerificationStep2
+            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
+            closeDrawer={this.setTwoStepVerification2False}
+          />
         </MainBottomDrawer>
       </Auxillary>
     );

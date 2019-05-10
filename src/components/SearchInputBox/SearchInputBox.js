@@ -31,7 +31,7 @@ class SearchInputBox extends React.Component {
   }
 
   mobileSearchBoxFn(e) {
-    let docInputBox = document.getElementById("search-input-box");
+    let docInputBox = document.getElementById("search-input-box-new-group");
     // docInputBox.style.background = "red";
     docInputBox.style.boxShadow = "0px 4px 5px 0px rgba(205,205,205,1)";
     this.setState({ mobileSearchBoxValue: e, inputArrow: true }, () => {

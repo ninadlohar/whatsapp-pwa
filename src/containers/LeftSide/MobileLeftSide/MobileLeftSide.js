@@ -231,6 +231,23 @@ class MobileLeftSide extends React.Component {
     window.addEventListener("resize", this.resizeFn);
   }
 
+  componentWithoutSearchBar = (header, leftHeight) => {
+    var height = document.getElementById("page").clientHeight;
+    var headheight = header.clientHeight;
+    var content = leftHeight;
+    var step1 = height - headheight;
+    var availableheight = step1;
+    content.style.marginTop = headheight + "px";
+    content.style.height = availableheight + "px";
+    content.style.overflow = "scroll";
+  };
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.resizeFor1and2Tab);
+    window.removeEventListener("resize", this.onResizeSearchActive);
+    window.removeEventListener("resize", this.resizeFn);
+  }
+
   render() {
     const { classes, theme } = this.props;
     const { value } = this.state;
@@ -438,7 +455,10 @@ class MobileLeftSide extends React.Component {
           </div>
         </div>
         <MainBottomDrawer onOpen={this.setNewChatTrue} open={this.state.newChat}>
-          <MobileNewChat closeDrawer={this.setNewChatFalse} />
+          <MobileNewChat
+            componentWithoutSearchBar={this.componentWithoutSearchBar}
+            closeDrawer={this.setNewChatFalse}
+          />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setNewGroupTrue} open={this.state.newGroup}>
           <MobileNewGroup closeGroupDrawer={this.setNewGroupFalse} />
@@ -450,7 +470,10 @@ class MobileLeftSide extends React.Component {
           <MobileStarredMessages closeStarredMessagesDrawer={this.setStarredMessagesFalse} />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setSettingsTrue} open={this.state.settings}>
-          <MobileSettings closeSettingsDrawer={this.setSettingsFalse} />
+          <MobileSettings
+            closeSettingsDrawer={this.setSettingsFalse}
+            componentWithoutSearchBar={this.componentWithoutSearchBar}
+          />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.openChatTrue} open={this.state.chat}>
           <MobileUserChat closeDrawer={this.openChatFalse} />
