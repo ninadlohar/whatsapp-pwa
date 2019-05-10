@@ -1,6 +1,7 @@
 import React from "react";
 import "../App.scss";
 import Textarea from "react-textarea-autosize";
+import TextareaAutosize from "react-textarea-autosize";
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -40,11 +41,13 @@ class SearchBar extends React.Component {
       }
       case "textarea": {
         return (
-          <Textarea
+          <TextareaAutosize
             id="textarea"
             className={(defaultClass += " " + this.props.classes)}
             minRows={1}
             maxRows={5}
+            useCacheForDOMMeasurements
+            style={{ maxHeight: 100 }}
             placeholder={this.props.placeholder}
             value={this.props.value}
             onChange={this.inputHandler}

@@ -51,7 +51,7 @@ class MobileUserChat extends React.Component {
                     <img
                       src={require("../../../assets/images/user-image.jpg")}
                       className="mobile__sender__user__image"
-                      alt="sender-image"
+                      alt="sender-pic"
                     />
                     <span className="pl-3">Nikolay</span>
                   </div>
