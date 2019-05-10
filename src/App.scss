@@ -1537,6 +1537,14 @@ body {
   border-radius: 50%;
 }
 
+.bottomDrawerParent {
+  > div {
+    > div {
+      overflow-y: hidden;
+    }
+  }
+}
+
 .MAT_UI__buttons {
   display: flex;
   justify-content: flex-end;

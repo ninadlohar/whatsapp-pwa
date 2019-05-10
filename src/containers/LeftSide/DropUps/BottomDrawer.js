@@ -8,19 +8,22 @@ const styles = {
   },
   fullList: {
     width: "auto"
+  },
+  removeY: {
+    overflowY: "hidden"
   }
 };
 
 class TemporaryDrawer extends React.Component {
   render() {
     return (
-      <div>
-        <Drawer anchor="bottom" open={this.props.open} onOpen={this.props.onOpen}>
-          <div tabIndex={0} onClick={this.props.toggleDrawer} className="bottomDrawer">
-            {this.props.children}
-          </div>
-        </Drawer>
-      </div>
+
+      <Drawer anchor="bottom" open={this.props.open} onOpen={this.props.onOpen} classes={styles.removeY} className="bottomDrawerParent">
+        <div tabIndex={0} onClick={this.props.toggleDrawer} className="bottomDrawer">
+          {this.props.children}
+        </div>
+      </Drawer>
+
     );
   }
 }

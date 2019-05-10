@@ -219,7 +219,7 @@ class MobileLeftSide extends React.Component {
     var step1 = height - headheight;
     content.style.marginTop = headheight + "px";
     content.style.height = step1 + "px";
-    content.style.overflow = "scroll";
+    content.style.overflow = "auto";
   };
 
   componentDidMount() {
@@ -239,7 +239,7 @@ class MobileLeftSide extends React.Component {
     var availableheight = step1;
     content.style.marginTop = headheight + "px";
     content.style.height = availableheight + "px";
-    content.style.overflow = "scroll";
+    content.style.overflow = "auto";
   };
 
   componentWillUnmount() {
@@ -254,42 +254,41 @@ class MobileLeftSide extends React.Component {
 
     let defaultScreen = (
       <Auxillary>
-        <div>
-          <header className="col-12 mobile__view__header fixed-top px-0" id="head">
-            <div className="row mx-0">
-              <div className="col-12 d-flex">
-                <h3 className="brand__name py-3 mb-0">Sup</h3>
-                <div className="w-100 d-flex align-items-center justify-content-end">
-                  <div className="px-3" onClick={() => this.setSearchActiveFn()}>
-                    <img
-                      src={require("../../../assets/svg/mobile-search.svg")}
-                      width="19"
-                      height="19"
-                      alt="search-svg"
-                    />
-                  </div>
-                  <div className="mobile__dropdown__ellipsis">
-                    <DropDown
-                      classes="fas fa-ellipsis-v"
-                      mobile={this.props.mobile}
-                      mobileViewDropDown={this.state.mobileViewDropDown}
-                      setNewGroupTrue={this.setNewGroupTrue}
-                      setNewBroadcastTrue={this.setNewBroadcastTrue}
-                      setStarredMessagesTrue={this.setStarredMessagesTrue}
-                      setSettingsTrue={this.setSettingsTrue}
-                    />
-                  </div>
+        <header className="col-12 mobile__view__header fixed-top px-0" id="head">
+          <div className="row mx-0">
+            <div className="col-12 d-flex">
+              <h3 className="brand__name py-3 mb-0">Sup</h3>
+              <div className="w-100 d-flex align-items-center justify-content-end">
+                <div className="px-3" onClick={() => this.setSearchActiveFn()}>
+                  <img
+                    src={require("../../../assets/svg/mobile-search.svg")}
+                    width="19"
+                    height="19"
+                    alt="search-svg"
+                  />
+                </div>
+                <div className="mobile__dropdown__ellipsis">
+                  <DropDown
+                    classes="fas fa-ellipsis-v"
+                    mobile={this.props.mobile}
+                    mobileViewDropDown={this.state.mobileViewDropDown}
+                    setNewGroupTrue={this.setNewGroupTrue}
+                    setNewBroadcastTrue={this.setNewBroadcastTrue}
+                    setStarredMessagesTrue={this.setStarredMessagesTrue}
+                    setSettingsTrue={this.setSettingsTrue}
+                  />
                 </div>
               </div>
             </div>
+          </div>
 
-            {this.state.setSearchActive ? (
-              <SearchInputBox
-                placeholder="Search..."
-                searchBoxType="mobileSearchBox"
-                setSearchDeactiveFn={this.setSearchDeactiveFn}
-              />
-            ) : (
+          {this.state.setSearchActive ? (
+            <SearchInputBox
+              placeholder="Search..."
+              searchBoxType="mobileSearchBox"
+              setSearchDeactiveFn={this.setSearchDeactiveFn}
+            />
+          ) : (
               <div className="row mx-0" id="input-box">
                 <div className="col-12 pb-1 d-flex camera">
                   <div className="d-flex align-items-center pt-1">
@@ -336,121 +335,120 @@ class MobileLeftSide extends React.Component {
                 </div>
               </div>
             )}
-          </header>
-          <div className="mx-0" id="message-logs">
-            <section className="col-12 px-0 leftSide__chat__section">
-              <div className="row mx-0" style={{ height: "100vh" }}>
-                <SwipeableViews
-                  axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-                  index={this.state.value}
-                  onChangeIndex={this.handleChangeIndex}
-                  style={{ width: "100vw" }}
-                >
-                  <TabContainer dir={theme.direction}>
-                    <div className="col-12 px-0 leftSide__log__of__chats" id="content">
-                      <div className="row mx-0">
-                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
-                          <DefaultLoadedChat />
-                        </div>
-                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
-                          <DefaultLoadedChat />
-                        </div>
-                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
-                          <DefaultLoadedChat />
-                        </div>
-                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
-                          <DefaultLoadedChat />
-                        </div>
-                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
-                          <DefaultLoadedChat />
-                        </div>
-                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
-                          <DefaultLoadedChat />
-                        </div>
-                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
-                          <DefaultLoadedChat />
-                        </div>
-                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
-                          <DefaultLoadedChat />
-                        </div>
-                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
-                          <DefaultLoadedChat />
-                        </div>
-                        <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
-                          <DefaultLoadedChat />
-                        </div>
+        </header>
+        <div className="mx-0" id="message-logs">
+          <section className="col-12 px-0 leftSide__chat__section">
+            <div className="row mx-0" style={{ height: "100vh" }}>
+              <SwipeableViews
+                axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+                index={this.state.value}
+                onChangeIndex={this.handleChangeIndex}
+                style={{ width: "100vw" }}
+              >
+                <TabContainer dir={theme.direction}>
+                  <div className="col-12 px-0 leftSide__log__of__chats" id="content">
+                    <div className="row mx-0">
+                      <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                        <DefaultLoadedChat />
+                      </div>
+                      <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                        <DefaultLoadedChat />
+                      </div>
+                      <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                        <DefaultLoadedChat />
+                      </div>
+                      <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                        <DefaultLoadedChat />
+                      </div>
+                      <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                        <DefaultLoadedChat />
+                      </div>
+                      <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                        <DefaultLoadedChat />
+                      </div>
+                      <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                        <DefaultLoadedChat />
+                      </div>
+                      <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                        <DefaultLoadedChat />
+                      </div>
+                      <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                        <DefaultLoadedChat />
+                      </div>
+                      <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
+                        <DefaultLoadedChat />
                       </div>
                     </div>
-                  </TabContainer>
-                  <TabContainer dir={theme.direction}>
-                    <div className="col-12 px-0 leftSide__log__of__chats" id="content8" name="swipe">
-                      <div className="row mx-0">
-                        <Status />
-                        <Status />
-                        <Status />
-                        <Status />
-                        <Status />
-                        <Status />
-                        <Status />
-                        <Status />
-                        <Status />
-                      </div>
+                  </div>
+                </TabContainer>
+                <TabContainer dir={theme.direction}>
+                  <div className="col-12 px-0 leftSide__log__of__chats" id="content8" name="swipe">
+                    <div className="row mx-0">
+                      <Status />
+                      <Status />
+                      <Status />
+                      <Status />
+                      <Status />
+                      <Status />
+                      <Status />
+                      <Status />
+                      <Status />
                     </div>
-                  </TabContainer>
-                  <TabContainer dir={theme.direction}>
-                    <div className="col-12 px-0 leftSide__log__of__chats" id="content9" name="swipe">
-                      <div className="row mx-0">
-                        <Calls />
-                        <Calls />
-                        <Calls />
-                        <Calls />
-                        <Calls />
-                        <Calls />
-                        <Calls />
-                        <Calls />
-                        <Calls />
-                      </div>
+                  </div>
+                </TabContainer>
+                <TabContainer dir={theme.direction}>
+                  <div className="col-12 px-0 leftSide__log__of__chats" id="content9" name="swipe">
+                    <div className="row mx-0">
+                      <Calls />
+                      <Calls />
+                      <Calls />
+                      <Calls />
+                      <Calls />
+                      <Calls />
+                      <Calls />
+                      <Calls />
+                      <Calls />
                     </div>
-                  </TabContainer>
-                </SwipeableViews>
-              </div>
-            </section>
-
-            <div className="new__chat__green__logo-main">
-              <div className="new__chat__green__logo">
-                {this.state.value === 0 ? (
-                  <div onClick={this.setNewChatTrue}>
-                    <img
-                      src={require("../../../assets/svg/new-chat-ballon.svg")}
-                      alt="message-ballon"
-                      height="18"
-                      width="18"
-                    />
                   </div>
-                ) : null}
+                </TabContainer>
+              </SwipeableViews>
+            </div>
+          </section>
 
-                {this.state.value === 1 ? (
-                  <div>
-                    <img
-                      src={require("../../../assets/svg/square-stop-button.svg")}
-                      alt="message-ballon"
-                      height="16"
-                      width="16"
-                    />
-                  </div>
-                ) : null}
+          <div className="new__chat__green__logo-main">
+            <div className="new__chat__green__logo">
+              {this.state.value === 0 ? (
+                <div onClick={this.setNewChatTrue}>
+                  <img
+                    src={require("../../../assets/svg/new-chat-ballon.svg")}
+                    alt="message-ballon"
+                    height="18"
+                    width="18"
+                  />
+                </div>
+              ) : null}
 
-                {this.state.value === 2 ? (
-                  <div>
-                    <img
-                      src={require("../../../assets/svg/emergency-call.svg")}
-                      alt="message-ballon"
-                      height="16"
-                      width="16"
-                    />
-                  </div>
-                ) : null}
-              </div>
+              {this.state.value === 1 ? (
+                <div>
+                  <img
+                    src={require("../../../assets/svg/square-stop-button.svg")}
+                    alt="message-ballon"
+                    height="16"
+                    width="16"
+                  />
+                </div>
+              ) : null}
+
+              {this.state.value === 2 ? (
+                <div>
+                  <img
+                    src={require("../../../assets/svg/emergency-call.svg")}
+                    alt="message-ballon"
+                    height="16"
+                    width="16"
+                  />
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
