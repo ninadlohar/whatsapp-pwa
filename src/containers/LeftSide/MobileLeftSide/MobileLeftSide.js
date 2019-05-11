@@ -260,12 +260,7 @@ class MobileLeftSide extends React.Component {
               <h3 className="brand__name py-3 mb-0">Sup</h3>
               <div className="w-100 d-flex align-items-center justify-content-end">
                 <div className="px-3" onClick={() => this.setSearchActiveFn()}>
-                  <img
-                    src={require("../../../assets/svg/mobile-search.svg")}
-                    width="19"
-                    height="19"
-                    alt="search-svg"
-                  />
+                  <img src={require("../../../assets/svg/mobile-search.svg")} width="19" height="19" alt="search-svg" />
                 </div>
                 <div className="mobile__dropdown__ellipsis">
                   <DropDown
@@ -289,52 +284,52 @@ class MobileLeftSide extends React.Component {
               setSearchDeactiveFn={this.setSearchDeactiveFn}
             />
           ) : (
-              <div className="row mx-0" id="input-box">
-                <div className="col-12 pb-1 d-flex camera">
-                  <div className="d-flex align-items-center pt-1">
-                    <img src={require("../../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
-                  </div>
-                  <div className={classes.root}>
-                    <AppBar className="demo" position="static" color="inherit">
-                      <Tabs
-                        variant="fullWidth"
-                        value={value}
-                        onChange={this.handleChange}
+            <div className="row mx-0" id="input-box">
+              <div className="col-12 pb-1 d-flex camera">
+                <div className="d-flex align-items-center pt-1">
+                  <img src={require("../../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
+                </div>
+                <div className={classes.root}>
+                  <AppBar className="demo" position="static" color="inherit">
+                    <Tabs
+                      variant="fullWidth"
+                      value={value}
+                      onChange={this.handleChange}
+                      classes={{
+                        root: classes.tabsRoot,
+                        indicator: classes.tabsIndicator
+                      }}
+                    >
+                      <Tab
+                        disableRipple
                         classes={{
-                          root: classes.tabsRoot,
-                          indicator: classes.tabsIndicator
+                          root: classes.tabRoot,
+                          selected: classes.tabSelected
                         }}
-                      >
-                        <Tab
-                          disableRipple
-                          classes={{
-                            root: classes.tabRoot,
-                            selected: classes.tabSelected
-                          }}
-                          label="CHATS"
-                        />
-                        <Tab
-                          disableRipple
-                          classes={{
-                            root: classes.tabRoot,
-                            selected: classes.tabSelected
-                          }}
-                          label="STATUS"
-                        />
-                        <Tab
-                          disableRipple
-                          classes={{
-                            root: classes.tabRoot,
-                            selected: classes.tabSelected
-                          }}
-                          label="CALLS"
-                        />
-                      </Tabs>
-                    </AppBar>
-                  </div>
+                        label="CHATS"
+                      />
+                      <Tab
+                        disableRipple
+                        classes={{
+                          root: classes.tabRoot,
+                          selected: classes.tabSelected
+                        }}
+                        label="STATUS"
+                      />
+                      <Tab
+                        disableRipple
+                        classes={{
+                          root: classes.tabRoot,
+                          selected: classes.tabSelected
+                        }}
+                        label="CALLS"
+                      />
+                    </Tabs>
+                  </AppBar>
                 </div>
               </div>
-            )}
+            </div>
+          )}
         </header>
         <div className="mx-0" id="message-logs">
           <section className="col-12 px-0 leftSide__chat__section">
@@ -459,7 +454,10 @@ class MobileLeftSide extends React.Component {
           />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setNewGroupTrue} open={this.state.newGroup}>
-          <MobileNewGroup closeGroupDrawer={this.setNewGroupFalse} />
+          <MobileNewGroup
+            closeGroupDrawer={this.setNewGroupFalse}
+            componentWithoutSearchBar={this.componentWithoutSearchBar}
+          />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setNewBroadcastTrue} open={this.state.newBroadcast}>
           <MobileNewBroadcast closeBroadcastDrawer={this.setNewBroadcastFalse} />

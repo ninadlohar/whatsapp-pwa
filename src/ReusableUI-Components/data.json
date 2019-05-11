@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "wakanda",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg",
+      "status": "lorem15"
+    },
+    {
+      "id": 2,
+      "name": "preet",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg",
+      "status": "i am good"
+    },
+    {
+      "id": 3,
+      "name": "niko",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg",
+      "status": "namespace"
+    },
+    {
+      "id": 4,
+      "name": "bard",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg",
+      "status": "conio.h sadsadads"
+    },
+    {
+      "id": 5,
+      "name": "client",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg",
+      "status": "oh my gawd"
+    },
+    {
+      "id": 6,
+      "name": "sorcery",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg",
+      "status": "lorem15"
+    },
+    {
+      "id": 7,
+      "name": "ramanujan",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg",
+      "status": "i am good"
+    },
+    {
+      "id": 8,
+      "name": "kiddo",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg",
+      "status": "namespace"
+    },
+    {
+      "id": 9,
+      "name": "spaceman",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg",
+      "status": "conio.h sadsadads"
+    },
+    {
+      "id": 10,
+      "name": "xereth",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Carl-Benz_coloriert.jpg",
+      "status": "oh my gawd"
+    }
+  ]
+}

@@ -179,7 +179,7 @@ class SearchInputBox extends React.Component {
     );
 
     let mobileSearchBox = (
-      <div className="col-12 px-0 input__box" id="search-input-box">
+      <div className="col-12 px-0 input__box" id="search-input-box-new-group">
         <div className="px-2 py-2 d-flex">
           <div className="row mx-0 w-100">
             <div className="col-12 px-0">

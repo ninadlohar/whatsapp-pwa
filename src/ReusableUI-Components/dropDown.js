@@ -1,9 +1,10 @@
 import React from "react";
 import Auxillary from "../hoc/Auxillary";
 import MainModel from "./Modal";
-
+import MainBottomDrawer from "../containers/LeftSide/DropUps/BottomDrawer";
 import { CSSTransition } from "react-transition-group";
 import "../scss/dropdown/dropdown.scss";
+import Help from "./Help";
 
 class DropDown extends React.Component {
   state = {
@@ -13,7 +14,8 @@ class DropDown extends React.Component {
     exitGroup: false,
     squeezeLayoutBoolean: this.props.squeezeLayoutBoolean,
     selectedMessages: false,
-    footerActive: false
+    footerActive: false,
+    openHelp: false
   };
 
   showMenu = () => {
@@ -25,6 +27,14 @@ class DropDown extends React.Component {
     this.setState({ showMenu: false }, () => {
       document.removeEventListener("click", this.closeMenu);
     });
+  };
+
+  openHelpTrue = () => {
+    this.setState({ openHelp: true });
+  };
+
+  openHelpFalse = () => {
+    this.setState({ openHelp: false });
   };
 
   toggle = () => {
@@ -149,6 +159,17 @@ class DropDown extends React.Component {
       </div>
     );
 
+    let newChatDropdown = (
+      <div className="mobile-right-dropdown">
+        <div className="px-4 py-2">Invite Friend</div>
+        <div className="px-4 py-2">Contacts</div>
+        <div className="px-4 py-2">Refresh</div>
+        <div className="px-4 py-2" onClick={this.openHelpTrue}>
+          Help
+        </div>
+      </div>
+    );
+
     let dropDownMenu = null;
     if (this.props.leftDropdown) {
       dropDownMenu = this.props.leftDropdown && this.state.showMenu ? leftMenu : null;
@@ -158,12 +179,17 @@ class DropDown extends React.Component {
       dropDownMenu = this.props.attachment && this.state.showMenu ? attachment : null;
     } else if (this.props.mobileViewDropDown) {
       dropDownMenu = this.props.mobileViewDropDown && this.state.showMenu ? mobileViewDropDown : null;
+    } else if (this.props.newChatDropdown) {
+      dropDownMenu = this.props.newChatDropdown && this.state.showMenu ? newChatDropdown : null;
     }
 
     return (
       <Auxillary>
         <i className={this.props.mobile ? "" : "icon-color"}>
-          <i className={this.props.classes + "  single-icons d-flex justify-content-center"} onClick={this.showMenu} />
+          <i
+            className={this.props.classes + "  single-icons d-flex justify-content-center align-items-center"}
+            onClick={this.showMenu}
+          />
         </i>
         <CSSTransition
           timeout={200}
@@ -226,6 +252,9 @@ class DropDown extends React.Component {
             </div>
           </div>
         </MainModel>
+        <MainBottomDrawer onOpen={this.openHelpTrue} open={this.state.openHelp}>
+          <Help componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.openHelpFalse} />
+        </MainBottomDrawer>
       </Auxillary>
     );
   }
