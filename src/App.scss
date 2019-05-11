@@ -1540,7 +1540,7 @@ body {
 .bottomDrawerParent {
   > div {
     > div {
-      overflow-y: hidden;
+      overflow-y: hidden !important;
     }
   }
 }
