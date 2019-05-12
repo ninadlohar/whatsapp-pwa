@@ -6,6 +6,8 @@ import { CSSTransition } from "react-transition-group";
 import "../scss/dropdown/dropdown.scss";
 import Help from "./Help";
 import ViewContact from "../containers/LeftSide/DropUps/ViewContact";
+import MobileMedia from '../containers/LeftSide/DropUps/MobileMedia';
+import MobileModal from './MobileModal';
 
 class DropDown extends React.Component {
   state = {
@@ -18,6 +20,13 @@ class DropDown extends React.Component {
     footerActive: false,
     openHelp: false,
     viewContact: false,
+    mobileMedia: false,
+    mute: false,
+    muteOptions: [
+      { key: "8 hours", value: "8 hours" },
+      { key: "1 Week", value: "1 Week" },
+      { key: "1 Year", value: "1 Year" }
+    ]
   };
 
   showMenu = () => {
@@ -30,6 +39,12 @@ class DropDown extends React.Component {
       document.removeEventListener("click", this.closeMenu);
     });
   };
+  openMuteModal = () => {
+    this.setState({ mute: true })
+  }
+  closeMuteModal = () => {
+    this.setState({ mute: false })
+  }
 
   openHelpTrue = () => {
     this.setState({ openHelp: true });
@@ -63,6 +78,14 @@ class DropDown extends React.Component {
 
   openViewContact = () => {
     this.setState({ viewContact: true })
+  }
+
+  closeMobileMedia = () => {
+    this.setState({ mobileMedia: false })
+  }
+
+  openMobileMedia = () => {
+    this.setState({ mobileMedia: true })
   }
 
   selectMessages = () => {
@@ -187,9 +210,9 @@ class DropDown extends React.Component {
     let userChatDropdown = (
       <div className="mobile-right-dropdown">
         <div className="px-3 py-2" onClick={this.openViewContact}>View Contact</div>
-        <div className="px-3 py-2">Media</div>
+        <div className="px-3 py-2" onClick={this.openMobileMedia}>Media</div>
         <div className="px-3 py-2">Search</div>
-        <div className="px-3 py-2">Mute Notifications</div>
+        <div className="px-3 py-2" onClick={this.openMuteModal}>Mute Notifications</div>
         <div className="px-3 py-2">Wallpaper</div>
         <div className="px-3 py-2" onClick={this.openMoreDropdown}>More</div>
       </div>
@@ -309,6 +332,15 @@ class DropDown extends React.Component {
         <MainBottomDrawer onOpen={this.openViewContact} open={this.state.viewContact}>
           <ViewContact closeDrawer={this.closeViewContact} />
         </MainBottomDrawer>
+        <MainBottomDrawer onOpen={this.openMobileMedia} open={this.state.mobileMedia}>
+          <MobileMedia componentWithoutSearchBar={this.componentWithoutSearchBar} closeDrawer={this.closeMobileMedia} />
+        </MainBottomDrawer>
+        <MobileModal
+          openModal={this.openMuteModal}
+          open={this.state.mute}
+          closeModal={this.closeMuteModal}
+          key2={this.state.muteOptions}
+        />
       </Auxillary>
     );
   }

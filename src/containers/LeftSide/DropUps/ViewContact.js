@@ -9,7 +9,8 @@ class ViewContact extends React.Component {
   state = {
     checkedA: false,
     viewProfileDropdown: true,
-    openNotification: false
+    openNotification: false,
+    mobileMedia: false
   }
 
   componentWithoutSearchBar = (header, leftHeight) => {
@@ -22,6 +23,14 @@ class ViewContact extends React.Component {
     content.style.height = availableheight + "px";
     content.style.overflow = "auto";
   };
+
+  openMobileMedia = () => {
+    this.setState({ mobileMedia: true })
+  }
+
+  closeMobileMedia = () => {
+    this.setState({ mobileMedia: false })
+  }
 
   openNotification = () => {
     this.setState({ openNotification: true })
