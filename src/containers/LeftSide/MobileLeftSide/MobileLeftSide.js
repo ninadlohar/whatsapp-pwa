@@ -103,7 +103,7 @@ class MobileLeftSide extends React.Component {
     this.setState({ setSearchActive: true }, () => {
       document.getElementById("col-xl-3-5").style.transform = "translate(0, -65px)";
       var height = document.getElementById("page").clientHeight;
-      var inputBox = document.getElementById("search-input-box").clientHeight;
+      var inputBox = document.getElementById("search-input-box-new-group").clientHeight;
       var content = document.getElementById("content");
       this.onSearchActive(height, inputBox, content);
       window.addEventListener("resize", () => {
@@ -284,52 +284,52 @@ class MobileLeftSide extends React.Component {
               setSearchDeactiveFn={this.setSearchDeactiveFn}
             />
           ) : (
-            <div className="row mx-0" id="input-box">
-              <div className="col-12 pb-1 d-flex camera">
-                <div className="d-flex align-items-center pt-1">
-                  <img src={require("../../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
-                </div>
-                <div className={classes.root}>
-                  <AppBar className="demo" position="static" color="inherit">
-                    <Tabs
-                      variant="fullWidth"
-                      value={value}
-                      onChange={this.handleChange}
-                      classes={{
-                        root: classes.tabsRoot,
-                        indicator: classes.tabsIndicator
-                      }}
-                    >
-                      <Tab
-                        disableRipple
+              <div className="row mx-0" id="input-box">
+                <div className="col-12 pb-1 d-flex camera">
+                  <div className="d-flex align-items-center pt-1">
+                    <img src={require("../../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
+                  </div>
+                  <div className={classes.root}>
+                    <AppBar className="demo" position="static" color="inherit">
+                      <Tabs
+                        variant="fullWidth"
+                        value={value}
+                        onChange={this.handleChange}
                         classes={{
-                          root: classes.tabRoot,
-                          selected: classes.tabSelected
+                          root: classes.tabsRoot,
+                          indicator: classes.tabsIndicator
                         }}
-                        label="CHATS"
-                      />
-                      <Tab
-                        disableRipple
-                        classes={{
-                          root: classes.tabRoot,
-                          selected: classes.tabSelected
-                        }}
-                        label="STATUS"
-                      />
-                      <Tab
-                        disableRipple
-                        classes={{
-                          root: classes.tabRoot,
-                          selected: classes.tabSelected
-                        }}
-                        label="CALLS"
-                      />
-                    </Tabs>
-                  </AppBar>
+                      >
+                        <Tab
+                          disableRipple
+                          classes={{
+                            root: classes.tabRoot,
+                            selected: classes.tabSelected
+                          }}
+                          label="CHATS"
+                        />
+                        <Tab
+                          disableRipple
+                          classes={{
+                            root: classes.tabRoot,
+                            selected: classes.tabSelected
+                          }}
+                          label="STATUS"
+                        />
+                        <Tab
+                          disableRipple
+                          classes={{
+                            root: classes.tabRoot,
+                            selected: classes.tabSelected
+                          }}
+                          label="CALLS"
+                        />
+                      </Tabs>
+                    </AppBar>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
         </header>
         <div className="mx-0" id="message-logs">
           <section className="col-12 px-0 leftSide__chat__section">

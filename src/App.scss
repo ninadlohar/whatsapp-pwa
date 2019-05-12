@@ -151,6 +151,30 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 1440px) {
+  .media-section {
+    background-color: white;
+  }
+  .viewProfile__parent {
+    background-color: #d7dcde;
+  }
+  .viewProfile__image__parent {
+    border-bottom: 5px
+  }
+  .viewProfile__image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  .user__chat__phone__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile__search__box__input {
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
   .mobile-right-dropdown {
     background-color: white;
     border-radius: 3px;
@@ -290,6 +314,13 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .viewProfile__contact__details {
+    width: calc(100% - 130px);
+  }
+  .viewProfile__section__header {
+    color: #255d53;
+    font-size: 16px;
+  }
   .mobile__dropdown__ellipsis {
     padding-top: 4px;
     font-size: 19px;
@@ -882,7 +913,7 @@ body {
   }
   .search__input__box {
     border: transparent !important;
-    font-size: 14px !important;
+    font-size: 16px !important;
     font-weight: 100 !important;
     color: $search-input-box-text-color;
     border-radius: 32px !important;

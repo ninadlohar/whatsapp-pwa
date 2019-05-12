@@ -3,6 +3,7 @@ import Auxillary from "../hoc/Auxillary";
 
 class Help extends React.Component {
   componentDidMount() {
+    console.log(this.props)
     let header = document.getElementById("mobile__help__head");
     let content = document.getElementById("mobile__help__section");
     this.props.componentWithoutSearchBar(header, content);

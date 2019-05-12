@@ -32,7 +32,6 @@ class SearchInputBox extends React.Component {
 
   mobileSearchBoxFn(e) {
     let docInputBox = document.getElementById("search-input-box-new-group");
-    // docInputBox.style.background = "red";
     docInputBox.style.boxShadow = "0px 4px 5px 0px rgba(205,205,205,1)";
     this.setState({ mobileSearchBoxValue: e, inputArrow: true }, () => {
       docInputBox.style.backgroundColor = "#f8f8f8";
@@ -52,8 +51,8 @@ class SearchInputBox extends React.Component {
     let leftArrow = this.state.inputArrow ? (
       <i className="fas fa-arrow-down input__box__blue__arrow px-2 py-2" id="input-arrow" />
     ) : (
-      <i className="fas fa-search icon-color input__search__icon px-3" />
-    );
+        <i className="fas fa-search icon-color input__search__icon px-3" />
+      );
     let casualSearchBox = (
       <div className="col-12 px-0 input__box" id="input-box">
         <div className="px-2 py-2 d-flex">
@@ -180,7 +179,7 @@ class SearchInputBox extends React.Component {
 
     let mobileSearchBox = (
       <div className="col-12 px-0 input__box" id="search-input-box-new-group">
-        <div className="px-2 py-2 d-flex">
+        <div className="mobile__search__box__input d-flex">
           <div className="row mx-0 w-100">
             <div className="col-12 px-0">
               <div className="main-left-arrow px-1" onClick={this.props.setSearchDeactiveFn}>
@@ -200,7 +199,7 @@ class SearchInputBox extends React.Component {
     );
 
     let mobileTSVInput = (
-      <div className="col-12 px-0 input__box" id="search-input-box">
+      <div className="col-12 px-0 input__box" id="search-input-box-new-group">
         <div className="px-2 py-2 d-flex">
           <div className="row mx-0 w-100 justify-content-center">
             <Input
@@ -216,7 +215,7 @@ class SearchInputBox extends React.Component {
     );
 
     let mobileTSVInput3 = (
-      <div className="col-12 px-0 input__box" id="search-input-box">
+      <div className="col-12 px-0 input__box" id="search-input-box-new-group">
         <div className="px-2 py-2 d-flex">
           <div className="row mx-0 w-100 justify-content-center">
             <Input
@@ -232,7 +231,7 @@ class SearchInputBox extends React.Component {
     );
 
     let mobileChangeNumberInputs = (
-      <div className="col-12 px-0 input__box" id="search-input-box">
+      <div className="col-12 px-0 input__box" id="search-input-box-new-group">
         <div className="px-2 py-2 d-flex">
           <div className="row mx-0 w-100 justify-content-center">
             <Input

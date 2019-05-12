@@ -4,8 +4,7 @@ class ContactDataChatWStataus extends React.Component {
   state = {
     onHoverState: false,
     data: "",
-    selected: false,
-    count: 0
+    selected: false
   };
   onHover = () => {
     this.setState({ onHoverState: true });
@@ -18,16 +17,14 @@ class ContactDataChatWStataus extends React.Component {
     this.setState({ data: this.props.value });
   }
 
+
   countParticipants = id => {
     if (this.state.data.id === id) {
-      this.setState({ selected: true, count: this.state.count + 1 });
-    } else {
-      this.setState({ selected: false });
+      this.setState({ selected: !this.state.selected })
     }
   };
 
   render() {
-    console.log(this.state.selected + "    " + this.state.count);
     return (
       <div
         className="chat-1 w-100 d-flex rightSlider__userInfo__box"

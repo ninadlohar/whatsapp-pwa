@@ -1,11 +1,14 @@
 import React from "react";
 import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
-
-// onSearchActive={this.onSearchActive} onResizeSearchActive={this.onResizeSearchActive
+import DropDown from '../../../ReusableUI-Components/dropDown';
 
 class MobileUserChat extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      userChatDropdown: true,
+      moreOptionsDropdown: true
+    }
     this.resizeFn = this.resizeFn.bind(this);
   }
   resizeFn() {
@@ -56,8 +59,8 @@ class MobileUserChat extends React.Component {
                     <span className="pl-3">Nikolay</span>
                   </div>
                 </div>
-                <div className="mobile__sender__user__options">
-                  <span>
+                <div className=" mobile__sender__user__options">
+                  <span className="single-icons d-flex align-items-center">
                     <img
                       src={require("../../../assets/svg/video-camera1.svg")}
                       height="24"
@@ -65,12 +68,14 @@ class MobileUserChat extends React.Component {
                       alt="video camera"
                     />
                   </span>
-                  <span>
+                  <span className="single-icons user__chat__phone__icon">
                     <img src={require("../../../assets/svg/call.svg")} height="18" width="18" alt="video camera" />
                   </span>
-                  <span>
-                    <img src={require("../../../assets/svg/ellipsis.svg")} height="18" width="18" alt="video camera" />
-                  </span>
+                  <DropDown
+                    classes="fas fa-ellipsis-v"
+                    userChatDropdown={this.state.userChatDropdown}
+                    moreOptionsDropdown={this.state.moreOptionsDropdown}
+                  />
                 </div>
               </div>
             </div>

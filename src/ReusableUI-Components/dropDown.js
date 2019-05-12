@@ -5,6 +5,7 @@ import MainBottomDrawer from "../containers/LeftSide/DropUps/BottomDrawer";
 import { CSSTransition } from "react-transition-group";
 import "../scss/dropdown/dropdown.scss";
 import Help from "./Help";
+import ViewContact from "../containers/LeftSide/DropUps/ViewContact";
 
 class DropDown extends React.Component {
   state = {
@@ -15,7 +16,8 @@ class DropDown extends React.Component {
     squeezeLayoutBoolean: this.props.squeezeLayoutBoolean,
     selectedMessages: false,
     footerActive: false,
-    openHelp: false
+    openHelp: false,
+    viewContact: false,
   };
 
   showMenu = () => {
@@ -55,6 +57,14 @@ class DropDown extends React.Component {
     }));
   };
 
+  closeViewContact = () => {
+    this.setState({ viewContact: false })
+  }
+
+  openViewContact = () => {
+    this.setState({ viewContact: true })
+  }
+
   selectMessages = () => {
     var li = document.getElementById("message1List").getElementsByTagName("li");
     var checkBox = document.getElementsByName("checkboxMessage");
@@ -90,6 +100,10 @@ class DropDown extends React.Component {
       rightSide.classList.add("DOMChangedRightSide", "DOMChangedRightSide_P-1301");
     });
   };
+
+  toggleViewProfile = () => {
+
+  }
 
   render() {
     let leftMenu = (
@@ -170,6 +184,36 @@ class DropDown extends React.Component {
       </div>
     );
 
+    let userChatDropdown = (
+      <div className="mobile-right-dropdown">
+        <div className="px-3 py-2" onClick={this.openViewContact}>View Contact</div>
+        <div className="px-3 py-2">Media</div>
+        <div className="px-3 py-2">Search</div>
+        <div className="px-3 py-2">Mute Notifications</div>
+        <div className="px-3 py-2">Wallpaper</div>
+        <div className="px-3 py-2" onClick={this.openMoreDropdown}>More</div>
+      </div>
+    )
+
+    let moreOptionsDropdown = (
+      <div className="mobile-right-dropdown">
+        <div className="px-3 py-2">Report</div>
+        <div className="px-3 py-2">Block</div>
+        <div className="px-3 py-2">Clear Chat</div>
+        <div className="px-3 py-2">Export Chat</div>
+        <div className="px-3 py-2">Add Shortcut</div>
+      </div>
+    )
+
+    let viewProfileDropdown = (
+      <div className="mobile-right-dropdown">
+        <div className="px-3 py-2">Share</div>
+        <div className="px-3 py-2">Edit</div>
+        <div className="px-3 py-2">View in address book</div>
+        <div className="px-3 py-2">View security code</div>
+      </div>
+    )
+
     let dropDownMenu = null;
     if (this.props.leftDropdown) {
       dropDownMenu = this.props.leftDropdown && this.state.showMenu ? leftMenu : null;
@@ -181,6 +225,12 @@ class DropDown extends React.Component {
       dropDownMenu = this.props.mobileViewDropDown && this.state.showMenu ? mobileViewDropDown : null;
     } else if (this.props.newChatDropdown) {
       dropDownMenu = this.props.newChatDropdown && this.state.showMenu ? newChatDropdown : null;
+    } else if (this.props.userChatDropdown) {
+      dropDownMenu = this.props.userChatDropdown && this.state.showMenu ? userChatDropdown : null
+    } else if (this.props.moreOptionsDropdown) {
+      dropDownMenu = this.props.moreOptionsDropdown && this.state.showMenu ? moreOptionsDropdown : null
+    } else if (this.props.viewProfileDropdown) {
+      dropDownMenu = this.props.viewProfileDropdown && this.state.showMenu ? viewProfileDropdown : null
     }
 
     return (
@@ -253,7 +303,11 @@ class DropDown extends React.Component {
           </div>
         </MainModel>
         <MainBottomDrawer onOpen={this.openHelpTrue} open={this.state.openHelp}>
-          <Help componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.openHelpFalse} />
+          <Help
+            componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.openHelpFalse} />
+        </MainBottomDrawer>
+        <MainBottomDrawer onOpen={this.openViewContact} open={this.state.viewContact}>
+          <ViewContact closeDrawer={this.closeViewContact} />
         </MainBottomDrawer>
       </Auxillary>
     );
