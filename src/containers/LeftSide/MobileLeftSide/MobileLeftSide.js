@@ -472,7 +472,7 @@ class MobileLeftSide extends React.Component {
           />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.openChatTrue} open={this.state.chat}>
-          <MobileUserChat closeDrawer={this.openChatFalse} />
+          <MobileUserChat componentWithoutSearchBar={this.componentWithoutSearchBar} closeDrawer={this.openChatFalse} />
         </MainBottomDrawer>
       </Auxillary>
     );

@@ -9,7 +9,9 @@ class SearchInputBox extends React.Component {
       inputArrow: false,
       value: "",
       mobileSearchBoxValue: "",
-      mobileSearch: ""
+      mobileSearch: "",
+      mobileChat: '',
+      messageList: []
     };
     this.searchUsersFn = this.searchUsersFn.bind(this);
     this.mobileSearchBoxFn = this.mobileSearchBoxFn.bind(this);
@@ -36,6 +38,11 @@ class SearchInputBox extends React.Component {
     this.setState({ mobileSearchBoxValue: e, inputArrow: true }, () => {
       docInputBox.style.backgroundColor = "#f8f8f8";
       docInputBox.style.boxShadow = "none";
+    });
+  }
+
+  chatActive = (e) => {
+    this.setState({ mobileSearchBoxValue: e, inputArrow: true }, () => {
     });
   }
 
@@ -179,7 +186,7 @@ class SearchInputBox extends React.Component {
 
     let mobileSearchBox = (
       <div className="col-12 px-0 input__box" id="search-input-box-new-group">
-        <div className="mobile__search__box__input d-flex">
+        <div className="d-flex">
           <div className="row mx-0 w-100">
             <div className="col-12 px-0">
               <div className="main-left-arrow px-1" onClick={this.props.setSearchDeactiveFn}>
@@ -192,6 +199,33 @@ class SearchInputBox extends React.Component {
                 classes="search__input__box"
                 type="text"
               />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+
+    let chatActiveSearch = (
+      <div className="col-12 px-0 mobile__search__box__input_active" id="chat-active">
+        <div className="mobile__search__box__input d-flex">
+          <div className="row mx-0 w-100">
+            <div className="col-12 px-0">
+              <div className="main-left-arrow px-1" onClick={this.props.setSearchDeactiveFn}>
+                <i className="fas fa-arrow-down input__box__white__arrow px-2 py-2" id="input-arrow" />
+              </div>
+              <div className="d-flex">
+                <Input
+                  placeholder={this.props.placeholder}
+                  onChangeHandler={this.chatActive}
+                  value={this.state.mobileSearchBoxValue}
+                  classes="mobile__search__box__input_active__box w-75 ml-4"
+                  type="text"
+                />
+                <div class="d-flex">
+                  <i class="d-flex align-items-center justify-content-center single-icons1 fas fa-chevron-up"></i>
+                  <i class="d-flex align-items-center justify-content-center single-icons1 fas fa-chevron-down"></i>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -252,9 +286,9 @@ class SearchInputBox extends React.Component {
             <Input
               placeholder={this.props.placeholder}
               classes="mobileSearchTextArea"
-              onChangeHandler={this.mobileChatFn}
+              onChangeHandler={this.props.onChangeHandler}
+              onClickHandler={this.props.onClickHandler}
               type="textarea"
-              placeholder="Type a message"
             />
           </div>
         </div>
@@ -295,6 +329,9 @@ class SearchInputBox extends React.Component {
         break;
       case "mobileMainChat":
         searchBox = mobileMainChat;
+        break;
+      case "chatActiveSearch":
+        searchBox = chatActiveSearch;
         break;
       default:
         searchBox = simpleInputForProfile__About;

@@ -124,9 +124,6 @@ class DropDown extends React.Component {
     });
   };
 
-  toggleViewProfile = () => {
-
-  }
 
   render() {
     let leftMenu = (
@@ -211,7 +208,7 @@ class DropDown extends React.Component {
       <div className="mobile-right-dropdown">
         <div className="px-3 py-2" onClick={this.openViewContact}>View Contact</div>
         <div className="px-3 py-2" onClick={this.openMobileMedia}>Media</div>
-        <div className="px-3 py-2">Search</div>
+        <div className="px-3 py-2" onClick={this.props.setSearchActiveFn}>Search</div>
         <div className="px-3 py-2" onClick={this.openMuteModal}>Mute Notifications</div>
         <div className="px-3 py-2">Wallpaper</div>
         <div className="px-3 py-2" onClick={this.openMoreDropdown}>More</div>

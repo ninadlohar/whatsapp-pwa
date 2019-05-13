@@ -247,12 +247,6 @@ class Notifications extends React.Component {
           key2={this.state.colorOptions}
           value="White"
         />
-        {/* <MainBottomDrawer onOpen={this.setAccountTrue} open={this.state.account}>
-          <Account setAccountFalse={this.setAccountFalse} />
-        </MainBottomDrawer>
-        <MainBottomDrawer onOpen={this.setHelpTrue} open={this.state.Help}>
-          <Help setHelpFalse={this.setHelpFalse} />
-        </MainBottomDrawer> */}
       </Auxilliary>
     );
   }
