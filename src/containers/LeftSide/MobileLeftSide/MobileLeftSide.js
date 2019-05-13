@@ -18,6 +18,7 @@ import MobileNewBroadcast from "../DropUps/MobileNewBroadcast";
 import MobileStarredMessages from "../DropUps/MobileStarredMessages";
 import MobileSettings from "../DropUps/MobileSettings";
 import MobileUserChat from "../DropUps/MobileUserChat";
+import CallInfo from "../DropUps/CallInfo";
 
 function TabContainer({ children, dir }) {
   return (
@@ -84,7 +85,8 @@ class MobileLeftSide extends React.Component {
     newBroadcast: false,
     starredMessages: false,
     settings: false,
-    chat: false
+    chat: false,
+    callInfo: false
   };
 
   onSearchActive = (height, inputBox, content) => {
@@ -165,6 +167,14 @@ class MobileLeftSide extends React.Component {
   setSettingsFalse = () => {
     this.setState({ settings: false });
   };
+
+  openCallInfo = () => {
+    this.setState({ callInfo: true })
+  }
+
+  closeCallInfo = () => {
+    this.setState({ callInfo: false })
+  }
 
   resizeFn = () => {
     var height = document.getElementById("page").clientHeight;
@@ -394,15 +404,36 @@ class MobileLeftSide extends React.Component {
                 <TabContainer dir={theme.direction}>
                   <div className="col-12 px-0 leftSide__log__of__chats" id="content9" name="swipe">
                     <div className="row mx-0">
-                      <Calls />
-                      <Calls />
-                      <Calls />
-                      <Calls />
-                      <Calls />
-                      <Calls />
-                      <Calls />
-                      <Calls />
-                      <Calls />
+                      <div className="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                        <Calls />
+                      </div>
+                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                        <Calls />
+                      </div>
+                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                        <Calls />
+                      </div>
+                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                        <Calls />
+                      </div>
+                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                        <Calls />
+                      </div>
+                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                        <Calls />
+                      </div>
+                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                        <Calls />
+                      </div>
+                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                        <Calls />
+                      </div>
+                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                        <Calls />
+                      </div>
+                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                        <Calls />
+                      </div>
                     </div>
                   </div>
                 </TabContainer>
@@ -473,6 +504,9 @@ class MobileLeftSide extends React.Component {
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.openChatTrue} open={this.state.chat}>
           <MobileUserChat componentWithoutSearchBar={this.componentWithoutSearchBar} closeDrawer={this.openChatFalse} />
+        </MainBottomDrawer>
+        <MainBottomDrawer onOpen={this.openCallInfo} open={this.state.callInfo}>
+          <CallInfo closeDrawer={this.closeCallInfo} />
         </MainBottomDrawer>
       </Auxillary>
     );

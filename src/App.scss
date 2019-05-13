@@ -352,6 +352,19 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .call__history__options {
+    width: 106px;
+  }
+  .call__history__mobile {
+    border-radius: 4px;
+  }
+  .call__info__section {
+    background-color: #d7dcde;
+  }
+  .call__info__header {
+    background-color: #255d53;
+    color: white;
+  }
   .mobile__chat__section {
     padding-left: 10%;
     padding-right: 10%;
@@ -627,6 +640,7 @@ body {
     padding-top: 11px !important;
     padding-bottom: 10px !important;
   }
+
   .mobile__view__chat__Messages__Header {
     background-color: #255d53;
     color: white;

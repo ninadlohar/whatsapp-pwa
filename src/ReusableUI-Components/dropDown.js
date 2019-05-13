@@ -234,6 +234,13 @@ class DropDown extends React.Component {
       </div>
     )
 
+    let callInfoDropdown = (
+      <div className="mobile-right-dropdown">
+        <div className="px-2 py-2">Remove from call log</div>
+        <div className="px-2 py-2">Block</div>
+      </div>
+    )
+
     let dropDownMenu = null;
     if (this.props.leftDropdown) {
       dropDownMenu = this.props.leftDropdown && this.state.showMenu ? leftMenu : null;
@@ -251,6 +258,8 @@ class DropDown extends React.Component {
       dropDownMenu = this.props.moreOptionsDropdown && this.state.showMenu ? moreOptionsDropdown : null
     } else if (this.props.viewProfileDropdown) {
       dropDownMenu = this.props.viewProfileDropdown && this.state.showMenu ? viewProfileDropdown : null
+    } else if (this.props.callInfoDropdown) {
+      dropDownMenu = this.props.callInfoDropdown && this.state.showMenu ? callInfoDropdown : null
     }
 
     return (
