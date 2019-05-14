@@ -4,7 +4,7 @@ import { SocialIcon } from "react-social-icons";
 class InviteFriends extends React.Component {
   render() {
     return (
-      <div className="col-12 px-0 justify-content-around d-flex">
+      <div className="col-12 p-2 px-0 justify-content-around d-flex">
         <div className="row mx-0">
           <div className="col-3 p-1">
             <SocialIcon url="http://linkedin.com/in/" />
