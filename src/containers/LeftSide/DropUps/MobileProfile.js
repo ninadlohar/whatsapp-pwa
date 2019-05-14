@@ -1,6 +1,17 @@
 import React from "react";
+import SmallDrawer from "../../../ReusableUI-Components/SmallDrawer";
+import NameEdit from "./SmallDrawers/NameEdit";
 
 class MobileProfile extends React.Component {
+  state = {
+    nameEdit: false
+  };
+  openNameEdit = () => {
+    this.setState({ nameEdit: true });
+  };
+  closeNameEdit = () => {
+    this.setState({ nameEdit: false });
+  };
   componentDidMount() {
     let header = document.getElementById("mobile__profile__header");
     let content = document.getElementById("mobile__profile__section");
@@ -45,7 +56,7 @@ class MobileProfile extends React.Component {
               </div>
             </div>
           </div>
-          <div className="col-12 px-0">
+          <div className="col-12 px-0" onClick={this.openNameEdit}>
             <div className="row mx-0">
               <div className="col-12 py-2 d-flex">
                 <div className="pl-3 pr-4 pt-2">
@@ -122,6 +133,9 @@ class MobileProfile extends React.Component {
             </div>
           </div>
         </div>
+        <SmallDrawer opOpen={this.openNameEdit} open={this.state.nameEdit}>
+          <NameEdit closeDrawer={this.closeNameEdit} />
+        </SmallDrawer>
       </div>
     );
   }

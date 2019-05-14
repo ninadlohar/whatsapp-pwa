@@ -280,7 +280,7 @@ class SearchInputBox extends React.Component {
     );
     let mobileMainChat = (
       <div className="col-12 px-0" id="mobileSearch-input-box">
-        <div className="py-2 d-flex">
+        <div className="py-1 d-flex">
           <div className="row mx-0 w-100 justify-content-center">
             <Input
               placeholder={this.props.placeholder}
@@ -288,6 +288,22 @@ class SearchInputBox extends React.Component {
               onChangeHandler={this.props.onChangeHandler}
               onClickHandler={this.props.onClickHandler}
               type="textarea"
+            />
+          </div>
+        </div>
+      </div>
+    );
+
+    let smallDrawerInput = (
+      <div className="col-12 px-0" id="mobileSearch-input-box">
+        <div className="py-2 d-flex">
+          <div className="row mx-0 w-100 justify-content-center">
+            <Input
+              placeholder={this.props.placeholder}
+              classes="smallDrawerInput"
+              onChangeHandler={this.props.onChangeHandler}
+              onClickHandler={this.props.onClickHandler}
+              type="text"
             />
           </div>
         </div>
@@ -331,6 +347,9 @@ class SearchInputBox extends React.Component {
         break;
       case "chatActiveSearch":
         searchBox = chatActiveSearch;
+        break;
+      case "smallDrawerInput":
+        searchBox = smallDrawerInput;
         break;
       default:
         searchBox = simpleInputForProfile__About;
