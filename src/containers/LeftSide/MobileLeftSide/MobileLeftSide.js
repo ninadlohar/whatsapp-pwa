@@ -19,6 +19,7 @@ import MobileStarredMessages from "../DropUps/MobileStarredMessages";
 import MobileSettings from "../DropUps/MobileSettings";
 import MobileUserChat from "../DropUps/MobileUserChat";
 import CallInfo from "../DropUps/CallInfo";
+import MobileGroupCall from "../DropUps/MobileGroupCall";
 
 function TabContainer({ children, dir }) {
   return (
@@ -86,7 +87,8 @@ class MobileLeftSide extends React.Component {
     starredMessages: false,
     settings: false,
     chat: false,
-    callInfo: false
+    callInfo: false,
+    groupCalls: false
   };
 
   onSearchActive = (height, inputBox, content) => {
@@ -174,6 +176,14 @@ class MobileLeftSide extends React.Component {
 
   closeCallInfo = () => {
     this.setState({ callInfo: false });
+  };
+
+  openGroupCalls = () => {
+    this.setState({ groupCalls: true });
+  };
+
+  closeGroupCalls = () => {
+    this.setState({ groupCalls: false });
   };
 
   resizeFn = () => {
@@ -313,7 +323,12 @@ class MobileLeftSide extends React.Component {
             <div className="row mx-0" id="input-box">
               <div className="col-12 pb-1 d-flex camera">
                 <div className="d-flex align-items-center pt-1">
-                  <img src={require("../../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
+                  <div className="image-upload">
+                    <label for="file-input" name="file-input">
+                      <img src={require("../../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
+                    </label>
+                    <input id="file-input" type="file" />
+                  </div>
                 </div>
                 <div className={classes.root}>
                   <AppBar className="demo" position="static" color="inherit">
@@ -471,18 +486,20 @@ class MobileLeftSide extends React.Component {
               ) : null}
 
               {this.state.value === 1 ? (
-                <div>
-                  <img
-                    src={require("../../../assets/svg/square-stop-button.svg")}
-                    alt="message-ballon"
-                    height="16"
-                    width="16"
-                  />
+                <div className="image-upload">
+                  <label for="file-input" name="file-input">
+                    <img
+                      src={require("../../../assets/svg/square-stop-button.svg")}
+                      alt="message-ballon"
+                      height="16"
+                      width="16"
+                    />
+                  </label>
+                  <input id="file-input" type="file" />
                 </div>
               ) : null}
-
               {this.state.value === 2 ? (
-                <div>
+                <div onClick={this.openGroupCalls}>
                   <img
                     src={require("../../../assets/svg/emergency-call.svg")}
                     alt="message-ballon"
@@ -523,6 +540,12 @@ class MobileLeftSide extends React.Component {
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.openCallInfo} open={this.state.callInfo}>
           <CallInfo closeDrawer={this.closeCallInfo} />
+        </MainBottomDrawer>
+        <MainBottomDrawer onOpen={this.openGroupCalls} open={this.state.groupCalls}>
+          <MobileGroupCall
+            closeDrawer={this.closeGroupCalls}
+            componentWithoutSearchBar={this.componentWithoutSearchBar}
+          />
         </MainBottomDrawer>
       </Auxillary>
     );

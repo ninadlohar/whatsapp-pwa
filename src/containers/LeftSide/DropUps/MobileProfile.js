@@ -50,17 +50,20 @@ class MobileProfile extends React.Component {
           <div className="col-12 px-0">
             <div className="row mx-0">
               <div className="col-12 py-4 d-flex justify-content-center align-items-center">
-                <div>
-                  <img
-                    src={require("../../../assets/images/user-image.jpg")}
-                    alt="user-pic"
-                    className="mobile__profile__image"
-                  />
+                <div className="image-upload">
+                  <label for="file-input" name="file-input">
+                    <img
+                      src={require("../../../assets/images/user-image.jpg")}
+                      alt="user-pic"
+                      className="mobile__profile__image"
+                    />
+                  </label>
                   <div className="d-flex justify-content-end">
                     <div className="edit__photo d-flex justify-content-center align-items-center">
                       <img src={require("../../../assets/svg/camera.svg")} alt="camera" height="18" width="18" />
                     </div>
                   </div>
+                  <input id="file-input" type="file" />
                 </div>
               </div>
             </div>

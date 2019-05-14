@@ -350,6 +350,9 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .image-upload > input {
+    display: none;
+  }
   .small__drawer__header {
     font-weight: 600;
   }
