@@ -119,6 +119,7 @@ class MobileStarredMessages extends React.Component {
                   className="mobile__basicUserInfo__image"
                 />
               </div>
+
               <div className="d-flex align-items-center w-100">
                 <div>
                   <div className="mobile__settings__header__name">

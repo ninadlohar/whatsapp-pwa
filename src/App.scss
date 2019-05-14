@@ -350,13 +350,22 @@ body {
 }
 
 @media (min-width: 200px) and (max-width: 767px) {
+  .edit__photo {
+    background-color: #255d53;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 35px;
+    right: 0%;
+  }
   .font__14__px {
     font-size: 14px;
     color: rgba(0, 0, 0, 0.6);
   }
   .mobile__profile__image {
-    height: 90px;
-    width: 90px;
+    height: 120px;
+    width: 120px;
     border-radius: 50%;
   }
   .call__history__options {

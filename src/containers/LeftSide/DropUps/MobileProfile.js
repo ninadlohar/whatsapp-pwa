@@ -30,11 +30,18 @@ class MobileProfile extends React.Component {
           <div className="col-12 px-0">
             <div className="row mx-0">
               <div className="col-12 py-4 d-flex justify-content-center align-items-center">
-                <img
-                  src={require("../../../assets/images/user-image.jpg")}
-                  alt="user-image"
-                  className="mobile__profile__image"
-                />
+                <div>
+                  <img
+                    src={require("../../../assets/images/user-image.jpg")}
+                    alt="user-pic"
+                    className="mobile__profile__image"
+                  />
+                  <div className="d-flex justify-content-end">
+                    <div className="edit__photo d-flex justify-content-center align-items-center">
+                      <img src={require("../../../assets/svg/camera.svg")} alt="camera" height="18" width="18" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -57,14 +64,14 @@ class MobileProfile extends React.Component {
                       This is not your username or pin. This name will be visible to your WhatsApp contacts.
                     </div>
                   </div>
-                  <div className="h-100 pt-2">
-                    <img
-                      src={require("../../../assets/svg/create-new-pencil-button.svg")}
-                      alt="create-new-pencil-button"
-                      height="18"
-                      width="18"
-                    />
-                  </div>
+                </div>
+                <div className="h-100 pt-2">
+                  <img
+                    src={require("../../../assets/svg/create-new-pencil-button.svg")}
+                    alt="create-new-pencil-button"
+                    height="18"
+                    width="18"
+                  />
                 </div>
               </div>
             </div>
