@@ -423,31 +423,31 @@ class MobileLeftSide extends React.Component {
                       <div className="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
                         <Calls />
                       </div>
-                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                      <div className="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
                         <Calls />
                       </div>
-                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                      <div className="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
                         <Calls />
                       </div>
-                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                      <div className="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
                         <Calls />
                       </div>
-                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                      <div className="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
                         <Calls />
                       </div>
-                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                      <div className="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
                         <Calls />
                       </div>
-                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                      <div className="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
                         <Calls />
                       </div>
-                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                      <div className="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
                         <Calls />
                       </div>
-                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                      <div className="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
                         <Calls />
                       </div>
-                      <div class="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
+                      <div className="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
                         <Calls />
                       </div>
                     </div>
