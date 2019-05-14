@@ -10,13 +10,33 @@ class MobileStarredMessages extends React.Component {
     this.setState({ setSearchActive: true }, () => {
       document.getElementById("col-xl-3-5").style.transform = "translate(0, -65px)";
     });
+    this.componentWithSearchBar();
+  };
+
+  componentWithSearchBar = () => {
+    let height = document.getElementById("page").clientHeight;
+    let input = document.getElementById("search__input__box");
+    let content = document.getElementById("mobile__starred__messages__section");
+    let availableheight = height - input;
+    content.style.marginTop = 0 + "px";
+    content.style.height = availableheight + "px";
+    content.style.overflow = "auto";
   };
 
   setSearchDeactiveFn = () => {
+    let content = document.getElementById("mobile__starred__messages__section");
     this.setState({ setSearchActive: false }, () => {
       document.getElementById("col-xl-3-5").style.transform = "translate(0px, 0px)";
     });
+    content.style.marginTop = 56 + "px";
+    content.style.overflow = "auto";
   };
+
+  componentDidMount() {
+    let header = document.getElementById("mobile__starred__messages__head");
+    let content = document.getElementById("mobile__starred__messages__section");
+    this.props.componentWithoutSearchBar(header, content);
+  }
 
   render() {
     return (
@@ -28,41 +48,44 @@ class MobileStarredMessages extends React.Component {
             setSearchDeactiveFn={this.setSearchDeactiveFn}
           />
         ) : (
-            <header className="col-12 mobile__view__starred__Messages__Header py-2" id="head">
-              <div className="row mx-0 w-100">
-                <div className="col-12 px-0 py-1 d-flex">
-                  <div className="row mx-0 w-100">
+          <header className="col-12 fixed-top call__info__header py-1" id="mobile__starred__messages__head">
+            <div className="row mx-0 w-100">
+              <div className="col-12 px-0 py-1 d-flex">
+                <div className="row mx-0 w-100">
+                  <div
+                    className="mobileView__left__arrow d-flex align-items-center justify-content-start"
+                    onClick={this.props.closeStarredMessagesDrawer}
+                  >
+                    <img src={require("../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                  </div>
+                  <div className="d-flex align-items-center mobileView__selectContactSection pl-3">
+                    <div className="mobile__newChat__selectedContact">Starred Messages</div>
+                  </div>
+                  <div className="mobile__newChat__options d-flex justify-content-end align-items-center">
                     <div
-                      className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                      onClick={this.props.closeStarredMessagesDrawer}
+                      className="single-icons d-flex justify-content-center align-items-center"
+                      onClick={() => this.setSearchActiveFn()}
                     >
-                      <img src={require("../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
-                    </div>
-                    <div className="mobileView__selectContactSection pl-3">
-                      <div className="mobile__newChat__selectedContact">Starred Messages</div>
-                    </div>
-                    <div className="mobile__newChat__options d-flex justify-content-end align-items-center">
-                      <div className="px-3" onClick={() => this.setSearchActiveFn()}>
-                        <img
-                          src={require("../../../assets/svg/mobile-search.svg")}
-                          width="19"
-                          height="19"
-                          alt="search-svg"
-                        />
-                      </div>
-                      <DropDown
-                        classes="fas fa-ellipsis-v"
-                        mobile={this.props.mobile}
-                        mobileViewDropDown={this.state.mobileViewDropDown}
+                      <img
+                        src={require("../../../assets/svg/mobile-search.svg")}
+                        width="19"
+                        height="19"
+                        alt="search-svg"
                       />
                     </div>
+                    <DropDown
+                      classes="fas fa-ellipsis-v"
+                      mobile={this.props.mobile}
+                      mobileViewDropDown={this.state.mobileViewDropDown}
+                    />
                   </div>
                 </div>
               </div>
-            </header>
-          )}
-        <section className="col-12 px-0 leftSide__chat__section">
-          <div className="row mx-0">
+            </div>
+          </header>
+        )}
+        <section className="col-12 px-0 leftSide__chat__section" id="mobile__starred__messages__section">
+          <div className="row mx-0 h-100">
             <div className="col-12 px-0 leftSide__log__of__chats starred-messages-container">
               <div className="row mx-0">
                 <div className="col-12 starred-messages-section w-100 ">

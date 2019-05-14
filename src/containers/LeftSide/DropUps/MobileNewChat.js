@@ -25,7 +25,7 @@ class MobileNewChat extends React.Component {
     this.setState({ setSearchActive: false }, () => {
       document.getElementById("col-xl-3-5").style.transform = "translate(0px, 0px)";
     });
-    content.style.marginTop = 56 + "px";
+    content.style.marginTop = 58 + "px";
     content.style.overflow = "auto";
   };
 
@@ -39,7 +39,7 @@ class MobileNewChat extends React.Component {
 
   componentWithSearchBar = () => {
     let height = document.getElementById("page").clientHeight;
-    let input = document.getElementById("search-input-box-new-group");
+    let input = document.getElementById("chat-active");
     let content = document.getElementById("mobileNewChat__section");
     let availableheight = height - input;
     content.style.marginTop = 0 + "px";

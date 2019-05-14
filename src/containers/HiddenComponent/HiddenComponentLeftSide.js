@@ -13,13 +13,11 @@ class HiddenComponentLeftSide extends React.Component {
   };
 
   toggleHandlerIn() {
-    document.getElementById("leftSlider__chatActiveBox").style.transform =
-      "translate(0%, 0)";
+    document.getElementById("leftSlider__chatActiveBox").style.transform = "translate(0%, 0)";
   }
 
   toggleHandlerOut = () => {
-    document.getElementById("leftSlider__chatActiveBox").style.transform =
-      "translate(-100%, 0)";
+    document.getElementById("leftSlider__chatActiveBox").style.transform = "translate(-100%, 0)";
   };
 
   componentDidMount = () => {
@@ -31,33 +29,14 @@ class HiddenComponentLeftSide extends React.Component {
       ? this.state.baseClasses.concat(this.state.hiddenLeftClass).join(" ")
       : this.state.baseClasses.join(" ");
 
-    let makeNewGroup = (
-      <NewGroup classes={classes} toggleHandlerOut={this.toggleHandlerOut} />
-    );
-    let profile = (
-      <Profile classes={classes} toggleHandlerOut={this.toggleHandlerOut} />
-    );
+    let makeNewGroup = <NewGroup classes={classes} toggleHandlerOut={this.toggleHandlerOut} />;
+    let profile = <Profile classes={classes} toggleHandlerOut={this.toggleHandlerOut} />;
     let display1 = (
-      <NewChat
-        squeezeLayoutBoolean={this.props.squeezeLayoutBoolean}
-        toggleHandlerOut={this.toggleHandlerOut}
-      />
+      <NewChat squeezeLayoutBoolean={this.props.squeezeLayoutBoolean} toggleHandlerOut={this.toggleHandlerOut} />
     );
-    let archievedChat = (
-      <ArchievedChat
-        classes={classes}
-        toggleHandlerOut={this.toggleHandlerOut}
-      />
-    );
-    let starredMessages = (
-      <StarredMessages
-        classes={classes}
-        toggleHandlerOut={this.toggleHandlerOut}
-      />
-    );
-    let settingsC = (
-      <Settings classes={classes} toggleHandlerOut={this.toggleHandlerOut} />
-    );
+    let archievedChat = <ArchievedChat classes={classes} toggleHandlerOut={this.toggleHandlerOut} />;
+    let starredMessages = <StarredMessages classes={classes} toggleHandlerOut={this.toggleHandlerOut} />;
+    let settingsC = <Settings classes={classes} toggleHandlerOut={this.toggleHandlerOut} />;
     let display = null;
     switch (this.props.currentScreen) {
       case "newGroup":

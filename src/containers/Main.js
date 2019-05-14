@@ -79,6 +79,12 @@ class Main extends React.Component {
     });
   };
 
+  setLeftSliderScreenRightDrawer = screen2 => {
+    this.setState({ currentScreen2: screen2 }, () => {
+      this.hiddenRightDrawer.openRightHiddenDrawer();
+    });
+  };
+
   render() {
     console.log(this.state.squeezeLayoutBoolean);
     const { width } = this.state;
@@ -93,6 +99,9 @@ class Main extends React.Component {
                   onRef={ref => (this.LeftDrawer = ref)}
                   squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
                   currentScreen={this.state.currentScreen}
+                  currentScreen2={this.state.currentScreen2}
+                  onRef3={ref3 => (this.hiddenRightDrawer = ref3)}
+                  setLeftSliderScreenRightDrawer={this.setLeftSliderScreenRightDrawer}
                 />
 
                 <LeftSide

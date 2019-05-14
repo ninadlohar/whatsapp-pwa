@@ -1,9 +1,9 @@
 import React from "react";
 
-class Settings extends React.Component {
+class Notification extends React.Component {
   render() {
     return (
-      <div className={this.props.classes} id="leftSlider__chatActiveBox">
+      <div className={this.props.classes} id="rightSlider__chatActiveBox">
         <header className="col-12 px-0">
           <div className="leftSlider__header__green_box">
             <div className="row">
@@ -11,7 +11,7 @@ class Settings extends React.Component {
                 <span className="leftSlider__back__arrow" onClick={this.props.toggleHandlerOut}>
                   <i className="fas fa-arrow-left" />
                 </span>
-                <span className="leftSlider__greenBox__header">Settings</span>
+                <span className="leftSlider__greenBox__header">Notifications</span>
               </div>
             </div>
           </div>
@@ -40,10 +40,6 @@ class Settings extends React.Component {
               </div>
               <div className="row mx-0">
                 <div className="col-12 px-0">
-                  {/* <div
-                    className="settings_options"
-                    onClick={() => this.props.setLeftSliderScreenRightDrawer("notification")}
-                  > */}
                   <div className="settings_options">
                     <div className="d-flex settings_each_logo align-items-center">
                       <div className="settings_logos d-flex justify-content-center">
@@ -91,4 +87,4 @@ class Settings extends React.Component {
   }
 }
 
-export default Settings;
+export default Notification;

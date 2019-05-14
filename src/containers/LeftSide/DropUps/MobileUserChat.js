@@ -19,10 +19,14 @@ class MobileUserChat extends React.Component {
   }
   setSearchActiveFn = () => {
     this.setState({ setSearchActive: true });
+    this.componentWithSearchBar();
   };
 
   setSearchDeactiveFn = () => {
+    let content = document.getElementById("message2List");
     this.setState({ setSearchActive: false });
+    content.style.marginTop = 56 + "px";
+    content.style.overflow = "auto";
   };
   openViewContact = () => {
     this.setState({ viewContact: true });
@@ -34,7 +38,7 @@ class MobileUserChat extends React.Component {
     var page = document.getElementById("page").clientHeight;
     var headheight = document.getElementById("user-chat-header").clientHeight;
     var content = document.getElementById("message2List");
-    var footer = document.getElementById("user-chat-section").clientHeight;
+    var footer = document.getElementById("user-footer-chat-section").clientHeight;
     var availableheight = page - headheight - footer;
     content.style.marginTop = headheight + "px";
     content.style.height = availableheight + 39 + "px";
@@ -45,20 +49,29 @@ class MobileUserChat extends React.Component {
     var page = document.getElementById("page").clientHeight;
     var headheight = document.getElementById("user-chat-header").clientHeight;
     var content = document.getElementById("message2List");
-    var footer = document.getElementById("user-chat-section").clientHeight;
+    var footer = document.getElementById("user-footer-chat-section").clientHeight;
     var availableheight = page - headheight - footer;
     content.style.marginTop = headheight + "px";
     content.style.height = availableheight + 39 + "px";
     content.style.overflow = "auto";
     window.addEventListener("resize", this.resizeFn);
   }
+  componentWithSearchBar = () => {
+    let height = document.getElementById("page").clientHeight;
+    let input = document.getElementById("chat-active");
+    let content = document.getElementById("message2List");
+    let availableheight = height - input;
+    content.style.marginTop = 0 + "px";
+    content.style.height = availableheight + "px";
+    content.style.overflow = "auto";
+  };
   componentWillUnmount() {
     window.removeEventListener("resize", this.resizeFn);
   }
   sendMessageIcon = e => {
     this.setState({ secondValue: e });
   };
-  appendDataToMessageLogScreen = e => {
+  appendDataToMessageLogScreen = () => {
     if (this.state.secondValue === "" || this.state.secondValue.trim() === "") {
       return;
     } else if (this.state.secondValue !== "") {
@@ -146,7 +159,7 @@ class MobileUserChat extends React.Component {
                 ))
               : null}
           </div>
-          <footer className="fixed-bottom col-12 px-0" id="user-chat-section">
+          <footer className="fixed-bottom col-12 px-0" id="user-footer-chat-section">
             <div className="row mx-0">
               <div className="mobiale__screen__input justify-content-center px-1 align-items-center w-100 d-flex">
                 <div className="custom__width90">

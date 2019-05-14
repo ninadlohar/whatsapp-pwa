@@ -527,7 +527,10 @@ class MobileLeftSide extends React.Component {
           <MobileNewBroadcast closeBroadcastDrawer={this.setNewBroadcastFalse} />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setStarredMessagesTrue} open={this.state.starredMessages}>
-          <MobileStarredMessages closeStarredMessagesDrawer={this.setStarredMessagesFalse} />
+          <MobileStarredMessages
+            componentWithoutSearchBar={this.componentWithoutSearchBar}
+            closeStarredMessagesDrawer={this.setStarredMessagesFalse}
+          />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setSettingsTrue} open={this.state.settings}>
           <MobileSettings
