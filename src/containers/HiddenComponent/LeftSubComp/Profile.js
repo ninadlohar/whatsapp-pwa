@@ -4,7 +4,9 @@ import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
 class Profile extends React.Component {
   state = {
     isEditingName: false,
-    isEditingAbout: false
+    isEditingAbout: false,
+    editNameProfile: "",
+    editAboutProfile: ""
   };
   isEditingNameFn = () => {
     this.setState({ isEditingName: !this.state.isEditingName });
@@ -13,8 +15,15 @@ class Profile extends React.Component {
     this.setState({ isEditingAbout: !this.state.isEditingAbout });
   };
 
-  componentDidMount() {
+  editNameProfile = e => {
+    this.setState({ editNameProfile: e });
+  };
 
+  editAboutProfile = e => {
+    this.setState({ editAboutProfile: e });
+  };
+
+  componentDidMount() {
     var height = document.getElementById("page").clientHeight;
     var header = document.getElementById("leftSlider__header__green_box").clientHeight;
     var content = document.getElementById("profile__section");
@@ -23,7 +32,7 @@ class Profile extends React.Component {
     content.style.height = availableheight + "px";
     content.style.overflow = "scroll";
 
-    window.addEventListener("resize", function () {
+    window.addEventListener("resize", function() {
       var height = document.getElementById("page").clientHeight;
       var header = document.getElementById("leftSlider__header__green_box").clientHeight;
       var content = document.getElementById("profile__section");
@@ -95,11 +104,16 @@ class Profile extends React.Component {
                   <div className="profile_section_name">Your Name</div>
                   {this.state.isEditingName ? (
                     <div>
-                      <SearchInputBox searchBoxType="simpleInputForProfile__Name" isEditingNameFn={this.isEditingNameFn} />
+                      <SearchInputBox
+                        searchBoxType="simpleInputForProfile__Name"
+                        isEditingNameFn={this.isEditingNameFn}
+                        editNameProfileFn={this.editNameProfile}
+                        editNameProfile={this.state.editNameProfile}
+                      />
                     </div>
                   ) : (
-                      editName
-                    )}
+                    editName
+                  )}
                 </div>
               </div>
               <div className="row mx-0">
@@ -113,11 +127,16 @@ class Profile extends React.Component {
                 <div className="profile_section_name">About</div>
                 {this.state.isEditingAbout ? (
                   <div>
-                    <SearchInputBox searchBoxType="simpleInputForProfile__About" isEditingAboutFn={this.isEditingAboutFn} />
+                    <SearchInputBox
+                      searchBoxType="simpleInputForProfile__About"
+                      editAboutProfileFn={this.editAboutProfile}
+                      editAboutProfile={this.state.editAboutProfile}
+                      isEditingAboutFn={this.isEditingAboutFn}
+                    />
                   </div>
                 ) : (
-                    editAbout
-                  )}
+                  editAbout
+                )}
               </div>
               {/* </div> */}
             </div>

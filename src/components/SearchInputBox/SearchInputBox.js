@@ -94,7 +94,13 @@ class SearchInputBox extends React.Component {
       <div className="col-12 px-0">
         <div className="row mx-0">
           <div className="profile__input__box">
-            <Input placeholder="Type Contact Name" value="Niko" classes="simple__edit__pencil" type="text" />
+            <Input
+              placeholder="Type Contact Name"
+              value={this.props.editNameProfile}
+              classes="simple__edit__pencil"
+              type="text"
+              onChangeHandler={this.props.editNameProfileFn}
+            />
           </div>
           <div className="profile__input__icons__section d-flex justify-content-between pt-1">
             <div className="profile__input__characters__left">20</div>
@@ -117,7 +123,13 @@ class SearchInputBox extends React.Component {
       <div className="col-12 px-0">
         <div className="row mx-0">
           <div className="profile__input__box">
-            <Input placeholder="Type Contact Name" value="Niko" classes="simple__edit__pencil" type="text" />
+            <Input
+              placeholder="Type Contact Name"
+              value={this.props.editAboutProfile}
+              classes="simple__edit__pencil"
+              type="text"
+              onChangeHandler={this.props.editAboutProfileFn}
+            />
           </div>
           <div className="profile__input__icons__section d-flex justify-content-end pt-1">
             <div className="mr-2">
@@ -140,7 +152,13 @@ class SearchInputBox extends React.Component {
       <div className="col-12 px-0">
         <div className="row mx-0">
           <div className="profile__input__box ">
-            <Input placeholder="Type Contact Name" value="Niko" classes="simple__edit__pencil" type="text" />
+            <Input
+              placeholder="Type Contact Name"
+              value={this.props.editName}
+              classes="simple__edit__pencil"
+              type="text"
+              onChangeHandler={this.props.editNameEvent}
+            />
           </div>
           <div className="profile__input__icons__section d-flex justify-content-between pt-1">
             <div className="profile__input__characters__left">20</div>
@@ -164,7 +182,13 @@ class SearchInputBox extends React.Component {
       <div className="col-12 px-0">
         <div className="row mx-0">
           <div className="profile__input__box ">
-            <Input placeholder="Type Contact Name" value="Niko" classes="simple__edit__pencil" type="text" />
+            <Input
+              placeholder="Type Contact Name"
+              value={this.props.editDesc}
+              classes="simple__edit__pencil"
+              type="text"
+              onChangeHandler={this.props.editDescEvent}
+            />
           </div>
           <div className="profile__input__icons__section d-flex justify-content-end pt-1">
             <div className="mr-2">

@@ -7,6 +7,8 @@ class ContactContainer extends React.Component {
     squeezeLayoutBoolean: false,
     isEditingName: false,
     isEditingDescription: false,
+    editName: "",
+    editDesc: "",
     isTextAStatus: this.props.isTextAStatus,
     isChatWithStatusAndAdmin: this.props.isChatWithStatusAndAdmin
   };
@@ -24,6 +26,14 @@ class ContactContainer extends React.Component {
     content.style.height = availableheight + 15 + "px";
     content.style.overflow = "scroll";
   }
+
+  editNameEvent = e => {
+    this.setState({ editName: e });
+  };
+
+  editDescEvent = e => {
+    this.setState({ editDesc: e });
+  };
 
   isEditingNameGroupFn = () => {
     this.setState({ isEditingName: !this.state.isEditingName });
@@ -113,11 +123,13 @@ class ContactContainer extends React.Component {
                     <SearchInputBox
                       searchBoxType="simpleInputForGroupInfo__Name"
                       isEditingNameGroupFn={this.isEditingNameGroupFn}
+                      editNameEvent={this.editNameEvent}
+                      editName={this.state.editName}
                     />
                   </div>
                 ) : (
-                    editName
-                  )}
+                  editName
+                )}
                 <div className="rightSlider__sender__lastSeenDate">last seen today at 12:36pm</div>
               </div>
             </div>
@@ -129,11 +141,13 @@ class ContactContainer extends React.Component {
                   <SearchInputBox
                     searchBoxType="simpleInputForGroupInfo__Description"
                     isEditingDescriptionFn={this.isEditingDescriptionFn}
+                    editDescEvent={this.editDescEvent}
+                    editDesc={this.state.editDesc}
                   />
                 </div>
               ) : (
-                  editDescription
-                )}
+                editDescription
+              )}
             </div>
             <div className="rightSlider__media__links__section">
               <div className="d-flex">
