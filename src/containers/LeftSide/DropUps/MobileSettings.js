@@ -7,6 +7,8 @@ import Chats from "./Chats/Chats";
 import Notifications from "./Notifications/Notifications";
 import DataAndStorage from "./DataAndStorage/DataAndStorage";
 import MobileProfile from "./MobileProfile";
+import SmallDrawer from "../../../ReusableUI-Components/SmallDrawer";
+import InviteFriends from "./SmallDrawers/InviteFriends";
 
 class MobileStarredMessages extends React.Component {
   state = {
@@ -16,7 +18,8 @@ class MobileStarredMessages extends React.Component {
     chats: false,
     dataAndStorage: false,
     notifications: false,
-    mobileProfile: false
+    mobileProfile: false,
+    socialMediaLinks: false
   };
   setSearchActiveFn = () => {
     this.setState({ setSearchActive: true }, () => {
@@ -74,6 +77,12 @@ class MobileStarredMessages extends React.Component {
   };
   closeMobileProfile = () => {
     this.setState({ mobileProfile: false });
+  };
+  openSocialMediaLinks = () => {
+    this.setState({ socialMediaLinks: true });
+  };
+  closeSocialMediaLinks = () => {
+    this.setState({ socialMediaLinks: false });
   };
   resize = () => {
     window.addEventListener("resize", () => {
@@ -200,7 +209,7 @@ class MobileStarredMessages extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="col-12 py-3 d-flex">
+            <div className="col-12 py-3 d-flex" onClick={this.openSocialMediaLinks}>
               <div className="d-flex align-items-center pl-3 pr-4">
                 <img src={require("../../../assets/svg/user2.svg")} alt="two-users" height="18" width="18" />
               </div>
@@ -236,6 +245,9 @@ class MobileStarredMessages extends React.Component {
             closeDrawer={this.setNotificationsFalse}
           />
         </MainBottomDrawer>
+        <SmallDrawer onOpen={this.openSocialMediaLinks} open={this.state.socialMediaLinks}>
+          <InviteFriends closeDrawer={this.closeSocialMediaLinks} />
+        </SmallDrawer>
         <MainBottomDrawer onOpen={this.setDataAndStorageTrue} open={this.state.dataAndStorage}>
           <DataAndStorage
             componentWithoutSearchBar={this.props.componentWithoutSearchBar}
