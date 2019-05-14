@@ -6,6 +6,7 @@ import Help from "./Help";
 import Chats from "./Chats/Chats";
 import Notifications from "./Notifications/Notifications";
 import DataAndStorage from "./DataAndStorage/DataAndStorage";
+import MobileProfile from "./MobileProfile";
 
 class MobileStarredMessages extends React.Component {
   state = {
@@ -14,7 +15,8 @@ class MobileStarredMessages extends React.Component {
     Help: false,
     chats: false,
     dataAndStorage: false,
-    notifications: false
+    notifications: false,
+    mobileProfile: false
   };
   setSearchActiveFn = () => {
     this.setState({ setSearchActive: true }, () => {
@@ -67,10 +69,24 @@ class MobileStarredMessages extends React.Component {
   setDataAndStorageFalse = () => {
     this.setState({ dataAndStorage: false });
   };
+  openMobileProfile = () => {
+    this.setState({ mobileProfile: true });
+  };
+  closeMobileProfile = () => {
+    this.setState({ mobileProfile: false });
+  };
+  resize = () => {
+    window.addEventListener("resize", () => {
+      let header = document.getElementById("mobile__settings__head");
+      let infoSection = document.getElementById("mobile__settings__section");
+      this.props.componentWithoutSearchBar(header, infoSection);
+    });
+  };
   componentDidMount() {
     let header = document.getElementById("mobile__settings__head");
     let infoSection = document.getElementById("mobile__settings__section");
     this.props.componentWithoutSearchBar(header, infoSection);
+    this.resize();
   }
 
   render() {
@@ -95,7 +111,7 @@ class MobileStarredMessages extends React.Component {
         </header>
         <div className="col-12 px-0" id="mobile__settings__section">
           <div className="row mx-0">
-            <div className="col-12 py-3 d-flex mobile__settings__basicInfo__section">
+            <div className="col-12 py-3 d-flex mobile__settings__basicInfo__section" onClick={this.openMobileProfile}>
               <div className="d-flex align-items-center pr-4">
                 <img
                   src={require("../../../assets/images/user-image.jpg")}
@@ -195,7 +211,12 @@ class MobileStarredMessages extends React.Component {
             </div>
           </div>
         </div>
-
+        <MainBottomDrawer onOpen={this.openMobileProfile} open={this.state.mobileProfile}>
+          <MobileProfile
+            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
+            closeDrawer={this.closeMobileProfile}
+          />
+        </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setAccountTrue} open={this.state.account}>
           <Account
             componentWithoutSearchBar={this.props.componentWithoutSearchBar}

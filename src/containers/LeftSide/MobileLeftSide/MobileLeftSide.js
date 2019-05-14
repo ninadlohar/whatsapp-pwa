@@ -169,12 +169,12 @@ class MobileLeftSide extends React.Component {
   };
 
   openCallInfo = () => {
-    this.setState({ callInfo: true })
-  }
+    this.setState({ callInfo: true });
+  };
 
   closeCallInfo = () => {
-    this.setState({ callInfo: false })
-  }
+    this.setState({ callInfo: false });
+  };
 
   resizeFn = () => {
     var height = document.getElementById("page").clientHeight;
@@ -294,56 +294,56 @@ class MobileLeftSide extends React.Component {
               setSearchDeactiveFn={this.setSearchDeactiveFn}
             />
           ) : (
-              <div className="row mx-0" id="input-box">
-                <div className="col-12 pb-1 d-flex camera">
-                  <div className="d-flex align-items-center pt-1">
-                    <img src={require("../../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
-                  </div>
-                  <div className={classes.root}>
-                    <AppBar className="demo" position="static" color="inherit">
-                      <Tabs
-                        variant="fullWidth"
-                        value={value}
-                        onChange={this.handleChange}
+            <div className="row mx-0" id="input-box">
+              <div className="col-12 pb-1 d-flex camera">
+                <div className="d-flex align-items-center pt-1">
+                  <img src={require("../../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
+                </div>
+                <div className={classes.root}>
+                  <AppBar className="demo" position="static" color="inherit">
+                    <Tabs
+                      variant="fullWidth"
+                      value={value}
+                      onChange={this.handleChange}
+                      classes={{
+                        root: classes.tabsRoot,
+                        indicator: classes.tabsIndicator
+                      }}
+                    >
+                      <Tab
+                        disableRipple
                         classes={{
-                          root: classes.tabsRoot,
-                          indicator: classes.tabsIndicator
+                          root: classes.tabRoot,
+                          selected: classes.tabSelected
                         }}
-                      >
-                        <Tab
-                          disableRipple
-                          classes={{
-                            root: classes.tabRoot,
-                            selected: classes.tabSelected
-                          }}
-                          label="CHATS"
-                        />
-                        <Tab
-                          disableRipple
-                          classes={{
-                            root: classes.tabRoot,
-                            selected: classes.tabSelected
-                          }}
-                          label="STATUS"
-                        />
-                        <Tab
-                          disableRipple
-                          classes={{
-                            root: classes.tabRoot,
-                            selected: classes.tabSelected
-                          }}
-                          label="CALLS"
-                        />
-                      </Tabs>
-                    </AppBar>
-                  </div>
+                        label="CHATS"
+                      />
+                      <Tab
+                        disableRipple
+                        classes={{
+                          root: classes.tabRoot,
+                          selected: classes.tabSelected
+                        }}
+                        label="STATUS"
+                      />
+                      <Tab
+                        disableRipple
+                        classes={{
+                          root: classes.tabRoot,
+                          selected: classes.tabSelected
+                        }}
+                        label="CALLS"
+                      />
+                    </Tabs>
+                  </AppBar>
                 </div>
               </div>
-            )}
+            </div>
+          )}
         </header>
         <div className="mx-0" id="message-logs">
           <section className="col-12 px-0 leftSide__chat__section">
-            <div className="row mx-0" style={{ height: "100vh" }}>
+            <div className="row mx-0" style={{ height: "100%" }}>
               <SwipeableViews
                 axis={theme.direction === "rtl" ? "x-reverse" : "x"}
                 index={this.state.value}
