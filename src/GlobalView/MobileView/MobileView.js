@@ -16,7 +16,7 @@ import MobileNewChat from "../../containers/LeftSide/DropUps/MobileNewChat";
 import MobileNewGroup from "../../containers/LeftSide/DropUps/MobileNewGroup";
 import MobileNewBroadcast from "../../containers/LeftSide/DropUps/MobileNewBroadcast";
 import MobileStarredMessages from "../../containers/LeftSide/DropUps/MobileStarredMessages";
-import MobileSettings from "../../containers/LeftSide/DropUps/MobileSettings";
+import Settings from "./Drawers/FullDrawers/Settings";
 import MobileUserChat from "../../containers/LeftSide/DropUps/MobileUserChat";
 import CallInfo from "../../containers/LeftSide/DropUps/CallInfo";
 import MobileGroupCall from "../../containers/LeftSide/DropUps/MobileGroupCall";
@@ -533,7 +533,7 @@ class MobileView extends React.Component {
           />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setSettingsTrue} open={this.state.settings}>
-          <MobileSettings
+          <Settings
             closeSettingsDrawer={this.setSettingsFalse}
             componentWithoutSearchBar={this.componentWithoutSearchBar}
           />
