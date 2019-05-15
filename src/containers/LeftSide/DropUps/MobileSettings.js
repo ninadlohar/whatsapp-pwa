@@ -8,7 +8,7 @@ import Notifications from "./Notifications/Notifications";
 import DataAndStorage from "./DataAndStorage/DataAndStorage";
 import MobileProfile from "./MobileProfile";
 import SmallDrawer from "../../../ReusableUI-Components/SmallDrawer";
-import InviteFriends from "./SmallDrawers/InviteFriends";
+import InviteFriends from "../SmallDrawers/InviteFriends";
 
 class MobileStarredMessages extends React.Component {
   state = {

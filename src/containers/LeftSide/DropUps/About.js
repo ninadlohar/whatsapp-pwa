@@ -1,7 +1,7 @@
 import React from "react";
 import DropDown from "../../../ReusableUI-Components/dropDown";
 import SmallDrawer from "../../../ReusableUI-Components/SmallDrawer";
-import AddAbout from "./SmallDrawers/AddAbout";
+import AddAbout from "../SmallDrawers/AddAbout";
 
 class About extends React.Component {
   state = {

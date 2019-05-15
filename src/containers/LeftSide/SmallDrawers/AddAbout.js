@@ -1,5 +1,5 @@
 import React from "react";
-import SearchInputBox from "../../../../components/SearchInputBox/SearchInputBox";
+import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
 
 class AddAbout extends React.Component {
   state = {

@@ -1,5 +1,5 @@
 import React from "react";
-import SearchInputBox from "../../../../components/SearchInputBox/SearchInputBox";
+import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
 
 class NameEdit extends React.Component {
   state = {
