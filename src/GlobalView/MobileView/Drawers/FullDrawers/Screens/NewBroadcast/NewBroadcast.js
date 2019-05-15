@@ -1,11 +1,11 @@
 import React from "react";
-import ContactDataWStatus from "../../../components/TypesOfUserChats/ContactDataWStatus";
-import DropDown from "../../../ReusableUI-Components/dropDown";
-import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
-import Auxilliary from "../../../hoc/Auxillary";
-import { data } from "../../../ReusableUI-Components/data.json";
+import ContactDataWStatus from "../../../../../../components/TypesOfUserChats/ContactDataWStatus";
+import DropDown from "../../../../../../ReusableUI-Components/dropDown";
+import SearchInputBox from "../../../../../../components/SearchInputBox/SearchInputBox";
+import Auxilliary from "../../../../../../hoc/Auxillary";
+import { data } from "../../../../../../ReusableUI-Components/data.json";
 
-class MobileNewChat extends React.Component {
+class NewBroadcast extends React.Component {
   state = {
     setSearchActive: false,
     newBroadcast: false
@@ -46,7 +46,12 @@ class MobileNewChat extends React.Component {
                       className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                       onClick={this.props.closeBroadcastDrawer}
                     >
-                      <img src={require("../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                      <img
+                        src={require("../../../../../../assets/svg/left.svg")}
+                        width="24"
+                        height="24"
+                        alt="left-arrow"
+                      />
                     </div>
                     <div className="mobileView__selectContactSection pl-3">
                       <div className="mobile__newChat__selectedContact">New Broadcast</div>
@@ -55,7 +60,7 @@ class MobileNewChat extends React.Component {
                     <div className="mobile__newChat__options d-flex justify-content-end align-items-center">
                       <div className="px-3" onClick={() => this.setSearchActiveFn()}>
                         <img
-                          src={require("../../../assets/svg/mobile-search.svg")}
+                          src={require("../../../../../../assets/svg/mobile-search.svg")}
                           width="19"
                           height="19"
                           alt="search-svg"
@@ -82,4 +87,4 @@ class MobileNewChat extends React.Component {
   }
 }
 
-export default MobileNewChat;
+export default NewBroadcast;

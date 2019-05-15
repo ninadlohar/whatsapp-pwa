@@ -1,5 +1,5 @@
-import React from 'react';
-import Auxillary from '../../../hoc/Auxillary';
+import React from "react";
+import Auxillary from "../../../../../../../hoc/Auxillary";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { withStyles } from "@material-ui/core/styles";
@@ -60,11 +60,10 @@ const styles = theme => ({
   }
 });
 
-class MobileMedia extends React.Component {
+class Media extends React.Component {
   state = {
-    value: 0,
-
-  }
+    value: 0
+  };
   handleChangeIndex = index => {
     this.setState({ value: index });
     console.log(index);
@@ -84,19 +83,16 @@ class MobileMedia extends React.Component {
     content.style.overflow = "auto";
   };
   componentDidMount() {
-    let header = document.getElementById("mobile__media__head")
-    let content = document.getElementById("mobile__media__section")
-    this.componentWithoutSearchBar(header, content)
+    let header = document.getElementById("mobile__media__head");
+    let content = document.getElementById("mobile__media__section");
+    this.componentWithoutSearchBar(header, content);
   }
   render() {
     const { classes, theme } = this.props;
     const { value } = this.state;
     return (
       <Auxillary>
-        <header
-          className="col-12 fixed-top mobile__view__starred__Messages__Header py-2"
-          id="mobile__media__head"
-        >
+        <header className="col-12 fixed-top mobile__view__starred__Messages__Header py-2" id="mobile__media__head">
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
@@ -104,7 +100,12 @@ class MobileMedia extends React.Component {
                   className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                   onClick={this.props.closeDrawer}
                 >
-                  <img src={require("../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                  <img
+                    src={require("../../../../../../../assets/svg/left.svg")}
+                    width="24"
+                    height="24"
+                    alt="left-arrow"
+                  />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
                   <div className="mobile__newChat__selectedContact">9139396939</div>
@@ -166,33 +167,26 @@ class MobileMedia extends React.Component {
               >
                 <TabContainer dir={theme.direction}>
                   <div className="col-12 px-0 d-flex leftSide__log__of__chats" id="content">
-                    <div className="row mx-0">
-                      No Media Found
-                    </div>
+                    <div className="row mx-0">No Media Found</div>
                   </div>
                 </TabContainer>
                 <TabContainer dir={theme.direction}>
                   <div className="col-12 px-0  leftSide__log__of__chats" id="content8" name="swipe">
-                    <div className="row mx-0">
-                      No Doucments found
-                    </div>
+                    <div className="row mx-0">No Doucments found</div>
                   </div>
                 </TabContainer>
                 <TabContainer dir={theme.direction}>
                   <div className="col-12 px-0  leftSide__log__of__chats" id="content9" name="swipe">
-                    <div className="row mx-0">
-                      No Links Found
-                    </div>
+                    <div className="row mx-0">No Links Found</div>
                   </div>
                 </TabContainer>
               </SwipeableViews>
             </div>
           </section>
         </div>
-
       </Auxillary>
-    )
+    );
   }
 }
 
-export default withStyles(styles, { withTheme: true })(MobileMedia);
+export default withStyles(styles, { withTheme: true })(Media);

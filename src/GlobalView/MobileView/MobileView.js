@@ -11,15 +11,15 @@ import { withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import DefaultLoadedChat from "../../components/TypesOfUserChats/DefaultLoadedChat";
-import MainBottomDrawer from "../../containers/LeftSide/DropUps/BottomDrawer";
-import MobileNewChat from "../../containers/LeftSide/DropUps/MobileNewChat";
-import MobileNewGroup from "../../containers/LeftSide/DropUps/MobileNewGroup";
-import MobileNewBroadcast from "../../containers/LeftSide/DropUps/MobileNewBroadcast";
-import MobileStarredMessages from "../../containers/LeftSide/DropUps/MobileStarredMessages";
-import Settings from "./Drawers/FullDrawers/Settings";
-import MobileUserChat from "../../containers/LeftSide/DropUps/MobileUserChat";
-import CallInfo from "../../containers/LeftSide/DropUps/CallInfo";
-import MobileGroupCall from "../../containers/LeftSide/DropUps/MobileGroupCall";
+import MainBottomDrawer from "./Drawers/BottomDrawer";
+import NewChat from "./Drawers/FullDrawers/Screens/NewChat/NewChat";
+import NewGroup from "./Drawers/FullDrawers/Screens/NewGroup/NewGroup";
+import NewBroadcast from "./Drawers/FullDrawers/Screens/NewBroadcast/NewBroadcast";
+import StarredMessages from "./Drawers/FullDrawers/Screens/StarredMessages/StarredMessages";
+import Settings from "./Drawers/FullDrawers/Settings/Settings";
+import UserChatting from "./Drawers/FullDrawers/Screens/UserChatting/UserChatting";
+import CallInfo from "./Drawers/FullDrawers/Screens/CallInfo";
+import GroupCall from "./Drawers/FullDrawers/Screens/GroupCall/GroupCall";
 
 function TabContainer({ children, dir }) {
   return (
@@ -512,22 +512,19 @@ class MobileView extends React.Component {
           </div>
         </div>
         <MainBottomDrawer onOpen={this.setNewChatTrue} open={this.state.newChat}>
-          <MobileNewChat
-            componentWithoutSearchBar={this.componentWithoutSearchBar}
-            closeDrawer={this.setNewChatFalse}
-          />
+          <NewChat componentWithoutSearchBar={this.componentWithoutSearchBar} closeDrawer={this.setNewChatFalse} />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setNewGroupTrue} open={this.state.newGroup}>
-          <MobileNewGroup
+          <NewGroup
             closeGroupDrawer={this.setNewGroupFalse}
             componentWithoutSearchBar={this.componentWithoutSearchBar}
           />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setNewBroadcastTrue} open={this.state.newBroadcast}>
-          <MobileNewBroadcast closeBroadcastDrawer={this.setNewBroadcastFalse} />
+          <NewBroadcast closeBroadcastDrawer={this.setNewBroadcastFalse} />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setStarredMessagesTrue} open={this.state.starredMessages}>
-          <MobileStarredMessages
+          <StarredMessages
             componentWithoutSearchBar={this.componentWithoutSearchBar}
             closeStarredMessagesDrawer={this.setStarredMessagesFalse}
           />
@@ -539,16 +536,13 @@ class MobileView extends React.Component {
           />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.openChatTrue} open={this.state.chat}>
-          <MobileUserChat componentWithoutSearchBar={this.componentWithoutSearchBar} closeDrawer={this.openChatFalse} />
+          <UserChatting componentWithoutSearchBar={this.componentWithoutSearchBar} closeDrawer={this.openChatFalse} />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.openCallInfo} open={this.state.callInfo}>
           <CallInfo closeDrawer={this.closeCallInfo} />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.openGroupCalls} open={this.state.groupCalls}>
-          <MobileGroupCall
-            closeDrawer={this.closeGroupCalls}
-            componentWithoutSearchBar={this.componentWithoutSearchBar}
-          />
+          <GroupCall closeDrawer={this.closeGroupCalls} componentWithoutSearchBar={this.componentWithoutSearchBar} />
         </MainBottomDrawer>
       </Auxillary>
     );

@@ -1,6 +1,6 @@
 import React from "react";
 import Auxilliary from "../../../../../../hoc/Auxillary";
-import MainBottomDrawer from "../../../../../../containers/LeftSide/DropUps/BottomDrawer";
+import MainBottomDrawer from "../../../BottomDrawer";
 
 class Help extends React.Component {
   state = {

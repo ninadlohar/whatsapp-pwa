@@ -1,6 +1,6 @@
 import React from "react";
 import Auxilliary from "../../../../../../hoc/Auxillary";
-import MainBottomDrawer from "../../../../../../containers/LeftSide/DropUps/BottomDrawer";
+import MainBottomDrawer from "../../../BottomDrawer";
 import Privacy from "./Privacy/Privacy";
 import Security from "./Security/Security";
 import TwoStepVerification from "./TwoStepVerifcation/TwoStepVerification";

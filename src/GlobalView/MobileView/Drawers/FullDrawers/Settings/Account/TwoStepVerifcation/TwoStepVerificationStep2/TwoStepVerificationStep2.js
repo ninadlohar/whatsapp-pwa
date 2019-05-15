@@ -2,7 +2,7 @@ import React from "react";
 import SearchInputBox from "../../../../../../../../components/SearchInputBox/SearchInputBox";
 import Auxillary from "../../../../../../../../hoc/Auxillary";
 import TwoStepVerificationStep3 from "../TwoStepVerificationStep3/TwoStepVerificationStep3";
-import MainBottomDrawer from "../../../../../../../../containers/LeftSide/DropUps/BottomDrawer";
+import MainBottomDrawer from "../../../../../BottomDrawer";
 
 class TwoStepVerificationStep2 extends React.Component {
   state = {

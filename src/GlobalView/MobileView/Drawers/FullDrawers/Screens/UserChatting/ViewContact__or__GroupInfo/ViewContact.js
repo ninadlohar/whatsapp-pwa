@@ -1,9 +1,9 @@
-import React from 'react';
-import Auxillary from '../../../hoc/Auxillary';
-import DropDown from '../../../ReusableUI-Components/dropDown';
+import React from "react";
+import Auxillary from "../../../../../../../hoc/Auxillary";
+import DropDown from "../../../../../../../ReusableUI-Components/dropDown";
 import Switch from "@material-ui/core/Switch";
-import BottomDrawer from './BottomDrawer';
-import NotificationDrawer from './Notifications/NotificationDrawer';
+import BottomDrawer from "../../../../BottomDrawer";
+import NotifcationInsideViewContact from "./NotificationInsideViewContact/NotifcationInsideViewContact";
 
 class ViewContact extends React.Component {
   state = {
@@ -11,7 +11,7 @@ class ViewContact extends React.Component {
     viewProfileDropdown: true,
     openNotification: false,
     mobileMedia: false
-  }
+  };
 
   componentWithoutSearchBar = (header, leftHeight) => {
     var height = document.getElementById("page").clientHeight;
@@ -25,25 +25,25 @@ class ViewContact extends React.Component {
   };
 
   openMobileMedia = () => {
-    this.setState({ mobileMedia: true })
-  }
+    this.setState({ mobileMedia: true });
+  };
 
   closeMobileMedia = () => {
-    this.setState({ mobileMedia: false })
-  }
+    this.setState({ mobileMedia: false });
+  };
 
   openNotification = () => {
-    this.setState({ openNotification: true })
-  }
+    this.setState({ openNotification: true });
+  };
 
   closeNotification = () => {
-    this.setState({ openNotification: false })
-  }
+    this.setState({ openNotification: false });
+  };
 
   componentDidMount() {
     let header = document.getElementById("viewProfile__header");
-    let content = document.getElementById("viewContact__section")
-    this.componentWithoutSearchBar(header, content)
+    let content = document.getElementById("viewContact__section");
+    this.componentWithoutSearchBar(header, content);
   }
 
   handleChange = name => event => {
@@ -53,7 +53,7 @@ class ViewContact extends React.Component {
     let exitGroup = (
       <div className="rightSlider__exit__group d-flex">
         <div className="exit-logo-svg">
-          <img src={require("../../../assets/svg/stop.svg")} height="20" width="20" alt="exit-svg" />
+          <img src={require("../../../../../../../assets/svg/stop.svg")} height="20" width="20" alt="exit-svg" />
         </div>
         <div className="rightSlider__exit__group__text d-flex align-items-center">Block</div>
       </div>
@@ -61,7 +61,12 @@ class ViewContact extends React.Component {
     let reportGroup = (
       <div className="report-group-section d-flex">
         <div className="exit-logo-svg">
-          <img src={require("../../../assets/svg/thumb-down.svg")} height="20" width="20" alt="report-svg" />
+          <img
+            src={require("../../../../../../../assets/svg/thumb-down.svg")}
+            height="20"
+            width="20"
+            alt="report-svg"
+          />
         </div>
         <div className="rightSlider__exit__group__text d-flex align-items-center">Report Contact</div>
       </div>
@@ -76,7 +81,12 @@ class ViewContact extends React.Component {
                   className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                   onClick={this.props.closeDrawer}
                 >
-                  <img src={require("../../../assets/svg/left.svg")} width="20" height="20" alt="left-arrow" />
+                  <img
+                    src={require("../../../../../../../assets/svg/left.svg")}
+                    width="20"
+                    height="20"
+                    alt="left-arrow"
+                  />
                 </div>
                 <div className="mobileView__selectContactSection d-flex align-items-center">
                   <div className="mobile__newChat__selectedContact">
@@ -84,10 +94,7 @@ class ViewContact extends React.Component {
                   </div>
                 </div>
                 <div className="mobile__sender__user__options justify-content-end">
-                  <DropDown
-                    viewProfileDropdown={this.state.viewProfileDropdown}
-                    classes="fas fa-ellipsis-v"
-                  />
+                  <DropDown viewProfileDropdown={this.state.viewProfileDropdown} classes="fas fa-ellipsis-v" />
                 </div>
               </div>
             </div>
@@ -95,34 +102,58 @@ class ViewContact extends React.Component {
         </header>
         <div id="viewContact__section">
           <div className="col-12 px-0 viewProfile__image__parent px-0">
-            <img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Chris_Hemsworth_as_Thor.jpg" alt="thor" className="viewProfile__image" />
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/3/3c/Chris_Hemsworth_as_Thor.jpg"
+              alt="thor"
+              className="viewProfile__image"
+            />
           </div>
 
           <div>
             <div className="media-section px-0 col-12 mt-2">
               <div className="row mx-0">
-                <div className="col-6">
-                  Media
-            </div>
-                <div className="col-6 text-right">
-                  82 >
-            </div>
+                <div className="col-6">Media</div>
+                <div className="col-6 text-right">82 ></div>
               </div>
             </div>
             <div className="media-section px-0 col-12">
               <div className="row mx-0">
                 <div className="col-12 d-flex justify-content-between">
                   <div className="p-1">
-                    <img src="https://via.placeholder.com/150" className="img-responsive" alt="placeholder" height="64" width="64" />
+                    <img
+                      src="https://via.placeholder.com/150"
+                      className="img-responsive"
+                      alt="placeholder"
+                      height="64"
+                      width="64"
+                    />
                   </div>
                   <div className="p-1">
-                    <img src="https://via.placeholder.com/150" className="img-responsive" alt="placeholder" height="64" width="64" />
+                    <img
+                      src="https://via.placeholder.com/150"
+                      className="img-responsive"
+                      alt="placeholder"
+                      height="64"
+                      width="64"
+                    />
                   </div>
                   <div className="p-1">
-                    <img src="https://via.placeholder.com/150" className="img-responsive" alt="placeholder" height="64" width="64" />
+                    <img
+                      src="https://via.placeholder.com/150"
+                      className="img-responsive"
+                      alt="placeholder"
+                      height="64"
+                      width="64"
+                    />
                   </div>
                   <div className="p-1">
-                    <img src="https://via.placeholder.com/150" className="img-responsive" alt="placeholder" height="64" width="64" />
+                    <img
+                      src="https://via.placeholder.com/150"
+                      className="img-responsive"
+                      alt="placeholder"
+                      height="64"
+                      width="64"
+                    />
                   </div>
                 </div>
               </div>
@@ -165,65 +196,63 @@ class ViewContact extends React.Component {
                 <div className="w-100 ">
                   <div className="privacy__child__text">
                     Messages to this chat and calls are secured with end to end Encryption. Tap to verify
-                </div>
+                  </div>
                 </div>
               </div>
-              <div className="switch">
-              </div>
+              <div className="switch" />
             </div>
             <div className="media-section col-12 px-0 mt-3">
               <div className="row mx-0 py-1">
-                <div className="col-12 viewProfile__section__header">
-                  About and Phone Number
-              </div>
-                <div className="col-12">
-                  Can't talk WhatsApp only
-              </div>
-                <div className="col-12 privacy__child__text">
-                  April 9, 2016
-              </div>
+                <div className="col-12 viewProfile__section__header">About and Phone Number</div>
+                <div className="col-12">Can't talk WhatsApp only</div>
+                <div className="col-12 privacy__child__text">April 9, 2016</div>
               </div>
               <div className="row mx-0 d-flex py-1">
                 <div className="viewProfile__contact__details">
-                  <div className="col-12">
-                    +1(203) 671-2162
-                  </div>
-                  <div className="col-12 privacy__child__text">
-                    Mobile
-                   </div>
+                  <div className="col-12">+1(203) 671-2162</div>
+                  <div className="col-12 privacy__child__text">Mobile</div>
                 </div>
                 <div className="mobile__sender__user__options">
                   <span className="d-flex justify-content-start pt-1 single-icons user__chat__phone__icon">
-                    <img src={require("../../../assets/svg/message-ballon2.svg")} height="18" width="18" alt="video camera" />
+                    <img
+                      src={require("../../../../../../../assets/svg/message-ballon2.svg")}
+                      height="18"
+                      width="18"
+                      alt="video camera"
+                    />
                   </span>
                   <span className="single-icons d-flex align-items-center">
                     <img
-                      src={require("../../../assets/svg/video-camera.svg")}
+                      src={require("../../../../../../../assets/svg/video-camera.svg")}
                       height="24"
                       width="24"
                       alt="video camera"
                     />
                   </span>
                   <span className="single-icons user__chat__phone__icon">
-                    <img src={require("../../../assets/svg/call1.svg")} height="18" width="18" alt="video camera" />
+                    <img
+                      src={require("../../../../../../../assets/svg/call1.svg")}
+                      height="18"
+                      width="18"
+                      alt="video camera"
+                    />
                   </span>
                 </div>
               </div>
             </div>
-            <div className="media-section col-12 px-0 mt-3">
-              {exitGroup}
-            </div>
-            <div className="media-section  col-12 px-0 mt-3">
-              {reportGroup}
-            </div>
+            <div className="media-section col-12 px-0 mt-3">{exitGroup}</div>
+            <div className="media-section  col-12 px-0 mt-3">{reportGroup}</div>
           </div>
         </div>
         <BottomDrawer onOpen={this.openNotification} open={this.state.openNotification}>
-          <NotificationDrawer componentWithoutSearchBar={this.componentWithoutSearchBar} closeDrawer={this.closeNotification} />
+          <NotifcationInsideViewContact
+            componentWithoutSearchBar={this.componentWithoutSearchBar}
+            closeDrawer={this.closeNotification}
+          />
         </BottomDrawer>
       </Auxillary>
-    )
+    );
   }
 }
 
-export default ViewContact
+export default ViewContact;

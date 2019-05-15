@@ -1,7 +1,7 @@
 import React from "react";
 import Auxillary from "../../../../../../../hoc/Auxillary";
 import TwoStepVerificationStep1 from "./TwoStepVerificationStep1/TwoStepVerificationStep1";
-import MainBottomDrawer from "../../../../../../../containers/LeftSide/DropUps/BottomDrawer";
+import MainBottomDrawer from "../../../../BottomDrawer";
 
 class TwoStepVerification extends React.Component {
   state = {

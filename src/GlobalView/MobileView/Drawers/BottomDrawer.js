@@ -11,7 +11,7 @@ const styles = {
   }
 };
 
-class TemporaryDrawer extends React.Component {
+class BottomDrawer extends React.Component {
   render() {
     return (
       <Drawer anchor="bottom" open={this.props.open} onOpen={this.props.onOpen} className="bottomDrawerParent">
@@ -23,4 +23,4 @@ class TemporaryDrawer extends React.Component {
   }
 }
 
-export default withStyles(styles)(TemporaryDrawer);
+export default withStyles(styles)(BottomDrawer);

@@ -1,9 +1,9 @@
 import React from "react";
-import DropDown from "../../../ReusableUI-Components/dropDown";
-import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
-import Auxilliary from "../../../hoc/Auxillary";
-import { data } from "../../../ReusableUI-Components/data.json";
-import ContactDataChatWStataus from "../../../components/TypesOfUserChats/ContactDataWStatus";
+import DropDown from "../../../../../../../ReusableUI-Components/dropDown";
+import SearchInputBox from "../../../../../../../components/SearchInputBox/SearchInputBox";
+import Auxilliary from "../../../../../../../hoc/Auxillary";
+import { data } from "../../../../../../../ReusableUI-Components/data.json";
+import ContactDataChatWStataus from "../../../../../../../components/TypesOfUserChats/ContactDataWStatus";
 
 class NewGroupCall extends React.Component {
   state = {
@@ -58,7 +58,12 @@ class NewGroupCall extends React.Component {
                     className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                     onClick={this.props.closeDrawer}
                   >
-                    <img src={require("../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                    <img
+                      src={require("../../../../../../../assets/svg/left.svg")}
+                      width="24"
+                      height="24"
+                      alt="left-arrow"
+                    />
                   </div>
                   <div className="mobileView__selectContactSection pl-3">
                     <div className="mobile__newChat__selectedContact">Selected Contact</div>
@@ -70,7 +75,7 @@ class NewGroupCall extends React.Component {
                       onClick={() => this.setSearchActiveFn()}
                     >
                       <img
-                        src={require("../../../assets/svg/mobile-search.svg")}
+                        src={require("../../../../../../../assets/svg/mobile-search.svg")}
                         width="19"
                         height="19"
                         alt="search-svg"

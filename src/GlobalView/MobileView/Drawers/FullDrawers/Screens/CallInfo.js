@@ -1,8 +1,8 @@
 import React from "react";
-import Dropdown from "../../../ReusableUI-Components/dropDown";
-import Auxillary from "../../../hoc/Auxillary";
-import MobileUserChat from "./MobileUserChat";
-import BottomDrawer from "./BottomDrawer";
+import Dropdown from "../../../../../ReusableUI-Components/dropDown";
+import Auxillary from "../../../../../hoc/Auxillary";
+import UserChatting from "./UserChatting/UserChatting";
+import BottomDrawer from "../../BottomDrawer";
 
 class CallInfo extends React.Component {
   state = {
@@ -43,7 +43,7 @@ class CallInfo extends React.Component {
                   className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                   onClick={this.props.closeDrawer}
                 >
-                  <img src={require("../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                  <img src={require("../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3 d-flex align-items-center">
                   <div className="mobile__newChat__selectedContact">Call Info</div>
@@ -54,7 +54,7 @@ class CallInfo extends React.Component {
                     onClick={this.openChat}
                   >
                     <img
-                      src={require("../../../assets/svg/message-ballon3.svg")}
+                      src={require("../../../../../assets/svg/message-ballon3.svg")}
                       alt="message-ballon"
                       height="20"
                       width="20"
@@ -70,7 +70,7 @@ class CallInfo extends React.Component {
           <div className="chat-1 w-100 d-flex rightSlider__userInfo__box">
             <div className="leftChat__user__image">
               <img
-                src={require("../../../assets/images/BB_S5B_004_sm.jpg")}
+                src={require("../../../../../assets/images/BB_S5B_004_sm.jpg")}
                 alt="tim-holland"
                 className="sender__image__left__window"
               />
@@ -84,10 +84,15 @@ class CallInfo extends React.Component {
             </div>
             <div className="d-flex align-items-center">
               <span className="d-flex align-items-center single-icons mr-2">
-                <img src={require("../../../assets/svg/call1.svg")} alt="call" height="20" width="20" />
+                <img src={require("../../../../../assets/svg/call1.svg")} alt="call" height="20" width="20" />
               </span>
               <span className="d-flex align-items-center single-icons">
-                <img src={require("../../../assets/svg/video-camera.svg")} alt="video-camera" height="22" width="22" />
+                <img
+                  src={require("../../../../../assets/svg/video-camera.svg")}
+                  alt="video-camera"
+                  height="22"
+                  width="22"
+                />
               </span>
             </div>
           </div>
@@ -96,7 +101,7 @@ class CallInfo extends React.Component {
             <div className="col-12">
               <span className="pr-2">
                 <img
-                  src={require("../../../assets/svg/call-received-arrow.svg")}
+                  src={require("../../../../../assets/svg/call-received-arrow.svg")}
                   height="11"
                   width="11"
                   alt="call-received"
@@ -115,7 +120,7 @@ class CallInfo extends React.Component {
             <div className="col-12">
               <span className="pr-2">
                 <img
-                  src={require("../../../assets/svg/call-received-arrow.svg")}
+                  src={require("../../../../../assets/svg/call-received-arrow.svg")}
                   height="11"
                   width="11"
                   alt="call-received"
@@ -134,7 +139,7 @@ class CallInfo extends React.Component {
             <div className="col-12">
               <span className="pr-2">
                 <img
-                  src={require("../../../assets/svg/call-received-arrow.svg")}
+                  src={require("../../../../../assets/svg/call-received-arrow.svg")}
                   height="11"
                   width="11"
                   alt="call-received"
@@ -150,7 +155,7 @@ class CallInfo extends React.Component {
           </div>
         </div>
         <BottomDrawer onOpen={this.openChat} open={this.state.openChat}>
-          <MobileUserChat closeDrawer={this.closeChat} />
+          <UserChatting closeDrawer={this.closeChat} />
         </BottomDrawer>
       </Auxillary>
     );

@@ -1,13 +1,13 @@
 import React from "react";
 import Auxillary from "../hoc/Auxillary";
 import MainModel from "./Modal";
-import MainBottomDrawer from "../containers/LeftSide/DropUps/BottomDrawer";
+import MainBottomDrawer from "../GlobalView/MobileView/Drawers/BottomDrawer";
 import { CSSTransition } from "react-transition-group";
 import "../scss/dropdown/dropdown.scss";
 import Help from "./Help";
-import ViewContact from "../containers/LeftSide/DropUps/ViewContact";
-import MobileMedia from '../containers/LeftSide/DropUps/MobileMedia';
-import MobileModal from './MobileModal';
+import ViewContact from "../GlobalView/MobileView/Drawers/FullDrawers/Screens/UserChatting/ViewContact__or__GroupInfo/ViewContact";
+import MobileMedia from "../GlobalView/MobileView/Drawers/FullDrawers/Screens/UserChatting/Media/Media";
+import MobileModal from "./MobileModal";
 
 class DropDown extends React.Component {
   state = {
@@ -40,11 +40,11 @@ class DropDown extends React.Component {
     });
   };
   openMuteModal = () => {
-    this.setState({ mute: true })
-  }
+    this.setState({ mute: true });
+  };
   closeMuteModal = () => {
-    this.setState({ mute: false })
-  }
+    this.setState({ mute: false });
+  };
 
   openHelpTrue = () => {
     this.setState({ openHelp: true });
@@ -73,20 +73,20 @@ class DropDown extends React.Component {
   };
 
   closeViewContact = () => {
-    this.setState({ viewContact: false })
-  }
+    this.setState({ viewContact: false });
+  };
 
   openViewContact = () => {
-    this.setState({ viewContact: true })
-  }
+    this.setState({ viewContact: true });
+  };
 
   closeMobileMedia = () => {
-    this.setState({ mobileMedia: false })
-  }
+    this.setState({ mobileMedia: false });
+  };
 
   openMobileMedia = () => {
-    this.setState({ mobileMedia: true })
-  }
+    this.setState({ mobileMedia: true });
+  };
 
   selectMessages = () => {
     var li = document.getElementById("message1List").getElementsByTagName("li");
@@ -123,7 +123,6 @@ class DropDown extends React.Component {
       rightSide.classList.add("DOMChangedRightSide", "DOMChangedRightSide_P-1301");
     });
   };
-
 
   render() {
     let leftMenu = (
@@ -206,14 +205,24 @@ class DropDown extends React.Component {
 
     let userChatDropdown = (
       <div className="mobile-right-dropdown">
-        <div className="px-3 py-2" onClick={this.openViewContact}>View Contact</div>
-        <div className="px-3 py-2" onClick={this.openMobileMedia}>Media</div>
-        <div className="px-3 py-2" onClick={this.props.setSearchActiveFn}>Search</div>
-        <div className="px-3 py-2" onClick={this.openMuteModal}>Mute Notifications</div>
+        <div className="px-3 py-2" onClick={this.openViewContact}>
+          View Contact
+        </div>
+        <div className="px-3 py-2" onClick={this.openMobileMedia}>
+          Media
+        </div>
+        <div className="px-3 py-2" onClick={this.props.setSearchActiveFn}>
+          Search
+        </div>
+        <div className="px-3 py-2" onClick={this.openMuteModal}>
+          Mute Notifications
+        </div>
         <div className="px-3 py-2">Wallpaper</div>
-        <div className="px-3 py-2" onClick={this.openMoreDropdown}>More</div>
+        <div className="px-3 py-2" onClick={this.openMoreDropdown}>
+          More
+        </div>
       </div>
-    )
+    );
 
     let moreOptionsDropdown = (
       <div className="mobile-right-dropdown">
@@ -223,7 +232,7 @@ class DropDown extends React.Component {
         <div className="px-3 py-2">Export Chat</div>
         <div className="px-3 py-2">Add Shortcut</div>
       </div>
-    )
+    );
 
     let viewProfileDropdown = (
       <div className="mobile-right-dropdown">
@@ -232,14 +241,14 @@ class DropDown extends React.Component {
         <div className="px-3 py-2">View in address book</div>
         <div className="px-3 py-2">View security code</div>
       </div>
-    )
+    );
 
     let callInfoDropdown = (
       <div className="mobile-right-dropdown">
         <div className="px-2 py-2">Remove from call log</div>
         <div className="px-2 py-2">Block</div>
       </div>
-    )
+    );
 
     let dropDownMenu = null;
     if (this.props.leftDropdown) {
@@ -253,13 +262,13 @@ class DropDown extends React.Component {
     } else if (this.props.newChatDropdown) {
       dropDownMenu = this.props.newChatDropdown && this.state.showMenu ? newChatDropdown : null;
     } else if (this.props.userChatDropdown) {
-      dropDownMenu = this.props.userChatDropdown && this.state.showMenu ? userChatDropdown : null
+      dropDownMenu = this.props.userChatDropdown && this.state.showMenu ? userChatDropdown : null;
     } else if (this.props.moreOptionsDropdown) {
-      dropDownMenu = this.props.moreOptionsDropdown && this.state.showMenu ? moreOptionsDropdown : null
+      dropDownMenu = this.props.moreOptionsDropdown && this.state.showMenu ? moreOptionsDropdown : null;
     } else if (this.props.viewProfileDropdown) {
-      dropDownMenu = this.props.viewProfileDropdown && this.state.showMenu ? viewProfileDropdown : null
+      dropDownMenu = this.props.viewProfileDropdown && this.state.showMenu ? viewProfileDropdown : null;
     } else if (this.props.callInfoDropdown) {
-      dropDownMenu = this.props.callInfoDropdown && this.state.showMenu ? callInfoDropdown : null
+      dropDownMenu = this.props.callInfoDropdown && this.state.showMenu ? callInfoDropdown : null;
     }
 
     return (
@@ -332,8 +341,7 @@ class DropDown extends React.Component {
           </div>
         </MainModel>
         <MainBottomDrawer onOpen={this.openHelpTrue} open={this.state.openHelp}>
-          <Help
-            componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.openHelpFalse} />
+          <Help componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.openHelpFalse} />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.openViewContact} open={this.state.viewContact}>
           <ViewContact closeDrawer={this.closeViewContact} />

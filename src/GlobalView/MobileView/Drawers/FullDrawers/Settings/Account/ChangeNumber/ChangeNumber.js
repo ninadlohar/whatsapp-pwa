@@ -1,5 +1,5 @@
 import React from "react";
-import MainBottomDrawer from "../../../../../../../containers/LeftSide/DropUps/BottomDrawer";
+import MainBottomDrawer from "../../../../BottomDrawer";
 import Auxillary from "../../../../../../../hoc/Auxillary";
 import ChangeNumberWithInputs from "./ChangeNumberWithInputs/ChangeNumberWithInputs";
 

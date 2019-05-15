@@ -1,8 +1,8 @@
 import React from "react";
-import DropDown from "../../../ReusableUI-Components/dropDown";
-import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
+import DropDown from "../../../../../../ReusableUI-Components/dropDown";
+import SearchInputBox from "../../../../../../components/SearchInputBox/SearchInputBox";
 
-class MobileStarredMessages extends React.Component {
+class StarredMessages extends React.Component {
   state = {
     setSearchActive: false
   };
@@ -56,7 +56,12 @@ class MobileStarredMessages extends React.Component {
                     className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                     onClick={this.props.closeStarredMessagesDrawer}
                   >
-                    <img src={require("../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                    <img
+                      src={require("../../../../../../assets/svg/left.svg")}
+                      width="24"
+                      height="24"
+                      alt="left-arrow"
+                    />
                   </div>
                   <div className="d-flex align-items-center mobileView__selectContactSection pl-3">
                     <div className="mobile__newChat__selectedContact">Starred Messages</div>
@@ -67,7 +72,7 @@ class MobileStarredMessages extends React.Component {
                       onClick={() => this.setSearchActiveFn()}
                     >
                       <img
-                        src={require("../../../assets/svg/mobile-search.svg")}
+                        src={require("../../../../../../assets/svg/mobile-search.svg")}
                         width="19"
                         height="19"
                         alt="search-svg"
@@ -94,20 +99,20 @@ class MobileStarredMessages extends React.Component {
                       <div className="starred-messages-sender-image-main">
                         <img
                           alt="sender-img-in-starred-message"
-                          src={require("../../../assets/images/user-image.jpg")}
+                          src={require("../../../../../../assets/images/user-image.jpg")}
                           className="starred-messages-sender-image"
                         />
                       </div>
                       <div className="custom_pr-3">Dad</div>
                       <div>
-                        <img src={require("../../../assets/svg/right.svg")} height="7" width="7" alt="right" />
+                        <img src={require("../../../../../../assets/svg/right.svg")} height="7" width="7" alt="right" />
                       </div>
                       <div className="custom_pl-3">You</div>
                     </div>
                     <div className="col-3 px-0 starred-messages-date-sent text-right">
                       Sunday
                       <img
-                        src={require("../../../assets/svg/right-arrow.svg")}
+                        src={require("../../../../../../assets/svg/right-arrow.svg")}
                         alt="right-arrow-angle-1"
                         style={{ marginLeft: "8px" }}
                         height="12"
@@ -122,7 +127,7 @@ class MobileStarredMessages extends React.Component {
                           <div className="row mx-0 w-100">
                             <div className="col-11 px-0">
                               <img
-                                src={require("../../../assets/svg/forward-arrow.svg")}
+                                src={require("../../../../../../assets/svg/forward-arrow.svg")}
                                 alt="forward-arrow"
                                 width="12"
                                 height="12"
@@ -132,7 +137,7 @@ class MobileStarredMessages extends React.Component {
                             </div>
                             <div className="col-1 px-0 d-flex justify-content-end">
                               <img
-                                src={require("../../../assets/svg/chevron-arrow-down.svg")}
+                                src={require("../../../../../../assets/svg/chevron-arrow-down.svg")}
                                 alt="chevron-down"
                                 width="12"
                                 height="12"
@@ -149,7 +154,7 @@ class MobileStarredMessages extends React.Component {
                         </span>
                         <div className="starred-messages-date-sent text-right">
                           <img
-                            src={require("../../../assets/svg/rate-star-button.svg")}
+                            src={require("../../../../../../assets/svg/rate-star-button.svg")}
                             alt="rate-star"
                             width="10"
                             height="10"
@@ -170,4 +175,4 @@ class MobileStarredMessages extends React.Component {
   }
 }
 
-export default MobileStarredMessages;
+export default StarredMessages;

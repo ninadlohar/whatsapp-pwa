@@ -1,7 +1,7 @@
 import React from "react";
-import DropDown from "../../../ReusableUI-Components/dropDown";
-import SmallDrawer from "../../../ReusableUI-Components/SmallDrawer";
-import AddAbout from "../../../GlobalView/MobileView/Drawers/HalfDrawers/AddAbout";
+import DropDown from "../../../../../../../ReusableUI-Components/dropDown";
+import SmallDrawer from "../../../../../../../ReusableUI-Components/SmallDrawer";
+import AddAbout from "../../../../HalfDrawers/AddAbout";
 
 class About extends React.Component {
   state = {
@@ -29,7 +29,12 @@ class About extends React.Component {
                   className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                   onClick={this.props.closeDrawer}
                 >
-                  <img src={require("../../../assets/svg/left.svg")} width="20" height="20" alt="left-arrow" />
+                  <img
+                    src={require("../../../../../../../assets/svg/left.svg")}
+                    width="20"
+                    height="20"
+                    alt="left-arrow"
+                  />
                 </div>
                 <div className="mobileView__selectContactSection d-flex align-items-center">
                   <div className="mobile__newChat__selectedContact">
@@ -59,7 +64,7 @@ class About extends React.Component {
                   </div>
                   <div className="h-100">
                     <img
-                      src={require("../../../assets/svg/create-new-pencil-button.svg")}
+                      src={require("../../../../../../../assets/svg/create-new-pencil-button.svg")}
                       alt="create-new-pencil-button"
                       height="18"
                       width="18"

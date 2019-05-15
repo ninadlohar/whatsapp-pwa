@@ -1,13 +1,13 @@
 import React from "react";
-import DropDown from "../../../ReusableUI-Components/dropDown";
-import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
-import Auxilliary from "../../../hoc/Auxillary";
-import MainBottomDrawer from "../DropUps/BottomDrawer";
-import { data } from "../../../ReusableUI-Components/data.json";
-import GroupCall from "../../../GlobalView/DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/GroupCall";
-import NewGroupCall from "./NewGroupCall";
+import ContactDataWStatus from "../../../../../../components/TypesOfUserChats/ContactDataWStatus";
+import DropDown from "../../../../../../ReusableUI-Components/dropDown";
+import SearchInputBox from "../../../../../../components/SearchInputBox/SearchInputBox";
+import Auxilliary from "../../../../../../hoc/Auxillary";
+import NewGroup from "../NewGroup/NewGroup";
+import MainBottomDrawer from "../../../BottomDrawer";
+import { data } from "../../../../../../ReusableUI-Components/data.json";
 
-class MobileGroupCall extends React.Component {
+class NewChat extends React.Component {
   state = {
     setSearchActive: false,
     newGroup: false,
@@ -21,11 +21,11 @@ class MobileGroupCall extends React.Component {
   };
 
   setSearchDeactiveFn = () => {
-    let content = document.getElementById("mobileGroupCall__section");
+    let content = document.getElementById("mobileNewChat__section");
     this.setState({ setSearchActive: false }, () => {
       document.getElementById("col-xl-3-5").style.transform = "translate(0px, 0px)";
     });
-    content.style.marginTop = 56 + "px";
+    content.style.marginTop = 58 + "px";
     content.style.overflow = "auto";
   };
 
@@ -39,8 +39,8 @@ class MobileGroupCall extends React.Component {
 
   componentWithSearchBar = () => {
     let height = document.getElementById("page").clientHeight;
-    let input = document.getElementById("search-input-box-new-group");
-    let content = document.getElementById("mobileGroupCall__section");
+    let input = document.getElementById("chat-active");
+    let content = document.getElementById("mobileNewChat__section");
     let availableheight = height - input;
     content.style.marginTop = 0 + "px";
     content.style.height = availableheight + "px";
@@ -48,8 +48,8 @@ class MobileGroupCall extends React.Component {
   };
 
   componentDidMount() {
-    let header = document.getElementById("mobileGroupCall__header");
-    let content = document.getElementById("mobileGroupCall__section");
+    let header = document.getElementById("mobileNewChat__header");
+    let content = document.getElementById("mobileNewChat__section");
     this.props.componentWithoutSearchBar(header, content);
   }
 
@@ -63,13 +63,13 @@ class MobileGroupCall extends React.Component {
       >
         <div className="leftChat__user__image">
           <img
-            src={require("../../../assets/svg/team.svg")}
+            src={require("../../../../../../assets/svg/team.svg")}
             alt="karl-benz"
             className="logged__in__user__image__49px"
           />
         </div>
         <div className="leftChat__user__details">
-          <strong>New Group call</strong>
+          <strong>New Group</strong>
         </div>
       </div>
     );
@@ -81,7 +81,7 @@ class MobileGroupCall extends React.Component {
       >
         <div className="leftChat__user__image">
           <img
-            src={require("../../../assets/svg/user.svg")}
+            src={require("../../../../../../assets/svg/user.svg")}
             alt="karl-benz"
             className="logged__in__user__image__49px"
           />
@@ -100,7 +100,7 @@ class MobileGroupCall extends React.Component {
             setSearchDeactiveFn={this.setSearchDeactiveFn}
           />
         ) : (
-          <header className="col-12 mobile__view__header fixed-top px-3" id="mobileGroupCall__header">
+          <header className="col-12 mobile__view__header fixed-top px-3" id="mobileNewChat__header">
             <div className="row mx-0 w-100">
               <div className="col-12 px-0 py-1 d-flex">
                 <div className="row mx-0 w-100">
@@ -108,19 +108,21 @@ class MobileGroupCall extends React.Component {
                     className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                     onClick={this.props.closeDrawer}
                   >
-                    <img src={require("../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                    <img
+                      src={require("../../../../../../assets/svg/left.svg")}
+                      width="24"
+                      height="24"
+                      alt="left-arrow"
+                    />
                   </div>
                   <div className="mobileView__selectContactSection pl-3">
                     <div className="mobile__newChat__selectedContact">Selected Contact</div>
                     <div className="mobile__newChat__contactLength">385 Contacts</div>
                   </div>
                   <div className="mobile__newChat__options d-flex justify-content-end align-items-center">
-                    <div
-                      className="single-icons d-flex justify-content-center align-items-center"
-                      onClick={() => this.setSearchActiveFn()}
-                    >
+                    <div className="px-3" onClick={() => this.setSearchActiveFn()}>
                       <img
-                        src={require("../../../assets/svg/mobile-search.svg")}
+                        src={require("../../../../../../assets/svg/mobile-search.svg")}
                         width="19"
                         height="19"
                         alt="search-svg"
@@ -139,17 +141,18 @@ class MobileGroupCall extends React.Component {
             </div>
           </header>
         )}
-        <div id="mobileGroupCall__section">
+        <div id="mobileNewChat__section">
           {newGroup}
           {newContact}
           {data.map((v, i) => (
-            <GroupCall value={v} key={i} />
+            <ContactDataWStatus id={i} value={v} key={i} />
           ))}
         </div>
+
         <MainBottomDrawer onOpen={this.setNewGroupTrue} open={this.state.newGroup}>
-          <NewGroupCall
+          <NewGroup
             componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-            closeDrawer={this.setNewGroupFalse}
+            closeGroupDrawer={this.setNewGroupFalse}
           />
         </MainBottomDrawer>
       </Auxilliary>
@@ -157,4 +160,4 @@ class MobileGroupCall extends React.Component {
   }
 }
 
-export default MobileGroupCall;
+export default NewChat;

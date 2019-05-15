@@ -1,8 +1,8 @@
-import React from 'react';
-import MobileModal from '../../../../ReusableUI-Components/MobileModal';
-import Checkbox from '@material-ui/core/Checkbox';
+import React from "react";
+import MobileModal from "../../../../../../../../ReusableUI-Components/MobileModal";
+import Checkbox from "@material-ui/core/Checkbox";
 
-class NotificationDrawer extends React.Component {
+class NotifcationInsideViewContact extends React.Component {
   state = {
     checkedA: false,
     checkedB: false,
@@ -29,11 +29,11 @@ class NotificationDrawer extends React.Component {
       { key: "Short", value: "Short" },
       { key: "Long", value: "Long" }
     ]
-  }
+  };
   componentDidMount() {
-    let header = document.getElementById("mobile__notifications__head")
-    let content = document.getElementById("mobile__notifications__scetion")
-    this.props.componentWithoutSearchBar(header, content)
+    let header = document.getElementById("mobile__notifications__head");
+    let content = document.getElementById("mobile__notifications__scetion");
+    this.props.componentWithoutSearchBar(header, content);
   }
 
   handleChange = name => event => {
@@ -72,7 +72,12 @@ class NotificationDrawer extends React.Component {
                   className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                   onClick={this.props.closeDrawer}
                 >
-                  <img src={require("../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                  <img
+                    src={require("../../../../../../../../assets/svg/left.svg")}
+                    width="24"
+                    height="24"
+                    alt="left-arrow"
+                  />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
                   <div className="mobile__newChat__selectedContact">Notifications</div>
@@ -82,18 +87,17 @@ class NotificationDrawer extends React.Component {
           </div>
         </header>
 
-        <div className="media-section mobile__settings__basicInfo__section col-12 px-0" id="mobile__notifications__scetion">
+        <div
+          className="media-section mobile__settings__basicInfo__section col-12 px-0"
+          id="mobile__notifications__scetion"
+        >
           <div className="row mx-0">
             <div className="col-12 d-flex align-items-center">
               <div className="w-100 privacy__header">
                 <div className="mobile__settings__header__name">Use Custom Notifications</div>
               </div>
               <div className="switch">
-                <Checkbox
-                  checked={this.state.checkedA}
-                  onChange={this.handleChange('checkedA')}
-                  value="checkedA"
-                />
+                <Checkbox checked={this.state.checkedA} onChange={this.handleChange("checkedA")} value="checkedA" />
               </div>
             </div>
             <div className="notifcations__header pb-1 pt-3 pl-4">Message Notifications</div>
@@ -139,14 +143,10 @@ class NotificationDrawer extends React.Component {
                   <div className="mobile__settings__header__name">Use high priority notifications</div>
                   <div className="mobile__settings__header__status">
                     Show previews of notifications at the top of the screen
-                    </div>
+                  </div>
                 </div>
                 <div>
-                  <Checkbox
-                    checked={this.state.checkedB}
-                    onChange={this.handleChange('checkedB')}
-                    value="checkedA"
-                  />
+                  <Checkbox checked={this.state.checkedB} onChange={this.handleChange("checkedB")} value="checkedA" />
                 </div>
               </div>
             </div>
@@ -170,8 +170,6 @@ class NotificationDrawer extends React.Component {
                 </div>
               </div>
             </div>
-
-
           </div>
         </div>
         <MobileModal
@@ -199,8 +197,8 @@ class NotificationDrawer extends React.Component {
           value="White"
         />
       </div>
-    )
+    );
   }
 }
 
-export default NotificationDrawer
+export default NotifcationInsideViewContact;

@@ -1,10 +1,10 @@
 import React from "react";
-import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
-import DropDown from "../../../ReusableUI-Components/dropDown";
-import ViewContact from "./ViewContact";
-import BottomDrawer from "./BottomDrawer";
+import SearchInputBox from "../../../../../../components/SearchInputBox/SearchInputBox";
+import DropDown from "../../../../../../ReusableUI-Components/dropDown";
+import ViewContact from "./ViewContact__or__GroupInfo/ViewContact";
+import BottomDrawer from "../../../BottomDrawer";
 
-class MobileUserChat extends React.Component {
+class UserChatting extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -100,12 +100,17 @@ class MobileUserChat extends React.Component {
                     className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                     onClick={this.props.closeDrawer}
                   >
-                    <img src={require("../../../assets/svg/left.svg")} width="20" height="20" alt="left-arrow" />
+                    <img
+                      src={require("../../../../../../assets/svg/left.svg")}
+                      width="20"
+                      height="20"
+                      alt="left-arrow"
+                    />
                   </div>
                   <div className="mobileView__selectContactSection pl-3" onClick={this.openViewContact}>
                     <div className="mobile__newChat__selectedContact">
                       <img
-                        src={require("../../../assets/images/user-image.jpg")}
+                        src={require("../../../../../../assets/images/user-image.jpg")}
                         className="mobile__sender__user__image"
                         alt="sender-pic"
                       />
@@ -115,14 +120,19 @@ class MobileUserChat extends React.Component {
                   <div className=" mobile__sender__user__options">
                     <span className="single-icons d-flex align-items-center">
                       <img
-                        src={require("../../../assets/svg/video-camera1.svg")}
+                        src={require("../../../../../../assets/svg/video-camera1.svg")}
                         height="24"
                         width="24"
                         alt="video camera"
                       />
                     </span>
                     <span className="single-icons user__chat__phone__icon">
-                      <img src={require("../../../assets/svg/call.svg")} height="18" width="18" alt="video camera" />
+                      <img
+                        src={require("../../../../../../assets/svg/call.svg")}
+                        height="18"
+                        width="18"
+                        alt="video camera"
+                      />
                     </span>
                     <DropDown
                       classes="fas fa-ellipsis-v"
@@ -148,7 +158,7 @@ class MobileUserChat extends React.Component {
                         <span> 12: 36 </span>
                         <span>
                           <img
-                            src={require("../../../assets/svg/double-click.svg")}
+                            src={require("../../../../../../assets/svg/double-click.svg")}
                             alt="double-tick"
                             className="double-tick"
                           />
@@ -178,7 +188,7 @@ class MobileUserChat extends React.Component {
                   id="footer3"
                 >
                   <img
-                    src={require("../../../assets/svg/microphone-black.svg")}
+                    src={require("../../../../../../assets/svg/microphone-black.svg")}
                     alt="microphone"
                     width="18"
                     height="18"
@@ -196,4 +206,4 @@ class MobileUserChat extends React.Component {
   }
 }
 
-export default MobileUserChat;
+export default UserChatting;

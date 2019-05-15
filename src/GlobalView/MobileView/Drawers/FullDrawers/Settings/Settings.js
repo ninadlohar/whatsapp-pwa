@@ -1,14 +1,14 @@
 import React from "react";
-import Auxilliary from "../../../../hoc/Auxillary";
-import MainBottomDrawer from "../../../../containers/LeftSide/DropUps/BottomDrawer";
-import Account from "./Settings/Account/Account";
-import Help from "./Settings/Help/Help";
-import Chats from "./Settings/Chats/Chats";
-import Notifications from "./Settings/Notifications/Notifications";
-import DataAndStorage from "./Settings/DataAndStorageUsage/DataAndStorage";
-import MobileProfile from "../../../../containers/LeftSide/DropUps/MobileProfile";
-import SmallDrawer from "../../../../ReusableUI-Components/SmallDrawer";
-import InviteFriends from "../HalfDrawers/InviteFriends";
+import Auxilliary from "../../../../../hoc/Auxillary";
+import MainBottomDrawer from "../../BottomDrawer";
+import Account from "./Account/Account";
+import Help from "./Help/Help";
+import Chats from "./Chats/Chats";
+import Notifications from "./Notifications/Notifications";
+import DataAndStorage from "./DataAndStorageUsage/DataAndStorage";
+import Profile from "./Profile/Profile";
+import SmallDrawer from "../../../../../ReusableUI-Components/SmallDrawer";
+import InviteFriends from "../../HalfDrawers/InviteFriends";
 
 class Settings extends React.Component {
   state = {
@@ -109,7 +109,7 @@ class Settings extends React.Component {
                   className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                   onClick={this.props.closeSettingsDrawer}
                 >
-                  <img src={require("../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                  <img src={require("../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
                   <div className="mobile__newChat__selectedContact">Settings</div>
@@ -123,7 +123,7 @@ class Settings extends React.Component {
             <div className="col-12 py-3 d-flex mobile__settings__basicInfo__section" onClick={this.openMobileProfile}>
               <div className="d-flex align-items-center pr-4">
                 <img
-                  src={require("../../../../assets/images/user-image.jpg")}
+                  src={require("../../../../../assets/images/user-image.jpg")}
                   alt="sender-images"
                   className="mobile__basicUserInfo__image"
                 />
@@ -141,7 +141,7 @@ class Settings extends React.Component {
             {/*** */}
             <div className="col-12 py-3 d-flex" onClick={this.setAccountTrue}>
               <div className="d-flex align-items-center pl-3 pr-4">
-                <img src={require("../../../../assets/svg/key.svg")} alt="sender-images" height="18" width="18" />
+                <img src={require("../../../../../assets/svg/key.svg")} alt="sender-images" height="18" width="18" />
               </div>
               <div className="d-flex align-items-center w-100">
                 <div>
@@ -153,7 +153,7 @@ class Settings extends React.Component {
             <div className="col-12 py-3 d-flex" onClick={this.setChatTrue}>
               <div className="d-flex align-items-center pl-3 pr-4">
                 <img
-                  src={require("../../../../assets/svg/message-ballon2.svg")}
+                  src={require("../../../../../assets/svg/message-ballon2.svg")}
                   alt="sender-images"
                   height="18"
                   width="18"
@@ -169,7 +169,7 @@ class Settings extends React.Component {
             <div className="col-12 py-3 d-flex" onClick={this.setNotificationsTrue}>
               <div className="d-flex align-items-center pl-3 pr-4">
                 <img
-                  src={require("../../../../assets/svg/notification2.svg")}
+                  src={require("../../../../../assets/svg/notification2.svg")}
                   alt="sender-images"
                   height="18"
                   width="18"
@@ -185,7 +185,7 @@ class Settings extends React.Component {
             <div className="col-12 py-3 d-flex" onClick={this.setDataAndStorageTrue}>
               <div className="d-flex align-items-center pl-3 pr-4">
                 <img
-                  src={require("../../../../assets/svg/charging-circle2.svg")}
+                  src={require("../../../../../assets/svg/charging-circle2.svg")}
                   alt="sender-images"
                   height="18"
                   width="18"
@@ -200,7 +200,12 @@ class Settings extends React.Component {
             </div>
             <div className="col-12 py-3 d-flex" onClick={this.setHelpTrue}>
               <div className="d-flex align-items-center pl-3 pr-4">
-                <img src={require("../../../../assets/svg/information.svg")} alt="information" height="18" width="18" />
+                <img
+                  src={require("../../../../../assets/svg/information.svg")}
+                  alt="information"
+                  height="18"
+                  width="18"
+                />
               </div>
               <div className="d-flex align-items-center w-100">
                 <div>
@@ -211,7 +216,7 @@ class Settings extends React.Component {
             </div>
             <div className="col-12 py-3 d-flex" onClick={this.openSocialMediaLinks}>
               <div className="d-flex align-items-center pl-3 pr-4">
-                <img src={require("../../../../assets/svg/user2.svg")} alt="two-users" height="18" width="18" />
+                <img src={require("../../../../../assets/svg/user2.svg")} alt="two-users" height="18" width="18" />
               </div>
               <div className="d-flex align-items-center w-100">
                 <div>
@@ -222,7 +227,7 @@ class Settings extends React.Component {
           </div>
         </div>
         <MainBottomDrawer onOpen={this.openMobileProfile} open={this.state.mobileProfile}>
-          <MobileProfile
+          <Profile
             componentWithoutSearchBar={this.props.componentWithoutSearchBar}
             closeDrawer={this.closeMobileProfile}
           />

@@ -1,10 +1,10 @@
 import React from "react";
-import SmallDrawer from "../../../ReusableUI-Components/SmallDrawer";
-import NameEdit from "../../../GlobalView/MobileView/Drawers/HalfDrawers/NameEdit";
-import BottomDrawer from "./BottomDrawer";
-import About from "./About";
+import SmallDrawer from "../../../../../../ReusableUI-Components/SmallDrawer";
+import NameEdit from "../../../HalfDrawers/NameEdit";
+import BottomDrawer from "../../../BottomDrawer";
+import About from "./About/About";
 
-class MobileProfile extends React.Component {
+class Profile extends React.Component {
   state = {
     nameEdit: false,
     about: false
@@ -37,7 +37,7 @@ class MobileProfile extends React.Component {
                   className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                   onClick={this.props.closeDrawer}
                 >
-                  <img src={require("../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                  <img src={require("../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3 d-flex align-items-center">
                   <div className="mobile__newChat__selectedContact">Profile</div>
@@ -53,14 +53,19 @@ class MobileProfile extends React.Component {
                 <div className="image-upload">
                   <label for="file-input" name="file-input">
                     <img
-                      src={require("../../../assets/images/user-image.jpg")}
+                      src={require("../../../../../../assets/images/user-image.jpg")}
                       alt="user-pic"
                       className="mobile__profile__image"
                     />
                   </label>
                   <div className="d-flex justify-content-end">
                     <div className="edit__photo d-flex justify-content-center align-items-center">
-                      <img src={require("../../../assets/svg/camera.svg")} alt="camera" height="18" width="18" />
+                      <img
+                        src={require("../../../../../../assets/svg/camera.svg")}
+                        alt="camera"
+                        height="18"
+                        width="18"
+                      />
                     </div>
                   </div>
                   <input id="file-input" type="file" />
@@ -73,7 +78,7 @@ class MobileProfile extends React.Component {
               <div className="col-12 py-2 d-flex">
                 <div className="pl-3 pr-4 pt-2">
                   <img
-                    src={require("../../../assets/svg/user-male-black-shape.svg")}
+                    src={require("../../../../../../assets/svg/user-male-black-shape.svg")}
                     alt="sender-images"
                     height="18"
                     width="18"
@@ -90,7 +95,7 @@ class MobileProfile extends React.Component {
                 </div>
                 <div className="h-100 pt-2">
                   <img
-                    src={require("../../../assets/svg/create-new-pencil-button.svg")}
+                    src={require("../../../../../../assets/svg/create-new-pencil-button.svg")}
                     alt="create-new-pencil-button"
                     height="18"
                     width="18"
@@ -105,7 +110,7 @@ class MobileProfile extends React.Component {
               <div className="col-12 py-2 d-flex">
                 <div className="pl-3 pr-4 pt-2">
                   <img
-                    src={require("../../../assets/svg/information-circular-button-symbol.svg")}
+                    src={require("../../../../../../assets/svg/information-circular-button-symbol.svg")}
                     alt="sender-images"
                     height="18"
                     width="18"
@@ -119,7 +124,7 @@ class MobileProfile extends React.Component {
                 </div>
                 <div className="h-100 pt-2">
                   <img
-                    src={require("../../../assets/svg/create-new-pencil-button.svg")}
+                    src={require("../../../../../../assets/svg/create-new-pencil-button.svg")}
                     alt="create-new-pencil-button"
                     height="18"
                     width="18"
@@ -133,7 +138,12 @@ class MobileProfile extends React.Component {
             <div className="row mx-0">
               <div className="col-12 py-2 d-flex">
                 <div className="pl-3 pr-4 pt-2">
-                  <img src={require("../../../assets/svg/call.svg")} alt="sender-images" height="18" width="18" />
+                  <img
+                    src={require("../../../../../../assets/svg/call.svg")}
+                    alt="sender-images"
+                    height="18"
+                    width="18"
+                  />
                 </div>
                 <div className="d-flex align-items-center custom__width90 pb-1 deleteAccount__head__section">
                   <div>
@@ -156,4 +166,4 @@ class MobileProfile extends React.Component {
   }
 }
 
-export default MobileProfile;
+export default Profile;

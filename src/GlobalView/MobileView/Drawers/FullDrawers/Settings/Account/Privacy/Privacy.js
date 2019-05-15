@@ -2,7 +2,7 @@ import React from "react";
 import Auxilliary from "../../../../../../../hoc/Auxillary";
 import MobileModal from "../../../../../../../ReusableUI-Components/MobileModal";
 import Switch from "@material-ui/core/Switch";
-import BottomDrawer from "../../../../../../../containers/LeftSide/DropUps/BottomDrawer";
+import BottomDrawer from "../../../../BottomDrawer";
 import Groups from "./Groups/Groups";
 import StatusPrivacy from "./StatusPrivacy/StatusPrivacy";
 import LiveLocation from "./LiveLocation/LiveLocation";
