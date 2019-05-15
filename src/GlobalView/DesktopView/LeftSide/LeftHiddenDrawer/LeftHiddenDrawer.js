@@ -1,12 +1,12 @@
 import React from "react";
-import NewGroup from "./LeftSubComp/NewGroup";
-import Profile from "./LeftSubComp/Profile";
-import ArchievedChat from "./LeftSubComp/ArcheivedChat";
-import StarredMessages from "./LeftSubComp/StarredMessages";
-import Settings from "./LeftSubComp/Settings";
-import NewChat from "./LeftSubComp/NewChat";
+import NewGroup from "./LeftHiddenSubDrawers/NewGroup";
+import Profile from "./LeftHiddenSubDrawers/Profile";
+import ArchievedChat from "./LeftHiddenSubDrawers/ArcheivedChat";
+import StarredMessages from "./LeftHiddenSubDrawers/StarredMessages";
+import Settings from "./LeftHiddenSubDrawers/Settings";
+import NewChat from "./LeftHiddenSubDrawers/NewChat";
 
-class HiddenComponentLeftSide extends React.Component {
+class LeftHiddenDrawer extends React.Component {
   state = {
     baseClasses: ["row", "mx-0", "leftSlider__chatActiveBox"],
     hiddenLeftClass: ["DOMChangedLeftHiddenSide"]
@@ -66,4 +66,4 @@ class HiddenComponentLeftSide extends React.Component {
   }
 }
 
-export default HiddenComponentLeftSide;
+export default LeftHiddenDrawer;

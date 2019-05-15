@@ -23,7 +23,12 @@ const ArchievedChat = props => {
                 <div className="d-flex justify-content-center">
                   <div className="archieved-chats-cirle">
                     <div className="h-100 d-flex justify-content-center align-items-center">
-                      <img src={require("../../../assets/svg/archieved-chat.svg")} alt="archieved-chat" width="70" height="70" />
+                      <img
+                        src={require("../../../../../assets/svg/archieved-chat.svg")}
+                        alt="archieved-chat"
+                        width="70"
+                        height="70"
+                      />
                     </div>
                   </div>
                 </div>

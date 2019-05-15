@@ -1,7 +1,7 @@
 import React from "react";
-import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
+import SearchInputBox from "../../../../../components/SearchInputBox/SearchInputBox";
 
-class SearchContainer extends React.Component {
+class Search extends React.Component {
   state = {
     squeezeLayoutBoolean: this.props.squeezeLayoutBoolean
   };
@@ -15,7 +15,7 @@ class SearchContainer extends React.Component {
       <div className="rightSlider__child__open col-12 px-0" id="col-30-child">
         <header className="rightSlider__header d-flex">
           <div style={{ width: "54px" }} onClick={this.slideOutToggler}>
-            <img src={require("../../../assets/svg/cancel-real.svg")} alt="cancel" height="14" />
+            <img src={require("../../../../../assets/svg/cancel-real.svg")} alt="cancel" height="14" />
           </div>
           <div className="rightSlider__header__text">
             <span>Search Messages</span>
@@ -34,4 +34,4 @@ class SearchContainer extends React.Component {
   }
 }
 
-export default SearchContainer;
+export default Search;

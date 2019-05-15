@@ -1,8 +1,8 @@
 import React from "react";
-import SearchContainer from "./RightSubComp/SearchContainer";
-import ContactContainer from "./RightSubComp/ContactContainer";
+import Search from "./RightHiddenSubDrawers/Search";
+import Contact from "./RightHiddenSubDrawers/Contact";
 
-class HiddenComponentRightSide extends React.Component {
+class RightHiddenDrawer extends React.Component {
   constructor(props) {
     super(props);
     this.slideInToggler = this.slideInToggler.bind(this, "545");
@@ -113,7 +113,7 @@ class HiddenComponentRightSide extends React.Component {
 
   render() {
     let onSearchActiveContainer = (
-      <SearchContainer
+      <Search
         squeezeLayoutBoolean={this.props.squeezeLayoutBoolean}
         hiddenClass={this.props.hiddenClass}
         slideOutToggler={this.slideOutToggler}
@@ -122,7 +122,7 @@ class HiddenComponentRightSide extends React.Component {
     );
 
     let contactInfoContainer = (
-      <ContactContainer
+      <Contact
         squeezeLayoutBoolean={this.props.squeezeLayoutBoolean}
         hiddenClass={this.props.hiddenClass}
         slideOutToggler={this.slideOutToggler}
@@ -153,4 +153,4 @@ class HiddenComponentRightSide extends React.Component {
   }
 }
 
-export default HiddenComponentRightSide;
+export default RightHiddenDrawer;

@@ -1,7 +1,7 @@
 import React from "react";
-import FooterAndMessageLogs from "../../components/FooterAndMessageArea/Footer/FooterAndMessageLogs";
-import DropDown from "../../ReusableUI-Components/dropDown";
-import Auxillary from "../../hoc/Auxillary";
+import FooterAndMessageLogs from "../../../components/FooterAndMessageArea/Footer/FooterAndMessageLogs";
+import DropDown from "../../../ReusableUI-Components/dropDown";
+import Auxillary from "../../../hoc/Auxillary";
 
 class RightSide extends React.Component {
   state = {

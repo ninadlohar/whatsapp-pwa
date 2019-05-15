@@ -24,7 +24,7 @@ class Status extends React.Component {
       >
         <div className="leftChat__user__image">
           <img
-            src={require("../../../assets/images/Iron-Man.jpg")}
+            src={require("../../../../../assets/images/Iron-Man.jpg")}
             alt="jolie"
             className="sender__image__left__window"
           />

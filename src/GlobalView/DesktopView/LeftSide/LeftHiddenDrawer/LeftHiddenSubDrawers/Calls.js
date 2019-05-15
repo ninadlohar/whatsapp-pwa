@@ -24,7 +24,7 @@ class DefaultLoadedChat extends React.Component {
       >
         <div className="leftChat__user__image">
           <img
-            src={require("../../../assets/images/BB_S5B_004_sm.jpg")}
+            src={require("../../../../../assets/images/BB_S5B_004_sm.jpg")}
             alt="tim-holland"
             className="sender__image__left__window"
           />
@@ -40,7 +40,7 @@ class DefaultLoadedChat extends React.Component {
               <div className="leftChat__message noOverFlow">
                 <span className="pr-2">
                   <img
-                    src={require("../../../assets/svg/call-received-arrow.svg")}
+                    src={require("../../../../../assets/svg/call-received-arrow.svg")}
                     height="11"
                     width="11"
                     alt="call-received"
@@ -52,7 +52,7 @@ class DefaultLoadedChat extends React.Component {
           </div>
         </div>
         <div className="d-flex align-items-center">
-          <img src={require("../../../assets/svg/video-camera.svg")} alt="video-camera" height="20" width="20" />
+          <img src={require("../../../../../assets/svg/video-camera.svg")} alt="video-camera" height="20" width="20" />
         </div>
       </div>
     );

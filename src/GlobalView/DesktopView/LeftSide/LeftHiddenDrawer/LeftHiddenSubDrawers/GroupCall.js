@@ -26,7 +26,7 @@ class GroupCall extends React.Component {
         <div className="chat-1 w-100 d-flex rightSlider__userInfo__box">
           <div className="leftChat__user__image">
             <img
-              src={require("../../../assets/images/BB_S5B_004_sm.jpg")}
+              src={require("../../../../../assets/images/BB_S5B_004_sm.jpg")}
               alt="tim-holland"
               className="sender__image__left__window"
             />
@@ -40,10 +40,15 @@ class GroupCall extends React.Component {
           </div>
           <div className="d-flex align-items-center">
             <span className="d-flex align-items-center single-icons mr-2">
-              <img src={require("../../../assets/svg/call1.svg")} alt="call" height="20" width="20" />
+              <img src={require("../../../../../assets/svg/call1.svg")} alt="call" height="20" width="20" />
             </span>
             <span className="d-flex align-items-center single-icons">
-              <img src={require("../../../assets/svg/video-camera.svg")} alt="video-camera" height="22" width="22" />
+              <img
+                src={require("../../../../../assets/svg/video-camera.svg")}
+                alt="video-camera"
+                height="22"
+                width="22"
+              />
             </span>
           </div>
         </div>

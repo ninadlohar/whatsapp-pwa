@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import Main from "./containers/Main";
+
+import GlobalView from "./GlobalView/GlobalView";
 
 class App extends Component {
   render() {
-    return <Main />;
+    return <GlobalView />;
   }
 }
 

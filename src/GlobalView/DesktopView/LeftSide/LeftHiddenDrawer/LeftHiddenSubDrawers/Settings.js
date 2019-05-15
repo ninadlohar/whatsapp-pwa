@@ -24,7 +24,7 @@ class Settings extends React.Component {
                   <div className=" settings-section-image-section">
                     <div>
                       <img
-                        src={require("../../../assets/images/user-image.jpg")}
+                        src={require("../../../../../assets/images/user-image.jpg")}
                         alt="logged-in-user-img-in-settings-section"
                         className="settings-section-image_img"
                       />
@@ -48,7 +48,7 @@ class Settings extends React.Component {
                     <div className="d-flex settings_each_logo align-items-center">
                       <div className="settings_logos d-flex justify-content-center">
                         <img
-                          src={require("../../../assets/svg/notification.svg")}
+                          src={require("../../../../../assets/svg/notification.svg")}
                           alt="notification"
                           width="18"
                           height="18"
@@ -60,7 +60,12 @@ class Settings extends React.Component {
                   <div className="settings_options">
                     <div className="d-flex settings_each_logo align-items-center">
                       <div className="settings_logos d-flex justify-content-center">
-                        <img src={require("../../../assets/svg/gallery.svg")} alt="gallery" width="18" height="18" />
+                        <img
+                          src={require("../../../../../assets/svg/gallery.svg")}
+                          alt="gallery"
+                          width="18"
+                          height="18"
+                        />
                       </div>
                       <div>Chat Wallpaper</div>
                     </div>
@@ -68,7 +73,12 @@ class Settings extends React.Component {
                   <div className="settings_options">
                     <div className="d-flex settings_each_logo align-items-center">
                       <div className="settings_logos d-flex justify-content-center">
-                        <img src={require("../../../assets/svg/blocked.svg")} alt="blocked" width="18" height="18" />
+                        <img
+                          src={require("../../../../../assets/svg/blocked.svg")}
+                          alt="blocked"
+                          width="18"
+                          height="18"
+                        />
                       </div>
                       <div>Blocked</div>
                     </div>
@@ -76,7 +86,12 @@ class Settings extends React.Component {
                   <div className="settings_options">
                     <div className="d-flex settings_each_logo align-items-center">
                       <div className="settings_logos d-flex justify-content-center">
-                        <img src={require("../../../assets/svg/help.svg")} alt="notification" width="18" height="18" />
+                        <img
+                          src={require("../../../../../assets/svg/help.svg")}
+                          alt="notification"
+                          width="18"
+                          height="18"
+                        />
                       </div>
                       <div>Help</div>
                     </div>

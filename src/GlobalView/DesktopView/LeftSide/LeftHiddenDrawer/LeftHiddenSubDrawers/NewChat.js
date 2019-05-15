@@ -1,6 +1,6 @@
 import React from "react";
-import NewUserChat from "../../../components/TypesOfUserChats/NewUserChat";
-import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
+import NewUserChat from "../../../../../components/TypesOfUserChats/NewUserChat";
+import SearchInputBox from "../../../../../components/SearchInputBox/SearchInputBox";
 
 class NewChat extends React.Component {
   state = {
@@ -35,7 +35,7 @@ class NewChat extends React.Component {
       <div className="chat-1 w-100 py-2 d-flex rightSlider__userInfo__box ">
         <div className="rightSlider__userInfo__image__padding py-1">
           <img
-            src={require("../../../assets/images/new-group.png")}
+            src={require("../../../../../assets/images/new-group.png")}
             alt="new-group"
             className="sender__image__left__window"
           />
@@ -45,17 +45,11 @@ class NewChat extends React.Component {
     );
     let newChat = (
       <div className={classes} id="leftSlider__chatActiveBox">
-        <header
-          className="col-12 display-content-area-header px-0"
-          id="newChat__header"
-        >
+        <header className="col-12 display-content-area-header px-0" id="newChat__header">
           <div className="leftSlider__header__green_box">
             <div className="row">
               <div className="col-12 d-flex custom__59height align-items-center">
-                <span
-                  className="leftSlider__back__arrow"
-                  onClick={this.props.toggleHandlerOut}
-                >
+                <span className="leftSlider__back__arrow" onClick={this.props.toggleHandlerOut}>
                   <i className="fas fa-arrow-left" />
                 </span>
                 <span className="leftSlider__greenBox__header">New Chat</span>
@@ -64,17 +58,11 @@ class NewChat extends React.Component {
           </div>
         </header>
         <div id="input-box__newChat">
-          <SearchInputBox
-            searchBoxType="withSearchBox"
-            placeholder="Search Contacts"
-          />
+          <SearchInputBox searchBoxType="withSearchBox" placeholder="Search Contacts" />
         </div>
         <section className="col-12 px-0 leftSide__chat__section">
           <div className="row mx-0">
-            <div
-              className="col-12 px-0 leftSide__log__of__chats "
-              id="content__newChat"
-            >
+            <div className="col-12 px-0 leftSide__log__of__chats " id="content__newChat">
               <div className="row mx-0">
                 {newGroup}
                 {frequentlyContacted}

@@ -1,8 +1,8 @@
 import React from "react";
-import SearchInputBox from "../../components/SearchInputBox/SearchInputBox";
-import DropDown from "../../ReusableUI-Components/dropDown";
-import DefaultLoadedChat from "../../components/TypesOfUserChats/DefaultLoadedChat";
-import MobileLeftSide from "./MobileLeftSide/MobileLeftSide";
+import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
+import DropDown from "../../../ReusableUI-Components/dropDown";
+import DefaultLoadedChat from "../../../components/TypesOfUserChats/DefaultLoadedChat";
+import MobileView from "../../MobileView/MobileView";
 
 class LeftSide extends React.Component {
   constructor(props) {
@@ -79,7 +79,7 @@ class LeftSide extends React.Component {
 
   render() {
     let mobileLeftSide = (
-      <MobileLeftSide
+      <MobileView
         squeezeLayoutBoolean={this.props.squeezeLayoutBoolean}
         setDrawer={this.setDrawer}
         onRef2={ref2 => (this.setDrawerFn = ref2)}
@@ -102,11 +102,16 @@ class LeftSide extends React.Component {
             <div className="col-9">
               <div className="row mx-0 justify-content-end align-items-center h-100">
                 <div className="px-3">
-                  <img src={require("../../assets/svg/charging-circle.svg")} alt="status-v3" height="24" width="18" />
+                  <img
+                    src={require("../../../assets/svg/charging-circle.svg")}
+                    alt="status-v3"
+                    height="24"
+                    width="18"
+                  />
                 </div>
                 <div className="px-3" onClick={() => this.props.setLeftSliderScreen("defaultView")}>
                   <img
-                    src={require("../../assets/svg/message-ballon.svg")}
+                    src={require("../../../assets/svg/message-ballon.svg")}
                     alt="message-ballon"
                     height="20"
                     width="20"

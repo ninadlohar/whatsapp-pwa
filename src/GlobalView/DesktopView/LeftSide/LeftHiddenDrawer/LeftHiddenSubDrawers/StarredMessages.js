@@ -1,5 +1,5 @@
 import React from "react";
-import DropDown from "../../../ReusableUI-Components/dropDown";
+import DropDown from "../../../../../ReusableUI-Components/dropDown";
 
 const StarredMessages = props => {
   return (
@@ -31,20 +31,20 @@ const StarredMessages = props => {
                     <div className="starred-messages-sender-image-main">
                       <img
                         alt="sender-img-in-starred-message"
-                        src={require("../../../assets/images/user-image.jpg")}
+                        src={require("../../../../../assets/images/user-image.jpg")}
                         className="starred-messages-sender-image"
                       />
                     </div>
                     <div className="custom_pr-3">Dad</div>
                     <div>
-                      <img src={require("../../../assets/svg/right.svg")} height="7" width="7" alt="right" />
+                      <img src={require("../../../../../assets/svg/right.svg")} height="7" width="7" alt="right" />
                     </div>
                     <div className="custom_pl-3">You</div>
                   </div>
                   <div className="col-3 px-0 starred-messages-date-sent text-right">
                     Sunday
                     <img
-                      src={require("../../../assets/svg/right-arrow.svg")}
+                      src={require("../../../../../assets/svg/right-arrow.svg")}
                       alt="right-arrow-angle-1"
                       style={{ marginLeft: "8px" }}
                       height="12"
@@ -59,7 +59,7 @@ const StarredMessages = props => {
                         <div className="row mx-0 w-100">
                           <div className="col-11 px-0">
                             <img
-                              src={require("../../../assets/svg/forward-arrow.svg")}
+                              src={require("../../../../../assets/svg/forward-arrow.svg")}
                               alt="forward-arrow"
                               width="12"
                               height="12"
@@ -69,7 +69,7 @@ const StarredMessages = props => {
                           </div>
                           <div className="col-1 px-0 d-flex justify-content-end">
                             <img
-                              src={require("../../../assets/svg/chevron-arrow-down.svg")}
+                              src={require("../../../../../assets/svg/chevron-arrow-down.svg")}
                               alt="chevron-down"
                               width="12"
                               height="12"
@@ -79,13 +79,14 @@ const StarredMessages = props => {
                         </div>
                       </div>
                       <span>
-                        सुंदर. "आई ही अशी बँक आहे जिच्या मध्ये दु:खे जमा करू शकता " " पिता असे क्रेडीट कार्ड आहे जे बॅलन्स नसतांना सुद्धा
-                        खूशी देत असते " आई वडीलांचे प्रेम फूकट मिळत असते, बाकी सगळी नाती जपण्यासाठी कांही ना काहितरी किंमत अदा कराविच लागते.
-                        तूमचे आई वडिल जर तूमच्यासाठी एटीएम कार्ड बनू शकतात तर, तूम्ही त्यांचे आधार कार्ड का बनू शकत नाही ?
+                        सुंदर. "आई ही अशी बँक आहे जिच्या मध्ये दु:खे जमा करू शकता " " पिता असे क्रेडीट कार्ड आहे जे
+                        बॅलन्स नसतांना सुद्धा खूशी देत असते " आई वडीलांचे प्रेम फूकट मिळत असते, बाकी सगळी नाती
+                        जपण्यासाठी कांही ना काहितरी किंमत अदा कराविच लागते. तूमचे आई वडिल जर तूमच्यासाठी एटीएम कार्ड बनू
+                        शकतात तर, तूम्ही त्यांचे आधार कार्ड का बनू शकत नाही ?
                       </span>
                       <div className="starred-messages-date-sent text-right">
                         <img
-                          src={require("../../../assets/svg/rate-star-button.svg")}
+                          src={require("../../../../../assets/svg/rate-star-button.svg")}
                           alt="rate-star"
                           width="10"
                           height="10"

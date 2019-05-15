@@ -1,12 +1,11 @@
 import React from "react";
 import "../App.scss";
-import RightSide from "./RightSide/RightSide";
-import LeftSide from "./LeftSide/LeftSide";
-import HiddenComponentRightSide from "./HiddenComponent/HiddenComponentRightSide";
-import HiddenComponentLeftSide from "./HiddenComponent/HiddenComponentLeftSide";
-// import Auxillary from "../hoc/Auxillary";
+import RightSide from "./DesktopView/RightSide/RightSide";
+import LeftSide from "./DesktopView/LeftSide/LeftSide";
+import RightHiddenDrawer from "./DesktopView/RightSide/RightHiddenDrawer/RightHiddenDrawer";
+import LeftHiddenDrawer from "./DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenDrawer";
 
-class Main extends React.Component {
+class GlobalView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -95,7 +94,7 @@ class Main extends React.Component {
           <div className="row mx-0 bgColor">
             <div className="display-content-area d-flex" id="page">
               <div className="display-content-area-child">
-                <HiddenComponentLeftSide
+                <LeftHiddenDrawer
                   onRef={ref => (this.LeftDrawer = ref)}
                   squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
                   currentScreen={this.state.currentScreen}
@@ -123,7 +122,7 @@ class Main extends React.Component {
                   setRightSliderScreen={this.setRightSliderScreen}
                 />
 
-                <HiddenComponentRightSide
+                <RightHiddenDrawer
                   onRef1={ref1 => (this.RightDrawer = ref1)}
                   squeezeLayoutBoolean={this.state.squeezeLayoutBoolean}
                   hiddenClass={this.state.hiddenClass}
@@ -144,4 +143,4 @@ class Main extends React.Component {
   }
 }
 
-export default Main;
+export default GlobalView;

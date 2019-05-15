@@ -4,7 +4,7 @@ import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
 import Auxilliary from "../../../hoc/Auxillary";
 import MainBottomDrawer from "../DropUps/BottomDrawer";
 import { data } from "../../../ReusableUI-Components/data.json";
-import GroupCall from "../../HiddenComponent/LeftSubComp/GroupCall";
+import GroupCall from "../../../GlobalView/DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/GroupCall";
 import NewGroupCall from "./NewGroupCall";
 
 class MobileGroupCall extends React.Component {

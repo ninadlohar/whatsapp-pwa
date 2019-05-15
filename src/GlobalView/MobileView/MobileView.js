@@ -1,25 +1,25 @@
 import React from "react";
-import Auxillary from "../../../hoc/Auxillary";
+import Auxillary from "../../hoc/Auxillary";
 import SwipeableViews from "react-swipeable-views";
 import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
-import Status from "../../HiddenComponent/LeftSubComp/Status";
-import Calls from "../../HiddenComponent/LeftSubComp/Calls";
-import SearchInputBox from "../../../components/SearchInputBox/SearchInputBox";
-import DropDown from "../../../ReusableUI-Components/dropDown";
+import Status from "../DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/Status";
+import Calls from "../DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/Calls";
+import SearchInputBox from "../../components/SearchInputBox/SearchInputBox";
+import DropDown from "../../ReusableUI-Components/dropDown";
 import { withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import DefaultLoadedChat from "../../../components/TypesOfUserChats/DefaultLoadedChat";
-import MainBottomDrawer from "../DropUps/BottomDrawer";
-import MobileNewChat from "../DropUps/MobileNewChat";
-import MobileNewGroup from "../DropUps/MobileNewGroup";
-import MobileNewBroadcast from "../DropUps/MobileNewBroadcast";
-import MobileStarredMessages from "../DropUps/MobileStarredMessages";
-import MobileSettings from "../DropUps/MobileSettings";
-import MobileUserChat from "../DropUps/MobileUserChat";
-import CallInfo from "../DropUps/CallInfo";
-import MobileGroupCall from "../DropUps/MobileGroupCall";
+import DefaultLoadedChat from "../../components/TypesOfUserChats/DefaultLoadedChat";
+import MainBottomDrawer from "../../containers/LeftSide/DropUps/BottomDrawer";
+import MobileNewChat from "../../containers/LeftSide/DropUps/MobileNewChat";
+import MobileNewGroup from "../../containers/LeftSide/DropUps/MobileNewGroup";
+import MobileNewBroadcast from "../../containers/LeftSide/DropUps/MobileNewBroadcast";
+import MobileStarredMessages from "../../containers/LeftSide/DropUps/MobileStarredMessages";
+import MobileSettings from "../../containers/LeftSide/DropUps/MobileSettings";
+import MobileUserChat from "../../containers/LeftSide/DropUps/MobileUserChat";
+import CallInfo from "../../containers/LeftSide/DropUps/CallInfo";
+import MobileGroupCall from "../../containers/LeftSide/DropUps/MobileGroupCall";
 
 function TabContainer({ children, dir }) {
   return (
@@ -74,7 +74,7 @@ const styles = theme => ({
   }
 });
 
-class MobileLeftSide extends React.Component {
+class MobileView extends React.Component {
   state = {
     value: 0,
     mobileViewDropDown: true,
@@ -296,7 +296,7 @@ class MobileLeftSide extends React.Component {
               <h3 className="brand__name py-3 mb-0">Sup</h3>
               <div className="w-100 d-flex align-items-center justify-content-end">
                 <div className="px-3" onClick={() => this.setSearchActiveFn()}>
-                  <img src={require("../../../assets/svg/mobile-search.svg")} width="19" height="19" alt="search-svg" />
+                  <img src={require("../../assets/svg/mobile-search.svg")} width="19" height="19" alt="search-svg" />
                 </div>
                 <div className="mobile__dropdown__ellipsis">
                   <DropDown
@@ -325,7 +325,7 @@ class MobileLeftSide extends React.Component {
                 <div className="d-flex align-items-center pt-1">
                   <div className="image-upload">
                     <label for="file-input" name="file-input">
-                      <img src={require("../../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
+                      <img src={require("../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
                     </label>
                     <input id="file-input" type="file" />
                   </div>
@@ -477,7 +477,7 @@ class MobileLeftSide extends React.Component {
               {this.state.value === 0 ? (
                 <div onClick={this.setNewChatTrue}>
                   <img
-                    src={require("../../../assets/svg/new-chat-ballon.svg")}
+                    src={require("../../assets/svg/new-chat-ballon.svg")}
                     alt="message-ballon"
                     height="18"
                     width="18"
@@ -489,7 +489,7 @@ class MobileLeftSide extends React.Component {
                 <div className="image-upload">
                   <label for="file-input" name="file-input">
                     <img
-                      src={require("../../../assets/svg/square-stop-button.svg")}
+                      src={require("../../assets/svg/square-stop-button.svg")}
                       alt="message-ballon"
                       height="16"
                       width="16"
@@ -501,7 +501,7 @@ class MobileLeftSide extends React.Component {
               {this.state.value === 2 ? (
                 <div onClick={this.openGroupCalls}>
                   <img
-                    src={require("../../../assets/svg/emergency-call.svg")}
+                    src={require("../../assets/svg/emergency-call.svg")}
                     alt="message-ballon"
                     height="16"
                     width="16"
@@ -557,4 +557,4 @@ class MobileLeftSide extends React.Component {
   }
 }
 
-export default withStyles(styles, { withTheme: true })(MobileLeftSide);
+export default withStyles(styles, { withTheme: true })(MobileView);
