@@ -1,8 +1,8 @@
 /** clearC for checkboxes and key2 for radio buttons */
 
 import React from "react";
-import Auxilliary from "../../../../hoc/Auxillary";
-import MobileModal from "../../../../ReusableUI-Components/MobileModal";
+import Auxilliary from "../../../../../../hoc/Auxillary";
+import MobileModal from "../../../../../../ReusableUI-Components/MobileModal";
 import Switch from "@material-ui/core/Switch";
 
 class DataAndStorage extends React.Component {
@@ -71,7 +71,7 @@ class DataAndStorage extends React.Component {
                   className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                   onClick={this.props.closeDrawer}
                 >
-                  <img src={require("../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                  <img src={require("../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
                   <div className="mobile__newChat__selectedContact">Data and Storage usage</div>

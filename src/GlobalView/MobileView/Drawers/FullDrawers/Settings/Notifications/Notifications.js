@@ -1,8 +1,7 @@
 import React from "react";
-import Auxilliary from "../../../../hoc/Auxillary";
-// import MainBottomDrawer from "../BottomDrawer";
+import Auxilliary from "../../../../../../hoc/Auxillary";
 import Switch from "@material-ui/core/Switch";
-import MobileModal from "../../../../ReusableUI-Components/MobileModal";
+import MobileModal from "../../../../../../ReusableUI-Components/MobileModal";
 
 class Notifications extends React.Component {
   state = {
@@ -71,7 +70,7 @@ class Notifications extends React.Component {
                   className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                   onClick={this.props.closeDrawer}
                 >
-                  <img src={require("../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                  <img src={require("../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
                   <div className="mobile__newChat__selectedContact">Notifications</div>

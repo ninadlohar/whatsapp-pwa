@@ -1,6 +1,6 @@
 import React from "react";
-import Auxilliary from "../../../../hoc/Auxillary";
-import MobileModal from "../../../../ReusableUI-Components/MobileModal";
+import Auxilliary from "../../../../../../../hoc/Auxillary";
+import MobileModal from "../../../../../../../ReusableUI-Components/MobileModal";
 
 class ChatHistory extends React.Component {
   state = {
@@ -52,7 +52,12 @@ class ChatHistory extends React.Component {
                   className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                   onClick={this.props.closeDrawer}
                 >
-                  <img src={require("../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                  <img
+                    src={require("../../../../../../../assets/svg/left.svg")}
+                    width="24"
+                    height="24"
+                    alt="left-arrow"
+                  />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
                   <div className="mobile__newChat__selectedContact">Chats</div>
@@ -64,7 +69,7 @@ class ChatHistory extends React.Component {
         <div id="mobile__chatHistory__section">
           <div className="col-12 py-3 d-flex">
             <div className="d-flex align-items-center pl-3 pr-4">
-              <img src={require("../../../../assets/svg/export.svg")} alt="gallery" height="18" width="18" />
+              <img src={require("../../../../../../../assets/svg/export.svg")} alt="gallery" height="18" width="18" />
             </div>
             <div className="d-flex align-items-center w-100">
               <div>
@@ -74,7 +79,12 @@ class ChatHistory extends React.Component {
           </div>
           <div className="col-12 py-3 d-flex" onClick={this.openArchiveChatsModal}>
             <div className="d-flex align-items-center pl-3 pr-4">
-              <img src={require("../../../../assets/svg/archive.svg")} alt="cloud upload" height="18" width="18" />
+              <img
+                src={require("../../../../../../../assets/svg/archive.svg")}
+                alt="cloud upload"
+                height="18"
+                width="18"
+              />
             </div>
             <div className="d-flex align-items-center w-100">
               <div>
@@ -84,7 +94,7 @@ class ChatHistory extends React.Component {
           </div>
           <div className="col-12 py-3 d-flex" onClick={this.openClearChats}>
             <div className="d-flex align-items-center pl-3 pr-4">
-              <img src={require("../../../../assets/svg/minus.svg")} alt="minus" height="18" width="18" />
+              <img src={require("../../../../../../../assets/svg/minus.svg")} alt="minus" height="18" width="18" />
             </div>
             <div className="d-flex align-items-center w-100">
               <div>
@@ -95,7 +105,12 @@ class ChatHistory extends React.Component {
 
           <div className="col-12 py-3 d-flex" onClick={this.openDeleteChats}>
             <div className="d-flex align-items-center pl-3 pr-4">
-              <img src={require("../../../../assets/svg/delete-bin2.svg")} alt="delete-bin" height="18" width="18" />
+              <img
+                src={require("../../../../../../../assets/svg/delete-bin2.svg")}
+                alt="delete-bin"
+                height="18"
+                width="18"
+              />
             </div>
             <div className="d-flex align-items-center w-100">
               <div>

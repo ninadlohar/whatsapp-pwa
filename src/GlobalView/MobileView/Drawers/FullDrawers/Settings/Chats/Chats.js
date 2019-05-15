@@ -1,10 +1,10 @@
 import React from "react";
-import Auxilliary from "../../../../hoc/Auxillary";
-import MobileModal from "../../../../ReusableUI-Components/MobileModal";
+import Auxilliary from "../../../../../../hoc/Auxillary";
+import MobileModal from "../../../../../../ReusableUI-Components/MobileModal";
 import Switch from "@material-ui/core/Switch";
-import BottomDrawer from "../BottomDrawer";
-import ChatHistory from "./ChatHistory";
-import ChatBackup from "./ChatBackup";
+import BottomDrawer from "../../../../../../containers/LeftSide/DropUps/BottomDrawer";
+import ChatHistory from "./ChatHistory/ChatHistory";
+import ChatBackup from "./ChatBackup/ChatBackup";
 
 class Chats extends React.Component {
   state = {
@@ -71,7 +71,7 @@ class Chats extends React.Component {
                   className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                   onClick={this.props.closeDrawer}
                 >
-                  <img src={require("../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                  <img src={require("../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
                   <div className="mobile__newChat__selectedContact">Chats</div>
@@ -130,7 +130,7 @@ class Chats extends React.Component {
           </div>
           <div className="col-12 py-3 d-flex">
             <div className="d-flex align-items-center pl-3 pr-4">
-              <img src={require("../../../../assets/svg/gallery2.svg")} alt="gallery" height="18" width="18" />
+              <img src={require("../../../../../../assets/svg/gallery2.svg")} alt="gallery" height="18" width="18" />
             </div>
             <div className="d-flex align-items-center w-100">
               <div>
@@ -141,7 +141,7 @@ class Chats extends React.Component {
           <div className="col-12 py-3 d-flex">
             <div className="d-flex align-items-center pl-3 pr-4">
               <img
-                src={require("../../../../assets/svg/cloud-storage-uploading-option.svg")}
+                src={require("../../../../../../assets/svg/cloud-storage-uploading-option.svg")}
                 alt="cloud upload"
                 height="18"
                 width="18"
@@ -155,7 +155,7 @@ class Chats extends React.Component {
           </div>
           <div className="col-12 py-3 d-flex" onClick={this.openChatHistory}>
             <div className="d-flex align-items-center pl-3 pr-4">
-              <img src={require("../../../../assets/svg/history.svg")} alt="history" height="18" width="18" />
+              <img src={require("../../../../../../assets/svg/history.svg")} alt="history" height="18" width="18" />
             </div>
             <div className="d-flex align-items-center w-100">
               <div>
