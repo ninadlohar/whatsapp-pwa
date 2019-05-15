@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { Modal } from "reactstrap";
 
-class MainModal extends Component {
+class DesktopModal extends Component {
   render() {
     return (
       <Modal isOpen={this.props.isOpen} toggle={this.props.toggle} centered={true} contentClassName="modal__popup">
@@ -12,4 +12,4 @@ class MainModal extends Component {
   }
 }
 
-export default MainModal;
+export default DesktopModal;

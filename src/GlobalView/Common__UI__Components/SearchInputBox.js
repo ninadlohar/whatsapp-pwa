@@ -1,5 +1,5 @@
 import React from "react";
-import Input from "../../ReusableUI-Components/Input";
+import Input from "./Utils/Input";
 import "../../scss/dropdown/search.scss";
 
 class SearchInputBox extends React.Component {

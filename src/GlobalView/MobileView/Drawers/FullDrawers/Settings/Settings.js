@@ -7,7 +7,7 @@ import Chats from "./Chats/Chats";
 import Notifications from "./Notifications/Notifications";
 import DataAndStorage from "./DataAndStorageUsage/DataAndStorage";
 import Profile from "./Profile/Profile";
-import SmallDrawer from "../../../../../ReusableUI-Components/SmallDrawer";
+import SmallDrawer from "../../SmallDrawer";
 import InviteFriends from "../../HalfDrawers/InviteFriends";
 
 class Settings extends React.Component {

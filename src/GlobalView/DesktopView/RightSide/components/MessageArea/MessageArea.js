@@ -1,7 +1,7 @@
 import React from "react";
-import "../../../App.scss";
+import "../../../../../App.scss";
 
-const MessageLogs = props => {
+const MessageArea = props => {
   return (
     <div className="rightSide__chat__logScreen__parent">
       <div className="rightSide__chat__logScreen__child d-flex flex-column" id="message1List">
@@ -15,7 +15,7 @@ const MessageLogs = props => {
                     <span> 12: 36 </span>
                     <span>
                       <img
-                        src={require("../../../assets/svg/double-click.svg")}
+                        src={require("../../../../../assets/svg/double-click.svg")}
                         alt="double-tick"
                         className="double-tick"
                       />
@@ -30,4 +30,4 @@ const MessageLogs = props => {
   );
 };
 
-export default MessageLogs;
+export default MessageArea;

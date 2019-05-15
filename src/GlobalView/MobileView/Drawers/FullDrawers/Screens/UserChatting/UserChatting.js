@@ -1,6 +1,6 @@
 import React from "react";
-import SearchInputBox from "../../../../../../components/SearchInputBox/SearchInputBox";
-import DropDown from "../../../../../../ReusableUI-Components/dropDown";
+import SearchInputBox from "../../../../../Common__UI__Components/SearchInputBox";
+import DropDown from "../../../../../Common__UI__Components/DropDown";
 import ViewContact from "./ViewContact__or__GroupInfo/ViewContact";
 import BottomDrawer from "../../../BottomDrawer";
 

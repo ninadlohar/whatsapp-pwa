@@ -1,5 +1,5 @@
 import React from "react";
-import SmallDrawer from "../../../../../../ReusableUI-Components/SmallDrawer";
+import SmallDrawer from "../../../SmallDrawer";
 import NameEdit from "../../../HalfDrawers/NameEdit";
 import BottomDrawer from "../../../BottomDrawer";
 import About from "./About/About";

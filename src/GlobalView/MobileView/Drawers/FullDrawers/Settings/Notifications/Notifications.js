@@ -1,7 +1,7 @@
 import React from "react";
 import Auxilliary from "../../../../../../hoc/Auxillary";
 import Switch from "@material-ui/core/Switch";
-import MobileModal from "../../../../../../ReusableUI-Components/MobileModal";
+import MobileModal from "../../../../../Common__UI__Components/Utils/MobileModal";
 
 class Notifications extends React.Component {
   state = {

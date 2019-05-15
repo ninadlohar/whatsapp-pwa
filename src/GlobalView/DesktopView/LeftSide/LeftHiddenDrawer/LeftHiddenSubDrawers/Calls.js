@@ -1,6 +1,6 @@
 import React from "react";
 
-class DefaultLoadedChat extends React.Component {
+class Calls extends React.Component {
   state = {
     onHoverState: false
   };
@@ -59,4 +59,4 @@ class DefaultLoadedChat extends React.Component {
   }
 }
 
-export default DefaultLoadedChat;
+export default Calls;

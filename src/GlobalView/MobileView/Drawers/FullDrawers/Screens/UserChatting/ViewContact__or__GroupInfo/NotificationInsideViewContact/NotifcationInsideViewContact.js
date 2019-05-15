@@ -1,5 +1,5 @@
 import React from "react";
-import MobileModal from "../../../../../../../../ReusableUI-Components/MobileModal";
+import MobileModal from "../../../../../../../Common__UI__Components/Utils/MobileModal";
 import Checkbox from "@material-ui/core/Checkbox";
 
 class NotifcationInsideViewContact extends React.Component {

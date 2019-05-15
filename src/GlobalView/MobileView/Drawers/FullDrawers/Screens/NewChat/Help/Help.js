@@ -1,9 +1,9 @@
 import React from "react";
-import Auxillary from "../hoc/Auxillary";
+import Auxillary from "../../../../../../../hoc/Auxillary";
 
 class Help extends React.Component {
   componentDidMount() {
-    console.log(this.props)
+    console.log(this.props);
     let header = document.getElementById("mobile__help__head");
     let content = document.getElementById("mobile__help__section");
     this.props.componentWithoutSearchBar(header, content);
@@ -19,7 +19,12 @@ class Help extends React.Component {
                   className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                   onClick={this.props.closeDrawer}
                 >
-                  <img src={require("../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
+                  <img
+                    src={require("../../../../../../../assets/svg/left.svg")}
+                    width="24"
+                    height="24"
+                    alt="left-arrow"
+                  />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
                   <div className="mobile__newChat__selectedContact">Contacts Help</div>

@@ -1,6 +1,6 @@
 import React from "react";
 import Auxillary from "../../../../../../../hoc/Auxillary";
-import DropDown from "../../../../../../../ReusableUI-Components/dropDown";
+import DropDown from "../../../../../../Common__UI__Components/DropDown";
 import Switch from "@material-ui/core/Switch";
 import BottomDrawer from "../../../../BottomDrawer";
 import NotifcationInsideViewContact from "./NotificationInsideViewContact/NotifcationInsideViewContact";

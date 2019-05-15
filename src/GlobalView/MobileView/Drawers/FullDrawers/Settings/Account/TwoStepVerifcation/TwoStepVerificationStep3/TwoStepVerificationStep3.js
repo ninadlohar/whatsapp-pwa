@@ -1,5 +1,5 @@
 import React from "react";
-import SearchInputBox from "../../../../../../../../components/SearchInputBox/SearchInputBox";
+import SearchInputBox from "../../../../../../../Common__UI__Components/SearchInputBox";
 import Auxillary from "../../../../../../../../hoc/Auxillary";
 import TwoStepVerificationStep4 from "../TwoStepVerificationStep4/TwoStepVerificationStep4";
 import MainBottomDrawer from "../../../../../BottomDrawer";

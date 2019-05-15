@@ -1,5 +1,5 @@
 import React from "react";
-import Dropdown from "../../../../../ReusableUI-Components/dropDown";
+import Dropdown from "../../../../Common__UI__Components/DropDown";
 import Auxillary from "../../../../../hoc/Auxillary";
 import UserChatting from "./UserChatting/UserChatting";
 import BottomDrawer from "../../BottomDrawer";

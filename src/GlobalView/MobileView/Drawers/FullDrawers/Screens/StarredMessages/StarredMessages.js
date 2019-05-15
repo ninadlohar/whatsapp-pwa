@@ -1,6 +1,6 @@
 import React from "react";
-import DropDown from "../../../../../../ReusableUI-Components/dropDown";
-import SearchInputBox from "../../../../../../components/SearchInputBox/SearchInputBox";
+import DropDown from "../../../../../Common__UI__Components/DropDown";
+import SearchInputBox from "../../../../../Common__UI__Components/SearchInputBox";
 
 class StarredMessages extends React.Component {
   state = {

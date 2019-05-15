@@ -1,6 +1,6 @@
 import React from "react";
-import DropDown from "../../../../../../../ReusableUI-Components/dropDown";
-import SmallDrawer from "../../../../../../../ReusableUI-Components/SmallDrawer";
+import DropDown from "../../../../../../Common__UI__Components/DropDown";
+import SmallDrawer from "../../../../SmallDrawer";
 import AddAbout from "../../../../HalfDrawers/AddAbout";
 
 class About extends React.Component {

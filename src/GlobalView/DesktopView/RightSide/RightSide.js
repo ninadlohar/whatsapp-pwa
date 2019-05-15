@@ -1,6 +1,6 @@
 import React from "react";
-import FooterAndMessageLogs from "../../../components/FooterAndMessageArea/Footer/FooterAndMessageLogs";
-import DropDown from "../../../ReusableUI-Components/dropDown";
+import Footer from "../../DesktopView/RightSide/components/Footer/Footer";
+import DropDown from "../../Common__UI__Components/DropDown";
 import Auxillary from "../../../hoc/Auxillary";
 
 class RightSide extends React.Component {
@@ -88,7 +88,7 @@ class RightSide extends React.Component {
                 </div>
               </header>
             </div>
-            <FooterAndMessageLogs /> {/** it includes message logs area */}
+            <Footer />
           </div>
         </div>
       </Auxillary>

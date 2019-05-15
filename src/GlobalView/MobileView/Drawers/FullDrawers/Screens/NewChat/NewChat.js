@@ -1,11 +1,11 @@
 import React from "react";
-import ContactDataWStatus from "../../../../../../components/TypesOfUserChats/ContactDataWStatus";
-import DropDown from "../../../../../../ReusableUI-Components/dropDown";
-import SearchInputBox from "../../../../../../components/SearchInputBox/SearchInputBox";
+import ContactDataWStatus from "../../../../../Common__UI__Components/ChatTypes/ContactDataWStatus";
+import DropDown from "../../../../../Common__UI__Components/DropDown";
+import SearchInputBox from "../../../../../Common__UI__Components/SearchInputBox";
 import Auxilliary from "../../../../../../hoc/Auxillary";
 import NewGroup from "../NewGroup/NewGroup";
 import MainBottomDrawer from "../../../BottomDrawer";
-import { data } from "../../../../../../ReusableUI-Components/data.json";
+import { data } from "../../../../../../DummyAPI/data.json";
 
 class NewChat extends React.Component {
   state = {

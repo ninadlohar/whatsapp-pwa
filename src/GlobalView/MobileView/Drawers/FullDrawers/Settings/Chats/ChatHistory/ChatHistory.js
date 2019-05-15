@@ -1,6 +1,6 @@
 import React from "react";
 import Auxilliary from "../../../../../../../hoc/Auxillary";
-import MobileModal from "../../../../../../../ReusableUI-Components/MobileModal";
+import MobileModal from "../../../../../../Common__UI__Components/Utils/MobileModal";
 
 class ChatHistory extends React.Component {
   state = {

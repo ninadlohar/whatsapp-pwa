@@ -1,10 +1,10 @@
 import React from "react";
-import Input from "../../../ReusableUI-Components/Input";
-import MessageLogs from "../MessageLogs/MessageLogs";
-import Auxillary from "../../../hoc/Auxillary";
-import "../../../App.scss";
+import Input from "../../../../Common__UI__Components/Utils/Input";
+import MessageArea from "../MessageArea/MessageArea";
+import Auxillary from "../../../../../hoc/Auxillary";
+import "../../../../../App.scss";
 
-class FooterAndMessageLogs extends React.Component {
+class Footer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -60,9 +60,7 @@ class FooterAndMessageLogs extends React.Component {
     );
     return (
       <Auxillary>
-        {/* <div className="row mx-0"> */}
-        <MessageLogs messageLogs={this.state.messageList} />
-        {/* </div> */}
+        <MessageArea messageLogs={this.state.messageList} />
         <div className="row mx-0">
           <footer className="footer w-100" id="footer">
             <div className="rightSide__footer__input__box w-100 d-flex align-items-center py-2" id="child-footer">
@@ -96,7 +94,12 @@ class FooterAndMessageLogs extends React.Component {
               <div className="row mx-0 w-100">
                 <div className="slideUp__footer w-100 d-flex">
                   <div className="custom__padding_10 cancel-svg" onClick={this.hideSelectedChatFooter}>
-                    <img src={require("../../../assets/svg/cancel-real.svg")} height="15" width="15" alt="exit-svg" />
+                    <img
+                      src={require("../../../../../assets/svg/cancel-real.svg")}
+                      height="15"
+                      width="15"
+                      alt="exit-svg"
+                    />
                   </div>
                   <div className="selectedMessages__count d-flex align-items-center">
                     <span>0 Selected</span>
@@ -104,7 +107,7 @@ class FooterAndMessageLogs extends React.Component {
                   <div className="d-flex justify-content-end">
                     <div className="custom__padding_10 cancel-svg">
                       <img
-                        src={require("../../../assets/svg/rate-star-button.svg")}
+                        src={require("../../../../../assets/svg/rate-star-button.svg")}
                         height="18"
                         width="18"
                         alt="star-svg"
@@ -112,7 +115,7 @@ class FooterAndMessageLogs extends React.Component {
                     </div>
                     <div className="custom__padding_10 cancel-svg">
                       <img
-                        src={require("../../../assets/svg/delete-bin.svg")}
+                        src={require("../../../../../assets/svg/delete-bin.svg")}
                         height="18"
                         width="18"
                         alt="delete-bin-svg"
@@ -120,7 +123,7 @@ class FooterAndMessageLogs extends React.Component {
                     </div>
                     <div className="custom__padding_10 cancel-svg">
                       <img
-                        src={require("../../../assets/svg/forward-arrow.svg")}
+                        src={require("../../../../../assets/svg/forward-arrow.svg")}
                         height="18"
                         width="18"
                         alt="forward-arrow-svg"
@@ -128,7 +131,7 @@ class FooterAndMessageLogs extends React.Component {
                     </div>
                     <div className="custom__padding_10">
                       <img
-                        src={require("../../../assets/svg/download-button.svg")}
+                        src={require("../../../../../assets/svg/download-button.svg")}
                         height="18"
                         width="18"
                         alt="download-svg"
@@ -145,4 +148,4 @@ class FooterAndMessageLogs extends React.Component {
   }
 }
 
-export default FooterAndMessageLogs;
+export default Footer;

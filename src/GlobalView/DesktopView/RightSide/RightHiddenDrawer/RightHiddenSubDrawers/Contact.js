@@ -1,6 +1,6 @@
 import React from "react";
-import ContactDataChatWithStataus from "../../../../../components/TypesOfUserChats/ContactDataChatWithStatus";
-import SearchInputBox from "../../../../../components/SearchInputBox/SearchInputBox";
+import ContactDataChatWithStataus from "../../../../Common__UI__Components/ChatTypes/ContactDataChatWithStatus";
+import SearchInputBox from "../../../../Common__UI__Components/SearchInputBox";
 
 class Contact extends React.Component {
   state = {

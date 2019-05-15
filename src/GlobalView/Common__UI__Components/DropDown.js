@@ -1,13 +1,13 @@
 import React from "react";
-import Auxillary from "../hoc/Auxillary";
-import MainModel from "./Modal";
-import MainBottomDrawer from "../GlobalView/MobileView/Drawers/BottomDrawer";
+import Auxillary from "../../hoc/Auxillary";
+import DesktopModal from "../Common__UI__Components/Utils/DesktopModal";
+import MainBottomDrawer from "../MobileView/Drawers/BottomDrawer";
 import { CSSTransition } from "react-transition-group";
-import "../scss/dropdown/dropdown.scss";
-import Help from "./Help";
-import ViewContact from "../GlobalView/MobileView/Drawers/FullDrawers/Screens/UserChatting/ViewContact__or__GroupInfo/ViewContact";
-import MobileMedia from "../GlobalView/MobileView/Drawers/FullDrawers/Screens/UserChatting/Media/Media";
-import MobileModal from "./MobileModal";
+import "../../scss/dropdown/dropdown.scss";
+import Help from "../MobileView/Drawers/FullDrawers/Screens/NewChat/Help/Help";
+import ViewContact from "../MobileView/Drawers/FullDrawers/Screens/UserChatting/ViewContact__or__GroupInfo/ViewContact";
+import MobileMedia from "../MobileView/Drawers/FullDrawers/Screens/UserChatting/Media/Media";
+import MobileModal from "./Utils/MobileModal";
 
 class DropDown extends React.Component {
   state = {
@@ -184,10 +184,10 @@ class DropDown extends React.Component {
     let attachment = (
       <div className="main-attachment-dropdown">
         <div className="attachment-dropdown">
-          <img src={require("../assets/images/gallery.png")} alt="gallery" className="attachment-icons" />
-          <img src={require("../assets/images/camera.png")} alt="camera" className="attachment-icons" />
-          <img src={require("../assets/images/file.jpg")} alt="file" className="attachment-icons" />
-          <img src={require("../assets/images/user.png")} alt="user" className="attachment-icons" />
+          <img src={require("../../assets/images/gallery.png")} alt="gallery" className="attachment-icons" />
+          <img src={require("../../assets/images/camera.png")} alt="camera" className="attachment-icons" />
+          <img src={require("../../assets/images/file.jpg")} alt="file" className="attachment-icons" />
+          <img src={require("../../assets/images/user.png")} alt="user" className="attachment-icons" />
         </div>
       </div>
     );
@@ -289,7 +289,7 @@ class DropDown extends React.Component {
         >
           <Auxillary>{dropDownMenu}</Auxillary>
         </CSSTransition>
-        <MainModel isOpen={this.state.showModal} toggle={this.toggle}>
+        <DesktopModal isOpen={this.state.showModal} toggle={this.toggle}>
           <h5 className="mute__group__name">Mute "Group1"</h5>
           <div className="mute__radio__buttons">
             <div className="modal__mute__radio__buttons_p-6">
@@ -313,11 +313,11 @@ class DropDown extends React.Component {
               MUTE
             </div>
           </div>
-        </MainModel>
-        <MainModel isOpen={this.state.clearMessages} toggle={this.clearMessagesToggle}>
+        </DesktopModal>
+        <DesktopModal isOpen={this.state.clearMessages} toggle={this.clearMessagesToggle}>
           <div className="clear__messages__title">Clear "Group 1"?</div>
           <div className="clear__messages__clear__starred__messages">
-            <img src={require("../assets/svg/green-check-box.svg")} height="16" width="16" alt="checkbox-green" />
+            <img src={require("../../assets/svg/green-check-box.svg")} height="16" width="16" alt="checkbox-green" />
             <span className="pl-2 clear_messages__fontSize__14">Keep Starred Messages</span>
           </div>
           <div className="modal__cancel__mute__button d-flex justify-content-end">
@@ -328,8 +328,8 @@ class DropDown extends React.Component {
               CLEAR
             </div>
           </div>
-        </MainModel>
-        <MainModel isOpen={this.state.exitGroup} toggle={this.exitGroupToggle}>
+        </DesktopModal>
+        <DesktopModal isOpen={this.state.exitGroup} toggle={this.exitGroupToggle}>
           <div className="clear__messages__title">Exit Group "Group 1"?</div>
           <div className="modal__cancel__mute__button d-flex justify-content-end">
             <div className="modal__cancel" onClick={this.exitGroupToggle}>
@@ -339,7 +339,7 @@ class DropDown extends React.Component {
               EXIT
             </div>
           </div>
-        </MainModel>
+        </DesktopModal>
         <MainBottomDrawer onOpen={this.openHelpTrue} open={this.state.openHelp}>
           <Help componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.openHelpFalse} />
         </MainBottomDrawer>

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Auxilliary from "../../../../../../hoc/Auxillary";
-import MobileModal from "../../../../../../ReusableUI-Components/MobileModal";
+import MobileModal from "../../../../../Common__UI__Components/Utils/MobileModal";
 import Switch from "@material-ui/core/Switch";
 
 class DataAndStorage extends React.Component {

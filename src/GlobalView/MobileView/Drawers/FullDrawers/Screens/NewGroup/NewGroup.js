@@ -1,7 +1,7 @@
 import React from "react";
-import ContactDataWStatus from "../../../../../../components/TypesOfUserChats/ContactDataWStatus";
-import SearchInputBox from "../../../../../../components/SearchInputBox/SearchInputBox";
-import { data } from "../../../../../../ReusableUI-Components/data.json";
+import ContactDataWStatus from "../../../../../Common__UI__Components/ChatTypes/ContactDataWStatus";
+import SearchInputBox from "../../../../../Common__UI__Components/SearchInputBox";
+import { data } from "../../../../../../DummyAPI/data.json";
 
 class NewGroup extends React.Component {
   state = {
