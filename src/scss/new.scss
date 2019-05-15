@@ -1,3 +1,5 @@
+@import "./colors.scss";
+
 .leftChat__user__image {
   padding-left: 13px;
   padding-right: 15px;
@@ -10,7 +12,7 @@
   width: calc(100% - 77px);
   padding-top: 16px;
   padding-bottom: 6px;
-  border-top: 1px solid #f2f2f2;
+  border-top: 1px solid $chat-border-top-color;
   > strong {
     font-weight: 500;
   }
@@ -21,7 +23,7 @@
   width: calc(100% - 128px);
   padding-top: 16px;
   padding-bottom: 6px;
-  border-top: 1px solid #f2f2f2;
+  border-top: 1px solid $chat-border-top-color;
 }
 
 .calls__user__details__mobile {
@@ -32,7 +34,7 @@
 }
 
 .rightSlider__userInfo__box {
-  background-color: white;
+  background-color: $white;
 }
 
 .rightSlider__userInfo__box:hover {
@@ -46,14 +48,14 @@
   .leftChat__senderName {
     width: calc(100% - 58px);
     font-size: 17px;
-    color: #000;
+    color: $black;
   }
 
   .leftChat__time {
     width: 52px;
     margin-left: 6px;
     font-size: 12px;
-    color: #333333;
+    color: $time-color;
   }
 }
 
@@ -61,14 +63,14 @@
   .leftChat__message {
     width: calc(100% - 56px);
     font-size: 14px;
-    color: rgba(0, 0, 0, 0.6);
+    color: $leftChat-messageLeftToRead;
   }
 
   .leftChat__messageLeftToRead {
     width: 50px;
     margin-left: 6px;
     font-size: 12px;
-    color: #333333;
+    color: $leftChat-messageLeftToRead;
     text-align: right;
   }
 
@@ -77,10 +79,10 @@
   }
 
   .sender-notification-count {
-    background-color: #09d261;
+    background-color: $sender-notification-count;
     border-radius: 16px;
     padding: 1px 6px 1px 6px;
-    color: white;
+    color: $white;
   }
 }
 
@@ -93,7 +95,7 @@
 .leftChat__senderName___groupAdmin {
   .leftChat__senderName__asAdmin {
     font-size: 17px;
-    color: #000;
+    color: $black;
     width: calc(100% - 76px);
   }
   .leftChat__groupAdmin {

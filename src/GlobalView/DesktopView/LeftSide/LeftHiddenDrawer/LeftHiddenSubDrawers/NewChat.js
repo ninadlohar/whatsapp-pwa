@@ -40,7 +40,7 @@ class NewChat extends React.Component {
             className="sender__image__left__window"
           />
         </div>
-        <div className="remaining d-flex align-items-center">New Group</div>
+        <div className="remaining left__drawer__newGroup d-flex align-items-center">New Group</div>
       </div>
     );
     let newChat = (

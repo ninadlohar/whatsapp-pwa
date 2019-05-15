@@ -75,7 +75,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: black;
+    color: $black;
     font-size: 16px;
     font-weight: normal;
   }
@@ -85,7 +85,7 @@ body {
   }
   .leftSide__chat__section {
     position: relative;
-    background-color: white;
+    background-color: $white;
   }
   .chat-section-sending-user-data {
     overflow: hidden;
@@ -135,7 +135,7 @@ body {
     border-radius: 32px !important;
   }
   .right-dropdown {
-    background-color: white;
+    background-color: $white;
     border-radius: 3px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.16);
     padding: 9px 0px;
@@ -165,10 +165,10 @@ body {
     font-size: 20px !important;
   }
   .media-section {
-    background-color: white;
+    background-color: $white;
   }
   .viewProfile__parent {
-    background-color: #d7dcde;
+    background-color: $view-profile-bgColor;
   }
   .viewProfile__image__parent {
     border-bottom: 5px;
@@ -195,24 +195,24 @@ body {
     border: transparent !important;
     font-size: 16px !important;
     font-weight: 100 !important;
-    color: white !important;
+    color: $white !important;
     background-color: #258879;
     border-radius: 0px !important;
     padding-left: 2rem !important;
-    border-bottom: 2px solid white !important;
+    border-bottom: 2px solid $white !important;
   }
   .mobile__search__box__input_active__box:focus,
   .mobile__search__box__input_active__box:focus-within {
     border-color: transparent !important;
     background-color: #258879;
     box-shadow: none !important;
-    color: white !important;
+    color: $white !important;
     border-radius: 0px !important;
-    border-bottom: 2px solid white !important;
+    border-bottom: 2px solid $white !important;
   }
 
   .mobile-right-dropdown {
-    background-color: white;
+    background-color: $white;
     border-radius: 3px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.16);
     padding: 9px 0px;
@@ -234,7 +234,7 @@ body {
     width: 80%;
   }
   .right-dropdown {
-    background-color: white;
+    background-color: $white;
     border-radius: 3px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.16);
     padding: 9px 0px;
@@ -287,7 +287,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: black;
+    color: $black;
     font-size: 16px;
     font-weight: normal;
   }
@@ -298,7 +298,7 @@ body {
   }
   .leftSide__chat__section {
     position: relative;
-    background-color: white;
+    background-color: $white;
   }
   .chat-section-sending-user-data {
     overflow: hidden;
@@ -357,7 +357,7 @@ body {
     font-weight: 600;
   }
   .edit__photo {
-    background-color: #255d53;
+    background-color: $dark-green-common-color;
     height: 35px;
     width: 35px;
     border-radius: 50%;
@@ -381,11 +381,11 @@ body {
     border-radius: 4px;
   }
   .call__info__section {
-    background-color: #d7dcde;
+    background-color: $view-profile-bgColor;
   }
   .call__info__header {
-    background-color: #255d53;
-    color: white;
+    background-color: $dark-green-common-color;
+    color: $white;
   }
   .mobile__chat__section {
     padding-left: 10%;
@@ -397,8 +397,8 @@ body {
     min-width: 16% !important;
     display: inline-block;
     white-space: pre-wrap;
-    color: #262626;
-    font-size: 13px;
+    color: $mobile-message-sent-color;
+    font-size: 14.2px;
     box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
     word-break: break-all;
     padding-top: 6px;
@@ -415,7 +415,7 @@ body {
     width: calc(100% - 130px);
   }
   .viewProfile__section__header {
-    color: #255d53;
+    color: $dark-green-common-color;
     font-size: 16px;
   }
   .mobile__dropdown__ellipsis {
@@ -429,14 +429,14 @@ body {
   .single-icons1 {
     width: 40px;
     height: 40px;
-    color: white;
+    color: $white;
   }
   #content1 {
     background: url("./assets/images/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
   }
   .mobileSearchTextArea:focus,
   .mobileSearchTextArea:focus-within {
-    background-color: white !important;
+    background-color: $white !important;
     box-shadow: none !important;
     outline: none !important;
     border-bottom-right-radius: 32px !important;
@@ -448,25 +448,25 @@ body {
 
   .smallDrawerInput:focus,
   .smallDrawerInput:focus-within {
-    background-color: white !important;
+    background-color: $white !important;
     box-shadow: none !important;
     outline: none !important;
     border: transparent;
     border-radius: 0px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $black;
   }
   .smallDrawerInput {
     border-radius: 0px;
     border-radius: 0px;
     border: transparent;
-    background-color: white !important;
+    background-color: $white !important;
     box-shadow: none !important;
     outline: none !important;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $black;
   }
 
   .mobile__screen__microphone {
-    background-color: #07bc4c;
+    background-color: $common-dropup-bgColor;
     width: 38px;
     border-radius: 50%;
     height: 38px;
@@ -474,7 +474,7 @@ body {
   .mobileSearchTextArea {
     resize: none;
 
-    background-color: white !important;
+    background-color: $white !important;
     border-bottom-right-radius: 32px !important;
     border-bottom-left-radius: 32px !important;
     border-top-left-radius: 32px !important;
@@ -535,7 +535,7 @@ body {
 
     box-shadow: none !important;
     border-radius: 0px !important;
-    border-bottom: 2px solid #255d53 !important;
+    border-bottom: 2px solid $dark-green-common-color !important;
   }
 
   .mobileTSVInput:focus,
@@ -545,20 +545,20 @@ body {
     letter-spacing: 14px;
     box-shadow: none !important;
     border-radius: 0px !important;
-    border-bottom: 2px solid #255d53 !important;
+    border-bottom: 2px solid $dark-green-common-color !important;
   }
   .mobileTSVInput {
     width: 150px;
     border: transparent;
     background-color: transparent;
     border-radius: 0px !important;
-    border-bottom: 2px solid #255d53 !important;
+    border-bottom: 2px solid $dark-green-common-color !important;
   }
   .mobileTSVInput3 {
     border: transparent;
     background-color: transparent;
     border-radius: 0px !important;
-    border-bottom: 2px solid #255d53 !important;
+    border-bottom: 2px solid $dark-green-common-color !important;
   }
   .mobileTSVInput3:focus,
   .mobileTSVInput3:focus-within {
@@ -566,27 +566,27 @@ body {
     background-color: transparent;
     box-shadow: none !important;
     border-radius: 0px !important;
-    border-bottom: 2px solid #255d53 !important;
+    border-bottom: 2px solid $dark-green-common-color !important;
   }
   .enable-button {
     position: absolute;
-    background-color: #07bc4c;
-    color: white;
+    background-color: $TSVbuttonColor;
+    color: $white;
     font-weight: 900;
     bottom: 36px;
     border-radius: 3px;
     padding: 6px 15px;
   }
   .change_number {
-    background-color: #07bc4c;
-    color: white;
+    background-color: $TSVbuttonColor;
+    color: $white;
     bottom: 36px;
     border-radius: 3px;
     padding: 6px 15px;
   }
   .delete_account {
-    background-color: #df3333;
-    color: white;
+    background-color: $alert-color;
+    color: $white;
     bottom: 36px;
     border-radius: 3px;
     padding: 6px 15px;
@@ -595,12 +595,12 @@ body {
     position: inherit;
   }
   .privacy {
-    color: #255d53;
+    color: $dark-green-common-color;
     font-weight: bolder;
     font-size: 14px;
   }
   .notifcations__header {
-    color: #255d53;
+    color: $dark-green-common-color;
     font-size: 14px;
   }
   .privacy__text {
@@ -644,11 +644,11 @@ body {
     outline: none;
   }
   .input__box__green__arrow {
-    color: #255d53;
+    color: $dark-green-common-color;
     transform: rotate(90deg);
   }
   .input__box__white__arrow {
-    color: white;
+    color: $white;
     transform: rotate(90deg);
   }
   .camera {
@@ -663,7 +663,7 @@ body {
     right: 70px;
   }
   .new__chat__green__logo {
-    background-color: #5ad570;
+    background-color: $TSVbuttonColor;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -673,19 +673,19 @@ body {
     border-radius: 50%;
   }
   .mobile__view__header {
-    background-color: #255d53;
-    color: white;
+    background-color: $dark-green-common-color;
+    color: $white;
   }
   .mobile__view__starred__Messages__Header {
-    background-color: #255d53;
-    color: white;
+    background-color: $dark-green-common-color;
+    color: $white;
     padding-top: 11px !important;
     padding-bottom: 10px !important;
   }
 
   .mobile__view__chat__Messages__Header {
-    background-color: #255d53;
-    color: white;
+    background-color: $dark-green-common-color;
+    color: $white;
     padding-top: 5px !important;
     padding-bottom: 5px !important;
   }
@@ -701,7 +701,7 @@ body {
   }
   .selectedMessages__count {
     font-size: 14.5px;
-    color: #4b4b4b;
+    color: $rightSlider__profile__name;
     width: 74%;
   }
   .cancel-svg {
@@ -727,7 +727,7 @@ body {
   }
   .clear__messages__title {
     font-size: 14.2px;
-    color: #4b4b4b;
+    color: $rightSlider__profile__name;
   }
   .modal__cancel,
   .modal__mute {
@@ -736,11 +736,11 @@ body {
     border-radius: 3px;
   }
   .modal__cancel {
-    color: #07bc4c;
+    color: $TSVbuttonColor;
   }
   .modal__mute {
-    color: white;
-    background-color: #07bc4c;
+    color: $white;
+    background-color: $TSVbuttonColor;
   }
   .modal__cancel__mute__button {
     padding-top: 50px;
@@ -759,7 +759,7 @@ body {
     width: 400px !important;
     border: none !important;
     border-radius: 0px !important;
-    background-color: #fff;
+    background-color: $white;
     border-radius: 3px;
     box-shadow: 0 17px 50px 0 rgba(0, 0, 0, 0.19), 0 12px 15px 0 rgba(0, 0, 0, 0.24);
     padding: 22px 24px 20px 24px;
@@ -771,7 +771,7 @@ body {
     width: 80%;
     position: relative;
     border-radius: 32px;
-    background-color: white;
+    background-color: $white;
   }
   .textarea {
     font-weight: normal;
@@ -805,7 +805,7 @@ body {
     height: 60px;
   }
   .settings_section_logged_in_user_status {
-    color: rgba(0, 0, 0, 0.6);
+    color: $leftChat-messageLeftToRead;
     font-size: 14px;
     margin-top: 2px;
     overflow: hidden;
@@ -825,7 +825,7 @@ body {
     padding-right: 3px;
   }
   .starred-messages-container {
-    background-color: #eeeeef;
+    background-color: $common-dropup-bgColor;
   }
   .starred-messages-main {
     padding-left: 29px;
@@ -842,16 +842,15 @@ body {
   }
   .starred-messages {
     padding: 6px 7px 8px 9px;
-    background-color: white;
-    color: #262626;
+    background-color: $white;
+    color: $starred-messages-color;
     border-radius: 7.5px;
     margin-top: 7px;
   }
   .starred-messages-section {
     padding: 10px 7px 10px 13px;
     font-size: 14px;
-
-    background-color: #eeeeef;
+    background-color: $common-dropup-bgColor;
   }
   .starred-messages-sender-image {
     height: 26px;
@@ -961,7 +960,7 @@ body {
     min-width: 16% !important;
     display: inline-block;
     white-space: pre-wrap;
-    color: #262626;
+    color: $mobile-message-sent-color;
     font-size: 13px;
     box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
     word-break: break-all;
@@ -1015,7 +1014,7 @@ body {
   // }
   .leftSlider__chatActiveBox {
     display: block;
-    background: white;
+    background: $white;
     transition: all 0.3s;
     position: absolute;
     z-index: 999;
@@ -1028,12 +1027,12 @@ body {
     color: $green-box-color;
   }
   .leftSlider__greenBox__header {
-    color: white;
+    color: $white;
     font-size: 19px;
   }
   .leftSlider__back__arrow {
     width: 53px;
-    color: white;
+    color: $white;
   }
   .custom__59height {
     height: 59px;
@@ -1055,7 +1054,7 @@ body {
   }
 
   .remaining {
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid $chat-border-top-color;
     width: calc(100% - 72px);
   }
   .rightSlider__userInfo__image__padding {
@@ -1127,7 +1126,7 @@ body {
     display: none;
   }
   .left-dropdown {
-    background-color: white;
+    background-color: $white;
     transition: background-color 0.18s ease;
     border-radius: 3px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.16);
@@ -1144,7 +1143,7 @@ body {
   }
   .chat-dropdown {
     transition: background-color 0.18s ease;
-    background-color: white;
+    background-color: $white;
     border-radius: 3px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.16);
     padding-top: 9px;
@@ -1162,9 +1161,17 @@ body {
 }
 
 @media (min-width: 768px) {
+  .left__drawer__newGroup {
+    color: $black;
+    font-size: 17px;
+  }
+  .group__phone__numbers {
+    font-size: 13px;
+    color: $group-phone-numbers;
+  }
   .rightSlider__chatActiveBox {
     display: block;
-    background: white;
+    background: $white;
     transition: all 0.3s;
     position: absolute;
     z-index: 999;
@@ -1188,7 +1195,7 @@ body {
   }
   .selectedMessages__count {
     font-size: 14.5px;
-    color: #4b4b4b;
+    color: $rightSlider__profile__name;
     width: 74%;
   }
   .slideUp__footer {
@@ -1217,7 +1224,7 @@ body {
   }
   .simple__edit__pencil {
     border: transparent;
-    color: #4b4b4b;
+    color: $rightSlider__profile__name;
     font-size: 17px;
     padding: 8px 0;
     border-bottom: 2px solid #52c0a5;
@@ -1227,7 +1234,7 @@ body {
   .simple__edit__pencil:focus-within {
     border-color: transparent !important;
     box-shadow: none !important;
-    color: #4b4b4b;
+    color: $rightSlider__profile__name;
     font-size: 17px;
   }
   input[type="checkbox"] {
@@ -1245,7 +1252,7 @@ body {
   }
   .clear__messages__title {
     font-size: 14.2px;
-    color: #4b4b4b;
+    color: $rightSlider__profile__name;
   }
   .modal__cancel,
   .modal__mute {
@@ -1254,11 +1261,11 @@ body {
     border-radius: 3px;
   }
   .modal__cancel {
-    color: #07bc4c;
+    color: $common-dropup-bgColor;
   }
   .modal__mute {
-    color: white;
-    background-color: #07bc4c;
+    color: $white;
+    background-color: $common-dropup-bgColor;
   }
   .modal__cancel__mute__button {
     padding-top: 50px;
@@ -1358,12 +1365,12 @@ body {
   .starred-messages {
     margin-top: 7px;
     padding: 6px 7px 8px 9px;
-    background-color: white;
+    background-color: $white;
     color: #262626;
     border-radius: 7.5px;
   }
   .starred-messages-container {
-    background-color: #eeeeef;
+    background-color: $common-dropup-bgColor;
   }
   .starred-messages-section {
     padding: 10px 7px 10px 13px;
@@ -1572,7 +1579,7 @@ body {
   }
   .leftSlider__chatActiveBox {
     display: block;
-    background: white;
+    background: $white;
     transition: all 0.3s;
     position: absolute;
     z-index: 999;
@@ -1583,12 +1590,12 @@ body {
   }
 
   .leftSlider__greenBox__header {
-    color: white;
+    color: $white;
     font-size: 19px;
   }
   .leftSlider__back__arrow {
     width: 53px;
-    color: white;
+    color: $white;
   }
   .custom__59height {
     height: 59px;
@@ -1616,11 +1623,11 @@ body {
     width: 80%;
     position: relative;
     border-radius: 32px;
-    background-color: white;
+    background-color: $white;
   }
   .remaining {
     width: calc(100% - 72px);
-    border-bottom: 1px solid #f2f2f2;
+    border-bottom: 1px solid $chat-border-top-color;
   }
   .rightSlider__userInfo__image__padding {
     padding-left: 13px;
@@ -1684,7 +1691,7 @@ body {
 
   .left-dropdown {
     transition: background-color 0.18s ease;
-    background-color: white;
+    background-color: $white;
     border-radius: 3px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.16);
     padding: 9px 0px;
@@ -1700,7 +1707,7 @@ body {
   }
   .chat-dropdown {
     transition: background-color 0.18s ease;
-    background-color: white;
+    background-color: $white;
     border-radius: 3px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.16);
     padding-top: 9px;
@@ -1728,6 +1735,11 @@ body {
   height: 40px;
   width: 40px;
   border-radius: 50%;
+}
+
+.dropdown__text__color {
+  color: $dropdown-text-color;
+  font-size: 14.5px;
 }
 
 .bottomDrawerParent {
@@ -1781,12 +1793,12 @@ body {
       > div {
         > div {
           > button {
-            background-color: #255d53 !important;
+            background-color: $dark-green-common-color !important;
             margin-right: 0 !important;
             opacity: unset !important;
             &:active,
             &:focus {
-              background-color: #255d53 !important;
+              background-color: $dark-green-common-color !important;
             }
           }
         }

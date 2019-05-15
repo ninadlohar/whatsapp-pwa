@@ -127,39 +127,39 @@ class DropDown extends React.Component {
   render() {
     let leftMenu = (
       <div className="left-dropdown">
-        <div className="px-4 py-2" onClick={() => this.props.handleMenuClick("newGroup")}>
+        <div className="px-4 py-2 dropdown__text__color" onClick={() => this.props.handleMenuClick("newGroup")}>
           New Group
         </div>
-        <div className="px-4 py-2" onClick={() => this.props.handleMenuClick("profile")}>
+        <div className="px-4 py-2 dropdown__text__color" onClick={() => this.props.handleMenuClick("profile")}>
           Profile
         </div>
-        <div className="px-4 py-2" onClick={() => this.props.handleMenuClick("archievedChat")}>
+        <div className="px-4 py-2 dropdown__text__color" onClick={() => this.props.handleMenuClick("archievedChat")}>
           Archived
         </div>
-        <div className="px-4 py-2" onClick={() => this.props.handleMenuClick("starredMessages")}>
+        <div className="px-4 py-2 dropdown__text__color" onClick={() => this.props.handleMenuClick("starredMessages")}>
           Starred
         </div>
-        <div className="px-4 py-2" onClick={() => this.props.handleMenuClick("settings")}>
+        <div className="px-4 py-2 dropdown__text__color" onClick={() => this.props.handleMenuClick("settings")}>
           Settings
         </div>
-        <div className="px-4 py-2">Logout</div>
+        <div className="px-4 py-2 dropdown__text__color">Logout</div>
       </div>
     );
     let rightMenu = (
       <div className="right-dropdown">
-        <div className="px-4 py-2" onClick={() => this.props.handleMenuClick1("CONTACT")}>
+        <div className="px-4 py-2 dropdown__text__color" onClick={() => this.props.handleMenuClick1("CONTACT")}>
           Contact Info
         </div>
-        <div className="px-4 py-2" onClick={this.selectMessages}>
+        <div className="px-4 py-2 dropdown__text__color" onClick={this.selectMessages}>
           Selected Messages
         </div>
-        <div className="px-4 py-2" onClick={this.toggle}>
+        <div className="px-4 py-2 dropdown__text__color" onClick={this.toggle}>
           Mute
         </div>
-        <div className="px-4 py-2" onClick={this.clearMessagesToggle}>
+        <div className="px-4 py-2 dropdown__text__color" onClick={this.clearMessagesToggle}>
           Clear Messages
         </div>
-        <div className="px-4 py-2" onClick={this.exitGroupToggle}>
+        <div className="px-4 py-2 dropdown__text__color" onClick={this.exitGroupToggle}>
           Delete Chat
         </div>
       </div>
@@ -167,16 +167,16 @@ class DropDown extends React.Component {
 
     let mobileViewDropDown = (
       <div className="right-dropdown">
-        <div className="px-4 py-2" onClick={this.props.setNewGroupTrue}>
+        <div className="px-4 py-2 dropdown__text__color" onClick={this.props.setNewGroupTrue}>
           New Group
         </div>
-        <div className="px-4 py-2" onClick={this.props.setNewBroadcastTrue}>
+        <div className="px-4 py-2 dropdown__text__color" onClick={this.props.setNewBroadcastTrue}>
           New Broadcast
         </div>
-        <div className="px-4 py-2" onClick={this.props.setStarredMessagesTrue}>
+        <div className="px-4 py-2 dropdown__text__color" onClick={this.props.setStarredMessagesTrue}>
           Starred Messages
         </div>
-        <div className="px-4 py-2" onClick={this.props.setSettingsTrue}>
+        <div className="px-4 py-2 dropdown__text__color" onClick={this.props.setSettingsTrue}>
           Settings
         </div>
       </div>
@@ -194,10 +194,10 @@ class DropDown extends React.Component {
 
     let newChatDropdown = (
       <div className="mobile-right-dropdown">
-        <div className="px-4 py-2">Invite Friend</div>
-        <div className="px-4 py-2">Contacts</div>
-        <div className="px-4 py-2">Refresh</div>
-        <div className="px-4 py-2" onClick={this.openHelpTrue}>
+        <div className="px-4 py-2 dropdown__text__color">Invite Friend</div>
+        <div className="px-4 py-2 dropdown__text__color">Contacts</div>
+        <div className="px-4 py-2 dropdown__text__color">Refresh</div>
+        <div className="px-4 py-2 dropdown__text__color" onClick={this.openHelpTrue}>
           Help
         </div>
       </div>
@@ -205,20 +205,20 @@ class DropDown extends React.Component {
 
     let userChatDropdown = (
       <div className="mobile-right-dropdown">
-        <div className="px-3 py-2" onClick={this.openViewContact}>
+        <div className="px-3 py-2 dropdown__text__color" onClick={this.openViewContact}>
           View Contact
         </div>
-        <div className="px-3 py-2" onClick={this.openMobileMedia}>
+        <div className="px-3 py-2 dropdown__text__color" onClick={this.openMobileMedia}>
           Media
         </div>
-        <div className="px-3 py-2" onClick={this.props.setSearchActiveFn}>
+        <div className="px-3 py-2 dropdown__text__color" onClick={this.props.setSearchActiveFn}>
           Search
         </div>
-        <div className="px-3 py-2" onClick={this.openMuteModal}>
+        <div className="px-3 py-2 dropdown__text__color" onClick={this.openMuteModal}>
           Mute Notifications
         </div>
-        <div className="px-3 py-2">Wallpaper</div>
-        <div className="px-3 py-2" onClick={this.openMoreDropdown}>
+        <div className="px-3 py-2 dropdown__text__color">Wallpaper</div>
+        <div className="px-3 py-2 dropdown__text__color" onClick={this.openMoreDropdown}>
           More
         </div>
       </div>
@@ -226,20 +226,20 @@ class DropDown extends React.Component {
 
     let moreOptionsDropdown = (
       <div className="mobile-right-dropdown">
-        <div className="px-3 py-2">Report</div>
-        <div className="px-3 py-2">Block</div>
-        <div className="px-3 py-2">Clear Chat</div>
-        <div className="px-3 py-2">Export Chat</div>
-        <div className="px-3 py-2">Add Shortcut</div>
+        <div className="px-3 py-2 dropdown__text__color">Report</div>
+        <div className="px-3 py-2 dropdown__text__color">Block</div>
+        <div className="px-3 py-2 dropdown__text__color">Clear Chat</div>
+        <div className="px-3 py-2 dropdown__text__color">Export Chat</div>
+        <div className="px-3 py-2 dropdown__text__color">Add Shortcut</div>
       </div>
     );
 
     let viewProfileDropdown = (
       <div className="mobile-right-dropdown">
-        <div className="px-3 py-2">Share</div>
-        <div className="px-3 py-2">Edit</div>
-        <div className="px-3 py-2">View in address book</div>
-        <div className="px-3 py-2">View security code</div>
+        <div className="px-3 py-2 dropdown__text__color">Share</div>
+        <div className="px-3 py-2 dropdown__text__color">Edit</div>
+        <div className="px-3 py-2 dropdown__text__color">View in address book</div>
+        <div className="px-3 py-2 dropdown__text__color">View security code</div>
       </div>
     );
 

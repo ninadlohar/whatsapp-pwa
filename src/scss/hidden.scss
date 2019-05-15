@@ -6,7 +6,7 @@
   font-size: 17px;
   padding-top: 17px;
   padding-bottom: 18px;
-  color: black;
+  color: $black;
   background-color: $display-content-area-header-color;
 }
 .custom__padding50 {
@@ -57,11 +57,12 @@
 
 .rightSlider__profile__edit__name {
   font-weight: 400;
-  font-size: 18px;
+  font-size: 19px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   margin: 5px 0 6px 0;
+  color: $rightSlider__profile__name;
 }
 
 .pt-8_custom {
@@ -71,8 +72,8 @@
   padding-top: 3px;
 }
 .rightSlider__sender__lastSeenDate {
-  font-size: 13px;
-  color: $hidden_box_content_color;
+  font-size: 14px;
+  color: $rightSlider__time__created;
 }
 .rightSlider__group__details {
   margin-bottom: 10px;
@@ -86,6 +87,7 @@
     font-size: 14px;
     padding-top: 6px;
     padding-bottom: 5px;
+    color: $rightSlider__profile__name;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -114,12 +116,16 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   .mute {
     border-bottom: 1px solid #f2f2f2;
+    color: $black;
+    font-size: 17px;
     padding-top: 18px;
     padding-bottom: 18px;
   }
   .rightSlider__starred__messages {
     padding-top: 18px;
     padding-bottom: 18px;
+    color: $black;
+    font-size: 17px;
   }
 }
 
@@ -180,7 +186,7 @@
 }
 
 .rightSlider__exit__group__text {
-  color: #df3333;
+  color: $alert-color;
 }
 
 /** contact info details ends */

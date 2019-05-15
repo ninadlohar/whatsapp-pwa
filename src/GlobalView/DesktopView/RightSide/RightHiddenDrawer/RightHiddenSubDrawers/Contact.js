@@ -210,7 +210,7 @@ class Contact extends React.Component {
               </div>
             </div>
             <div className="d-flex">
-              <div className="rightSlider__participants__header custom__width__90percent">Media Links and Docs</div>
+              <div className="rightSlider__participants__header custom__width__90percent">38 Participants</div>
               <div style={{ marginTop: "13px" }}>
                 <img src={require("../../../../../assets/svg/search.svg")} alt="search" height="15" width="15" />
               </div>

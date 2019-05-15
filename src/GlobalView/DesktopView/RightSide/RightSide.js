@@ -62,7 +62,7 @@ class RightSide extends React.Component {
                       <div className="rightSide__header__details py-1 px-1">
                         <div className="rightSide___chat__sender__or__group__name">Coders Hub</div>
                         <div className="rightSide___chat__phone__number">
-                          <span>
+                          <span className="group__phone__numbers">
                             +1(201) 443 - 4380, +1(470) 343 - 9700, +1(703) 307 - 8272, +1(716) 333 - 5233, +1(716) 501
                             - 8285, +1(732) 983 - 61
                           </span>
