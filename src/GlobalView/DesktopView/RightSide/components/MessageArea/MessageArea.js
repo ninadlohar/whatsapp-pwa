@@ -1,5 +1,4 @@
 import React from "react";
-import "../../../../../App.scss";
 
 const MessageArea = props => {
   return (
@@ -14,11 +13,7 @@ const MessageArea = props => {
                   <span className="time-and-tick text-right">
                     <span> 12: 36 </span>
                     <span>
-                      <img
-                        src={require("../../../../../assets/svg/double-click.svg")}
-                        alt="double-tick"
-                        className="double-tick"
-                      />
+                      <img src={require("../../../../../assets/svg/double-click.svg")} alt="double-tick" className="double-tick" />
                     </span>
                   </span>
                 </div>

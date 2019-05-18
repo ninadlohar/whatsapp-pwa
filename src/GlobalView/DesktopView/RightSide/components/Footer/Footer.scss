@@ -1,0 +1,53 @@
+@import "../../../../../scss/colors.scss";
+
+.icon-color {
+  color: $icon-color;
+}
+.footer {
+  position: relative;
+}
+.rightSide__footer__input__box {
+  position: absolute;
+  min-height: 62px !important;
+  bottom: 0;
+  background-color: $footer-color;
+}
+.rightSide__footer__icons__w__10percent {
+  width: 10%;
+}
+.rightSide__footer__icons__w__80percent {
+  width: 80%;
+  position: relative;
+  border-radius: 32px;
+  background-color: $white;
+}
+.smiley {
+  font-size: 24px !important;
+}
+.textarea {
+  resize: none;
+  min-height: 20px;
+  max-height: 100px;
+  font-weight: 400;
+  outline: none;
+  position: relative;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 14px;
+  border-radius: 32px;
+  border: transparent !important;
+}
+.textarea:focus,
+.textarea:focus-within {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+.selectedMessages__count {
+  font-size: 14.5px;
+  color: $rightSlider__profile__name;
+  width: 74%;
+}
+.slideUp__footer {
+  padding-left: 16px;
+  padding-right: 15px;
+}

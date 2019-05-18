@@ -1,0 +1,56 @@
+.rightSide__chat__logScreen__parent {
+  height: calc(100% - 60px);
+  position: relative !important;
+}
+.rightSide__chat__logScreen__child {
+  position: absolute;
+  // height: 90vh;
+  // overflow-y: scroll;
+  width: 100%;
+  padding-left: 9%;
+  padding-right: 9%;
+  background: url("./assets/images/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+}
+.rightSide__chat__sender__message {
+  position: relative;
+  max-width: 65%;
+  min-width: 16% !important;
+  display: inline-block;
+  white-space: pre-wrap;
+  color: #262626;
+  font-size: 13px;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+  word-break: break-all;
+  padding-top: 6px;
+  padding-bottom: 8px;
+  padding-left: 9px;
+  padding-right: 7px;
+  background-color: $sender-chat-msg-color;
+  margin-top: 2px;
+  border-radius: 7.5px;
+  float: right;
+}
+
+li:first-child {
+  .rightSide__chat__sender__firstMessage {
+    position: absolute;
+    border-top: 0px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-left: 16px solid #dcf8c6;
+    width: 6px;
+    right: -12px;
+    top: 0;
+    height: 6px;
+  }
+}
+
+.time-and-tick {
+  width: 100%;
+  padding-left: 20px;
+}
+
+.double-tick {
+  padding-left: 4px;
+  height: 20px !important;
+  width: 18px !important;
+}
