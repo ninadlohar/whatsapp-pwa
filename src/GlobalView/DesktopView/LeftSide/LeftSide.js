@@ -115,7 +115,7 @@ class LeftSide extends React.Component {
         <SearchInputBox placeholder="Search or start new Chat" searchBoxType="withSearchBox" />
         <section className="col-12 px-0 leftSide__chat__section">
           <div className="row mx-0">
-            <div className="col-12 px-0 leftSide__log__of__chats" id="content">
+            <div className="col-12 px-0" id="content">
               <div className="row mx-0">
                 <DefaultLoadedChat />
                 <DefaultLoadedChat />

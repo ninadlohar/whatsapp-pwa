@@ -27,7 +27,7 @@ class ChangeNumberWithInputs extends React.Component {
         <div id="mobile__changeNumberWithInputs__section">
           <section className="col-12 leftSide__chat__section">
             <div className="row">
-              <div className="col-12 leftSide__log__of__chats leftSlider__profile__section">
+              <div className="col-12  leftSlider__profile__section">
                 <div className="row">
                   <div className="col-12">
                     <div className="py-3">

@@ -1,13 +1,13 @@
 import React from "react";
-import SearchInputBox from "../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
-import NewUserChat from "../../../../Common__UI__Components/ChatTypes/NewUserChat";
+import SearchInputBox from "../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
+import NewUserChat from "../../../../../Common__UI__Components/ChatTypes/NewUserChat";
 
 class NewGroup extends React.Component {
   componentDidMount() {
     var height = document.getElementById("page").clientHeight;
     var header = document.getElementById("newGroup_header").clientHeight;
     var inputBox = document.getElementById("newGroup__input__section").clientHeight;
-    var content = document.getElementById("leftSide__log__of__chats_newGroup");
+    var content = document.getElementById("_newGroup");
 
     var step1 = height - header;
     var availableheight = step1 - inputBox;
@@ -18,7 +18,7 @@ class NewGroup extends React.Component {
       var height = document.getElementById("page").clientHeight;
       var header = document.getElementById("newGroup_header").clientHeight;
       var inputBox = document.getElementById("newGroup__input__section").clientHeight;
-      var content = document.getElementById("leftSide__log__of__chats_newGroup");
+      var content = document.getElementById("_newGroup");
 
       var step1 = height - header;
       var availableheight = step1 - inputBox;
@@ -29,7 +29,7 @@ class NewGroup extends React.Component {
 
   render() {
     let hashTag = (
-      <div className="hashTag w-100">
+      <div className="w-100">
         <div className="hashTag_child">#</div>
       </div>
     );
@@ -50,7 +50,7 @@ class NewGroup extends React.Component {
         <section className="col-12 px-0 leftSide__chat__section">
           <SearchInputBox searchBoxType="searchBoxWithLine" placeholder="Type Contact Name" />
           <div className="row mx-0">
-            <div className="col-12 px-0 leftSide__log__of__chats " id="leftSide__log__of__chats_newGroup">
+            <div className="col-12 px-0  " id="_newGroup">
               <div className="row mx-0">
                 {hashTag}
                 <NewUserChat />

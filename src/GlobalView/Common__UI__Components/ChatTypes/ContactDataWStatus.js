@@ -17,17 +17,16 @@ class ContactDataChatWStataus extends React.Component {
     this.setState({ data: this.props.value });
   }
 
-
   countParticipants = id => {
     if (this.state.data.id === id) {
-      this.setState({ selected: !this.state.selected })
+      this.setState({ selected: !this.state.selected });
     }
   };
 
   render() {
     return (
       <div
-        className="chat-1 w-100 d-flex rightSlider__userInfo__box"
+        className=" w-100 d-flex userInfo__box"
         onMouseEnter={this.onHover}
         onMouseLeave={this.offHover}
         onClick={() => this.countParticipants(this.state.data.id)}

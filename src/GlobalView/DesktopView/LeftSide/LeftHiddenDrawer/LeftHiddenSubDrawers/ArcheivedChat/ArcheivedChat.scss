@@ -1,0 +1,52 @@
+@import "../../../../../../scss/colors.scss";
+
+.leftSlider__chatActiveBox {
+  display: block;
+  background: $white;
+  transition: all 0.3s;
+  position: absolute;
+  z-index: 999;
+  height: 100%;
+  transition: all 0.3s cubic-bezier(0, 0.7, 0.4, 0);
+  transform: translate(-100%, 0);
+}
+.leftSlider__header__green_box {
+  padding-top: 49px;
+  padding-left: 23px;
+  padding-right: 20px;
+  height: 108px;
+  background-color: $new-chat-active-color;
+}
+.custom__59height {
+  height: 59px;
+}
+.leftSlider__back__arrow {
+  width: 53px;
+  color: $white;
+}
+.leftSlider__greenBox__header {
+  color: $white;
+  font-size: 19px;
+}
+.leftSide__chat__section {
+  position: relative;
+  background-color: $white;
+}
+.leftSlider__profile__section {
+  background-color: #f7f7f7;
+}
+.archievedChatSection {
+  background-color: #f7f7f7;
+  padding: 50px;
+}
+.archieved-chats-cirle {
+  background-color: #e0e7e9;
+  border-radius: 50%;
+  margin-bottom: 32px;
+  height: 164px;
+  width: 164px;
+}
+.no-archieved-chats {
+  color: #929fa6;
+  font-size: 14px;
+}

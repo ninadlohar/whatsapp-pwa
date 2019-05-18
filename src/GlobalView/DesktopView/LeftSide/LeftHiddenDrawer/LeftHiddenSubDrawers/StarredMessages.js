@@ -23,7 +23,7 @@ const StarredMessages = props => {
       </header>
       <section className="col-12 px-0 leftSide__chat__section">
         <div className="row mx-0">
-          <div className="col-12 px-0 leftSide__log__of__chats starred-messages-container">
+          <div className="col-12 px-0  starred-messages-container">
             <div className="row mx-0">
               <div className="col-12 starred-messages-section w-100 ">
                 <div className="row mx-0 w-100 d-flex">

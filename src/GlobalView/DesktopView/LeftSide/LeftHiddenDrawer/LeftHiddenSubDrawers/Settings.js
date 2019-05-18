@@ -18,7 +18,7 @@ class Settings extends React.Component {
         </header>
         <section className="col-12 px-0 leftSide__chat__section">
           <div className="row mx-0">
-            <div className="col-12 px-0 leftSide__log__of__chats profile_section">
+            <div className="col-12 px-0  profile_section">
               <div className="row mx-0">
                 <div className="col-12 px-0 settings-section d-flex  w-100">
                   <div className=" settings-section-image-section">

@@ -17,14 +17,10 @@ class Calls extends React.Component {
 
   render() {
     return (
-      <div
-        className="chat-1 w-100 d-flex rightSlider__userInfo__box"
-        onMouseEnter={this.onHover}
-        onMouseLeave={this.offHover}
-      >
+      <div className=" w-100 d-flex userInfo__box" onMouseEnter={this.onHover} onMouseLeave={this.offHover}>
         <div className="leftChat__user__image">
           <img
-            src={require("../../../../../assets/images/BB_S5B_004_sm.jpg")}
+            src={require("../../../../../../assets/images/BB_S5B_004_sm.jpg")}
             alt="tim-holland"
             className="sender__image__left__window"
           />
@@ -39,12 +35,7 @@ class Calls extends React.Component {
             <div className="row mx-0">
               <div className="leftChat__message noOverFlow">
                 <span className="pr-2">
-                  <img
-                    src={require("../../../../../assets/svg/call-received-arrow.svg")}
-                    height="11"
-                    width="11"
-                    alt="call-received"
-                  />
+                  <img src={require("../../../../../../assets/svg/call-received-arrow.svg")} height="11" width="11" alt="call-received" />
                 </span>
                 <span>Yesterday 10:30 AM</span>
               </div>
@@ -52,7 +43,7 @@ class Calls extends React.Component {
           </div>
         </div>
         <div className="d-flex align-items-center">
-          <img src={require("../../../../../assets/svg/video-camera.svg")} alt="video-camera" height="20" width="20" />
+          <img src={require("../../../../../../assets/svg/video-camera.svg")} alt="video-camera" height="20" width="20" />
         </div>
       </div>
     );

@@ -166,17 +166,17 @@ class Media extends React.Component {
                 style={{ width: "100vw" }}
               >
                 <TabContainer dir={theme.direction}>
-                  <div className="col-12 px-0 d-flex leftSide__log__of__chats" id="content">
+                  <div className="col-12 px-0 d-flex " id="content">
                     <div className="row mx-0">No Media Found</div>
                   </div>
                 </TabContainer>
                 <TabContainer dir={theme.direction}>
-                  <div className="col-12 px-0  leftSide__log__of__chats" id="content8" name="swipe">
+                  <div className="col-12 px-0  " id="content8" name="swipe">
                     <div className="row mx-0">No Doucments found</div>
                   </div>
                 </TabContainer>
                 <TabContainer dir={theme.direction}>
-                  <div className="col-12 px-0  leftSide__log__of__chats" id="content9" name="swipe">
+                  <div className="col-12 px-0  " id="content9" name="swipe">
                     <div className="row mx-0">No Links Found</div>
                   </div>
                 </TabContainer>

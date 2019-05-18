@@ -1,0 +1,50 @@
+@import "../../../../../../scss/colors.scss";
+
+.profile_section_name_with_value {
+  font-size: 17px;
+  margin: 8px 0px;
+}
+.pt-3-custom {
+  padding-top: 3px;
+}
+.leftSlider__header__green_box {
+  padding-top: 49px;
+  padding-left: 23px;
+  padding-right: 20px;
+  height: 108px;
+  background-color: $new-chat-active-color;
+}
+.custom__59height {
+  height: 59px;
+}
+.leftSlider__back__arrow {
+  width: 53px;
+  color: $white;
+}
+.leftSlider__greenBox__header {
+  color: $white;
+  font-size: 19px;
+}
+.leftSide__chat__section {
+  position: relative;
+  background-color: $white;
+}
+.profile_section_basic_info {
+  margin-bottom: 10px;
+  background-color: #fff;
+  padding: 14px 30px 10px 30px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.profile_section_name {
+  color: #128c7e;
+  font-size: 14px;
+  line-height: normal;
+  margin-bottom: 14px;
+}
+
+.static_text {
+  color: #929fa6;
+  font-size: 13px;
+  margin: 4px 20px 28px 30px;
+  background-color: #f7f7f7;
+}

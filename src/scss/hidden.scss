@@ -1,146 +1,9 @@
 @import "./colors.scss";
 
-.rightSlider__header {
-  padding-left: 25px;
-  padding-right: 20px;
-  font-size: 17px;
-  padding-top: 17px;
-  padding-bottom: 18px;
-  color: $black;
-  background-color: $display-content-area-header-color;
-}
-.custom__padding50 {
-  padding: 50px;
-}
-.rightSlider__search__container__content {
-  font-size: 13px;
-  color: $hidden_box_content_color;
-}
-
 /** contact info details start */
-
-.rightSlider__contactInfo__parent {
-  position: relative;
-  width: 100%;
-  height: 80vh;
-  overflow: scroll;
-}
-
-.rightSlider__contactInfo__child {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  animation: 1s cubic-bezier(0.1, 0.82, 0.25, 1);
-}
-
-.rightSlider__basicInfo__section {
-  padding-top: 28px;
-  padding-bottom: 19px;
-  padding-left: 30px;
-  padding-right: 30px;
-  margin-bottom: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  .rightSlider__sender__basicInfo__image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    background-color: rgba(140, 140, 140, 0.85);
-  }
-}
-
-.rightSlider__sender__basicInfo__image:active {
-  opacity: 0.5;
-}
-
-.rightSlider__profile__edit__name {
-  font-weight: 400;
-  font-size: 19px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  margin: 5px 0 6px 0;
-  color: $rightSlider__profile__name;
-}
 
 .pt-8_custom {
   padding-top: 8px;
-}
-.pt-3-custom {
-  padding-top: 3px;
-}
-.rightSlider__sender__lastSeenDate {
-  font-size: 14px;
-  color: $rightSlider__time__created;
-}
-.rightSlider__group__details {
-  margin-bottom: 10px;
-  padding: 14px 30px 10px 30px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  .rightSlider__group__description {
-    color: #128c7e;
-    font-size: 14px;
-  }
-  .rightSlider__profile__edit__description {
-    font-size: 14px;
-    padding-top: 6px;
-    padding-bottom: 5px;
-    color: $rightSlider__profile__name;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-}
-
-.rightSlider__media__links__section {
-  padding: 14px 30px 10px 30px;
-  margin-bottom: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  .rightSlider__media__links__title {
-    font-size: 14px;
-    color: #128c7e;
-  }
-}
-.rightSlider__media__image__section {
-  padding-top: 8px;
-}
-.rightSlider__media__docs__image {
-  margin-right: 8px;
-  margin-bottom: 8px;
-}
-.rightSlider__mute__starred__messages__section {
-  padding-left: 30px;
-  padding-right: 30px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  .mute {
-    border-bottom: 1px solid #f2f2f2;
-    color: $black;
-    font-size: 17px;
-    padding-top: 18px;
-    padding-bottom: 18px;
-  }
-  .rightSlider__starred__messages {
-    padding-top: 18px;
-    padding-bottom: 18px;
-    color: $black;
-    font-size: 17px;
-  }
-}
-
-.rightSlider__participants__header {
-  padding: 18px 30px 14px 30px;
-  font-size: 14px;
-  color: #128c7e;
-}
-
-.rightSlider__group__participant {
-  padding-left: 14px;
-}
-
-.custom__width__90percent {
-  width: 90%;
 }
 
 .group-admin {
@@ -149,27 +12,6 @@
   padding: 2px 5px 2px 5px;
   border-radius: 3px;
   border: 1px solid #4caf50;
-}
-
-.rightSlider__userInfo__padding {
-  padding-left: 13px;
-  padding-right: 21px;
-}
-
-.rightSlider__more__group__people__count {
-  font-size: 17px;
-  border-top: 1px solid #f2f2f2;
-}
-
-.rightSlider__more__people {
-  margin-bottom: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-}
-
-.rightSlider__exit__group {
-  margin-bottom: 10px;
-  font-size: 17px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .report-group-section {
@@ -183,10 +25,6 @@
   padding-bottom: 18px;
   padding-left: 40px;
   padding-right: 31px;
-}
-
-.rightSlider__exit__group__text {
-  color: $alert-color;
 }
 
 /** contact info details ends */

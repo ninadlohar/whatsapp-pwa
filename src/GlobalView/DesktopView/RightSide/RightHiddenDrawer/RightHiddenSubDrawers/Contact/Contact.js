@@ -1,6 +1,6 @@
 import React from "react";
-import ContactDataChatWithStataus from "../../../../Common__UI__Components/ChatTypes/ContactDataChatWithStatus";
-import SearchInputBox from "../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
+import ContactDataChatWithStataus from "../../../../../Common__UI__Components/ChatTypes/ContactDataChatWithStatus";
+import SearchInputBox from "../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 
 class Contact extends React.Component {
   state = {
@@ -43,10 +43,10 @@ class Contact extends React.Component {
   };
   render() {
     let morePeople = (
-      <div className="chat-1 w-100 py-2 d-flex rightSlider__userInfo__box pr-3">
+      <div className=" w-100 py-2 d-flex userInfo__box pr-3">
         <div className="rightSlider__userInfo__padding">
           <div className="rightSlider__userInfo__image__padding py-3">
-            <img src={require("../../../../../assets/svg/down-arrow.svg")} alt="down-arrow" height="16" width="14" />
+            <img src={require("../../../../../../assets/svg/down-arrow.svg")} alt="down-arrow" height="16" width="14" />
           </div>
         </div>
         <div className="d-flex align-items-center rightSlider__more__group__people__count w-100 ">29 More</div>
@@ -57,7 +57,7 @@ class Contact extends React.Component {
     let exitGroup = (
       <div className="rightSlider__exit__group d-flex">
         <div className="exit-logo-svg">
-          <img src={require("../../../../../assets/svg/exit.svg")} height="20" width="20" alt="exit-svg" />
+          <img src={require("../../../../../../assets/svg/exit.svg")} height="20" width="20" alt="exit-svg" />
         </div>
         <div className="rightSlider__exit__group__text d-flex align-items-center">Exit Group</div>
       </div>
@@ -65,7 +65,7 @@ class Contact extends React.Component {
     let reportGroup = (
       <div className="report-group-section d-flex">
         <div className="exit-logo-svg">
-          <img src={require("../../../../../assets/svg/thumb-down.svg")} height="20" width="20" alt="report-svg" />
+          <img src={require("../../../../../../assets/svg/thumb-down.svg")} height="20" width="20" alt="report-svg" />
         </div>
         <div className="rightSlider__exit__group__text d-flex align-items-center">Report Group</div>
       </div>
@@ -76,7 +76,7 @@ class Contact extends React.Component {
       <div className="d-flex">
         <div className="rightSlider__profile__edit__name w-100">German Shepherd</div>
         <div className="pt-8_custom" onClick={this.isEditingNameGroupFn}>
-          <img src={require("../../../../../assets/svg/create-new-pencil-button.svg")} alt="edit" height="18" width="18" />
+          <img src={require("../../../../../../assets/svg/create-new-pencil-button.svg")} alt="edit" height="18" width="18" />
         </div>
       </div>
     );
@@ -85,7 +85,7 @@ class Contact extends React.Component {
       <div className="d-flex">
         <div className="rightSlider__profile__edit__description w-100">Add Group Description</div>
         <div onClick={this.isEditingDescriptionFn}>
-          <img src={require("../../../../../assets/svg/create-new-pencil-button.svg")} alt="pencil-edit" height="18" width="18" />
+          <img src={require("../../../../../../assets/svg/create-new-pencil-button.svg")} alt="pencil-edit" height="18" width="18" />
         </div>
       </div>
     );
@@ -94,9 +94,9 @@ class Contact extends React.Component {
       <div className="rightSlider__child__open col-12 px-0" id="col-30-child">
         <header className="rightSlider__header d-flex" id="rightSlider__header">
           <div style={{ width: "54px" }} onClick={this.slideOutToggler}>
-            <img src={require("../../../../../assets/svg/cancel-real.svg")} alt="cancel" height="14" />
+            <img src={require("../../../../../../assets/svg/cancel-real.svg")} alt="cancel" height="14" />
           </div>
-          <div className="rightSlider__header__text">
+          <div>
             <span>Contact Info</span>
           </div>
         </header>
@@ -107,7 +107,7 @@ class Contact extends React.Component {
             <div className="rightSlider__basicInfo__section">
               <div className="d-flex justify-content-center">
                 <img
-                  src={require("../../../../../assets/images/user-image.jpg")}
+                  src={require("../../../../../../assets/images/user-image.jpg")}
                   alt="sender-images"
                   className="rightSlider__sender__basicInfo__image"
                 />
@@ -148,7 +148,7 @@ class Contact extends React.Component {
               <div className="d-flex">
                 <div className="rightSlider__media__links__title w-100">Media Links and Docs</div>
                 <div>
-                  <img src={require("../../../../../assets/svg/right-arrow.svg")} alt="right-arrow-angle" height="13" width="13" />
+                  <img src={require("../../../../../../assets/svg/right-arrow.svg")} alt="right-arrow-angle" height="13" width="13" />
                 </div>
               </div>
               <div className="rightSlider__media__image__section d-flex justify-content-center">
@@ -161,20 +161,20 @@ class Contact extends React.Component {
               <div className="d-flex">
                 <div className="mute w-100">Mute</div>
                 <div style={{ marginTop: "16px" }}>
-                  <img src={require("../../../../../assets/svg/square.svg")} alt="pencil-edit" height="18" width="18" />
+                  <img src={require("../../../../../../assets/svg/square.svg")} alt="pencil-edit" height="18" width="18" />
                 </div>
               </div>
               <div className="d-flex">
                 <div className="rightSlider__starred__messages w-100">Starred Messages</div>
                 <div style={{ marginTop: "15px" }}>
-                  <img src={require("../../../../../assets/svg/right-arrow.svg")} alt="right-arrow-angle" height="13" width="13" />
+                  <img src={require("../../../../../../assets/svg/right-arrow.svg")} alt="right-arrow-angle" height="13" width="13" />
                 </div>
               </div>
             </div>
             <div className="d-flex">
               <div className="rightSlider__participants__header custom__width__90percent">38 Participants</div>
               <div style={{ marginTop: "13px" }}>
-                <img src={require("../../../../../assets/svg/search.svg")} alt="search" height="15" width="15" />
+                <img src={require("../../../../../../assets/svg/search.svg")} alt="search" height="15" width="15" />
               </div>
             </div>
             <div>

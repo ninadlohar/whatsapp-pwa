@@ -17,18 +17,13 @@ const ArchievedChat = props => {
       </header>
       <section className="col-12 px-0 leftSide__chat__section">
         <div className="row mx-0">
-          <div className="col-12 px-0 leftSide__log__of__chats leftSlider__profile__section">
+          <div className="col-12 px-0 leftSlider__profile__section">
             <div className="row mx-0">
               <div className="archievedChatSection w-100">
                 <div className="d-flex justify-content-center">
                   <div className="archieved-chats-cirle">
                     <div className="h-100 d-flex justify-content-center align-items-center">
-                      <img
-                        src={require("../../../../../assets/svg/archieved-chat.svg")}
-                        alt="archieved-chat"
-                        width="70"
-                        height="70"
-                      />
+                      <img src={require("../../../../../../assets/svg/archieved-chat.svg")} alt="archieved-chat" width="70" height="70" />
                     </div>
                   </div>
                 </div>

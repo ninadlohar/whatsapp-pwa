@@ -1,6 +1,6 @@
 import React from "react";
-import Search from "./RightHiddenSubDrawers/Search";
-import Contact from "./RightHiddenSubDrawers/Contact";
+import Search from "./RightHiddenSubDrawers/Search/Search";
+import Contact from "./RightHiddenSubDrawers/Contact/Contact";
 
 class RightHiddenDrawer extends React.Component {
   constructor(props) {
@@ -143,10 +143,7 @@ class RightHiddenDrawer extends React.Component {
         break;
     }
     return (
-      <div
-        className={this.props.squeezeLayoutBoolean ? this.props.hiddenClass.join(" ") : null}
-        id="DOMChangedHiddenSide"
-      >
+      <div className={this.props.squeezeLayoutBoolean ? this.props.hiddenClass.join(" ") : null} id="DOMChangedHiddenSide">
         {display}
       </div>
     );

@@ -37,7 +37,7 @@ class BlockedContact extends React.Component {
         </header>
         <section className="col-12 px-0 leftSide__chat__section" id="mobile__blockedContact__section">
           <div className="row mx-0">
-            <div className="col-12 px-0 leftSide__log__of__chats leftSlider__profile__section">
+            <div className="col-12 px-0  leftSlider__profile__section">
               <div className="row mx-0">
                 <div className="p-3 w-100 deleteAccount__head__section">
                   <div className="d-flex justify-content-center">

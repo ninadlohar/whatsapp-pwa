@@ -1,5 +1,5 @@
 import React from "react";
-import SearchInputBox from "../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
+import SearchInputBox from "../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 
 class Profile extends React.Component {
   state = {
@@ -47,9 +47,9 @@ class Profile extends React.Component {
     let editName = (
       <div className="d-flex">
         <div className="profile_section_name_with_value w-100">Niko</div>
-        <div className="profile_section_name_with_value_edit" onClick={this.isEditingNameFn}>
+        <div onClick={this.isEditingNameFn}>
           <img
-            src={require("../../../../../assets/svg/create-new-pencil-button.svg")}
+            src={require("../../../../../../assets/svg/create-new-pencil-button.svg")}
             alt="edit"
             height="18"
             width="18"
@@ -61,9 +61,9 @@ class Profile extends React.Component {
     let editAbout = (
       <div className="d-flex">
         <div className="profile_section_name_with_value w-100">coding</div>
-        <div className="profile_section_name_with_value_edit" onClick={this.isEditingAboutFn}>
+        <div onClick={this.isEditingAboutFn}>
           <img
-            src={require("../../../../../assets/svg/create-new-pencil-button.svg")}
+            src={require("../../../../../../assets/svg/create-new-pencil-button.svg")}
             alt="edit"
             height="18"
             width="18"
@@ -89,11 +89,11 @@ class Profile extends React.Component {
 
         <section className="col-12 px-0 leftSide__chat__section">
           <div className="row mx-0">
-            <div className="col-12 px-0 leftSide__log__of__chats profile_section" id="profile__section">
+            <div className="col-12 px-0" id="profile__section">
               <div className="row mx-0">
                 <div className="leftDrawer_Profile_ImageSection w-100 d-flex justify-content-center">
                   <img
-                    src={require("../../../../../assets/images/user-image.jpg")}
+                    src={require("../../../../../../assets/images/user-image.jpg")}
                     alt="logged_in_user_image"
                     className="leftDrawer_Profile_ImageSection_image justify-content-center"
                   />

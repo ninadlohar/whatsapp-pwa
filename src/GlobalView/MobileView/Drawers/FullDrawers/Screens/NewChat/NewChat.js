@@ -55,12 +55,7 @@ class NewChat extends React.Component {
 
   render() {
     let newGroup = (
-      <div
-        className="chat-1 w-100 d-flex rightSlider__userInfo__box "
-        onMouseEnter={this.onHover}
-        onMouseLeave={this.offHover}
-        onClick={this.setNewGroupTrue}
-      >
+      <div className=" w-100 d-flex userInfo__box " onMouseEnter={this.onHover} onMouseLeave={this.offHover} onClick={this.setNewGroupTrue}>
         <div className="leftChat__user__image">
           <img src={require("../../../../../../assets/svg/team.svg")} alt="karl-benz" className="logged__in__user__image__49px" />
         </div>
@@ -70,7 +65,7 @@ class NewChat extends React.Component {
       </div>
     );
     let newContact = (
-      <div className="chat-1 w-100 d-flex rightSlider__userInfo__box" onMouseEnter={this.onHover} onMouseLeave={this.offHover}>
+      <div className=" w-100 d-flex userInfo__box" onMouseEnter={this.onHover} onMouseLeave={this.offHover}>
         <div className="leftChat__user__image">
           <img src={require("../../../../../../assets/svg/user.svg")} alt="karl-benz" className="logged__in__user__image__49px" />
         </div>

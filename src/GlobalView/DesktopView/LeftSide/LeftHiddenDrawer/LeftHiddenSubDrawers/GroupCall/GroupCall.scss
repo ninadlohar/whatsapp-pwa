@@ -1,0 +1,40 @@
+@import "../../../../../../scss/colors.scss";
+
+.call__info__section {
+  background-color: $view-profile-bgColor;
+}
+.userInfo__box:hover {
+  .rollback-on-hover {
+    transition: all 0.3s;
+    transform: translate(-6px, 0px);
+  }
+}
+.leftChat__user__image {
+  padding-left: 13px;
+  padding-right: 15px;
+  padding-top: 12px;
+  padding-bottom: 11px;
+}
+.sender__image__left__window {
+  height: 49px;
+  width: 49px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.calls__user__details__mobile {
+  padding-right: 12px;
+  width: calc(100% - 150px);
+  padding-top: 23px;
+  padding-bottom: 6px;
+}
+.leftChat__senderName___time {
+  .leftChat__senderName {
+    width: calc(100% - 58px);
+    font-size: 17px;
+    color: $black;
+  }
+}
+.single-icons {
+  width: 40px;
+  height: 40px;
+}

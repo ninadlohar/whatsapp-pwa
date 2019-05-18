@@ -1,5 +1,5 @@
 import React from "react";
-import SearchInputBox from "../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
+import SearchInputBox from "../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 
 class Search extends React.Component {
   state = {
@@ -15,9 +15,9 @@ class Search extends React.Component {
       <div className="rightSlider__child__open col-12 px-0" id="col-30-child">
         <header className="rightSlider__header d-flex">
           <div style={{ width: "54px" }} onClick={this.slideOutToggler}>
-            <img src={require("../../../../../assets/svg/cancel-real.svg")} alt="cancel" height="14" />
+            <img src={require("../../../../../../assets/svg/cancel-real.svg")} alt="cancel" height="14" />
           </div>
-          <div className="rightSlider__header__text">
+          <div>
             <span>Search Messages</span>
           </div>
         </header>

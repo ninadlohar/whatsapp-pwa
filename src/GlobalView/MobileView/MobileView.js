@@ -4,7 +4,7 @@ import SwipeableViews from "react-swipeable-views";
 import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
 import Status from "../DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/Status";
-import Calls from "../DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/Calls";
+import Calls from "../DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/Calls/Calls";
 import SearchInputBox from "../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 import DropDown from "../Common__UI__Components/DropDown/DropDown";
 import { withStyles } from "@material-ui/core/styles";
@@ -378,7 +378,7 @@ class MobileView extends React.Component {
                 style={{ width: "100vw" }}
               >
                 <TabContainer dir={theme.direction}>
-                  <div className="col-12 px-0 leftSide__log__of__chats" id="content">
+                  <div className="col-12 px-0 " id="content">
                     <div className="row mx-0">
                       <div onClick={this.openChatTrue} style={{ overflow: "hidden" }}>
                         <DefaultLoadedChat />
@@ -414,7 +414,7 @@ class MobileView extends React.Component {
                   </div>
                 </TabContainer>
                 <TabContainer dir={theme.direction}>
-                  <div className="col-12 px-0 leftSide__log__of__chats" id="content8" name="swipe">
+                  <div className="col-12 px-0 " id="content8" name="swipe">
                     <div className="row mx-0">
                       <Status />
                       <Status />
@@ -429,7 +429,7 @@ class MobileView extends React.Component {
                   </div>
                 </TabContainer>
                 <TabContainer dir={theme.direction}>
-                  <div className="col-12 px-0 leftSide__log__of__chats" id="content9" name="swipe">
+                  <div className="col-12 px-0 " id="content9" name="swipe">
                     <div className="row mx-0">
                       <div className="w-100" onClick={this.openCallInfo} style={{ overflow: "hidden" }}>
                         <Calls />

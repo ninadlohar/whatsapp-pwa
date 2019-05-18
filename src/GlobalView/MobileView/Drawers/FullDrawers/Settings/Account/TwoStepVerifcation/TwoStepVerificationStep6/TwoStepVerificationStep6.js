@@ -47,7 +47,7 @@ class TwoStepVerificationStep6 extends React.Component {
         <div id="mobile__twoStepVerificationFinallyDone__section">
           <section className="col-12 px-0 leftSide__chat__section">
             <div className="row mx-0">
-              <div className="col-12 px-0 leftSide__log__of__chats leftSlider__profile__section">
+              <div className="col-12 px-0  leftSlider__profile__section">
                 <div className="row mx-0">
                   <div className="p-3 w-100">
                     <div className="d-flex justify-content-center">

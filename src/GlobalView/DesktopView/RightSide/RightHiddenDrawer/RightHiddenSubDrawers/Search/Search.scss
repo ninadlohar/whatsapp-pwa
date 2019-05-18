@@ -1,0 +1,21 @@
+.rightSlider__child__open {
+  width: 100%;
+  height: 100vh;
+  background-color: $white !important;
+}
+.rightSlider__header {
+  padding-left: 25px;
+  padding-right: 20px;
+  font-size: 17px;
+  padding-top: 17px;
+  padding-bottom: 18px;
+  color: $black;
+  background-color: $display-content-area-header-color;
+}
+.custom__padding50 {
+  padding: 50px;
+}
+.rightSlider__search__container__content {
+  font-size: 13px;
+  color: $hidden_box_content_color;
+}

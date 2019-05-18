@@ -1,0 +1,47 @@
+@import "../../../../../../scss/colors.scss";
+
+.userInfo__box {
+  background-color: $white;
+}
+
+.userInfo__box:hover {
+  .rollback-on-hover {
+    transition: all 0.3s;
+    transform: translate(-6px, 0px);
+  }
+}
+
+.frequently-contacted {
+  padding-left: 30px;
+  color: $green-box-color;
+}
+.remaining {
+  border-bottom: 1px solid $chat-border-top-color;
+  width: calc(100% - 72px);
+}
+.left__drawer__newGroup {
+  color: $black;
+  font-size: 17px;
+}
+.leftSlider__header__green_box {
+  padding-top: 49px;
+  padding-left: 23px;
+  padding-right: 20px;
+  height: 108px;
+  background-color: $new-chat-active-color;
+}
+.custom__59height {
+  height: 59px;
+}
+.leftSlider__back__arrow {
+  width: 53px;
+  color: $white;
+}
+.leftSlider__greenBox__header {
+  color: $white;
+  font-size: 19px;
+}
+.leftSide__chat__section {
+  position: relative;
+  background-color: $white;
+}

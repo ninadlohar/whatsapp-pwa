@@ -1,12 +1,5 @@
 @import "./colors.scss";
 
-.leftChat__user__image {
-  padding-left: 13px;
-  padding-right: 15px;
-  padding-top: 12px;
-  padding-bottom: 11px;
-}
-
 .leftChat__user__details {
   padding-right: 12px;
   width: calc(100% - 77px);
@@ -15,32 +8,6 @@
   border-top: 1px solid $chat-border-top-color;
   > strong {
     font-weight: 500;
-  }
-}
-
-.calls__user__details {
-  padding-right: 12px;
-  width: calc(100% - 128px);
-  padding-top: 16px;
-  padding-bottom: 6px;
-  border-top: 1px solid $chat-border-top-color;
-}
-
-.calls__user__details__mobile {
-  padding-right: 12px;
-  width: calc(100% - 150px);
-  padding-top: 23px;
-  padding-bottom: 6px;
-}
-
-.rightSlider__userInfo__box {
-  background-color: $white;
-}
-
-.rightSlider__userInfo__box:hover {
-  .rollback-on-hover {
-    transition: all 0.3s;
-    transform: translate(-6px, 0px);
   }
 }
 

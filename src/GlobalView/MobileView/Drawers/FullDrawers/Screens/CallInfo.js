@@ -56,7 +56,7 @@ class CallInfo extends React.Component {
           </div>
         </header>
         <div className="call__info__section" id="call__info__section">
-          <div className="chat-1 w-100 d-flex rightSlider__userInfo__box">
+          <div className=" w-100 d-flex userInfo__box">
             <div className="leftChat__user__image">
               <img
                 src={require("../../../../../assets/images/BB_S5B_004_sm.jpg")}

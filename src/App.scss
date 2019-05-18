@@ -4,15 +4,20 @@
 @import "./scss/hidden.scss";
 @import "./GlobalView/DesktopView/RightSide/components/Footer/Footer.scss";
 @import "./GlobalView/DesktopView/RightSide/RightSide.scss";
+@import "./GlobalView/DesktopView/RightSide/RightHiddenDrawer/RightHiddenSubDrawers/Contact/Contact.scss";
+@import "./GlobalView/DesktopView/RightSide/RightHiddenDrawer/RightHiddenSubDrawers/Search/Search.scss";
 @import "./GlobalView/DesktopView/RightSide/components/MessageArea/MessageArea.scss";
+@import "./GlobalView/DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/ArcheivedChat/ArcheivedChat.scss";
+@import "./GlobalView/DesktopView/LeftSide/LeftSide.scss";
+@import "./GlobalView/DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/Calls/Calls.scss";
+@import "./GlobalView/DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/NewGroup/NewGroup.scss";
+@import "./GlobalView/DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/GroupCall/GroupCall.scss";
+@import "./GlobalView/DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/NewChat/NewChat.scss";
+@import "./GlobalView/DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/Profile/Profile.scss";
 @import "./GlobalView/Common__UI__Components/DropDown/Dropdown.scss";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600");
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
 
 html,
 body {
-  // font-family: "Open Sans", sans-serif;
   font-family: "Segoe UI", sans-serif;
 }
 
@@ -45,23 +50,7 @@ body {
     border-radius: 50%;
     object-fit: cover;
   }
-  .sender__image__left__window {
-    height: 49px;
-    width: 49px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  .leftSide__header {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-right: 1px solid $border-color;
-    background-color: $display-content-area-header-color;
-  }
 
-  .leftSide__chat__section {
-    position: relative;
-    background-color: $white;
-  }
   .chat-section-sending-user-data {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -143,23 +132,7 @@ body {
     width: 49px;
     border-radius: 50%;
   }
-  .sender__image__left__window {
-    height: 49px;
-    width: 49px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  .leftSide__header {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-right: 1px solid $border-color;
-    background-color: $display-content-area-header-color;
-  }
 
-  .leftSide__chat__section {
-    position: relative;
-    background-color: $white;
-  }
   .chat-section-sending-user-data {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -221,9 +194,7 @@ body {
   .call__history__mobile {
     border-radius: 4px;
   }
-  .call__info__section {
-    background-color: $view-profile-bgColor;
-  }
+
   .call__info__header {
     background-color: $dark-green-common-color;
     color: $white;
@@ -547,40 +518,7 @@ body {
     border-radius: 0px !important;
     border-bottom: 2px solid #00bfa5;
   }
-  .no-archieved-chats {
-    color: #929fa6;
-    font-size: 14px;
-  }
-  .archieved-chats-cirle {
-    background-color: #e0e7e9;
-    border-radius: 50%;
-    margin-bottom: 32px;
-    height: 164px;
-    width: 164px;
-  }
-  .archievedChatSection {
-    background-color: #f7f7f7;
-    padding: 50px;
-  }
-  .leftSlider__profile__section {
-    background-color: #f7f7f7;
-  }
-  .profile_section_name {
-    color: #128c7e;
-    font-size: 14px;
-    line-height: normal;
-    margin-bottom: 14px;
-  }
-  .profile_section_name_with_value {
-    font-size: 17px;
-    margin: 8px 0px;
-  }
-  .static_text {
-    color: #929fa6;
-    font-size: 13px;
-    margin: 4px 20px 28px 30px;
-    background-color: #f7f7f7;
-  }
+
   .leftDrawer_Profile_ImageSection {
     margin-top: 28px;
     margin-bottom: 28px;
@@ -589,13 +527,6 @@ body {
     width: 200px !important;
     height: 200px !important;
     border-radius: 50%;
-  }
-  .hashTag_child {
-    padding-top: 30px;
-    padding-left: 32px;
-    padding-bottom: 15px;
-    font-size: 15px;
-    color: $green-box-color;
   }
 
   .leftSide__chat__window__parent {
@@ -611,59 +542,11 @@ body {
     color: $sender-message-color;
     font-size: 13px;
   }
-  // .log-of-chats-new-chat-active {
-  //   overflow-y: scroll;
-  //   height: 73vh;
-  // }
-  .leftSlider__chatActiveBox {
-    display: block;
-    background: $white;
-    transition: all 0.3s;
-    position: absolute;
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    transform: translate(-100%, 0);
-  }
-  .frequently-contacted {
-    padding-left: 30px;
-    color: $green-box-color;
-  }
-  .leftSlider__greenBox__header {
-    color: $white;
-    font-size: 19px;
-  }
-  .leftSlider__back__arrow {
-    width: 53px;
-    color: $white;
-  }
-  .custom__59height {
-    height: 59px;
-  }
-  .leftSlider__header__green_box {
-    padding-top: 49px;
-    padding-left: 23px;
-    padding-right: 20px;
-    height: 108px;
-    background-color: $new-chat-active-color;
-  }
 
-  .remaining {
-    border-bottom: 1px solid $chat-border-top-color;
-    width: calc(100% - 72px);
-  }
-  .rightSlider__userInfo__image__padding {
-    padding-left: 13px;
-    padding-right: 15px;
-  }
   .col-xl-3-5 {
     width: 100%;
   }
-  // .leftSide__log__of__chats {
-  //   overflow-y: scroll;
-  //   position: absolute;
-  //   height: 90vh;
-  // }
+
   .send-text-input-box:focus,
   .send-text-input-box:focus-within {
     border-color: transparent !important;
@@ -682,17 +565,6 @@ body {
   }
   .mobile__newChat__options {
     width: 100px;
-  }
-
-  .rightSlider__userInfo__box:hover {
-    .rollback-on-hover {
-      transition: all 0.3s;
-      transform: translate(-6px, 0px);
-    }
-  }
-  .rightSlider__userInfo__box:active {
-    background-color: $chat-active-color;
-    cursor: pointer;
   }
   .rightSide__chat__window__parent {
     position: relative;
@@ -719,11 +591,6 @@ body {
 }
 
 @media (min-width: 768px) {
-  .left__drawer__newGroup {
-    color: $black;
-    font-size: 17px;
-  }
-
   .rightSlider__chatActiveBox {
     display: block;
     background: $white;
@@ -842,20 +709,7 @@ body {
     border-bottom: 2px solid #00bfa5;
     // color: $search-input-box-text-color;
   }
-  .leftSlider__profile__section {
-    background-color: #f7f7f7;
-  }
-  .no-archieved-chats {
-    color: #929fa6;
-    font-size: 14px;
-  }
-  .archieved-chats-cirle {
-    background-color: #e0e7e9;
-    border-radius: 50%;
-    margin-bottom: 32px;
-    height: 164px;
-    width: 164px;
-  }
+
   .archievedChatSection {
     background-color: #f7f7f7;
     padding: 50px;
@@ -864,39 +718,11 @@ body {
     margin-top: 28px;
     margin-bottom: 28px;
   }
-  .profile_section_name_with_value {
-    font-size: 17px;
-    margin: 8px 0px;
-  }
-  .static_text {
-    color: #929fa6;
-    font-size: 13px;
-    margin: 4px 20px 28px 30px;
-    background-color: #f7f7f7;
-  }
-  .profile_section_name {
-    color: #128c7e;
-    font-size: 14px;
-    line-height: normal;
-    margin-bottom: 14px;
-  }
-  .profile_section_basic_info {
-    margin-bottom: 10px;
-    background-color: #fff;
-    padding: 14px 30px 10px 30px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  }
+
   .leftDrawer_Profile_ImageSection_image {
     width: 200px !important;
     height: 200px !important;
     border-radius: 50%;
-  }
-  .hashTag_child {
-    padding-top: 30px;
-    padding-left: 32px;
-    padding-bottom: 15px;
-    font-size: 15px;
-    color: $green-box-color;
   }
 
   .leftSide__chat__window__parent {
@@ -911,64 +737,15 @@ body {
     color: $sender-message-color;
     font-size: 13px;
   }
-  // .log-of-chats-new-chat-active {
-  //   overflow-y: scroll;
-  //   height: 73vh;
-  //   z-index: 999;
-  // }
-  .frequently-contacted {
-    padding-left: 30px;
-    color: $green-box-color;
-  }
+
   .h-72 {
     height: 72px;
   }
-  .leftSlider__chatActiveBox {
-    display: block;
-    background: $white;
-    transition: all 0.3s;
-    position: absolute;
-    z-index: 999;
-    height: 100%;
-    transition: all 0.3s cubic-bezier(0, 0.7, 0.4, 0);
-    // width: 30%;
-    transform: translate(-100%, 0);
-  }
 
-  .leftSlider__greenBox__header {
-    color: $white;
-    font-size: 19px;
-  }
-  .leftSlider__back__arrow {
-    width: 53px;
-    color: $white;
-  }
-  .custom__59height {
-    height: 59px;
-  }
-  .leftSlider__header__green_box {
-    padding-top: 49px;
-    padding-left: 23px;
-    padding-right: 20px;
-    height: 108px;
-    background-color: $new-chat-active-color;
-  }
-  .remaining {
-    width: calc(100% - 72px);
-    border-bottom: 1px solid $chat-border-top-color;
-  }
-  .rightSlider__userInfo__image__padding {
-    padding-left: 13px;
-    padding-right: 15px;
-  }
   .rightSide__chat__window__parent {
     position: relative;
   }
-  // .leftSide__log__of__chats {
-  //   overflow-y: scroll;
-  //   // position: absolute;
-  //   height: 90vh;
-  // }
+
   .send-text-input-box:focus,
   .send-text-input-box:focus-within {
     border-color: transparent !important;
@@ -981,18 +758,6 @@ body {
   ::-webkit-scrollbar-thumb {
     width: 8px;
     background: $scrollbar-color;
-  }
-
-  .rightSlider__userInfo__box:hover {
-    .rollback-on-hover {
-      transition: all 0.3s;
-      transform: translate(-6px, 0px);
-    }
-  }
-
-  .rightSlider__userInfo__box:active {
-    background-color: $chat-active-color;
-    cursor: pointer;
   }
 
   .chat-dropdown {
