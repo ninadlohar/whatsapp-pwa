@@ -1,6 +1,6 @@
 import React from "react";
 import Auxillary from "../../../../../../../hoc/Auxillary";
-import DropDown from "../../../../../../Common__UI__Components/DropDown";
+import DropDown from "../../../../../../Common__UI__Components/DropDown/DropDown";
 import Switch from "@material-ui/core/Switch";
 import BottomDrawer from "../../../../BottomDrawer";
 import NotifcationInsideViewContact from "./NotificationInsideViewContact/NotifcationInsideViewContact";
@@ -61,12 +61,7 @@ class ViewContact extends React.Component {
     let reportGroup = (
       <div className="report-group-section d-flex">
         <div className="exit-logo-svg">
-          <img
-            src={require("../../../../../../../assets/svg/thumb-down.svg")}
-            height="20"
-            width="20"
-            alt="report-svg"
-          />
+          <img src={require("../../../../../../../assets/svg/thumb-down.svg")} height="20" width="20" alt="report-svg" />
         </div>
         <div className="rightSlider__exit__group__text d-flex align-items-center">Report Contact</div>
       </div>
@@ -77,16 +72,8 @@ class ViewContact extends React.Component {
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
-                <div
-                  className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                  onClick={this.props.closeDrawer}
-                >
-                  <img
-                    src={require("../../../../../../../assets/svg/left.svg")}
-                    width="20"
-                    height="20"
-                    alt="left-arrow"
-                  />
+                <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.closeDrawer}>
+                  <img src={require("../../../../../../../assets/svg/left.svg")} width="20" height="20" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection d-flex align-items-center">
                   <div className="mobile__newChat__selectedContact">
@@ -120,40 +107,16 @@ class ViewContact extends React.Component {
               <div className="row mx-0">
                 <div className="col-12 d-flex justify-content-between">
                   <div className="p-1">
-                    <img
-                      src="https://via.placeholder.com/150"
-                      className="img-responsive"
-                      alt="placeholder"
-                      height="64"
-                      width="64"
-                    />
+                    <img src="https://via.placeholder.com/150" className="img-responsive" alt="placeholder" height="64" width="64" />
                   </div>
                   <div className="p-1">
-                    <img
-                      src="https://via.placeholder.com/150"
-                      className="img-responsive"
-                      alt="placeholder"
-                      height="64"
-                      width="64"
-                    />
+                    <img src="https://via.placeholder.com/150" className="img-responsive" alt="placeholder" height="64" width="64" />
                   </div>
                   <div className="p-1">
-                    <img
-                      src="https://via.placeholder.com/150"
-                      className="img-responsive"
-                      alt="placeholder"
-                      height="64"
-                      width="64"
-                    />
+                    <img src="https://via.placeholder.com/150" className="img-responsive" alt="placeholder" height="64" width="64" />
                   </div>
                   <div className="p-1">
-                    <img
-                      src="https://via.placeholder.com/150"
-                      className="img-responsive"
-                      alt="placeholder"
-                      height="64"
-                      width="64"
-                    />
+                    <img src="https://via.placeholder.com/150" className="img-responsive" alt="placeholder" height="64" width="64" />
                   </div>
                 </div>
               </div>
@@ -214,28 +177,13 @@ class ViewContact extends React.Component {
                 </div>
                 <div className="mobile__sender__user__options">
                   <span className="d-flex justify-content-start pt-1 single-icons user__chat__phone__icon">
-                    <img
-                      src={require("../../../../../../../assets/svg/message-ballon2.svg")}
-                      height="18"
-                      width="18"
-                      alt="video camera"
-                    />
+                    <img src={require("../../../../../../../assets/svg/message-ballon2.svg")} height="18" width="18" alt="video camera" />
                   </span>
                   <span className="single-icons d-flex align-items-center">
-                    <img
-                      src={require("../../../../../../../assets/svg/video-camera.svg")}
-                      height="24"
-                      width="24"
-                      alt="video camera"
-                    />
+                    <img src={require("../../../../../../../assets/svg/video-camera.svg")} height="24" width="24" alt="video camera" />
                   </span>
                   <span className="single-icons user__chat__phone__icon">
-                    <img
-                      src={require("../../../../../../../assets/svg/call1.svg")}
-                      height="18"
-                      width="18"
-                      alt="video camera"
-                    />
+                    <img src={require("../../../../../../../assets/svg/call1.svg")} height="18" width="18" alt="video camera" />
                   </span>
                 </div>
               </div>
@@ -245,10 +193,7 @@ class ViewContact extends React.Component {
           </div>
         </div>
         <BottomDrawer onOpen={this.openNotification} open={this.state.openNotification}>
-          <NotifcationInsideViewContact
-            componentWithoutSearchBar={this.componentWithoutSearchBar}
-            closeDrawer={this.closeNotification}
-          />
+          <NotifcationInsideViewContact componentWithoutSearchBar={this.componentWithoutSearchBar} closeDrawer={this.closeNotification} />
         </BottomDrawer>
       </Auxillary>
     );

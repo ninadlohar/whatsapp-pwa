@@ -1,6 +1,6 @@
 import React from "react";
 import Auxilliary from "../../../../../../../hoc/Auxillary";
-import MobileModal from "../../../../../../Common__UI__Components/Utils/MobileModal";
+import MobileModal from "../../../../../../Common__UI__Components/Utils/MobileModal/MobileModal";
 import Switch from "@material-ui/core/Switch";
 import BottomDrawer from "../../../../BottomDrawer";
 import ChatHistory from "../ChatHistory/ChatHistory";
@@ -65,16 +65,8 @@ class ChatBackup extends React.Component {
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
-                <div
-                  className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                  onClick={this.props.closeDrawer}
-                >
-                  <img
-                    src={require("../../../../../../../assets/svg/left.svg")}
-                    width="24"
-                    height="24"
-                    alt="left-arrow"
-                  />
+                <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.closeDrawer}>
+                  <img src={require("../../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
                   <div className="mobile__newChat__selectedContact">Chats</div>
@@ -86,19 +78,14 @@ class ChatBackup extends React.Component {
         <div id="mobile__chatBackup__section">
           <div className="col-12 py-3 d-flex deleteAccount__head__section">
             <div className="d-flex align-items-top pl-3 pr-4">
-              <img
-                src={require("../../../../../../../assets/svg/cloud-backup.svg")}
-                alt="cloud-backup"
-                height="18"
-                width="18"
-              />
+              <img src={require("../../../../../../../assets/svg/cloud-backup.svg")} alt="cloud-backup" height="18" width="18" />
             </div>
             <div className="d-flex align-items-center w-100">
               <div>
                 <div className="notifcations__header pb-2">Last Backup</div>
                 <div className="privacy__text">
-                  Backup your messages and media to Google Drive. You can restore them when you reinstall WhatsApp. Your
-                  messages will also backup to your phone's internal storage.
+                  Backup your messages and media to Google Drive. You can restore them when you reinstall WhatsApp. Your messages will also
+                  backup to your phone's internal storage.
                 </div>
                 <div className="chatBackup__text pt-3">Local: 2.17 AM</div>
                 <div className="chatBackup__text pt-2 pb-3">Google Drive: Never</div>
@@ -113,12 +100,7 @@ class ChatBackup extends React.Component {
 
           <div className="col-12 py-3 d-flex">
             <div className="d-flex align-items-top pl-3 pr-4">
-              <img
-                src={require("../../../../../../../assets/svg/google-drive.svg")}
-                alt="google-drive"
-                height="18"
-                width="18"
-              />
+              <img src={require("../../../../../../../assets/svg/google-drive.svg")} alt="google-drive" height="18" width="18" />
             </div>
             <div className="d-flex align-items-center w-100">
               <div>
@@ -197,10 +179,7 @@ class ChatBackup extends React.Component {
           value="Wi-Fi Only"
         />
         <BottomDrawer onOpen={this.openChatHistory} open={this.state.chatHistory}>
-          <ChatHistory
-            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-            closeDrawer={this.closeChatHistory}
-          />
+          <ChatHistory componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.closeChatHistory} />
         </BottomDrawer>
       </Auxilliary>
     );

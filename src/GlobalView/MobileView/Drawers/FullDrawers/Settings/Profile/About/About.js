@@ -1,5 +1,5 @@
 import React from "react";
-import DropDown from "../../../../../../Common__UI__Components/DropDown";
+import DropDown from "../../../../../../Common__UI__Components/DropDown/DropDown";
 import SmallDrawer from "../../../../SmallDrawer";
 import AddAbout from "../../../../HalfDrawers/AddAbout";
 
@@ -25,16 +25,8 @@ class About extends React.Component {
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
-                <div
-                  className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                  onClick={this.props.closeDrawer}
-                >
-                  <img
-                    src={require("../../../../../../../assets/svg/left.svg")}
-                    width="20"
-                    height="20"
-                    alt="left-arrow"
-                  />
+                <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.closeDrawer}>
+                  <img src={require("../../../../../../../assets/svg/left.svg")} width="20" height="20" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection d-flex align-items-center">
                   <div className="mobile__newChat__selectedContact">
@@ -54,10 +46,7 @@ class About extends React.Component {
             <div className="col-12 px-0 deleteAccount__head__section">
               <div className="row mx-0">
                 <div className="col-12 py-2 d-flex">
-                  <div
-                    className="d-flex align-items-center custom__width90 pb-1 deleteAccount__head__section"
-                    onClick={this.openAddAbout}
-                  >
+                  <div className="d-flex align-items-center custom__width90 pb-1 deleteAccount__head__section" onClick={this.openAddAbout}>
                     <div>
                       <div className="mobile__settings__header__name">Coding</div>
                     </div>

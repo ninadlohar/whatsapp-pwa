@@ -1,5 +1,5 @@
 import React from "react";
-import MobileModal from "../../../../../../../Common__UI__Components/Utils/MobileModal";
+import MobileModal from "../../../../../../../Common__UI__Components/Utils/MobileModal/MobileModal";
 import Checkbox from "@material-ui/core/Checkbox";
 
 class NotifcationInsideViewContact extends React.Component {
@@ -61,23 +61,12 @@ class NotifcationInsideViewContact extends React.Component {
   render() {
     return (
       <div>
-        <header
-          className="col-12 fixed-top mobile__view__starred__Messages__Header py-2"
-          id="mobile__notifications__head"
-        >
+        <header className="col-12 fixed-top mobile__view__starred__Messages__Header py-2" id="mobile__notifications__head">
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
-                <div
-                  className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                  onClick={this.props.closeDrawer}
-                >
-                  <img
-                    src={require("../../../../../../../../assets/svg/left.svg")}
-                    width="24"
-                    height="24"
-                    alt="left-arrow"
-                  />
+                <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.closeDrawer}>
+                  <img src={require("../../../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
                   <div className="mobile__newChat__selectedContact">Notifications</div>
@@ -87,10 +76,7 @@ class NotifcationInsideViewContact extends React.Component {
           </div>
         </header>
 
-        <div
-          className="media-section mobile__settings__basicInfo__section col-12 px-0"
-          id="mobile__notifications__scetion"
-        >
+        <div className="media-section mobile__settings__basicInfo__section col-12 px-0" id="mobile__notifications__scetion">
           <div className="row mx-0">
             <div className="col-12 d-flex align-items-center">
               <div className="w-100 privacy__header">
@@ -141,9 +127,7 @@ class NotifcationInsideViewContact extends React.Component {
               <div className="d-flex align-items-center w-100 pl-2">
                 <div className="custom__width85">
                   <div className="mobile__settings__header__name">Use high priority notifications</div>
-                  <div className="mobile__settings__header__status">
-                    Show previews of notifications at the top of the screen
-                  </div>
+                  <div className="mobile__settings__header__status">Show previews of notifications at the top of the screen</div>
                 </div>
                 <div>
                   <Checkbox checked={this.state.checkedB} onChange={this.handleChange("checkedB")} value="checkedA" />

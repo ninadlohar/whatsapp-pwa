@@ -1,6 +1,6 @@
 import React from "react";
-import SearchInputBox from "../../Common__UI__Components/SearchInputBox";
-import DropDown from "../../Common__UI__Components/DropDown";
+import SearchInputBox from "../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
+import DropDown from "../../Common__UI__Components/DropDown/DropDown";
 import DefaultLoadedChat from "../../Common__UI__Components/ChatTypes/DefaultLoadedChat";
 import MobileView from "../../MobileView/MobileView";
 
@@ -102,26 +102,12 @@ class LeftSide extends React.Component {
             <div className="col-9">
               <div className="row mx-0 justify-content-end align-items-center h-100">
                 <div className="px-3">
-                  <img
-                    src={require("../../../assets/svg/charging-circle.svg")}
-                    alt="status-v3"
-                    height="24"
-                    width="18"
-                  />
+                  <img src={require("../../../assets/svg/charging-circle.svg")} alt="status-v3" height="24" width="18" />
                 </div>
                 <div className="px-3" onClick={() => this.props.setLeftSliderScreen("defaultView")}>
-                  <img
-                    src={require("../../../assets/svg/message-ballon.svg")}
-                    alt="message-ballon"
-                    height="20"
-                    width="20"
-                  />
+                  <img src={require("../../../assets/svg/message-ballon.svg")} alt="message-ballon" height="20" width="20" />
                 </div>
-                <DropDown
-                  leftDropdown={this.props.leftDropdown}
-                  classes="fas fa-ellipsis-v"
-                  handleMenuClick={this.handleMenuClick}
-                />
+                <DropDown leftDropdown={this.props.leftDropdown} classes="fas fa-ellipsis-v" handleMenuClick={this.handleMenuClick} />
               </div>
             </div>
           </div>

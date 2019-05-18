@@ -1,6 +1,6 @@
 import React from "react";
-import DropDown from "../../../../../../Common__UI__Components/DropDown";
-import SearchInputBox from "../../../../../../Common__UI__Components/SearchInputBox";
+import DropDown from "../../../../../../Common__UI__Components/DropDown/DropDown";
+import SearchInputBox from "../../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 import Auxilliary from "../../../../../../../hoc/Auxillary";
 import { data } from "../../../../../../../DummyAPI/data.json";
 import ContactDataChatWStataus from "../../../../../../Common__UI__Components/ChatTypes/ContactDataWStatus";
@@ -44,42 +44,22 @@ class NewGroupCall extends React.Component {
     return (
       <Auxilliary>
         {this.state.setSearchActive ? (
-          <SearchInputBox
-            placeholder="Search..."
-            searchBoxType="mobileSearchBox"
-            setSearchDeactiveFn={this.setSearchDeactiveFn}
-          />
+          <SearchInputBox placeholder="Search..." searchBoxType="mobileSearchBox" setSearchDeactiveFn={this.setSearchDeactiveFn} />
         ) : (
           <header className="col-12 mobile__view__header fixed-top px-3" id="newGroupCall__header">
             <div className="row mx-0 w-100">
               <div className="col-12 px-0 py-1 d-flex">
                 <div className="row mx-0 w-100">
-                  <div
-                    className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                    onClick={this.props.closeDrawer}
-                  >
-                    <img
-                      src={require("../../../../../../../assets/svg/left.svg")}
-                      width="24"
-                      height="24"
-                      alt="left-arrow"
-                    />
+                  <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.closeDrawer}>
+                    <img src={require("../../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                   </div>
                   <div className="mobileView__selectContactSection pl-3">
                     <div className="mobile__newChat__selectedContact">Selected Contact</div>
                     <div className="mobile__newChat__contactLength">385 Contacts</div>
                   </div>
                   <div className="mobile__newChat__options d-flex justify-content-end align-items-center">
-                    <div
-                      className="single-icons d-flex justify-content-center align-items-center"
-                      onClick={() => this.setSearchActiveFn()}
-                    >
-                      <img
-                        src={require("../../../../../../../assets/svg/mobile-search.svg")}
-                        width="19"
-                        height="19"
-                        alt="search-svg"
-                      />
+                    <div className="single-icons d-flex justify-content-center align-items-center" onClick={() => this.setSearchActiveFn()}>
+                      <img src={require("../../../../../../../assets/svg/mobile-search.svg")} width="19" height="19" alt="search-svg" />
                     </div>
                     <DropDown
                       classes="fas fa-ellipsis-v"

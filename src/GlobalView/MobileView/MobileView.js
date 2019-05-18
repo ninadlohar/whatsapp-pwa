@@ -5,8 +5,8 @@ import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
 import Status from "../DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/Status";
 import Calls from "../DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/Calls";
-import SearchInputBox from "../Common__UI__Components/SearchInputBox";
-import DropDown from "../Common__UI__Components/DropDown";
+import SearchInputBox from "../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
+import DropDown from "../Common__UI__Components/DropDown/DropDown";
 import { withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -314,11 +314,7 @@ class MobileView extends React.Component {
           </div>
 
           {this.state.setSearchActive ? (
-            <SearchInputBox
-              placeholder="Search..."
-              searchBoxType="mobileSearchBox"
-              setSearchDeactiveFn={this.setSearchDeactiveFn}
-            />
+            <SearchInputBox placeholder="Search..." searchBoxType="mobileSearchBox" setSearchDeactiveFn={this.setSearchDeactiveFn} />
           ) : (
             <div className="row mx-0" id="input-box">
               <div className="col-12 pb-1 d-flex camera">
@@ -476,36 +472,21 @@ class MobileView extends React.Component {
             <div className="new__chat__green__logo">
               {this.state.value === 0 ? (
                 <div onClick={this.setNewChatTrue}>
-                  <img
-                    src={require("../../assets/svg/new-chat-ballon.svg")}
-                    alt="message-ballon"
-                    height="18"
-                    width="18"
-                  />
+                  <img src={require("../../assets/svg/new-chat-ballon.svg")} alt="message-ballon" height="18" width="18" />
                 </div>
               ) : null}
 
               {this.state.value === 1 ? (
                 <div className="image-upload">
                   <label for="file-input" name="file-input">
-                    <img
-                      src={require("../../assets/svg/square-stop-button.svg")}
-                      alt="message-ballon"
-                      height="16"
-                      width="16"
-                    />
+                    <img src={require("../../assets/svg/square-stop-button.svg")} alt="message-ballon" height="16" width="16" />
                   </label>
                   <input id="file-input" type="file" />
                 </div>
               ) : null}
               {this.state.value === 2 ? (
                 <div onClick={this.openGroupCalls}>
-                  <img
-                    src={require("../../assets/svg/emergency-call.svg")}
-                    alt="message-ballon"
-                    height="16"
-                    width="16"
-                  />
+                  <img src={require("../../assets/svg/emergency-call.svg")} alt="message-ballon" height="16" width="16" />
                 </div>
               ) : null}
             </div>
@@ -515,10 +496,7 @@ class MobileView extends React.Component {
           <NewChat componentWithoutSearchBar={this.componentWithoutSearchBar} closeDrawer={this.setNewChatFalse} />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setNewGroupTrue} open={this.state.newGroup}>
-          <NewGroup
-            closeGroupDrawer={this.setNewGroupFalse}
-            componentWithoutSearchBar={this.componentWithoutSearchBar}
-          />
+          <NewGroup closeGroupDrawer={this.setNewGroupFalse} componentWithoutSearchBar={this.componentWithoutSearchBar} />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setNewBroadcastTrue} open={this.state.newBroadcast}>
           <NewBroadcast closeBroadcastDrawer={this.setNewBroadcastFalse} />
@@ -530,10 +508,7 @@ class MobileView extends React.Component {
           />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setSettingsTrue} open={this.state.settings}>
-          <Settings
-            closeSettingsDrawer={this.setSettingsFalse}
-            componentWithoutSearchBar={this.componentWithoutSearchBar}
-          />
+          <Settings closeSettingsDrawer={this.setSettingsFalse} componentWithoutSearchBar={this.componentWithoutSearchBar} />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.openChatTrue} open={this.state.chat}>
           <UserChatting componentWithoutSearchBar={this.componentWithoutSearchBar} closeDrawer={this.openChatFalse} />

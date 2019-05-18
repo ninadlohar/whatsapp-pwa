@@ -1,6 +1,6 @@
 import React from "react";
 import NewUserChat from "../../../../Common__UI__Components/ChatTypes/NewUserChat";
-import SearchInputBox from "../../../../Common__UI__Components/SearchInputBox";
+import SearchInputBox from "../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 
 class NewChat extends React.Component {
   state = {
@@ -26,19 +26,13 @@ class NewChat extends React.Component {
       : this.state.baseClasses.join(" ");
     let frequentlyContacted = (
       <div className="chat-1 w-100 py-4 d-flex rightSlider__userInfo__box pr-3">
-        <div className="rightSlider__userInfo__box d-flex align-items-center frequently-contacted">
-          FREQUENTLY CONTACTED
-        </div>
+        <div className="rightSlider__userInfo__box d-flex align-items-center frequently-contacted">FREQUENTLY CONTACTED</div>
       </div>
     );
     let newGroup = (
       <div className="chat-1 w-100 py-2 d-flex rightSlider__userInfo__box ">
         <div className="rightSlider__userInfo__image__padding py-1">
-          <img
-            src={require("../../../../../assets/images/new-group.png")}
-            alt="new-group"
-            className="sender__image__left__window"
-          />
+          <img src={require("../../../../../assets/images/new-group.png")} alt="new-group" className="sender__image__left__window" />
         </div>
         <div className="remaining left__drawer__newGroup d-flex align-items-center">New Group</div>
       </div>

@@ -43,11 +43,7 @@ class DefaultLoadedChat extends React.Component {
     let addChevron = this.state.onHoverState ? downArrow : null;
 
     return (
-      <div
-        className="chat-1 w-100 d-flex rightSlider__userInfo__box"
-        onMouseEnter={this.onHover}
-        onMouseLeave={this.offHover}
-      >
+      <div className="chat-1 w-100 d-flex rightSlider__userInfo__box" onMouseEnter={this.onHover} onMouseLeave={this.offHover}>
         <div className="leftChat__user__image">
           <img
             src={require("../../../assets/images/220px-Chris_Hemsworth_as_Thor.jpg")}
@@ -65,8 +61,8 @@ class DefaultLoadedChat extends React.Component {
           <div className="leftChat__message___messageLeftToRead">
             <div className="row mx-0">
               <div className="leftChat__message noOverFlow">
-                is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-                standard dummy text ever since the 1500s
+                is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
+                since the 1500s
               </div>
               <div className="leftChat__messageLeftToRead noOverFlow">
                 <span className="sender-notification-count">2</span>

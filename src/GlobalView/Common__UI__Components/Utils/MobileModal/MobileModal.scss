@@ -1,0 +1,36 @@
+@import "../../../../scss/colors.scss";
+
+.mobile__modal {
+  > div {
+    padding: 12px !important;
+    border-radius: 3px !important;
+  }
+}
+
+.MAT_UI__checkboxes {
+  > span {
+    padding: 0px;
+  }
+  > label {
+    display: flex;
+    > span {
+      padding: 0px;
+    }
+    span {
+      padding-left: 6px;
+    }
+  }
+  h6 {
+    padding-left: 12px;
+    padding-top: 1px;
+  }
+}
+
+.MAT_UI__buttons {
+  display: flex;
+  justify-content: flex-end;
+  > span {
+    color: #006064;
+    padding-left: 15px;
+  }
+}

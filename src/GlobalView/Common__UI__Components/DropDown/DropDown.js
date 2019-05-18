@@ -1,13 +1,12 @@
 import React from "react";
-import Auxillary from "../../hoc/Auxillary";
-import DesktopModal from "../Common__UI__Components/Utils/DesktopModal";
-import MainBottomDrawer from "../MobileView/Drawers/BottomDrawer";
+import Auxillary from "../../../hoc/Auxillary";
+import DesktopModal from "../Utils/DesktopModal/DesktopModal";
+import MainBottomDrawer from "../../MobileView/Drawers/BottomDrawer";
 import { CSSTransition } from "react-transition-group";
-import "../../scss/dropdown/dropdown.scss";
-import Help from "../MobileView/Drawers/FullDrawers/Screens/NewChat/Help/Help";
-import ViewContact from "../MobileView/Drawers/FullDrawers/Screens/UserChatting/ViewContact__or__GroupInfo/ViewContact";
-import MobileMedia from "../MobileView/Drawers/FullDrawers/Screens/UserChatting/Media/Media";
-import MobileModal from "./Utils/MobileModal";
+import Help from "../../MobileView/Drawers/FullDrawers/Screens/NewChat/Help/Help";
+import ViewContact from "../../MobileView/Drawers/FullDrawers/Screens/UserChatting/ViewContact__or__GroupInfo/ViewContact";
+import MobileMedia from "../../MobileView/Drawers/FullDrawers/Screens/UserChatting/Media/Media";
+import MobileModal from "../Utils/MobileModal/MobileModal";
 
 class DropDown extends React.Component {
   state = {
@@ -22,11 +21,7 @@ class DropDown extends React.Component {
     viewContact: false,
     mobileMedia: false,
     mute: false,
-    muteOptions: [
-      { key: "8 hours", value: "8 hours" },
-      { key: "1 Week", value: "1 Week" },
-      { key: "1 Year", value: "1 Year" }
-    ]
+    muteOptions: [{ key: "8 hours", value: "8 hours" }, { key: "1 Week", value: "1 Week" }, { key: "1 Year", value: "1 Year" }]
   };
 
   showMenu = () => {
@@ -184,10 +179,10 @@ class DropDown extends React.Component {
     let attachment = (
       <div className="main-attachment-dropdown">
         <div className="attachment-dropdown">
-          <img src={require("../../assets/images/gallery.png")} alt="gallery" className="attachment-icons" />
-          <img src={require("../../assets/images/camera.png")} alt="camera" className="attachment-icons" />
-          <img src={require("../../assets/images/file.jpg")} alt="file" className="attachment-icons" />
-          <img src={require("../../assets/images/user.png")} alt="user" className="attachment-icons" />
+          <img src={require("../../../assets/images/gallery.png")} alt="gallery" className="attachment-icons" />
+          <img src={require("../../../assets/images/camera.png")} alt="camera" className="attachment-icons" />
+          <img src={require("../../../assets/images/file.jpg")} alt="file" className="attachment-icons" />
+          <img src={require("../../../assets/images/user.png")} alt="user" className="attachment-icons" />
         </div>
       </div>
     );
@@ -274,10 +269,7 @@ class DropDown extends React.Component {
     return (
       <Auxillary>
         <i className={this.props.mobile ? "" : "icon-color"}>
-          <i
-            className={this.props.classes + "  single-icons d-flex justify-content-center align-items-center"}
-            onClick={this.showMenu}
-          />
+          <i className={this.props.classes + "  single-icons d-flex justify-content-center align-items-center"} onClick={this.showMenu} />
         </i>
         <CSSTransition
           timeout={200}
@@ -317,7 +309,7 @@ class DropDown extends React.Component {
         <DesktopModal isOpen={this.state.clearMessages} toggle={this.clearMessagesToggle}>
           <div className="clear__messages__title">Clear "Group 1"?</div>
           <div className="clear__messages__clear__starred__messages">
-            <img src={require("../../assets/svg/green-check-box.svg")} height="16" width="16" alt="checkbox-green" />
+            <img src={require("../../../assets/svg/green-check-box.svg")} height="16" width="16" alt="checkbox-green" />
             <span className="pl-2 clear_messages__fontSize__14">Keep Starred Messages</span>
           </div>
           <div className="modal__cancel__mute__button d-flex justify-content-end">
@@ -349,12 +341,7 @@ class DropDown extends React.Component {
         <MainBottomDrawer onOpen={this.openMobileMedia} open={this.state.mobileMedia}>
           <MobileMedia componentWithoutSearchBar={this.componentWithoutSearchBar} closeDrawer={this.closeMobileMedia} />
         </MainBottomDrawer>
-        <MobileModal
-          openModal={this.openMuteModal}
-          open={this.state.mute}
-          closeModal={this.closeMuteModal}
-          key2={this.state.muteOptions}
-        />
+        <MobileModal openModal={this.openMuteModal} open={this.state.mute} closeModal={this.closeMuteModal} key2={this.state.muteOptions} />
       </Auxillary>
     );
   }

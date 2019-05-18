@@ -1,5 +1,5 @@
 import React from "react";
-import SearchInputBox from "../../../../../../../Common__UI__Components/SearchInputBox";
+import SearchInputBox from "../../../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 import Auxillary from "../../../../../../../../hoc/Auxillary";
 import MainBottomDrawer from "../../../../../BottomDrawer";
 import TwoStepVerificationStep2 from "../TwoStepVerificationStep2/TwoStepVerificationStep2";
@@ -23,23 +23,12 @@ class TwoStepVerificationStep1 extends React.Component {
     return (
       <Auxillary>
         <div>
-          <header
-            className="col-12 fixed-top mobile__view__starred__Messages__Header py-2"
-            id="mobile__twoStepVerification1__head"
-          >
+          <header className="col-12 fixed-top mobile__view__starred__Messages__Header py-2" id="mobile__twoStepVerification1__head">
             <div className="row mx-0 w-100">
               <div className="col-12 px-0 py-1 d-flex">
                 <div className="row mx-0 w-100">
-                  <div
-                    className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                    onClick={this.props.closeDrawer}
-                  >
-                    <img
-                      src={require("../../../../../../../../assets/svg/left.svg")}
-                      width="24"
-                      height="24"
-                      alt="left-arrow"
-                    />
+                  <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.closeDrawer}>
+                    <img src={require("../../../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                   </div>
                   <div className="mobileView__selectContactSection pl-3">
                     <div className="mobile__newChat__selectedContact">Two-Step Verification</div>
@@ -65,10 +54,7 @@ class TwoStepVerificationStep1 extends React.Component {
                 </div>
               </div>
             </section>
-            <div
-              className="enable-button-parent w-100 d-flex justify-content-center"
-              onClick={this.setTwoStepVerifcation2True}
-            >
+            <div className="enable-button-parent w-100 d-flex justify-content-center" onClick={this.setTwoStepVerifcation2True}>
               <div className="enable-button">
                 <div className="d-flex justify-content-center">NEXT</div>
               </div>

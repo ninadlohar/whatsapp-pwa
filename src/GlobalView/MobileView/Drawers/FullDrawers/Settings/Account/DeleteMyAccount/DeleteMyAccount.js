@@ -1,5 +1,5 @@
 import React from "react";
-import SearchInputBox from "../../../../../../Common__UI__Components/SearchInputBox";
+import SearchInputBox from "../../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 import TextField from "@material-ui/core/TextField";
 import { withStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -58,23 +58,12 @@ class DeleteMyAccount extends React.Component {
     const { classes } = this.props;
     return (
       <Auxillary>
-        <header
-          className="col-12 fixed-top mobile__view__starred__Messages__Header py-2"
-          id="mobile__deleteAccount__head"
-        >
+        <header className="col-12 fixed-top mobile__view__starred__Messages__Header py-2" id="mobile__deleteAccount__head">
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
-                <div
-                  className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                  onClick={this.props.closeDrawer}
-                >
-                  <img
-                    src={require("../../../../../../../assets/svg/left.svg")}
-                    width="24"
-                    height="24"
-                    alt="left-arrow"
-                  />
+                <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.closeDrawer}>
+                  <img src={require("../../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
                   <div className="mobile__newChat__selectedContact">Delete Account</div>
@@ -89,12 +78,7 @@ class DeleteMyAccount extends React.Component {
               <div className="row mx-0">
                 <div className="col-12 py-3 d-flex">
                   <div className="d-flex pt-1 pl-3 pr-4">
-                    <img
-                      src={require("../../../../../../../assets/svg/danger.svg")}
-                      alt="sender-images"
-                      height="18"
-                      width="18"
-                    />
+                    <img src={require("../../../../../../../assets/svg/danger.svg")} alt="sender-images" height="18" width="18" />
                   </div>
                   <div className="w-100 deleteAccount__head__section">
                     <div className="deleteAccount__1st__header pb-1">Deleting your account will</div>
@@ -109,12 +93,7 @@ class DeleteMyAccount extends React.Component {
                 </div>
                 <div className="col-12 py-3 d-flex deleteAccount__head__section">
                   <div className="d-flex pt-1 pl-3 pr-4">
-                    <img
-                      src={require("../../../../../../../assets/svg/smartphone.svg")}
-                      alt="sender-images"
-                      height="18"
-                      width="18"
-                    />
+                    <img src={require("../../../../../../../assets/svg/smartphone.svg")} alt="sender-images" height="18" width="18" />
                   </div>
                   <div className="w-100 deleteAccount__head__section">
                     <div className=" pb-1">Change number instead</div>
@@ -128,9 +107,7 @@ class DeleteMyAccount extends React.Component {
                 <div className="col-12 py-3 d-flex deleteAccount__head__section">
                   <div className="d-flex pt-1 pl-3 pr-4" />
                   <div className="w-100 deleteAccount__head__section pl-3">
-                    <div className="pb-3">
-                      To delete your account, confirm your country code and enter your phone number.
-                    </div>
+                    <div className="pb-3">To delete your account, confirm your country code and enter your phone number.</div>
 
                     <TextField
                       id="standard-select-currency"

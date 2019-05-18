@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "../../DesktopView/RightSide/components/Footer/Footer";
-import DropDown from "../../Common__UI__Components/DropDown";
+import DropDown from "../../Common__UI__Components/DropDown/DropDown";
 import Auxillary from "../../../hoc/Auxillary";
 
 class RightSide extends React.Component {
@@ -63,8 +63,8 @@ class RightSide extends React.Component {
                         <div className="rightSide___chat__sender__or__group__name">Coders Hub</div>
                         <div className="rightSide___chat__phone__number">
                           <span className="group__phone__numbers">
-                            +1(201) 443 - 4380, +1(470) 343 - 9700, +1(703) 307 - 8272, +1(716) 333 - 5233, +1(716) 501
-                            - 8285, +1(732) 983 - 61
+                            +1(201) 443 - 4380, +1(470) 343 - 9700, +1(703) 307 - 8272, +1(716) 333 - 5233, +1(716) 501 - 8285, +1(732) 983
+                            - 61
                           </span>
                         </div>
                       </div>
@@ -72,10 +72,7 @@ class RightSide extends React.Component {
                   </div>
                   <div className="rightSide__header__with__icons">
                     <div className="row justify-content-center align-items-center h-100 mx-0">
-                      <i
-                        className="fas fa-search icon-color px-3"
-                        onClick={() => this.props.setRightSliderScreen("SEARCH")}
-                      />
+                      <i className="fas fa-search icon-color px-3" onClick={() => this.props.setRightSliderScreen("SEARCH")} />
                       <DropDown attachment={this.state.attachment} classes="fas fa-paperclip icon-color" />
                       <DropDown
                         rightDropdown={this.props.rightDropdown}

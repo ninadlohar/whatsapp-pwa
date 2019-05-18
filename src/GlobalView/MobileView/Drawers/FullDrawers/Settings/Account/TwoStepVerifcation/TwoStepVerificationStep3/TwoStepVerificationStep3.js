@@ -1,5 +1,5 @@
 import React from "react";
-import SearchInputBox from "../../../../../../../Common__UI__Components/SearchInputBox";
+import SearchInputBox from "../../../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 import Auxillary from "../../../../../../../../hoc/Auxillary";
 import TwoStepVerificationStep4 from "../TwoStepVerificationStep4/TwoStepVerificationStep4";
 import MainBottomDrawer from "../../../../../BottomDrawer";
@@ -22,23 +22,12 @@ class TwoStepVerificationStep3 extends React.Component {
   render() {
     return (
       <Auxillary>
-        <header
-          className="col-12 fixed-top mobile__view__starred__Messages__Header py-2"
-          id="mobile__twoStepVerification3__head"
-        >
+        <header className="col-12 fixed-top mobile__view__starred__Messages__Header py-2" id="mobile__twoStepVerification3__head">
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
-                <div
-                  className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                  onClick={this.props.closeDrawer}
-                >
-                  <img
-                    src={require("../../../../../../../../assets/svg/left.svg")}
-                    width="24"
-                    height="24"
-                    alt="left-arrow"
-                  />
+                <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.closeDrawer}>
+                  <img src={require("../../../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
                   <div className="mobile__newChat__selectedContact">Two-Step Verification</div>
@@ -54,8 +43,7 @@ class TwoStepVerificationStep3 extends React.Component {
                 <div className="row mx-0">
                   <div className="p-3 w-100">
                     <div className="no-archieved-chats text-center">
-                      Add an email address to your account which will be used to reset your PIN if you forget it and
-                      safeguard your account.
+                      Add an email address to your account which will be used to reset your PIN if you forget it and safeguard your account.
                     </div>
                     <div className="twoStepVerification__input">
                       <SearchInputBox searchBoxType="mobileTSVInput3" placeholder="Email" />
@@ -65,10 +53,7 @@ class TwoStepVerificationStep3 extends React.Component {
               </div>
             </div>
           </section>
-          <div
-            className="enable-button-parent w-100 d-flex justify-content-center"
-            onClick={this.setTwoStepVerifcation4True}
-          >
+          <div className="enable-button-parent w-100 d-flex justify-content-center" onClick={this.setTwoStepVerifcation4True}>
             <div className="enable-button">
               <div className="d-flex justify-content-center">NEXT</div>
             </div>

@@ -1,6 +1,6 @@
 import React from "react";
-import SearchInputBox from "../../../../../Common__UI__Components/SearchInputBox";
-import DropDown from "../../../../../Common__UI__Components/DropDown";
+import SearchInputBox from "../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
+import DropDown from "../../../../../Common__UI__Components/DropDown/DropDown";
 import ViewContact from "./ViewContact__or__GroupInfo/ViewContact";
 import BottomDrawer from "../../../BottomDrawer";
 
@@ -86,26 +86,14 @@ class UserChatting extends React.Component {
     return (
       <div>
         {this.state.setSearchActive ? (
-          <SearchInputBox
-            placeholder="Search..."
-            searchBoxType="chatActiveSearch"
-            setSearchDeactiveFn={this.setSearchDeactiveFn}
-          />
+          <SearchInputBox placeholder="Search..." searchBoxType="chatActiveSearch" setSearchDeactiveFn={this.setSearchDeactiveFn} />
         ) : (
           <header className="col-12 mobile__view__chat__Messages__Header fixed-top" id="user-chat-header">
             <div className="row mx-0 w-100">
               <div className="col-12 px-0 py-1 d-flex">
                 <div className="row mx-0 w-100">
-                  <div
-                    className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                    onClick={this.props.closeDrawer}
-                  >
-                    <img
-                      src={require("../../../../../../assets/svg/left.svg")}
-                      width="20"
-                      height="20"
-                      alt="left-arrow"
-                    />
+                  <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.closeDrawer}>
+                    <img src={require("../../../../../../assets/svg/left.svg")} width="20" height="20" alt="left-arrow" />
                   </div>
                   <div className="mobileView__selectContactSection pl-3" onClick={this.openViewContact}>
                     <div className="mobile__newChat__selectedContact">
@@ -119,20 +107,10 @@ class UserChatting extends React.Component {
                   </div>
                   <div className=" mobile__sender__user__options">
                     <span className="single-icons d-flex align-items-center">
-                      <img
-                        src={require("../../../../../../assets/svg/video-camera1.svg")}
-                        height="24"
-                        width="24"
-                        alt="video camera"
-                      />
+                      <img src={require("../../../../../../assets/svg/video-camera1.svg")} height="24" width="24" alt="video camera" />
                     </span>
                     <span className="single-icons user__chat__phone__icon">
-                      <img
-                        src={require("../../../../../../assets/svg/call.svg")}
-                        height="18"
-                        width="18"
-                        alt="video camera"
-                      />
+                      <img src={require("../../../../../../assets/svg/call.svg")} height="18" width="18" alt="video camera" />
                     </span>
                     <DropDown
                       classes="fas fa-ellipsis-v"
@@ -157,11 +135,7 @@ class UserChatting extends React.Component {
                       <span className="time-and-tick text-right">
                         <span> 12: 36 </span>
                         <span>
-                          <img
-                            src={require("../../../../../../assets/svg/double-click.svg")}
-                            alt="double-tick"
-                            className="double-tick"
-                          />
+                          <img src={require("../../../../../../assets/svg/double-click.svg")} alt="double-tick" className="double-tick" />
                         </span>
                       </span>
                     </div>
@@ -187,12 +161,7 @@ class UserChatting extends React.Component {
                   className="d-flex justify-content-center align-items-center mobile__screen__microphone ml-1"
                   id="footer3"
                 >
-                  <img
-                    src={require("../../../../../../assets/svg/microphone-black.svg")}
-                    alt="microphone"
-                    width="18"
-                    height="18"
-                  />
+                  <img src={require("../../../../../../assets/svg/microphone-black.svg")} alt="microphone" width="18" height="18" />
                 </div>
               </div>
             </div>

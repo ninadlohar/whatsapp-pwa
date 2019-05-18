@@ -1,5 +1,5 @@
 import React from "react";
-import Input from "../../../../Common__UI__Components/Utils/Input";
+import Input from "../../../../Common__UI__Components/Utils/Input/Input";
 import MessageArea from "../MessageArea/MessageArea";
 import Auxillary from "../../../../../hoc/Auxillary";
 import "../../../../../App.scss";
@@ -94,48 +94,23 @@ class Footer extends React.Component {
               <div className="row mx-0 w-100">
                 <div className="slideUp__footer w-100 d-flex">
                   <div className="custom__padding_10 cancel-svg" onClick={this.hideSelectedChatFooter}>
-                    <img
-                      src={require("../../../../../assets/svg/cancel-real.svg")}
-                      height="15"
-                      width="15"
-                      alt="exit-svg"
-                    />
+                    <img src={require("../../../../../assets/svg/cancel-real.svg")} height="15" width="15" alt="exit-svg" />
                   </div>
                   <div className="selectedMessages__count d-flex align-items-center">
                     <span>0 Selected</span>
                   </div>
                   <div className="d-flex justify-content-end">
                     <div className="custom__padding_10 cancel-svg">
-                      <img
-                        src={require("../../../../../assets/svg/rate-star-button.svg")}
-                        height="18"
-                        width="18"
-                        alt="star-svg"
-                      />
+                      <img src={require("../../../../../assets/svg/rate-star-button.svg")} height="18" width="18" alt="star-svg" />
                     </div>
                     <div className="custom__padding_10 cancel-svg">
-                      <img
-                        src={require("../../../../../assets/svg/delete-bin.svg")}
-                        height="18"
-                        width="18"
-                        alt="delete-bin-svg"
-                      />
+                      <img src={require("../../../../../assets/svg/delete-bin.svg")} height="18" width="18" alt="delete-bin-svg" />
                     </div>
                     <div className="custom__padding_10 cancel-svg">
-                      <img
-                        src={require("../../../../../assets/svg/forward-arrow.svg")}
-                        height="18"
-                        width="18"
-                        alt="forward-arrow-svg"
-                      />
+                      <img src={require("../../../../../assets/svg/forward-arrow.svg")} height="18" width="18" alt="forward-arrow-svg" />
                     </div>
                     <div className="custom__padding_10">
-                      <img
-                        src={require("../../../../../assets/svg/download-button.svg")}
-                        height="18"
-                        width="18"
-                        alt="download-svg"
-                      />
+                      <img src={require("../../../../../assets/svg/download-button.svg")} height="18" width="18" alt="download-svg" />
                     </div>
                   </div>
                 </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import Auxilliary from "../../../../../../hoc/Auxillary";
 import Switch from "@material-ui/core/Switch";
-import MobileModal from "../../../../../Common__UI__Components/Utils/MobileModal";
+import MobileModal from "../../../../../Common__UI__Components/Utils/MobileModal/MobileModal";
 
 class Notifications extends React.Component {
   state = {
@@ -59,17 +59,11 @@ class Notifications extends React.Component {
   render() {
     return (
       <Auxilliary>
-        <header
-          className="col-12 fixed-top mobile__view__starred__Messages__Header py-2"
-          id="mobile__notification__head"
-        >
+        <header className="col-12 fixed-top mobile__view__starred__Messages__Header py-2" id="mobile__notification__head">
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
-                <div
-                  className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                  onClick={this.props.closeDrawer}
-                >
+                <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.closeDrawer}>
                   <img src={require("../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
@@ -86,9 +80,7 @@ class Notifications extends React.Component {
                 <div className="d-flex align-items-center w-100 pl-2">
                   <div className="custom__width85">
                     <div className="mobile__settings__header__name">Conversation Tones</div>
-                    <div className="mobile__settings__header__status">
-                      Play sounds for incoming and outgoing messages
-                    </div>
+                    <div className="mobile__settings__header__status">Play sounds for incoming and outgoing messages</div>
                   </div>
                   <div>
                     <Switch checked={this.state.checkedA} onChange={this.handleChange("checkedA")} value="checkedA" />
@@ -138,9 +130,7 @@ class Notifications extends React.Component {
                 <div className="d-flex align-items-center w-100 pl-2">
                   <div className="custom__width85">
                     <div className="mobile__settings__header__name">Use high priority notifications</div>
-                    <div className="mobile__settings__header__status">
-                      Show previews of notifications at the top of the screen
-                    </div>
+                    <div className="mobile__settings__header__status">Show previews of notifications at the top of the screen</div>
                   </div>
                   <div>
                     <Switch checked={this.state.checkedA} onChange={this.handleChange("checkedA")} value="checkedA" />
@@ -190,9 +180,7 @@ class Notifications extends React.Component {
                 <div className="d-flex align-items-center w-100 pl-2">
                   <div className="custom__width85">
                     <div className="mobile__settings__header__name">Use high priority notifications</div>
-                    <div className="mobile__settings__header__status">
-                      Show previews of notifications at the top of the screen
-                    </div>
+                    <div className="mobile__settings__header__status">Show previews of notifications at the top of the screen</div>
                   </div>
                   <div>
                     <Switch checked={this.state.checkedA} onChange={this.handleChange("checkedA")} value="checkedA" />

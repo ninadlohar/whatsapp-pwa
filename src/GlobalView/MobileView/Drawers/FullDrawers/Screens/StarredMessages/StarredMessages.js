@@ -1,6 +1,6 @@
 import React from "react";
-import DropDown from "../../../../../Common__UI__Components/DropDown";
-import SearchInputBox from "../../../../../Common__UI__Components/SearchInputBox";
+import DropDown from "../../../../../Common__UI__Components/DropDown/DropDown";
+import SearchInputBox from "../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 
 class StarredMessages extends React.Component {
   state = {
@@ -42,11 +42,7 @@ class StarredMessages extends React.Component {
     return (
       <div>
         {this.state.setSearchActive ? (
-          <SearchInputBox
-            placeholder="Search..."
-            searchBoxType="mobileSearchBox"
-            setSearchDeactiveFn={this.setSearchDeactiveFn}
-          />
+          <SearchInputBox placeholder="Search..." searchBoxType="mobileSearchBox" setSearchDeactiveFn={this.setSearchDeactiveFn} />
         ) : (
           <header className="col-12 fixed-top call__info__header py-1" id="mobile__starred__messages__head">
             <div className="row mx-0 w-100">
@@ -56,33 +52,16 @@ class StarredMessages extends React.Component {
                     className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                     onClick={this.props.closeStarredMessagesDrawer}
                   >
-                    <img
-                      src={require("../../../../../../assets/svg/left.svg")}
-                      width="24"
-                      height="24"
-                      alt="left-arrow"
-                    />
+                    <img src={require("../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                   </div>
                   <div className="d-flex align-items-center mobileView__selectContactSection pl-3">
                     <div className="mobile__newChat__selectedContact">Starred Messages</div>
                   </div>
                   <div className="mobile__newChat__options d-flex justify-content-end align-items-center">
-                    <div
-                      className="single-icons d-flex justify-content-center align-items-center"
-                      onClick={() => this.setSearchActiveFn()}
-                    >
-                      <img
-                        src={require("../../../../../../assets/svg/mobile-search.svg")}
-                        width="19"
-                        height="19"
-                        alt="search-svg"
-                      />
+                    <div className="single-icons d-flex justify-content-center align-items-center" onClick={() => this.setSearchActiveFn()}>
+                      <img src={require("../../../../../../assets/svg/mobile-search.svg")} width="19" height="19" alt="search-svg" />
                     </div>
-                    <DropDown
-                      classes="fas fa-ellipsis-v"
-                      mobile={this.props.mobile}
-                      mobileViewDropDown={this.state.mobileViewDropDown}
-                    />
+                    <DropDown classes="fas fa-ellipsis-v" mobile={this.props.mobile} mobileViewDropDown={this.state.mobileViewDropDown} />
                   </div>
                 </div>
               </div>
@@ -147,10 +126,9 @@ class StarredMessages extends React.Component {
                           </div>
                         </div>
                         <span>
-                          सुंदर. "आई ही अशी बँक आहे जिच्या मध्ये दु:खे जमा करू शकता " " पिता असे क्रेडीट कार्ड आहे जे
-                          बॅलन्स नसतांना सुद्धा खूशी देत असते " आई वडीलांचे प्रेम फूकट मिळत असते, बाकी सगळी नाती
-                          जपण्यासाठी कांही ना काहितरी किंमत अदा कराविच लागते. तूमचे आई वडिल जर तूमच्यासाठी एटीएम कार्ड
-                          बनू शकतात तर, तूम्ही त्यांचे आधार कार्ड का बनू शकत नाही ?
+                          सुंदर. "आई ही अशी बँक आहे जिच्या मध्ये दु:खे जमा करू शकता " " पिता असे क्रेडीट कार्ड आहे जे बॅलन्स नसतांना सुद्धा
+                          खूशी देत असते " आई वडीलांचे प्रेम फूकट मिळत असते, बाकी सगळी नाती जपण्यासाठी कांही ना काहितरी किंमत अदा कराविच
+                          लागते. तूमचे आई वडिल जर तूमच्यासाठी एटीएम कार्ड बनू शकतात तर, तूम्ही त्यांचे आधार कार्ड का बनू शकत नाही ?
                         </span>
                         <div className="starred-messages-date-sent text-right">
                           <img

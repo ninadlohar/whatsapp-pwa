@@ -1,7 +1,7 @@
 import React from "react";
 import ContactDataWStatus from "../../../../../Common__UI__Components/ChatTypes/ContactDataWStatus";
-import DropDown from "../../../../../Common__UI__Components/DropDown";
-import SearchInputBox from "../../../../../Common__UI__Components/SearchInputBox";
+import DropDown from "../../../../../Common__UI__Components/DropDown/DropDown";
+import SearchInputBox from "../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 import Auxilliary from "../../../../../../hoc/Auxillary";
 import NewGroup from "../NewGroup/NewGroup";
 import MainBottomDrawer from "../../../BottomDrawer";
@@ -62,11 +62,7 @@ class NewChat extends React.Component {
         onClick={this.setNewGroupTrue}
       >
         <div className="leftChat__user__image">
-          <img
-            src={require("../../../../../../assets/svg/team.svg")}
-            alt="karl-benz"
-            className="logged__in__user__image__49px"
-          />
+          <img src={require("../../../../../../assets/svg/team.svg")} alt="karl-benz" className="logged__in__user__image__49px" />
         </div>
         <div className="leftChat__user__details">
           <strong>New Group</strong>
@@ -74,17 +70,9 @@ class NewChat extends React.Component {
       </div>
     );
     let newContact = (
-      <div
-        className="chat-1 w-100 d-flex rightSlider__userInfo__box"
-        onMouseEnter={this.onHover}
-        onMouseLeave={this.offHover}
-      >
+      <div className="chat-1 w-100 d-flex rightSlider__userInfo__box" onMouseEnter={this.onHover} onMouseLeave={this.offHover}>
         <div className="leftChat__user__image">
-          <img
-            src={require("../../../../../../assets/svg/user.svg")}
-            alt="karl-benz"
-            className="logged__in__user__image__49px"
-          />
+          <img src={require("../../../../../../assets/svg/user.svg")} alt="karl-benz" className="logged__in__user__image__49px" />
         </div>
         <div className="leftChat__user__details">
           <strong>New Contact</strong>
@@ -94,26 +82,14 @@ class NewChat extends React.Component {
     return (
       <Auxilliary>
         {this.state.setSearchActive ? (
-          <SearchInputBox
-            placeholder="Search..."
-            searchBoxType="mobileSearchBox"
-            setSearchDeactiveFn={this.setSearchDeactiveFn}
-          />
+          <SearchInputBox placeholder="Search..." searchBoxType="mobileSearchBox" setSearchDeactiveFn={this.setSearchDeactiveFn} />
         ) : (
           <header className="col-12 mobile__view__header fixed-top px-3" id="mobileNewChat__header">
             <div className="row mx-0 w-100">
               <div className="col-12 px-0 py-1 d-flex">
                 <div className="row mx-0 w-100">
-                  <div
-                    className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                    onClick={this.props.closeDrawer}
-                  >
-                    <img
-                      src={require("../../../../../../assets/svg/left.svg")}
-                      width="24"
-                      height="24"
-                      alt="left-arrow"
-                    />
+                  <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.closeDrawer}>
+                    <img src={require("../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                   </div>
                   <div className="mobileView__selectContactSection pl-3">
                     <div className="mobile__newChat__selectedContact">Selected Contact</div>
@@ -121,12 +97,7 @@ class NewChat extends React.Component {
                   </div>
                   <div className="mobile__newChat__options d-flex justify-content-end align-items-center">
                     <div className="px-3" onClick={() => this.setSearchActiveFn()}>
-                      <img
-                        src={require("../../../../../../assets/svg/mobile-search.svg")}
-                        width="19"
-                        height="19"
-                        alt="search-svg"
-                      />
+                      <img src={require("../../../../../../assets/svg/mobile-search.svg")} width="19" height="19" alt="search-svg" />
                     </div>
                     <DropDown
                       classes="fas fa-ellipsis-v"
@@ -150,10 +121,7 @@ class NewChat extends React.Component {
         </div>
 
         <MainBottomDrawer onOpen={this.setNewGroupTrue} open={this.state.newGroup}>
-          <NewGroup
-            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-            closeGroupDrawer={this.setNewGroupFalse}
-          />
+          <NewGroup componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeGroupDrawer={this.setNewGroupFalse} />
         </MainBottomDrawer>
       </Auxilliary>
     );

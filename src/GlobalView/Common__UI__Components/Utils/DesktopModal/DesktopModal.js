@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./DesktopModal.scss";
 
 import { Modal } from "reactstrap";
 

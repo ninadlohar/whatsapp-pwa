@@ -9,6 +9,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import Checkbox from "@material-ui/core/Checkbox";
 import green from "@material-ui/core/colors/green";
+import "./MobileModal.scss";
 
 const styles = theme => ({
   paper: {
@@ -31,11 +32,7 @@ const styles = theme => ({
 class MobileModal extends React.Component {
   state = {
     value: this.props.value,
-    key2: [
-      { key: "Everyone", value: "Everyone" },
-      { key: "My Contacts", value: "My Contacts" },
-      { key: "Nobody", value: "Nobody" }
-    ]
+    key2: [{ key: "Everyone", value: "Everyone" }, { key: "My Contacts", value: "My Contacts" }, { key: "Nobody", value: "Nobody" }]
   };
   handleChange = event => {
     this.setState({ value: event.target.value });
@@ -66,13 +63,7 @@ class MobileModal extends React.Component {
                   <RadioGroup className={classes.group} value={this.state.value} onChange={this.handleChange}>
                     {this.props.key2 &&
                       this.props.key2.map(k => (
-                        <FormControlLabel
-                          key={k.key}
-                          value={k.key}
-                          control={<Radio />}
-                          label={k.value}
-                          onClick={this.props.closeModal}
-                        />
+                        <FormControlLabel key={k.key} value={k.key} control={<Radio />} label={k.value} onClick={this.props.closeModal} />
                       ))}
                   </RadioGroup>
                 </FormControl>

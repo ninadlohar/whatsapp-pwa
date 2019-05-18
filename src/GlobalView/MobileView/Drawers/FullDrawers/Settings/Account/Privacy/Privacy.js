@@ -1,6 +1,6 @@
 import React from "react";
 import Auxilliary from "../../../../../../../hoc/Auxillary";
-import MobileModal from "../../../../../../Common__UI__Components/Utils/MobileModal";
+import MobileModal from "../../../../../../Common__UI__Components/Utils/MobileModal/MobileModal";
 import Switch from "@material-ui/core/Switch";
 import BottomDrawer from "../../../../BottomDrawer";
 import Groups from "./Groups/Groups";
@@ -18,11 +18,7 @@ class Privacy extends React.Component {
     group: false,
     liveLocation: false,
     blockedUser: false,
-    key2: [
-      { key: "Everyone", value: "Everyone" },
-      { key: "My Contacts", value: "My Contacts" },
-      { key: "Nobody", value: "Nobody" }
-    ]
+    key2: [{ key: "Everyone", value: "Everyone" }, { key: "My Contacts", value: "My Contacts" }, { key: "Nobody", value: "Nobody" }]
   };
   handleChange = name => event => {
     this.setState({ [name]: event.target.checked });
@@ -89,16 +85,8 @@ class Privacy extends React.Component {
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
-                <div
-                  className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                  onClick={this.props.closeDrawer}
-                >
-                  <img
-                    src={require("../../../../../../../assets/svg/left.svg")}
-                    width="24"
-                    height="24"
-                    alt="left-arrow"
-                  />
+                <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.closeDrawer}>
+                  <img src={require("../../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
                   <div className="mobile__newChat__selectedContact">Privacy</div>
@@ -110,9 +98,7 @@ class Privacy extends React.Component {
         <div id="mobile__privacy__section">
           <div className="col-12 py-3">
             <div className="privacy">Who can see my personal Info</div>
-            <div className="privacy__text">
-              If you don't share your Last Seen, you won't be able to see other people's Last Seen
-            </div>
+            <div className="privacy__text">If you don't share your Last Seen, you won't be able to see other people's Last Seen</div>
           </div>
           <div className="col-12 py-3" onClick={this.openPrivacyModal}>
             <div className="w-100 privacy__header">
@@ -189,25 +175,16 @@ class Privacy extends React.Component {
             </div>
           </div>
           <BottomDrawer onOpen={this.openStatusPrivacy} open={this.state.statusPrivacy}>
-            <StatusPrivacy
-              componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-              closeDrawer={this.closeStatusPrivacy}
-            />
+            <StatusPrivacy componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.closeStatusPrivacy} />
           </BottomDrawer>
           <BottomDrawer onOpen={this.openGroup} open={this.state.group}>
             <Groups componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.closeGroup} />
           </BottomDrawer>
           <BottomDrawer onOpen={this.openLiveLocation} open={this.state.liveLocation}>
-            <LiveLocation
-              componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-              closeDrawer={this.closeLiveLocation}
-            />
+            <LiveLocation componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.closeLiveLocation} />
           </BottomDrawer>
           <BottomDrawer onOpen={this.openBlockedUser} open={this.state.blockedUser}>
-            <BlockedContact
-              componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-              closeDrawer={this.closeBlockedUser}
-            />
+            <BlockedContact componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.closeBlockedUser} />
           </BottomDrawer>
           <MobileModal
             openModal={this.openPrivacyModal}

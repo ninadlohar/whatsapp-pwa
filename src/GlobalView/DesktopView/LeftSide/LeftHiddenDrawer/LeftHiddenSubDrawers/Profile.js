@@ -1,5 +1,5 @@
 import React from "react";
-import SearchInputBox from "../../../../Common__UI__Components/SearchInputBox";
+import SearchInputBox from "../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 
 class Profile extends React.Component {
   state = {

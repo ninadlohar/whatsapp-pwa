@@ -1,6 +1,6 @@
 import React from "react";
-import Input from "./Utils/Input";
-import "../../scss/dropdown/search.scss";
+import Input from "../Input/Input";
+import "./SearchInputBox.scss";
 
 class SearchInputBox extends React.Component {
   constructor(props) {
@@ -105,15 +105,10 @@ class SearchInputBox extends React.Component {
           <div className="profile__input__icons__section d-flex justify-content-between pt-1">
             <div className="profile__input__characters__left">20</div>
             <div className="">
-              <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
+              <img src={require("../../../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
             </div>
             <div className="" onClick={this.props.isEditingNameFn}>
-              <img
-                src={require("../../assets/svg/correct-signal.svg")}
-                alt="tick-correct-signal"
-                height="17"
-                width="17"
-              />
+              <img src={require("../../../../assets/svg/correct-signal.svg")} alt="tick-correct-signal" height="17" width="17" />
             </div>
           </div>
         </div>
@@ -133,15 +128,10 @@ class SearchInputBox extends React.Component {
           </div>
           <div className="profile__input__icons__section d-flex justify-content-end pt-1">
             <div className="mr-2">
-              <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
+              <img src={require("../../../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
             </div>
             <div className="" onClick={this.props.isEditingAboutFn}>
-              <img
-                src={require("../../assets/svg/correct-signal.svg")}
-                alt="tick-correct-signal"
-                height="17"
-                width="17"
-              />
+              <img src={require("../../../../assets/svg/correct-signal.svg")} alt="tick-correct-signal" height="17" width="17" />
             </div>
           </div>
         </div>
@@ -163,15 +153,10 @@ class SearchInputBox extends React.Component {
           <div className="profile__input__icons__section d-flex justify-content-between pt-1">
             <div className="profile__input__characters__left">20</div>
             <div className="">
-              <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
+              <img src={require("../../../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
             </div>
             <div className="" onClick={this.props.isEditingNameGroupFn}>
-              <img
-                src={require("../../assets/svg/correct-signal.svg")}
-                alt="tick-correct-signal"
-                height="17"
-                width="17"
-              />
+              <img src={require("../../../../assets/svg/correct-signal.svg")} alt="tick-correct-signal" height="17" width="17" />
             </div>
           </div>
         </div>
@@ -192,15 +177,10 @@ class SearchInputBox extends React.Component {
           </div>
           <div className="profile__input__icons__section d-flex justify-content-end pt-1">
             <div className="mr-2">
-              <img src={require("../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
+              <img src={require("../../../../assets/svg/happy.svg")} alt="tick-mark" height="17" width="17" />
             </div>
             <div className="" onClick={this.props.isEditingDescriptionFn}>
-              <img
-                src={require("../../assets/svg/correct-signal.svg")}
-                alt="tick-correct-signal"
-                height="17"
-                width="17"
-              />
+              <img src={require("../../../../assets/svg/correct-signal.svg")} alt="tick-correct-signal" height="17" width="17" />
             </div>
           </div>
         </div>

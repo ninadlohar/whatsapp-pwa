@@ -1,6 +1,6 @@
 import React from "react";
 import Auxilliary from "../../../../../../hoc/Auxillary";
-import MobileModal from "../../../../../Common__UI__Components/Utils/MobileModal";
+import MobileModal from "../../../../../Common__UI__Components/Utils/MobileModal/MobileModal";
 import Switch from "@material-ui/core/Switch";
 import BottomDrawer from "../../../BottomDrawer";
 import ChatHistory from "./ChatHistory/ChatHistory";
@@ -67,10 +67,7 @@ class Chats extends React.Component {
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
-                <div
-                  className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                  onClick={this.props.closeDrawer}
-                >
+                <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.closeDrawer}>
                   <img src={require("../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
@@ -101,9 +98,7 @@ class Chats extends React.Component {
                 <div className="d-flex align-items-center w-100 pl-2">
                   <div className="custom__width85">
                     <div className="mobile__settings__header__name">Media Visibility</div>
-                    <div className="mobile__settings__header__status">
-                      Show newly downloaded media on your phone's gallery
-                    </div>
+                    <div className="mobile__settings__header__status">Show newly downloaded media on your phone's gallery</div>
                   </div>
                   <Switch checked={this.state.checkedA} onChange={this.handleChange("checkedA")} value="checkedA" />
                 </div>
@@ -181,16 +176,10 @@ class Chats extends React.Component {
           value="Phone's Language(English)"
         />
         <BottomDrawer onOpen={this.openChatHistory} open={this.state.chatHistory}>
-          <ChatHistory
-            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-            closeDrawer={this.closeChatHistory}
-          />
+          <ChatHistory componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.closeChatHistory} />
         </BottomDrawer>
         <BottomDrawer onOpen={this.openChatBackup} open={this.state.chatBackup}>
-          <ChatBackup
-            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-            closeDrawer={this.closeChatBackup}
-          />
+          <ChatBackup componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.closeChatBackup} />
         </BottomDrawer>
       </Auxilliary>
     );
