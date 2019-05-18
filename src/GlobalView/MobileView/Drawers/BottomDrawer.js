@@ -14,7 +14,7 @@ const styles = {
 class BottomDrawer extends React.Component {
   render() {
     return (
-      <Drawer anchor="bottom" open={this.props.open} onOpen={this.props.onOpen} className="bottomDrawerParent">
+      <Drawer anchor="bottom" open={this.props.open} className="bottomDrawerParent">
         <div tabIndex={0} onClick={this.props.toggleDrawer} className="bottomDrawer">
           {this.props.children}
         </div>
