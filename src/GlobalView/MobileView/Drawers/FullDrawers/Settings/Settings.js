@@ -84,18 +84,21 @@ class Settings extends React.Component {
   closeSocialMediaLinks = () => {
     this.setState({ socialMediaLinks: false });
   };
+
   resize = () => {
-    window.addEventListener("resize", () => {
-      let header = document.getElementById("mobile__settings__head");
-      let infoSection = document.getElementById("mobile__settings__section");
-      this.props.componentWithoutSearchBar(header, infoSection);
-    });
+    let header = document.getElementById("mobile__settings__head");
+    let infoSection = document.getElementById("mobile__settings__section");
+    this.props.componentWithoutSearchBar(header, infoSection);
   };
   componentDidMount() {
     let header = document.getElementById("mobile__settings__head");
     let infoSection = document.getElementById("mobile__settings__section");
     this.props.componentWithoutSearchBar(header, infoSection);
-    this.resize();
+    window.addEventListener("resize", this.resize);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.resize);
   }
 
   render() {

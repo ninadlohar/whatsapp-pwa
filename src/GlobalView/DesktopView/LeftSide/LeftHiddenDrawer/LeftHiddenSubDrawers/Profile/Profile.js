@@ -23,15 +23,7 @@ class Profile extends React.Component {
     this.setState({ editAboutProfile: e });
   };
 
-  componentDidMount() {
-    var height = document.getElementById("page").clientHeight;
-    var header = document.getElementById("leftSlider__header__green_box").clientHeight;
-    var content = document.getElementById("profile__section");
-    var step1 = height - header;
-    var availableheight = step1;
-    content.style.height = availableheight + "px";
-    content.style.overflow = "scroll";
-
+  resizeFn = () => {
     window.addEventListener("resize", function() {
       var height = document.getElementById("page").clientHeight;
       var header = document.getElementById("leftSlider__header__green_box").clientHeight;
@@ -41,6 +33,20 @@ class Profile extends React.Component {
       content.style.height = availableheight + "px";
       content.style.overflow = "scroll";
     });
+  };
+
+  componentDidMount() {
+    var height = document.getElementById("page").clientHeight;
+    var header = document.getElementById("leftSlider__header__green_box").clientHeight;
+    var content = document.getElementById("profile__section");
+    var step1 = height - header;
+    var availableheight = step1;
+    content.style.height = availableheight + "px";
+    content.style.overflow = "scroll";
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.resizeFn);
   }
 
   render() {

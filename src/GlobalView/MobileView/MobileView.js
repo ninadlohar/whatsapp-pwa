@@ -251,21 +251,6 @@ class MobileView extends React.Component {
     window.addEventListener("resize", this.resizeFn);
   }
 
-  // resize = (header, leftHeight) => {
-  //   let h = header;
-  //   let l = leftHeight;
-  //   window.addEventListener("resize", (h, l) => {
-  //     var height = document.getElementById("page").clientHeight;
-  //     var headheight = h.clientHeight;
-  //     var content = l;
-  //     var step1 = height - headheight;
-  //     var availableheight = step1;
-  //     content.style.marginTop = headheight + "px";
-  //     content.style.height = availableheight + "px";
-  //     content.style.overflow = "auto";
-  //   });
-  // };
-
   componentWithoutSearchBar = (header, leftHeight) => {
     var height = document.getElementById("page").clientHeight;
     var headheight = header.clientHeight;
@@ -275,7 +260,6 @@ class MobileView extends React.Component {
     content.style.marginTop = headheight + "px";
     content.style.height = availableheight + "px";
     content.style.overflow = "auto";
-    // this.resize(header, leftHeight);
   };
 
   componentWillUnmount() {
