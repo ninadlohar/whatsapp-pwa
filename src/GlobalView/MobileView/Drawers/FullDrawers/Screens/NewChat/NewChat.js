@@ -4,7 +4,7 @@ import DropDown from "../../../../../Common__UI__Components/DropDown/DropDown";
 import SearchInputBox from "../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 import Auxilliary from "../../../../../../hoc/Auxillary";
 import NewGroup from "../NewGroup/NewGroup";
-import MainBottomDrawer from "../../../BottomDrawer";
+import MainBottomDrawer from "../../../BottomDrawer/BottomDrawer";
 import { data } from "../../../../../../DummyAPI/data.json";
 
 class NewChat extends React.Component {

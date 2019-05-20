@@ -1,5 +1,5 @@
 import React from "react";
-import MainBottomDrawer from "../../../../BottomDrawer";
+import MainBottomDrawer from "../../../../BottomDrawer/BottomDrawer";
 import Auxillary from "../../../../../../../hoc/Auxillary";
 import ChangeNumberWithInputs from "./ChangeNumberWithInputs/ChangeNumberWithInputs";
 
@@ -21,23 +21,12 @@ class ChangeNumber extends React.Component {
   render() {
     return (
       <Auxillary>
-        <header
-          className="col-12 fixed-top mobile__view__starred__Messages__Header py-2"
-          id="mobile__changeNumber__head"
-        >
+        <header className="col-12 fixed-top mobile__view__starred__Messages__Header py-2" id="mobile__changeNumber__head">
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
-                <div
-                  className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                  onClick={this.props.closeDrawer}
-                >
-                  <img
-                    src={require("../../../../../../../assets/svg/left.svg")}
-                    width="24"
-                    height="24"
-                    alt="left-arrow"
-                  />
+                <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.closeDrawer}>
+                  <img src={require("../../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
                   <div className="mobile__newChat__selectedContact">Change Number</div>
@@ -55,12 +44,7 @@ class ChangeNumber extends React.Component {
                     <div className="d-flex justify-content-center">
                       <div className="archieved-chats-cirle">
                         <div className="h-100 d-flex justify-content-center align-items-center">
-                          <img
-                            src={require("../../../../../../../assets/svg/sim-card.svg")}
-                            alt="sim-card"
-                            width="70"
-                            height="70"
-                          />
+                          <img src={require("../../../../../../../assets/svg/sim-card.svg")} alt="sim-card" width="70" height="70" />
                         </div>
                       </div>
                     </div>
@@ -78,10 +62,7 @@ class ChangeNumber extends React.Component {
               </div>
             </div>
           </section>
-          <div
-            className="enable-button-parent w-100 d-flex justify-content-center"
-            onClick={this.setChangeNumberWithInputsTrue}
-          >
+          <div className="enable-button-parent w-100 d-flex justify-content-center" onClick={this.setChangeNumberWithInputsTrue}>
             <div className="enable-button">
               <div className="d-flex justify-content-center">NEXT</div>
             </div>

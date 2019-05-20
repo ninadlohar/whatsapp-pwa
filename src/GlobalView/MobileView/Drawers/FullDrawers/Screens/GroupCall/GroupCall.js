@@ -2,7 +2,7 @@ import React from "react";
 import DropDown from "../../../../../Common__UI__Components/DropDown/DropDown";
 import SearchInputBox from "../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 import Auxilliary from "../../../../../../hoc/Auxillary";
-import MainBottomDrawer from "../../../BottomDrawer";
+import MainBottomDrawer from "../../../BottomDrawer/BottomDrawer";
 import { data } from "../../../../../../DummyAPI/data.json";
 import GroupCallChatScreen from "../../../../../DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/GroupCall/GroupCall";
 import NewGroupCall from "./NewGroupCall/NewGroupCall";

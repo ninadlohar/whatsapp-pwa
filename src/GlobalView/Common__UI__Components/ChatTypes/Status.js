@@ -19,7 +19,7 @@ class Status extends React.Component {
     return (
       <div className=" w-100 d-flex userInfo__box" onMouseEnter={this.onHover} onMouseLeave={this.offHover}>
         <div className="leftChat__user__image">
-          <img src={require("../../../../../assets/images/Iron-Man.jpg")} alt="jolie" className="sender__image__left__window" />
+          <img src={require("../../../assets/images/Iron-Man.jpg")} alt="jolie" className="sender__image__left__window" />
         </div>
         <div className="leftChat__user__details">
           <div className="leftChat__senderName___time">

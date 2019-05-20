@@ -3,7 +3,7 @@ import Auxillary from "../../hoc/Auxillary";
 import SwipeableViews from "react-swipeable-views";
 import AppBar from "@material-ui/core/AppBar";
 import Typography from "@material-ui/core/Typography";
-import Status from "../DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/Status";
+import Status from "../Common__UI__Components/ChatTypes/Status";
 import Calls from "../DesktopView/LeftSide/LeftHiddenDrawer/LeftHiddenSubDrawers/Calls/Calls";
 import SearchInputBox from "../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 import DropDown from "../Common__UI__Components/DropDown/DropDown";
@@ -11,7 +11,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import DefaultLoadedChat from "../Common__UI__Components/ChatTypes/DefaultLoadedChat";
-import MainBottomDrawer from "./Drawers/BottomDrawer";
+import MainBottomDrawer from "./Drawers/BottomDrawer/BottomDrawer";
 import NewChat from "./Drawers/FullDrawers/Screens/NewChat/NewChat";
 import NewGroup from "./Drawers/FullDrawers/Screens/NewGroup/NewGroup";
 import NewBroadcast from "./Drawers/FullDrawers/Screens/NewBroadcast/NewBroadcast";
@@ -320,7 +320,7 @@ class MobileView extends React.Component {
               <div className="col-12 pb-1 d-flex camera">
                 <div className="d-flex align-items-center pt-1">
                   <div className="image-upload">
-                    <label for="file-input" name="file-input">
+                    <label htmlFor="file-input" name="file-input">
                       <img src={require("../../assets/svg/camera.svg")} width="20" height="20" alt="camera-svg" />
                     </label>
                     <input id="file-input" type="file" />
@@ -477,8 +477,8 @@ class MobileView extends React.Component {
               ) : null}
 
               {this.state.value === 1 ? (
-                <div className="image-upload">
-                  <label for="file-input" name="file-input">
+                <div className="image-upload pt-2">
+                  <label htmlFor="file-input" name="file-input">
                     <img src={require("../../assets/svg/square-stop-button.svg")} alt="message-ballon" height="16" width="16" />
                   </label>
                   <input id="file-input" type="file" />

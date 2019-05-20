@@ -2,7 +2,7 @@ import React from "react";
 import Auxilliary from "../../../../../../hoc/Auxillary";
 import MobileModal from "../../../../../Common__UI__Components/Utils/MobileModal/MobileModal";
 import Switch from "@material-ui/core/Switch";
-import BottomDrawer from "../../../BottomDrawer";
+import BottomDrawer from "../../../BottomDrawer/BottomDrawer";
 import ChatHistory from "./ChatHistory/ChatHistory";
 import ChatBackup from "./ChatBackup/ChatBackup";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import Auxillary from "../../../../../../../../hoc/Auxillary";
 import TwoStepVerification6 from "../TwoStepVerificationStep6/TwoStepVerificationStep6";
-import MainBottomDrawer from "../../../../../BottomDrawer";
+import MainBottomDrawer from "../../../../../BottomDrawer/BottomDrawer";
 
 class TwoStepVerification5 extends React.Component {
   state = {
@@ -21,23 +21,12 @@ class TwoStepVerification5 extends React.Component {
   render() {
     return (
       <Auxillary>
-        <header
-          className="col-12 fixed-top mobile__view__starred__Messages__Header py-2"
-          id="mobile__twoStepVerificationDone__head"
-        >
+        <header className="col-12 fixed-top mobile__view__starred__Messages__Header py-2" id="mobile__twoStepVerificationDone__head">
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
-                <div
-                  className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                  onClick={this.props.closeDrawer}
-                >
-                  <img
-                    src={require("../../../../../../../../assets/svg/left.svg")}
-                    width="24"
-                    height="24"
-                    alt="left-arrow"
-                  />
+                <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.closeDrawer}>
+                  <img src={require("../../../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
                   <div className="mobile__newChat__selectedContact">Two-Step Verification</div>
@@ -77,10 +66,7 @@ class TwoStepVerification5 extends React.Component {
           </div>
         </div>
         <MainBottomDrawer onOpen={this.setStep2True} open={this.state.step2}>
-          <TwoStepVerification6
-            closeDrawer={this.setStep2False}
-            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-          />
+          <TwoStepVerification6 closeDrawer={this.setStep2False} componentWithoutSearchBar={this.props.componentWithoutSearchBar} />
         </MainBottomDrawer>
       </Auxillary>
     );

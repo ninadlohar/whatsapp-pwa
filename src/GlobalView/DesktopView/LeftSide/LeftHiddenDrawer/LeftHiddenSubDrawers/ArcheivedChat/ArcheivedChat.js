@@ -15,8 +15,8 @@ const ArchievedChat = props => {
           </div>
         </div>
       </header>
-      <section className="col-12 px-0 leftSide__chat__section">
-        <div className="row mx-0">
+      <section className="col-12 px-0 leftSide__chat__section h-100">
+        <div className="row mx-0 h-100">
           <div className="col-12 px-0 leftSlider__profile__section">
             <div className="row mx-0">
               <div className="archievedChatSection w-100">

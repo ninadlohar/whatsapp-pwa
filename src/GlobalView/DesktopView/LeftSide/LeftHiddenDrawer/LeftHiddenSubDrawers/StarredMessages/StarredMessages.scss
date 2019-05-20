@@ -1,0 +1,63 @@
+@import "../../../../../../scss/colors.scss";
+
+.leftSlider__header__green_box {
+  padding-top: 49px;
+  padding-left: 23px;
+  padding-right: 20px;
+  height: 108px;
+  background-color: $new-chat-active-color;
+}
+.custom__59height {
+  height: 59px;
+}
+.leftSlider__back__arrow {
+  width: 53px;
+  color: $white;
+}
+.leftSlider__greenBox__header {
+  color: $white;
+  font-size: 19px;
+}
+.leftSide__chat__section {
+  position: relative;
+  background-color: $white;
+}
+.starred-messages-container {
+  background-color: $common-dropup-bgColor;
+}
+.starred-messages-section {
+  padding: 10px 7px 10px 13px;
+  font-size: 14px;
+  background-color: $common-dropup-bgColor;
+}
+.starred-messages-sender-image-main {
+  margin-right: 6px;
+}
+.starred-messages-sender-image {
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+}
+.custom_pr-3 {
+  padding-right: 3px;
+}
+.custom_pl-3 {
+  padding-left: 3px;
+}
+
+.starred-messages-date-sent {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 11px;
+}
+.starred-messages-main {
+  padding-left: 29px;
+  padding-right: 12px;
+}
+
+.starred-messages {
+  padding: 6px 7px 8px 9px;
+  background-color: $white;
+  color: $starred-messages-color;
+  border-radius: 7.5px;
+  margin-top: 7px;
+}

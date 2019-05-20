@@ -1,6 +1,6 @@
 import React from "react";
 import Auxilliary from "../../../../../hoc/Auxillary";
-import MainBottomDrawer from "../../BottomDrawer";
+import MainBottomDrawer from "../../BottomDrawer/BottomDrawer";
 import Account from "./Account/Account";
 import Help from "./Help/Help";
 import Chats from "./Chats/Chats";
@@ -152,12 +152,7 @@ class Settings extends React.Component {
             </div>
             <div className="col-12 py-3 d-flex" onClick={this.setChatTrue}>
               <div className="d-flex align-items-center pl-3 pr-4">
-                <img
-                  src={require("../../../../../assets/svg/message-ballon2.svg")}
-                  alt="sender-images"
-                  height="18"
-                  width="18"
-                />
+                <img src={require("../../../../../assets/svg/message-ballon2.svg")} alt="sender-images" height="18" width="18" />
               </div>
               <div className="d-flex align-items-center w-100">
                 <div>
@@ -168,12 +163,7 @@ class Settings extends React.Component {
             </div>
             <div className="col-12 py-3 d-flex" onClick={this.setNotificationsTrue}>
               <div className="d-flex align-items-center pl-3 pr-4">
-                <img
-                  src={require("../../../../../assets/svg/notification2.svg")}
-                  alt="sender-images"
-                  height="18"
-                  width="18"
-                />
+                <img src={require("../../../../../assets/svg/notification2.svg")} alt="sender-images" height="18" width="18" />
               </div>
               <div className="d-flex align-items-center w-100">
                 <div>
@@ -184,12 +174,7 @@ class Settings extends React.Component {
             </div>
             <div className="col-12 py-3 d-flex" onClick={this.setDataAndStorageTrue}>
               <div className="d-flex align-items-center pl-3 pr-4">
-                <img
-                  src={require("../../../../../assets/svg/charging-circle2.svg")}
-                  alt="sender-images"
-                  height="18"
-                  width="18"
-                />
+                <img src={require("../../../../../assets/svg/charging-circle2.svg")} alt="sender-images" height="18" width="18" />
               </div>
               <div className="d-flex align-items-center w-100">
                 <div>
@@ -200,12 +185,7 @@ class Settings extends React.Component {
             </div>
             <div className="col-12 py-3 d-flex" onClick={this.setHelpTrue}>
               <div className="d-flex align-items-center pl-3 pr-4">
-                <img
-                  src={require("../../../../../assets/svg/information.svg")}
-                  alt="information"
-                  height="18"
-                  width="18"
-                />
+                <img src={require("../../../../../assets/svg/information.svg")} alt="information" height="18" width="18" />
               </div>
               <div className="d-flex align-items-center w-100">
                 <div>
@@ -227,16 +207,10 @@ class Settings extends React.Component {
           </div>
         </div>
         <MainBottomDrawer onOpen={this.openMobileProfile} open={this.state.mobileProfile}>
-          <Profile
-            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-            closeDrawer={this.closeMobileProfile}
-          />
+          <Profile componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.closeMobileProfile} />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setAccountTrue} open={this.state.account}>
-          <Account
-            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-            setAccountFalse={this.setAccountFalse}
-          />
+          <Account componentWithoutSearchBar={this.props.componentWithoutSearchBar} setAccountFalse={this.setAccountFalse} />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setHelpTrue} open={this.state.Help}>
           <Help componentWithoutSearchBar={this.props.componentWithoutSearchBar} setHelpFalse={this.setHelpFalse} />
@@ -245,19 +219,13 @@ class Settings extends React.Component {
           <Chats componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.setChatFalse} />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setNotificationsTrue} open={this.state.notifications}>
-          <Notifications
-            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-            closeDrawer={this.setNotificationsFalse}
-          />
+          <Notifications componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.setNotificationsFalse} />
         </MainBottomDrawer>
         <SmallDrawer onOpen={this.openSocialMediaLinks} open={this.state.socialMediaLinks}>
           <InviteFriends closeDrawer={this.closeSocialMediaLinks} />
         </SmallDrawer>
         <MainBottomDrawer onOpen={this.setDataAndStorageTrue} open={this.state.dataAndStorage}>
-          <DataAndStorage
-            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-            closeDrawer={this.setDataAndStorageFalse}
-          />
+          <DataAndStorage componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.setDataAndStorageFalse} />
         </MainBottomDrawer>
       </Auxilliary>
     );

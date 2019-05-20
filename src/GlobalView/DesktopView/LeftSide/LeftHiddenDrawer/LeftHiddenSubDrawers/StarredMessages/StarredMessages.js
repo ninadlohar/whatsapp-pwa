@@ -1,5 +1,5 @@
 import React from "react";
-import DropDown from "../../../../Common__UI__Components/DropDown/DropDown";
+import DropDown from "../../../../../Common__UI__Components/DropDown/DropDown";
 
 const StarredMessages = props => {
   return (
@@ -21,8 +21,8 @@ const StarredMessages = props => {
           </div>
         </div>
       </header>
-      <section className="col-12 px-0 leftSide__chat__section">
-        <div className="row mx-0">
+      <section className="col-12 px-0 leftSide__chat__section h-100">
+        <div className="row mx-0 h-100">
           <div className="col-12 px-0  starred-messages-container">
             <div className="row mx-0">
               <div className="col-12 starred-messages-section w-100 ">
@@ -31,20 +31,20 @@ const StarredMessages = props => {
                     <div className="starred-messages-sender-image-main">
                       <img
                         alt="sender-img-in-starred-message"
-                        src={require("../../../../../assets/images/user-image.jpg")}
+                        src={require("../../../../../../assets/images/user-image.jpg")}
                         className="starred-messages-sender-image"
                       />
                     </div>
                     <div className="custom_pr-3">Dad</div>
                     <div>
-                      <img src={require("../../../../../assets/svg/right.svg")} height="7" width="7" alt="right" />
+                      <img src={require("../../../../../../assets/svg/right.svg")} height="7" width="7" alt="right" />
                     </div>
                     <div className="custom_pl-3">You</div>
                   </div>
                   <div className="col-3 px-0 starred-messages-date-sent text-right">
                     Sunday
                     <img
-                      src={require("../../../../../assets/svg/right-arrow.svg")}
+                      src={require("../../../../../../assets/svg/right-arrow.svg")}
                       alt="right-arrow-angle-1"
                       style={{ marginLeft: "8px" }}
                       height="12"
@@ -59,7 +59,7 @@ const StarredMessages = props => {
                         <div className="row mx-0 w-100">
                           <div className="col-11 px-0">
                             <img
-                              src={require("../../../../../assets/svg/forward-arrow.svg")}
+                              src={require("../../../../../../assets/svg/forward-arrow.svg")}
                               alt="forward-arrow"
                               width="12"
                               height="12"
@@ -69,7 +69,7 @@ const StarredMessages = props => {
                           </div>
                           <div className="col-1 px-0 d-flex justify-content-end">
                             <img
-                              src={require("../../../../../assets/svg/chevron-arrow-down.svg")}
+                              src={require("../../../../../../assets/svg/chevron-arrow-down.svg")}
                               alt="chevron-down"
                               width="12"
                               height="12"
@@ -85,7 +85,7 @@ const StarredMessages = props => {
                       </span>
                       <div className="starred-messages-date-sent text-right">
                         <img
-                          src={require("../../../../../assets/svg/rate-star-button.svg")}
+                          src={require("../../../../../../assets/svg/rate-star-button.svg")}
                           alt="rate-star"
                           width="10"
                           height="10"

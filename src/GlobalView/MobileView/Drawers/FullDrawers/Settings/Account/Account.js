@@ -1,6 +1,6 @@
 import React from "react";
 import Auxilliary from "../../../../../../hoc/Auxillary";
-import MainBottomDrawer from "../../../BottomDrawer";
+import MainBottomDrawer from "../../../BottomDrawer/BottomDrawer";
 import Privacy from "./Privacy/Privacy";
 import Security from "./Security/Security";
 import TwoStepVerification from "./TwoStepVerifcation/TwoStepVerification";
@@ -95,12 +95,7 @@ class Account extends React.Component {
                     className="mobileView__left__arrow d-flex align-items-center justify-content-start"
                     onClick={this.props.setAccountFalse}
                   >
-                    <img
-                      src={require("../../../../../../assets/svg/left.svg")}
-                      width="24"
-                      height="24"
-                      alt="left-arrow"
-                    />
+                    <img src={require("../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                   </div>
                   <div className="mobileView__selectContactSection pl-3">
                     <div className="mobile__newChat__selectedContact">Account</div>
@@ -113,12 +108,7 @@ class Account extends React.Component {
             <div className="row mx-0">
               <div className="col-12 py-3 d-flex" onClick={this.setPrivacyTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
-                  <img
-                    src={require("../../../../../../assets/svg/locked-padlock.svg")}
-                    alt="sender-images"
-                    height="18"
-                    width="18"
-                  />
+                  <img src={require("../../../../../../assets/svg/locked-padlock.svg")} alt="sender-images" height="18" width="18" />
                 </div>
                 <div className="d-flex align-items-center w-100">
                   <div>
@@ -128,12 +118,7 @@ class Account extends React.Component {
               </div>
               <div className="col-12 py-3 d-flex" onClick={this.setSecurityTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
-                  <img
-                    src={require("../../../../../../assets/svg/antivirus.svg")}
-                    alt="message-ballon"
-                    height="18"
-                    width="18"
-                  />
+                  <img src={require("../../../../../../assets/svg/antivirus.svg")} alt="message-ballon" height="18" width="18" />
                 </div>
                 <div className="d-flex align-items-center w-100">
                   <div>
@@ -143,12 +128,7 @@ class Account extends React.Component {
               </div>
               <div className="col-12 py-3 d-flex" onClick={this.setTwoStepVerificationTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
-                  <img
-                    src={require("../../../../../../assets/svg/more-dots.svg")}
-                    alt="notification-bell"
-                    height="18"
-                    width="18"
-                  />
+                  <img src={require("../../../../../../assets/svg/more-dots.svg")} alt="notification-bell" height="18" width="18" />
                 </div>
                 <div className="d-flex align-items-center w-100">
                   <div>
@@ -158,12 +138,7 @@ class Account extends React.Component {
               </div>
               <div className="col-12 py-3 d-flex" onClick={this.setChangeNumberTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
-                  <img
-                    src={require("../../../../../../assets/svg/smartphone.svg")}
-                    alt="sender-images"
-                    height="18"
-                    width="18"
-                  />
+                  <img src={require("../../../../../../assets/svg/smartphone.svg")} alt="sender-images" height="18" width="18" />
                 </div>
                 <div className="d-flex align-items-center w-100">
                   <div>
@@ -173,12 +148,7 @@ class Account extends React.Component {
               </div>
               <div className="col-12 py-3 d-flex" onClick={this.setRequestAccountInfoTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
-                  <img
-                    src={require("../../../../../../assets/svg/text-file.svg")}
-                    alt="sender-images"
-                    height="18"
-                    width="18"
-                  />
+                  <img src={require("../../../../../../assets/svg/text-file.svg")} alt="sender-images" height="18" width="18" />
                 </div>
                 <div className="d-flex align-items-center w-100">
                   <div>
@@ -188,12 +158,7 @@ class Account extends React.Component {
               </div>
               <div className="col-12 py-3 d-flex" onClick={this.deleteAccountTrue}>
                 <div className="d-flex align-items-center pl-3 pr-4">
-                  <img
-                    src={require("../../../../../../assets/svg/delete-bin2.svg")}
-                    alt="sender-images"
-                    height="18"
-                    width="18"
-                  />
+                  <img src={require("../../../../../../assets/svg/delete-bin2.svg")} alt="sender-images" height="18" width="18" />
                 </div>
                 <div className="d-flex align-items-center w-100">
                   <div>
@@ -205,16 +170,10 @@ class Account extends React.Component {
           </div>
         </div>
         <MainBottomDrawer onOpen={this.setPrivacyTrue} open={this.state.privacy}>
-          <Privacy
-            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-            closeDrawer={this.setPrivacyFalse}
-          />
+          <Privacy componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.setPrivacyFalse} />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setSecurityTrue} open={this.state.Security}>
-          <Security
-            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-            closeDrawer={this.setSecurityFalse}
-          />
+          <Security componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.setSecurityFalse} />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setTwoStepVerificationTrue} open={this.state.TwoStepVerification}>
           <TwoStepVerification
@@ -223,10 +182,7 @@ class Account extends React.Component {
           />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setChangeNumberTrue} open={this.state.ChangeNumber}>
-          <ChangeNumber
-            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-            closeDrawer={this.setChangeNumberFalse}
-          />
+          <ChangeNumber componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.setChangeNumberFalse} />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.setRequestAccountInfoTrue} open={this.state.RequestAccountInfo}>
           <RequestAccountInfo
@@ -235,10 +191,7 @@ class Account extends React.Component {
           />
         </MainBottomDrawer>
         <MainBottomDrawer onOpen={this.deleteAccountTrue} open={this.state.deleteAccount}>
-          <DeleteMyAccount
-            componentWithoutSearchBar={this.props.componentWithoutSearchBar}
-            closeDrawer={this.deleteAccountFalse}
-          />
+          <DeleteMyAccount componentWithoutSearchBar={this.props.componentWithoutSearchBar} closeDrawer={this.deleteAccountFalse} />
         </MainBottomDrawer>
       </Auxilliary>
     );

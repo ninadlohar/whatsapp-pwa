@@ -1,7 +1,7 @@
 import React from "react";
 import SmallDrawer from "../../../SmallDrawer";
 import NameEdit from "../../../HalfDrawers/NameEdit";
-import BottomDrawer from "../../../BottomDrawer";
+import BottomDrawer from "../../../BottomDrawer/BottomDrawer";
 import About from "./About/About";
 
 class Profile extends React.Component {
@@ -33,10 +33,7 @@ class Profile extends React.Component {
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
-                <div
-                  className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                  onClick={this.props.closeDrawer}
-                >
+                <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.closeDrawer}>
                   <img src={require("../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3 d-flex align-items-center">
@@ -60,12 +57,7 @@ class Profile extends React.Component {
                   </label>
                   <div className="d-flex justify-content-end">
                     <div className="edit__photo d-flex justify-content-center align-items-center">
-                      <img
-                        src={require("../../../../../../assets/svg/camera.svg")}
-                        alt="camera"
-                        height="18"
-                        width="18"
-                      />
+                      <img src={require("../../../../../../assets/svg/camera.svg")} alt="camera" height="18" width="18" />
                     </div>
                   </div>
                   <input id="file-input" type="file" />
@@ -77,12 +69,7 @@ class Profile extends React.Component {
             <div className="row mx-0">
               <div className="col-12 py-2 d-flex">
                 <div className="pl-3 pr-4 pt-2">
-                  <img
-                    src={require("../../../../../../assets/svg/user-male-black-shape.svg")}
-                    alt="sender-images"
-                    height="18"
-                    width="18"
-                  />
+                  <img src={require("../../../../../../assets/svg/user-male-black-shape.svg")} alt="sender-images" height="18" width="18" />
                 </div>
                 <div className="d-flex align-items-center custom__width90 pb-1 deleteAccount__head__section">
                   <div>
@@ -138,12 +125,7 @@ class Profile extends React.Component {
             <div className="row mx-0">
               <div className="col-12 py-2 d-flex">
                 <div className="pl-3 pr-4 pt-2">
-                  <img
-                    src={require("../../../../../../assets/svg/call.svg")}
-                    alt="sender-images"
-                    height="18"
-                    width="18"
-                  />
+                  <img src={require("../../../../../../assets/svg/call.svg")} alt="sender-images" height="18" width="18" />
                 </div>
                 <div className="d-flex align-items-center custom__width90 pb-1 deleteAccount__head__section">
                   <div>

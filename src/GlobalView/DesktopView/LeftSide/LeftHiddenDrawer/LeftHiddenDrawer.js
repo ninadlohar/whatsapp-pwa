@@ -2,8 +2,8 @@ import React from "react";
 import NewGroup from "./LeftHiddenSubDrawers/NewGroup/NewGroup";
 import Profile from "./LeftHiddenSubDrawers/Profile/Profile";
 import ArchievedChat from "./LeftHiddenSubDrawers/ArcheivedChat/ArcheivedChat";
-import StarredMessages from "./LeftHiddenSubDrawers/StarredMessages";
-import Settings from "./LeftHiddenSubDrawers/Settings";
+import StarredMessages from "./LeftHiddenSubDrawers/StarredMessages/StarredMessages";
+import Settings from "./LeftHiddenSubDrawers/Settings/Settings";
 import NewChat from "./LeftHiddenSubDrawers/NewChat/NewChat";
 
 class LeftHiddenDrawer extends React.Component {

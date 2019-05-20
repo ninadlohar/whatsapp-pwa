@@ -1,7 +1,7 @@
 import React from "react";
 import Auxillary from "../../../hoc/Auxillary";
 import DesktopModal from "../Utils/DesktopModal/DesktopModal";
-import MainBottomDrawer from "../../MobileView/Drawers/BottomDrawer";
+import MainBottomDrawer from "../../MobileView/Drawers/BottomDrawer/BottomDrawer";
 import { CSSTransition } from "react-transition-group";
 import Help from "../../MobileView/Drawers/FullDrawers/Screens/NewChat/Help/Help";
 import ViewContact from "../../MobileView/Drawers/FullDrawers/Screens/UserChatting/ViewContact__or__GroupInfo/ViewContact";

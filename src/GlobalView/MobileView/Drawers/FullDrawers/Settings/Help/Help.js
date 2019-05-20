@@ -1,6 +1,6 @@
 import React from "react";
 import Auxilliary from "../../../../../../hoc/Auxillary";
-import MainBottomDrawer from "../../../BottomDrawer";
+import MainBottomDrawer from "../../../BottomDrawer/BottomDrawer";
 
 class Help extends React.Component {
   state = {
@@ -32,10 +32,7 @@ class Help extends React.Component {
           <div className="row mx-0 w-100">
             <div className="col-12 px-0 py-1 d-flex">
               <div className="row mx-0 w-100">
-                <div
-                  className="mobileView__left__arrow d-flex align-items-center justify-content-start"
-                  onClick={this.props.setHelpFalse}
-                >
+                <div className="mobileView__left__arrow d-flex align-items-center justify-content-start" onClick={this.props.setHelpFalse}>
                   <img src={require("../../../../../../assets/svg/left.svg")} width="24" height="24" alt="left-arrow" />
                 </div>
                 <div className="mobileView__selectContactSection pl-3">
@@ -49,12 +46,7 @@ class Help extends React.Component {
           <div className="row mx-0">
             <div className="col-12 py-3 d-flex">
               <div className="d-flex align-items-center pl-3 pr-4">
-                <img
-                  src={require("../../../../../../assets/svg/information.svg")}
-                  alt="information"
-                  height="18"
-                  width="18"
-                />
+                <img src={require("../../../../../../assets/svg/information.svg")} alt="information" height="18" width="18" />
               </div>
               <div className="d-flex align-items-center w-100">
                 <div>
@@ -74,12 +66,7 @@ class Help extends React.Component {
             </div>
             <div className="col-12 py-3 d-flex">
               <div className="d-flex align-items-center pl-3 pr-4">
-                <img
-                  src={require("../../../../../../assets/svg/text-file.svg")}
-                  alt="text-file"
-                  height="18"
-                  width="18"
-                />
+                <img src={require("../../../../../../assets/svg/text-file.svg")} alt="text-file" height="18" width="18" />
               </div>
               <div className="d-flex align-items-center w-100">
                 <div>

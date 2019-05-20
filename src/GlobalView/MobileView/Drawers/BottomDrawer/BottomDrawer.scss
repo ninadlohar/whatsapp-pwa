@@ -1,0 +1,14 @@
+.bottomDrawer {
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  outline: none;
+}
+.bottomDrawerParent {
+  min-height: 100%;
+  height: 100% !important;
+  > div {
+    height: 100% !important;
+    overflow-y: unset !important;
+  }
+}

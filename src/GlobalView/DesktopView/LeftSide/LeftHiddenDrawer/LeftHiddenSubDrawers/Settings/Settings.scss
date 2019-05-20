@@ -1,0 +1,66 @@
+@import "../../../../../../scss/colors.scss";
+
+.leftSlider__header__green_box {
+  padding-top: 49px;
+  padding-left: 23px;
+  padding-right: 20px;
+  height: 108px;
+  background-color: $new-chat-active-color;
+}
+.custom__59height {
+  height: 59px;
+}
+.leftSlider__back__arrow {
+  width: 53px;
+  color: $white;
+}
+.leftSlider__greenBox__header {
+  color: $white;
+  font-size: 19px;
+}
+.leftSide__chat__section {
+  position: relative;
+  background-color: $white;
+}
+.settings-section {
+  padding-right: 24px !important;
+}
+
+.settings-section-image-section {
+  padding-left: 19px;
+  padding-right: 19px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+.settings-section-image_img {
+  height: 82px;
+  width: 82px;
+  border-radius: 50%;
+}
+.settings_section_logged_in_user_name {
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.settings_section_logged_in_user_status {
+  color: $leftChat-messageLeftToRead;
+  font-size: 14px;
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.settings_options {
+  padding-right: 30px;
+}
+
+.settings_each_logo {
+  height: 60px;
+}
+
+.settings_logos {
+  width: 74px;
+}

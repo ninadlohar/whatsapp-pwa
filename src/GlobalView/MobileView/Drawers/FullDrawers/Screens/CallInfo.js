@@ -2,7 +2,7 @@ import React from "react";
 import Dropdown from "../../../../Common__UI__Components/DropDown/DropDown";
 import Auxillary from "../../../../../hoc/Auxillary";
 import UserChatting from "./UserChatting/UserChatting";
-import BottomDrawer from "../../BottomDrawer";
+import BottomDrawer from "../../BottomDrawer/BottomDrawer";
 
 class CallInfo extends React.Component {
   state = {

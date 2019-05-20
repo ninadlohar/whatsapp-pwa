@@ -2,7 +2,7 @@ import React from "react";
 import Auxillary from "../../../../../../../hoc/Auxillary";
 import DropDown from "../../../../../../Common__UI__Components/DropDown/DropDown";
 import Switch from "@material-ui/core/Switch";
-import BottomDrawer from "../../../../BottomDrawer";
+import BottomDrawer from "../../../../BottomDrawer/BottomDrawer";
 import NotifcationInsideViewContact from "./NotificationInsideViewContact/NotifcationInsideViewContact";
 
 class ViewContact extends React.Component {

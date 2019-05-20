@@ -2,7 +2,7 @@ import React from "react";
 import SearchInputBox from "../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 import DropDown from "../../../../../Common__UI__Components/DropDown/DropDown";
 import ViewContact from "./ViewContact__or__GroupInfo/ViewContact";
-import BottomDrawer from "../../../BottomDrawer";
+import BottomDrawer from "../../../BottomDrawer/BottomDrawer";
 
 class UserChatting extends React.Component {
   constructor(props) {
