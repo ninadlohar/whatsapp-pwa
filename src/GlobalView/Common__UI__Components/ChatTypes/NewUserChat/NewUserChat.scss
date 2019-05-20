@@ -1,4 +1,4 @@
-@import "../../../../../../scss/colors.scss";
+@import "../../../../scss/colors.scss";
 
 .userInfo__box {
   background-color: $white;
@@ -15,12 +15,27 @@
   background-color: $chat-active-color;
   cursor: pointer;
 }
-.calls__user__details {
+.leftChat__user__image {
+  padding-left: 13px;
+  padding-right: 15px;
+  padding-top: 12px;
+  padding-bottom: 11px;
+}
+.sender__image__left__window {
+  height: 49px;
+  width: 49px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.leftChat__user__details {
   padding-right: 12px;
-  width: calc(100% - 128px);
+  width: calc(100% - 77px);
   padding-top: 16px;
   padding-bottom: 6px;
   border-top: 1px solid $chat-border-top-color;
+  > strong {
+    font-weight: 500;
+  }
 }
 .leftChat__senderName___time {
   .leftChat__senderName {

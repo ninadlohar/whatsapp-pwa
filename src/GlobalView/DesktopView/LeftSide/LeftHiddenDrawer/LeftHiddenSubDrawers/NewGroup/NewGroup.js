@@ -1,6 +1,6 @@
 import React from "react";
 import SearchInputBox from "../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
-import NewUserChat from "../../../../../Common__UI__Components/ChatTypes/NewUserChat";
+import NewUserChat from "../../../../../Common__UI__Components/ChatTypes/NewUserChat/NewUserChat";
 
 class NewGroup extends React.Component {
   componentDidMount() {

@@ -46,7 +46,7 @@ class DefaultLoadedChat extends React.Component {
       <div className=" w-100 d-flex userInfo__box" onMouseEnter={this.onHover} onMouseLeave={this.offHover}>
         <div className="leftChat__user__image">
           <img
-            src={require("../../../assets/images/220px-Chris_Hemsworth_as_Thor.jpg")}
+            src={require("../../../../assets/images/220px-Chris_Hemsworth_as_Thor.jpg")}
             alt="mclaren"
             className="sender__image__left__window"
           />

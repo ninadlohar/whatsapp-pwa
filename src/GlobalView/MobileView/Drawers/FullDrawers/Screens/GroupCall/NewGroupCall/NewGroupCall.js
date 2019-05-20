@@ -3,7 +3,7 @@ import DropDown from "../../../../../../Common__UI__Components/DropDown/DropDown
 import SearchInputBox from "../../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 import Auxilliary from "../../../../../../../hoc/Auxillary";
 import { data } from "../../../../../../../DummyAPI/data.json";
-import ContactDataChatWStataus from "../../../../../../Common__UI__Components/ChatTypes/ContactDataWStatus";
+import ContactDataChatWStataus from "../../../../../../Common__UI__Components/ChatTypes/ContactDataWStatus/ContactDataWStatus";
 
 class NewGroupCall extends React.Component {
   state = {

@@ -1,0 +1,64 @@
+@import "../../../../scss/colors.scss";
+
+.userInfo__box {
+  background-color: $white;
+}
+
+.userInfo__box:hover {
+  .rollback-on-hover {
+    transition: all 0.3s;
+    transform: translate(-6px, 0px);
+  }
+}
+
+.userInfo__box:active {
+  background-color: $chat-active-color;
+  cursor: pointer;
+}
+.leftChat__user__image {
+  padding-left: 13px;
+  padding-right: 15px;
+  padding-top: 12px;
+  padding-bottom: 11px;
+}
+.logged__in__user__image__49px {
+  height: 49px;
+  width: 49px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.leftChat__user__details {
+  padding-right: 12px;
+  width: calc(100% - 77px);
+  padding-top: 16px;
+  padding-bottom: 6px;
+  border-top: 1px solid $chat-border-top-color;
+  > strong {
+    font-weight: 500;
+  }
+}
+.leftChat__senderName___groupAdmin {
+  .leftChat__senderName__asAdmin {
+    font-size: 17px;
+    color: $black;
+    width: calc(100% - 76px);
+  }
+  .leftChat__groupAdmin {
+    width: 76px;
+  }
+}
+.group-admin {
+  color: #4caf50;
+  font-size: 10px;
+  padding: 2px 5px 2px 5px;
+  border-radius: 3px;
+  border: 1px solid #4caf50;
+}
+
+.leftChat__message___messageLeftToRead {
+  .leftChat__message {
+    width: calc(100% - 56px);
+    font-size: 14px;
+    color: $leftChat-messageLeftToRead;
+  }
+}

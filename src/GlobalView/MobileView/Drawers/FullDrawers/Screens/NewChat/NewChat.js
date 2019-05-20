@@ -1,5 +1,5 @@
 import React from "react";
-import ContactDataWStatus from "../../../../../Common__UI__Components/ChatTypes/ContactDataWStatus";
+import ContactDataWStatus from "../../../../../Common__UI__Components/ChatTypes/ContactDataWStatus/ContactDataWStatus";
 import DropDown from "../../../../../Common__UI__Components/DropDown/DropDown";
 import SearchInputBox from "../../../../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 import Auxilliary from "../../../../../../hoc/Auxillary";

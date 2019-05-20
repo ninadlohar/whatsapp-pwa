@@ -1,0 +1,104 @@
+@import "../../../../scss/colors.scss";
+
+.chat-dropdown-links {
+  padding-top: 13px;
+  padding-left: 24px;
+  padding-right: 58px;
+  text-align: left;
+}
+.chat-dropdown {
+  transition: background-color 0.18s ease;
+  background-color: $white;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26), 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+  padding-top: 9px;
+  padding-bottom: 18px;
+  display: none;
+  width: 180px;
+  position: absolute;
+  display: block;
+  right: 8% !important;
+  z-index: 2;
+  font-size: 14px;
+  transform: scale(1);
+}
+.userInfo__box {
+  background-color: $white;
+}
+
+.userInfo__box:hover {
+  .rollback-on-hover {
+    transition: all 0.3s;
+    transform: translate(-6px, 0px);
+  }
+}
+
+.userInfo__box:active {
+  background-color: $chat-active-color;
+  cursor: pointer;
+}
+
+.leftChat__user__image {
+  padding-left: 13px;
+  padding-right: 15px;
+  padding-top: 12px;
+  padding-bottom: 11px;
+}
+.sender__image__left__window {
+  height: 49px;
+  width: 49px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.leftChat__user__details {
+  padding-right: 12px;
+  width: calc(100% - 77px);
+  padding-top: 16px;
+  padding-bottom: 6px;
+  border-top: 1px solid $chat-border-top-color;
+  > strong {
+    font-weight: 500;
+  }
+}
+
+.leftChat__senderName___time {
+  .leftChat__senderName {
+    width: calc(100% - 58px);
+    font-size: 17px;
+    color: $black;
+  }
+
+  .leftChat__time {
+    width: 52px;
+    margin-left: 6px;
+    font-size: 12px;
+    color: $time-color;
+  }
+}
+
+.leftChat__message___messageLeftToRead {
+  .leftChat__message {
+    width: calc(100% - 56px);
+    font-size: 14px;
+    color: $leftChat-messageLeftToRead;
+  }
+
+  .leftChat__messageLeftToRead {
+    width: 50px;
+    margin-left: 6px;
+    font-size: 12px;
+    color: $leftChat-messageLeftToRead;
+    text-align: right;
+  }
+
+  .rollback-on-hover {
+    margin-left: 5px;
+  }
+
+  .sender-notification-count {
+    background-color: $sender-notification-count;
+    border-radius: 16px;
+    padding: 1px 6px 1px 6px;
+    color: $white;
+  }
+}

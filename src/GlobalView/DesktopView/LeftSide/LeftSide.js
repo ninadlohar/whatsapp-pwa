@@ -1,7 +1,7 @@
 import React from "react";
 import SearchInputBox from "../../Common__UI__Components/Utils/SearchInputBox/SearchInputBox";
 import DropDown from "../../Common__UI__Components/DropDown/DropDown";
-import DefaultLoadedChat from "../../Common__UI__Components/ChatTypes/DefaultLoadedChat";
+import DefaultLoadedChat from "../../Common__UI__Components/ChatTypes/DefaultLoadedChat/DefaultLoadedChat";
 import MobileView from "../../MobileView/MobileView";
 
 class LeftSide extends React.Component {
